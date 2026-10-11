@@ -1,0 +1,20 @@
+{
+  "max_pages_per_category": 30,
+  "delay_seconds": [2.0, 4.0],
+  "stores": {
+    "woolworths": {
+      "enabled": true,
+      "departments": ["fruit-veg", "meat-poultry", "fish-seafood", "fridge-deli", "bakery", "frozen", "pantry", "drinks", "health-body", "cleaning-homeware"]
+    },
+    "newworld": {
+      "enabled": true,
+      "store_id": "ef977d89-f3d8-4e8b-8a48-b895ded38646",
+      "categories": ["Fruit & Veg", "Meat, Poultry & Seafood", "Fridge, Deli & Eggs", "Bakery", "Frozen", "Pantry", "Drinks", "Health & Body", "Household & Cleaning"]
+    },
+    "paknsave": {
+      "enabled": true,
+      "store_id": "a7d09522-bee2-41e4-8fe0-0b82b7f342f5",
+      "categories": ["Fruit & Veg", "Meat, Poultry & Seafood", "Fridge, Deli & Eggs", "Bakery", "Frozen", "Pantry", "Drinks", "Health & Body", "Household & Cleaning"]
+    }
+  }
+}
