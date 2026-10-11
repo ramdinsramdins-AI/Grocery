@@ -1,0 +1,33 @@
+name: Scrape prices
+
+on:
+  schedule:
+    - cron: "0 17,23,5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Scrape
+        env:
+          SCRAPER_CONTACT: ${{ secrets.SCRAPER_CONTACT }}
+        run: python scraper.py
+        continue-on-error: true
+      - name: Commit data
+        run: |
+          git config user.name "shelf-check-bot"
+          git config user.email "shelf-check-bot@users.noreply.github.com"
+          git add docs/data/latest.json docs/data/history.jsonl docs/data/compare.json
+          git diff --cached --quiet || git commit -m "Update prices $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+          
