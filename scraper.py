@@ -30,7 +30,7 @@ import requests
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "docs" / "data"   # served by GitHub Pages next to docs/index.html
 RAW = ROOT / "raw"              # probe output, not published
-CONTACT = os.environ.get("SCRAPER_CONTACT", "set SCRAPER_CONTACT to an email or site")
+CONTACT = " ".join((os.environ.get("SCRAPER_CONTACT") or "").split()) or "no contact set"
 UA = f"ShelfCheckBot/0.1 (personal price comparison; {CONTACT})"
 
 
