@@ -30,7 +30,7 @@ import requests
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "docs" / "data"   # served by GitHub Pages next to docs/index.html
 RAW = ROOT / "raw"              # probe output, not published
-CONTACT = " ".join((os.environ.get("SCRAPER_CONTACT") or "").split()) or "no contact set"
+CONTACT = " ".join((os.environ.get("SCRAPER_CONTACT") or "").split()) or "no contact set"  # strips stray newlines from pasted secrets
 UA = f"ShelfCheckBot/0.1 (personal price comparison; {CONTACT})"
 
 
@@ -129,22 +129,29 @@ class Blocked(Exception):
     pass
 
 
-def polite_get(session, url, delay, **kw):
+def _request(session, method, url, delay, **kw):
     time.sleep(random.uniform(*delay))
-    r = session.get(url, timeout=30, **kw)
+    for attempt in (1, 2):
+        try:
+            r = session.request(method, url, timeout=30 if attempt == 1 else 60, **kw)
+            break
+        except requests.exceptions.Timeout:
+            if attempt == 2:
+                raise
+            print(f"  timeout on {url[:90]}, waiting 10s and retrying once", file=sys.stderr)
+            time.sleep(10)
     if r.status_code in (403, 429):
         raise Blocked(f"{r.status_code} from {url}")
     r.raise_for_status()
     return r
+
+
+def polite_get(session, url, delay, **kw):
+    return _request(session, "GET", url, delay, **kw)
 
 
 def polite_post(session, url, delay, **kw):
-    time.sleep(random.uniform(*delay))
-    r = session.post(url, timeout=30, **kw)
-    if r.status_code in (403, 429):
-        raise Blocked(f"{r.status_code} from {url}")
-    r.raise_for_status()
-    return r
+    return _request(session, "POST", url, delay, **kw)
 
 
 # ---------------------------------------------------------------- Woolworths NZ (formerly Countdown)
@@ -185,6 +192,11 @@ def scrape_woolworths(cfg, gcfg, session, probe=False):
                 return payload
             recs = woolworths_parse(payload, dept)
             if not recs:
+                if page == 1:
+                    raw = ((payload.get("products") or {}).get("items")) or []
+                    print(f"  woolworths {dept}: 0 usable products (API returned {len(raw)}; "
+                          f"first item keys: {sorted(raw[0])[:12] if raw else 'n/a'}; "
+                          f"payload keys: {sorted(payload)[:8]})", file=sys.stderr)
                 break
             results += recs
             print(f"  woolworths {dept} page {page}: {len(recs)}", file=sys.stderr)
@@ -220,6 +232,25 @@ def foodstuffs_parse(store, payload, category=None):
     return out
 
 
+def _category_names(obj, depth=0):
+    """Collect top-level category names from whatever tree the categories endpoint returns."""
+    names = []
+    if isinstance(obj, dict):
+        if "name" in obj and depth <= 1:
+            names.append(str(obj["name"]))
+        for v in obj.values():
+            if isinstance(v, (dict, list)):
+                names += _category_names(v, depth + 1)
+    elif isinstance(obj, list):
+        for v in obj:
+            names += _category_names(v, depth)
+    seen = []
+    for n in names:
+        if n not in seen:
+            seen.append(n)
+    return seen[:60]
+
+
 def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
     domain = {"newworld": "newworld.co.nz", "paknsave": "paknsave.co.nz"}[store]
     tok = polite_post(session, f"https://www.{domain}/api/user/get-current-user", gcfg["delay_seconds"]).json()
@@ -228,6 +259,13 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
         raise RuntimeError(f"no guest token in response; keys: {list(tok)}")
     session.headers.update({"Authorization": f"Bearer {token}"})
     base = f"https://api-prod.{domain}/v1/edge"
+    try:
+        r = session.get(f"{base}/store/{cfg['store_id']}/categories", timeout=30)
+        if r.ok:
+            names = _category_names(r.json())
+            print(f"  {store} top-level category names on the site: {names or r.text[:600]}", file=sys.stderr)
+    except Exception as e:
+        print(f"  {store}: could not list categories ({e!r})", file=sys.stderr)
     results = []
     for cat in cfg["categories"]:
         for page in range(0, gcfg["max_pages_per_category"]):
@@ -251,6 +289,11 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
                 return payload
             recs = foodstuffs_parse(store, payload, cat)
             if not recs:
+                if page == 0:
+                    raw = payload.get("products") or []
+                    print(f"  {store} {cat}: 0 usable products (API returned {len(raw)}; "
+                          f"first item keys: {sorted(raw[0])[:14] if raw else 'n/a'}; "
+                          f"first singlePrice: {raw[0].get('singlePrice') if raw else None})", file=sys.stderr)
                 break
             results += recs
             print(f"  {store} {cat} page {page}: {len(recs)}", file=sys.stderr)
@@ -297,7 +340,7 @@ def write_outputs(records, now):
     for r in all_rows:
         groups.setdefault(r["match_key"], {})[r["store"]] = r
     compare = {k: v for k, v in groups.items() if len(v) >= 2}
-    (DATA / "compare.json").write_text(json.dumps({"generated_at": now, "groups": compare}, separators=(",", ":")))
+    (DATA / "compare.json").write_text(json.dumps({"generated_at": now, "stores_scraped_this_run": sorted(scraped_stores), "groups": compare}, separators=(",", ":")))
     return len(all_rows), len(changes), len(compare)
 
 
