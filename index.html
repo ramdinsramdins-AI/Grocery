@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shelf Check NZ</title>
+<meta name="description" content="Compare a grocery list across Woolworths, New World and PAK'nSAVE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: shelf-edge price tickets. Search and shelf prices on the left, a sticky basket with the plan comparison on the right. */
+:root{
+  color-scheme:light;
+  --bg:#F2F4EF; --surface:#FFFFFF; --ink:#16201A; --muted:#5B675F; --line:#D8DDD3;
+  --tag:#FFD84A; --tag-ink:#2A2200; --good:#1C7A45; --warn:#9A5B00; --soft:#E8ECE3;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1511; --surface:#18211B; --ink:#EAF0E6; --muted:#9AA79E; --line:#2B382F;
+  --tag:#E9BE2A; --tag-ink:#1F1800; --good:#5CC98B; --warn:#E3A24A; --soft:#202B24; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1511; --surface:#18211B; --ink:#EAF0E6; --muted:#9AA79E; --line:#2B382F;
+  --tag:#E9BE2A; --tag-ink:#1F1800; --good:#5CC98B; --warn:#E3A24A; --soft:#202B24; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;padding-inline:16px;padding-block:20px 48px}
+.wrap{max-width:1180px;margin-inline:auto}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;padding-bottom:16px;border-bottom:2px solid var(--ink)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(34px,6vw,52px);line-height:.95;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.sub{margin:6px 0 0;color:var(--muted);max-width:56ch}
+.status{font-family:var(--f-mono);font-size:12px;max-width:42ch;padding:6px 10px;background:var(--soft);border:1px solid var(--line)}
+.status.sample{background:var(--tag);color:var(--tag-ink);border-color:var(--tag)}
+.status.err{background:transparent;color:var(--warn);border-color:var(--warn)}
+main{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:28px;margin-top:20px;align-items:start}
+@media (max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+input[type=search],input[type=number]{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:10px 12px;border-radius:4px;min-width:0}
+input[type=search]{flex:1 1 220px}
+input:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.toggle{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);cursor:pointer}
+.toggle input{width:18px;height:18px;accent-color:var(--ink)}
+.count{font-size:13px;color:var(--muted);margin:0 0 10px}
+.row{background:var(--surface);border:1px solid var(--line);padding:12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 14px;margin-bottom:8px}
+.row h3{margin:0;font-size:15px;font-weight:600;overflow-wrap:anywhere}
+.meta{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:2px}
+.prices{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cell{border:1px solid var(--line);padding:7px 9px;min-width:0;background:var(--surface)}
+.cell.best{background:var(--tag);color:var(--tag-ink);border-color:var(--tag)}
+.cell.na{color:var(--muted);background:var(--soft);border-style:dashed}
+.cell .st{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.cell .pr{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.05;font-variant-numeric:tabular-nums}
+.cell .un{font-family:var(--f-mono);font-size:11.5px;font-variant-numeric:tabular-nums}
+.cell .dl{font-size:11.5px;margin-top:2px}
+.cell .dl.real{color:var(--good);font-weight:600}.cell.best .dl.real{color:var(--tag-ink)}
+.cell .dl.weak{color:var(--warn)}.cell.best .dl.weak{color:var(--tag-ink)}
+.btn{font:inherit;font-weight:600;background:var(--ink);color:var(--bg);border:0;padding:8px 14px;border-radius:4px;cursor:pointer;align-self:start}
+.btn.in{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+.btn.more{display:block;margin:12px auto 0;background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+aside{position:sticky;top:env(safe-area-inset-top,0px);background:var(--surface);border:2px solid var(--ink);padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+@media (max-width:900px){aside{position:static}}
+aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;margin:0;letter-spacing:.02em}
+.items{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.items li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;font-size:14px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.items li span:first-child{overflow-wrap:anywhere}
+.qty{display:flex;align-items:center;gap:6px;font-family:var(--f-mono)}
+.qty button{width:26px;height:26px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer;font:inherit}
+.empty{color:var(--muted);font-size:14px;margin:0}
+.plans{display:flex;flex-direction:column;gap:8px}
+.plan{text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:10px 12px;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:baseline}
+.plan[aria-pressed=true]{border:2px solid var(--ink);padding:9px 11px}
+.plan .pn{font-weight:600}
+.plan .tot{font-family:var(--f-display);font-weight:700;font-size:30px;font-variant-numeric:tabular-nums;line-height:1}
+.plan .nt{grid-column:1/-1;font-size:12.5px;color:var(--muted)}
+.rec{font-family:var(--f-mono);font-size:11px;background:var(--tag);color:var(--tag-ink);padding:1px 6px;margin-left:6px;vertical-align:2px}
+.stop{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.stop input{width:76px;padding:6px 8px}
+.bk h4{margin:10px 0 4px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;gap:8px}
+.bk ul{margin:0;padding:0;list-style:none;font-size:13.5px}
+.bk li{display:flex;justify-content:space-between;gap:10px;padding:2px 0}
+.bk li span:first-child{overflow-wrap:anywhere}
+.bk li span:last-child{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.foot{margin-top:28px;font-size:13px;color:var(--muted);max-width:70ch}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+.aisles{display:flex;gap:8px;overflow-x:auto;padding:12px 0 10px;margin-top:0;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.aisle{flex:0 0 auto;display:flex;align-items:center;gap:8px;font:inherit;font-size:13px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 12px 6px 6px;cursor:pointer;white-space:nowrap}
+.aisle .no{font-family:var(--f-mono);font-size:12px;background:var(--ink);color:var(--bg);min-width:22px;height:22px;display:grid;place-items:center;border-radius:3px}
+.aisle .n{font-family:var(--f-mono);font-weight:400;font-size:11px;color:var(--muted)}
+.aisle:hover{border-color:var(--ink)}
+.aisle[aria-pressed="true"]{background:var(--tag);color:var(--tag-ink);border-color:var(--tag)}
+.aisle[aria-pressed="true"] .no{background:var(--tag-ink);color:var(--tag)}
+.aisle[aria-pressed="true"] .n{color:var(--tag-ink)}
+.aisle:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <h1>Shelf Check NZ</h1>
+    <p class="sub">Build a grocery list and see the cheapest way to buy it across Woolworths, New World and PAK'nSAVE, with prices per 100g.</p>
+  </div>
+  <div class="status" id="status" role="status">Loading prices...</div>
+</header>
+<nav class="aisles" id="aisles" aria-label="Shop by aisle"></nav>
+
+<main>
+  <section aria-label="Products">
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search butter, mince, toilet paper" aria-label="Search products">
+      <label class="toggle"><input type="checkbox" id="member"> Use club prices (Everyday Rewards, Clubcard)</label>
+    </div>
+    <p class="count" id="count"></p>
+    <div id="list"></div>
+  </section>
+
+  <aside aria-label="Your list">
+    <h2>Your list</h2>
+    <ul class="items" id="items"></ul>
+    <div class="stop"><label for="stopCost">Cost of each extra stop</label> $<input type="number" id="stopCost" min="0" step="0.5" value="4"></div>
+    <div class="plans" id="plans"></div>
+    <div class="bk" id="bk"></div>
+  </aside>
+</main>
+
+<p class="foot">Only products found at two or more stores are listed, because those are the ones that can be compared. "Usual" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ.</p>
+</div>
+
+<script>
+var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE"};
+var KEYS = Object.keys(STORES);
+var PAGE = 40;
+var ITEMS = [], BYKEY = {};
+var state = {q:"", member:false, stop:4, list:{}, sel:null, shown:PAGE, aisle:""};
+try{var saved=JSON.parse(localStorage.getItem("shelfcheck-live")||"null"); if(saved&&saved.list){state.list=saved.list; if(typeof saved.stop==="number")state.stop=saved.stop;}}catch(e){}
+function save(){try{localStorage.setItem("shelfcheck-live",JSON.stringify({list:state.list,stop:state.stop}));}catch(e){}}
+
+function money(n){return "$"+n.toFixed(2);}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function enc(k){return encodeURIComponent(k);}
+
+// each price entry: [shelfPrice, usualPrice, clubPrice|null, unitPrice|null, unitBasis|null]
+function buildItems(groups){
+  ITEMS = Object.keys(groups).map(function(key){
+    var byStore = groups[key], prices = {}, first = null;
+    KEYS.forEach(function(k){
+      var r = byStore[k]; if(!r)return;
+      prices[k] = [r.price, r.was || r.price, r.club, r.unit_price, r.unit_basis];
+      if(!first)first = r;
+    });
+    var name = first.name || "";
+    if(first.brand && name.toLowerCase().indexOf(first.brand.toLowerCase())<0) name = first.brand+" "+name;
+    return {id:key, name:name, size:first.size||"", prices:prices, aisle:aisleOf(first.category,name)};
+  }).sort(function(a,b){return a.name.localeCompare(b.name);});
+  BYKEY = {}; ITEMS.forEach(function(i){BYKEY[i.id]=i;});
+  Object.keys(state.list).forEach(function(k){if(!BYKEY[k])delete state.list[k];});
+}
+
+
+// Aisles: a shopper-style grouping, worked out from each store's own category plus keywords in the name.
+var AISLES=[
+ ["Fruit & Veg",/fruit|veg|salad|herb|produce/],
+ ["Meat & Seafood",/meat|poultry|seafood|fish|chicken|beef|lamb|pork|mince|sausage|bacon|ham\b/],
+ ["Dairy & Eggs",/dairy|milk|egg|butter|cheese|yoghurt|yogurt|cream\b/],
+ ["Deli & Chilled",/deli|fridge|chilled|dip|hummus/],
+ ["Bakery",/bakery|bread|bagel|crumpet|muffin|wrap|bun\b|buns\b/],
+ ["Frozen",/frozen|ice cream|sorbet/],
+ ["Pantry",/pantry|cereal|canned|pasta|rice|noodle|sauce|baking|spread|jam|honey|oil|flour|sugar|soup/],
+ ["Snacks & Confectionery",/snack|chip|crisp|biscuit|cracker|chocolate|confection|sweet|lolli|gum\b|candy|nuts?\b/],
+ ["Drinks",/drink|beverage|juice|soft drink|water|cola|beer|wine|cider|coffee|tea\b|kombucha/],
+ ["Health & Beauty",/health|body|beauty|vitamin|shampoo|toothpaste|soap|deodorant|skin|baby/],
+ ["Household",/household|cleaning|homeware|laundry|toilet|paper|detergent|dishwash|bin liner|pet\b/]
+];
+// name keywords that override a broad store category (e.g. chocolate sitting under "Pantry")
+var NAME_AISLE=[
+ ["Snacks & Confectionery",/chocolate|lolli|sweets|chewing gum|\bgum\b|candy|chips\b|crisps|biscuit|cracker|popcorn|\bnuts?\b|bar\b/],
+ ["Drinks",/\bjuice|cola\b|soft drink|energy drink|sparkling|\bbeer|\bwine\b|\bcider\b|kombucha|coffee|\btea\b|cordial|\bwater\b/],
+ ["Dairy & Eggs",/\bmilk\b|\beggs?\b|\bbutter\b|\bcheese|yoghurt|yogurt|\bcream\b/]
+];
+function aisleOf(cat,name){
+  var n=String(name||"").toLowerCase(), c=String(cat||"").toLowerCase().replace(/-/g," ");
+  if(/frozen/.test(c))return "Frozen";
+  if(/fruit|veg/.test(c))return "Fruit & Veg";
+  if(/meat|seafood|poultry/.test(c))return "Meat & Seafood";
+  if(/bakery/.test(c))return "Bakery";
+  if(/health|body|beauty/.test(c))return "Health & Beauty";
+  if(/household|cleaning|homeware/.test(c))return "Household";
+  for(var i=0;i<NAME_AISLE.length;i++)if(NAME_AISLE[i][1].test(n))return NAME_AISLE[i][0];
+  if(/fridge|deli|chilled/.test(c))return "Deli & Chilled";
+  for(var j=0;j<AISLES.length;j++)if(AISLES[j][1].test(c))return AISLES[j][0];
+  return "Pantry";
+}
+function renderAisles(){
+  var counts={}; ITEMS.forEach(function(i){counts[i.aisle]=(counts[i.aisle]||0)+1;});
+  var html='<button class="aisle" type="button" data-aisle="" aria-pressed="'+(state.aisle===""?"true":"false")+'"><span class="no">All</span>All aisles <span class="n">'+ITEMS.length+'</span></button>';
+  var num=0;
+  AISLES.forEach(function(a){
+    if(!counts[a[0]])return;
+    num++;
+    html+='<button class="aisle" type="button" data-aisle="'+esc(a[0])+'" aria-pressed="'+(state.aisle===a[0]?"true":"false")+'"><span class="no">'+num+'</span>'+esc(a[0])+' <span class="n">'+counts[a[0]]+'</span></button>';
+  });
+  document.getElementById("aisles").innerHTML=html;
+}
+
+function priceFor(item,k){
+  var e=item.prices[k]; if(!e)return null;
+  var p=e[0]; if(state.member&&e[2]!=null&&e[2]<p)p=e[2]; return p;
+}
+function unitLabel(item,k,p){
+  var e=item.prices[k]; if(!e||e[3]==null)return "";
+  var up=e[3]*p/e[0];
+  return e[4]==="ea" ? money(up)+" each" : money(up)+"/"+e[4];
+}
+function dealText(item,k){
+  var e=item.prices[k], p=priceFor(item,k); if(!e||e[1]<=p)return null;
+  var pct=Math.round((1-p/e[1])*100);
+  if(pct>=10)return {cls:"real",t:"Real saving: "+pct+"% under usual "+money(e[1])};
+  return {cls:"weak",t:"Only "+pct+"% under usual "+money(e[1])};
+}
+
+function filtered(){
+  var words=state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  return ITEMS.filter(function(i){if(state.aisle&&i.aisle!==state.aisle)return false;var n=i.name.toLowerCase();return words.every(function(w){return n.indexOf(w)>-1;});});
+}
+
+function renderList(){
+  var rows=filtered(), shown=rows.slice(0,state.shown);
+  document.getElementById("count").textContent = rows.length ? (rows.length+" product"+(rows.length===1?"":"s")+" at 2 or more stores") : "";
+  if(!rows.length){
+    document.getElementById("list").innerHTML='<p class="empty">'+(ITEMS.length?'No products match. Try a shorter search or another aisle.':'No comparable products yet.')+'</p>';
+    return;
+  }
+  var html=shown.map(function(i){
+    var ps=KEYS.map(function(k){return priceFor(i,k);}).filter(function(p){return p!=null;});
+    var min=Math.min.apply(null,ps);
+    var cells=KEYS.map(function(k){
+      var p=priceFor(i,k);
+      if(p==null)return '<div class="cell na"><div class="st">'+esc(STORES[k])+'</div><div class="un">Not found</div></div>';
+      var d=dealText(i,k);
+      return '<div class="cell'+(p===min?' best':'')+'"><div class="st">'+esc(STORES[k])+'</div><div class="pr">'+money(p)+'</div><div class="un">'+esc(unitLabel(i,k,p))+'</div>'+(d?'<div class="dl '+d.cls+'">'+esc(d.t)+'</div>':'')+'</div>';
+    }).join("");
+    var inList=state.list[i.id];
+    return '<article class="row"><div><h3>'+esc(i.name)+'</h3><div class="meta">'+esc(i.size)+'</div></div><button class="btn'+(inList?' in':'')+'" data-add="'+enc(i.id)+'">'+(inList?'In list ('+inList+')':'Add')+'</button><div class="prices">'+cells+'</div></article>';
+  }).join("");
+  if(rows.length>shown.length) html+='<button class="btn more" data-more="1">Show more ('+(rows.length-shown.length)+' left)</button>';
+  document.getElementById("list").innerHTML=html;
+}
+
+function plans(){
+  var ids=Object.keys(state.list); if(!ids.length)return [];
+  function assign(storeSet){
+    var by={},total=0;
+    for(var n=0;n<ids.length;n++){
+      var it=BYKEY[ids[n]],best=null,bk=null;
+      storeSet.forEach(function(k){var p=priceFor(it,k); if(p!=null&&(best==null||p<best)){best=p;bk=k;}});
+      if(best==null)return null;
+      var line=best*state.list[it.id]; total+=line;
+      (by[bk]=by[bk]||[]).push({it:it,line:line});
+    }
+    return {by:by,total:total,stores:Object.keys(by).length};
+  }
+  var out=[];
+  var singles=KEYS.map(function(k){var a=assign([k]);return a?{k:k,a:a}:null;}).filter(Boolean);
+  if(singles.length){
+    singles.sort(function(a,b){return a.a.total-b.a.total;});
+    var s=singles[0];
+    out.push({id:"one",name:"One store: "+STORES[s.k],a:s.a,note:singles.length>1?"Dearest full-list store is "+money(singles[singles.length-1].a.total)+".":"Only store that has everything."});
+  }
+  var pairBest=null;
+  for(var x=0;x<KEYS.length;x++)for(var y=x+1;y<KEYS.length;y++){
+    var a=assign([KEYS[x],KEYS[y]]); if(a&&a.stores===2&&(!pairBest||a.total<pairBest.total))pairBest=a;
+  }
+  if(pairBest)out.push({id:"two",name:"Two stores: "+Object.keys(pairBest.by).map(function(k){return STORES[k];}).join(" + "),a:pairBest,note:""});
+  var all=assign(KEYS); if(all&&all.stores===3)out.push({id:"three",name:"Cheapest at all three",a:all,note:""});
+  out.forEach(function(p){
+    p.net=p.a.total+(p.a.stores-1)*state.stop;
+    p.note=(p.note?p.note+" ":"")+(p.a.stores>1?(p.a.stores-1)+" extra stop"+(p.a.stores>2?"s":"")+" at "+money(state.stop)+" each: "+money(p.net)+" all in.":"");
+  });
+  var rec=out.slice().sort(function(a,b){return a.net-b.net;})[0]; if(rec)rec.rec=true;
+  return out;
+}
+
+function renderBasket(){
+  var ids=Object.keys(state.list);
+  var el=document.getElementById("items");
+  if(!ids.length){
+    el.innerHTML='<li style="display:block;border:0"><p class="empty">Search for products and press Add to compare totals.</p></li>';
+    document.getElementById("plans").innerHTML="";document.getElementById("bk").innerHTML="";return;
+  }
+  el.innerHTML=ids.map(function(id){var i=BYKEY[id];return '<li><span>'+esc(i.name)+'</span><span class="qty"><button data-dec="'+enc(id)+'" aria-label="Fewer '+esc(i.name)+'">-</button>'+state.list[id]+'<button data-inc="'+enc(id)+'" aria-label="More '+esc(i.name)+'">+</button></span></li>';}).join("");
+  var ps=plans();
+  if(!ps.length){
+    document.getElementById("plans").innerHTML='<p class="empty">No combination of these three stores has everything on your list. Remove an item that shows "Not found" at a store to compare.</p>';
+    document.getElementById("bk").innerHTML="";return;
+  }
+  var rec=ps.filter(function(p){return p.rec;})[0];
+  if(!state.sel||!ps.some(function(p){return p.id===state.sel;}))state.sel=rec.id;
+  document.getElementById("plans").innerHTML=ps.map(function(p){
+    return '<button class="plan" data-plan="'+p.id+'" aria-pressed="'+(p.id===state.sel)+'"><span class="pn">'+esc(p.name)+(p.rec?'<span class="rec">BEST VALUE</span>':'')+'</span><span class="tot">'+money(p.a.total)+'</span><span class="nt">'+esc(p.note)+'</span></button>';
+  }).join("");
+  var cur=ps.filter(function(p){return p.id===state.sel;})[0];
+  document.getElementById("bk").innerHTML=Object.keys(cur.a.by).map(function(k){
+    var sub=0;
+    var lis=cur.a.by[k].map(function(r){sub+=r.line;var q=state.list[r.it.id];return '<li><span>'+(q>1?q+" x ":"")+esc(r.it.name)+'</span><span>'+money(r.line)+'</span></li>';}).join("");
+    return '<h4><span>'+esc(STORES[k])+'</span><span>'+money(sub)+'</span></h4><ul>'+lis+'</ul>';
+  }).join("");
+}
+function renderAll(){renderList();renderBasket();}
+
+function showStatus(cmp){
+  var el=document.getElementById("status");
+  if(cmp.generated_at==="sample"){
+    el.className="status sample"; el.textContent="Sample prices for testing. Run the scraper to load real prices."; return;
+  }
+  var when=new Date(cmp.generated_at), txt="";
+  try{txt=new Intl.DateTimeFormat("en-NZ",{dateStyle:"medium",timeStyle:"short",timeZone:"Pacific/Auckland"}).format(when);}catch(e){txt=cmp.generated_at;}
+  var missed=cmp.stores_scraped_this_run?KEYS.filter(function(k){return cmp.stores_scraped_this_run.indexOf(k)<0;}):[];
+  el.className="status";
+  var wt=cmp.store_times&&cmp.store_times.woolworths, wtxt="";
+  if(wt){try{wtxt=" Woolworths prices are from "+new Intl.DateTimeFormat("en-NZ",{dateStyle:"medium",timeZone:"Pacific/Auckland"}).format(new Date(wt))+".";}catch(e){}}
+  var missedTxt=missed.filter(function(k){return !(k==="woolworths"&&wt);});
+  el.textContent="Prices updated "+txt+(missedTxt.length?". Not refreshed last run: "+missedTxt.map(function(k){return STORES[k];}).join(", ")+".":".")+wtxt;
+}
+function showError(msg){
+  var el=document.getElementById("status"); el.className="status err"; el.textContent=msg;
+  document.getElementById("list").innerHTML='<p class="empty">'+esc(msg)+'</p>';
+}
+
+document.getElementById("q").addEventListener("input",function(e){state.q=e.target.value;state.shown=PAGE;renderList();});
+document.getElementById("member").addEventListener("change",function(e){state.member=e.target.checked;renderAll();});
+document.getElementById("stopCost").value=state.stop;
+document.getElementById("stopCost").addEventListener("input",function(e){var v=parseFloat(e.target.value);state.stop=isNaN(v)||v<0?0:v;save();renderBasket();});
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button"); if(!t)return;
+  var d=t.dataset, id;
+  if(d.aisle!==undefined&&t.classList.contains("aisle")){state.aisle=d.aisle;state.shown=PAGE;renderAisles();renderList();return;}
+  if(d.more){state.shown+=PAGE;renderList();return;}
+  if(d.add){id=decodeURIComponent(d.add);state.list[id]=(state.list[id]||0)+1;}
+  else if(d.inc){id=decodeURIComponent(d.inc);state.list[id]++;}
+  else if(d.dec){id=decodeURIComponent(d.dec);state.list[id]--; if(state.list[id]<=0)delete state.list[id];}
+  else if(d.plan){state.sel=d.plan;}
+  else return;
+  save(); renderAll();
+});
+
+fetch("data/compare.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("compare");return r.json();}).then(function(cmp){
+  buildItems(cmp.groups||{});
+  showStatus(cmp);
+  renderAisles();
+  renderAll();
+}).catch(function(){
+  showError("Could not load prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.");
+});
+</script>
+</body>
+</html>
