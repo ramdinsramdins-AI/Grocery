@@ -94,9 +94,11 @@ def unit_price_from_string(text):
 
 def match_key(brand, name, size_text):
     """Loose cross-store key: lowercase words from brand + name + normalised size. Exact matching is a starting point, not a promise."""
-    words = re.sub(r"[^a-z0-9 ]", " ", f"{brand or ''} {name or ''}".lower()).split()
-    stop = {"the", "and", "of", "pack", "value", "fresh"}
-    words = sorted({w for w in words if w not in stop})
+    text = re.sub(r"\b\d+(\.\d+)?\s*(kg|g|ml|l|ltr|pk|pack|ea)\b", " ", f"{brand or ''} {name or ''}".lower())
+    words = re.sub(r"[^a-z0-9 ]", " ", text).split()
+    stop = {"the", "and", "of", "pack", "value", "fresh", "nz", "new", "zealand", "each", "ea", "pk", "block", "approx"}
+    words = sorted({(w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w)
+                    for w in words if w not in stop})
     s = parse_size(size_text)
     size = f"{s[0]:g}{s[1]}" if s else "?"
     return " ".join(words) + "|" + size
@@ -131,15 +133,17 @@ class Blocked(Exception):
 
 def _request(session, method, url, delay, **kw):
     time.sleep(random.uniform(*delay))
-    for attempt in (1, 2):
+    for attempt in (1, 2, 3):
         try:
             r = session.request(method, url, timeout=30 if attempt == 1 else 60, **kw)
             break
-        except requests.exceptions.Timeout:
-            if attempt == 2:
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError,
+                requests.exceptions.ChunkedEncodingError) as e:
+            if attempt == 3:
                 raise
-            print(f"  timeout on {url[:90]}, waiting 10s and retrying once", file=sys.stderr)
-            time.sleep(10)
+            wait = 10 * attempt
+            print(f"  {type(e).__name__} on {url[:90]}, waiting {wait}s and retrying", file=sys.stderr)
+            time.sleep(wait)
     if r.status_code in (403, 429):
         raise Blocked(f"{r.status_code} from {url}")
     r.raise_for_status()
@@ -275,7 +279,7 @@ def _category_names(obj, depth=0):
     for n in names:
         if n not in seen:
             seen.append(n)
-    return seen[:60]
+    return seen[:300]
 
 
 def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
@@ -294,7 +298,10 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
     except Exception as e:
         print(f"  {store}: could not list categories ({e!r})", file=sys.stderr)
     results = []
-    for cat in cfg["categories"]:
+    aliases = cfg.get("category_aliases", {})
+    todo = list(cfg["categories"])
+    while todo:
+        cat = todo.pop(0)
         for page in range(0, gcfg["max_pages_per_category"]):
             body = {
                 "algoliaQuery": {
@@ -321,6 +328,9 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
                     print(f"  {store} {cat}: 0 usable products (API returned {len(raw)}; "
                           f"first item keys: {sorted(raw[0])[:14] if raw else 'n/a'}; "
                           f"first singlePrice: {raw[0].get('singlePrice') if raw else None})", file=sys.stderr)
+                    if not raw and aliases.get(cat):
+                        todo = list(aliases[cat]) + todo
+                        print(f"  {store}: trying alternative names for {cat}: {aliases[cat]}", file=sys.stderr)
                 break
             results += recs
             print(f"  {store} {cat} page {page}: {len(recs)}", file=sys.stderr)
