@@ -203,6 +203,33 @@ def scrape_woolworths(cfg, gcfg, session, probe=False):
     return results
 
 
+# Woolworths ignores requests from cloud servers such as GitHub's. The workaround is to collect its prices from a
+# home browser with collect-woolworths.js and upload the result as woolworths.json in the repo's main folder.
+MANUAL_WOOLWORTHS = ROOT / "woolworths.json"
+MAX_MANUAL_AGE_DAYS = 7
+
+
+def load_manual_woolworths():
+    """Return (records, collected_at) from woolworths.json, or None when it is missing, unreadable or too old."""
+    if not MANUAL_WOOLWORTHS.exists():
+        return None
+    try:
+        payload = json.loads(MANUAL_WOOLWORTHS.read_text())
+        at = payload["collected_at"]
+        age = dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(at.replace("Z", "+00:00"))
+    except Exception as e:
+        print(f"  woolworths.json is not usable ({e!r}); ignoring it", file=sys.stderr)
+        return None
+    if age.days > MAX_MANUAL_AGE_DAYS:
+        print(f"  woolworths.json is {age.days} days old (limit {MAX_MANUAL_AGE_DAYS}); ignoring it", file=sys.stderr)
+        return None
+    recs = woolworths_parse(payload, "uploaded")
+    if not recs:
+        print("  woolworths.json had no usable products; ignoring it", file=sys.stderr)
+        return None
+    return recs, at
+
+
 # ---------------------------------------------------------------- Foodstuffs (New World and PAK'nSAVE share one platform)
 # Prices in the API are in cents. Check field names with --probe newworld before trusting a full run.
 
@@ -309,7 +336,7 @@ def load_json(path, default):
         return default
 
 
-def write_outputs(records, now):
+def write_outputs(records, now, store_times=None):
     DATA.mkdir(parents=True, exist_ok=True)
     prev = load_json(DATA / "latest.json", {"products": []})
     if prev.get("generated_at") == "sample":  # the demo data shipped with the site is replaced, never kept
@@ -340,7 +367,8 @@ def write_outputs(records, now):
     for r in all_rows:
         groups.setdefault(r["match_key"], {})[r["store"]] = r
     compare = {k: v for k, v in groups.items() if len(v) >= 2}
-    (DATA / "compare.json").write_text(json.dumps({"generated_at": now, "stores_scraped_this_run": sorted(scraped_stores), "groups": compare}, separators=(",", ":")))
+    (DATA / "compare.json").write_text(json.dumps({"generated_at": now, "stores_scraped_this_run": sorted(scraped_stores),
+                    "store_times": store_times or {}, "groups": compare}, separators=(",", ":")))
     return len(all_rows), len(changes), len(compare)
 
 
@@ -369,9 +397,17 @@ def main():
     session = requests.Session()
     session.headers.update({"User-Agent": UA, "Accept": "application/json"})
 
+    store_times = {}
+
     def run(store, probe=False):
         c = cfg["stores"][store]
         if store == "woolworths":
+            if not probe:
+                manual = load_manual_woolworths()
+                if manual:
+                    store_times["woolworths"] = manual[1]
+                    print(f"  woolworths: using uploaded woolworths.json from {manual[1]} ({len(manual[0])} products)", file=sys.stderr)
+                    return manual[0]
             return scrape_woolworths(c, gcfg, session, probe)
         return scrape_foodstuffs(store, c, gcfg, session, probe)
 
@@ -398,7 +434,7 @@ def main():
     if not records:
         print("nothing scraped; leaving data untouched", file=sys.stderr)
         sys.exit(1)
-    print(write_outputs(records, now))
+    print(write_outputs(records, now, store_times))
     if failed:
         print(f"failed stores: {failed}", file=sys.stderr)
         sys.exit(2)
