@@ -298,6 +298,7 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
     except Exception as e:
         print(f"  {store}: could not list categories ({e!r})", file=sys.stderr)
     results = []
+    seen_ids = set()
     aliases = cfg.get("category_aliases", {})
     todo = list(cfg["categories"])
     while todo:
@@ -332,8 +333,59 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
                         todo = list(aliases[cat]) + todo
                         print(f"  {store}: trying alternative names for {cat}: {aliases[cat]}", file=sys.stderr)
                 break
-            results += recs
+            fresh = [r for r in recs if (r["id"] not in seen_ids)]   # categories overlap, so keep each product once
+            seen_ids.update(r["id"] for r in fresh)
+            results += fresh
             print(f"  {store} {cat} page {page}: {len(recs)}", file=sys.stderr)
+    return results
+
+
+# ---------------------------------------------------------------- Shopify stores (New Gum Sarn)
+# Shopify shops publish their catalogue as plain JSON at /products.json (250 per page). robots.txt for newgumsarn.co.nz
+# blocks carts, checkout, filtered and sorted views, but not this feed. Check the shop's terms before publishing.
+BULK_VARIANT = re.compile(r"carton|case|box|ctn|bulk|pallet|/\s*\d+|\bx\s*\d+", re.I)
+
+
+def shopify_parse(store, base, payload):
+    out = []
+    for p in payload.get("products", []):
+        variants = [v for v in p.get("variants", []) if v.get("available", True)]
+        single = [v for v in variants if not BULK_VARIANT.search(v.get("title") or "")]
+        if not single:
+            continue
+        v = single[0]
+        try:
+            price = float(v.get("price"))
+        except (TypeError, ValueError):
+            continue
+        if price <= 0:
+            continue
+        try:
+            cmp_price = float(v.get("compare_at_price") or 0)
+        except ValueError:
+            cmp_price = 0
+        title = p.get("title") or ""
+        # size comes from the title (the grams field includes packaging); unit price is worked out from it
+        out.append(make_record(store, v.get("sku") or p.get("id"), title, p.get("vendor"), title, price,
+                               cmp_price if cmp_price > price else None, None, None,
+                               p.get("product_type"), f"{base}/products/{p.get('handle')}"))
+    return out
+
+
+def scrape_shopify(store, cfg, gcfg, session, probe=False):
+    base = cfg["base_url"].rstrip("/")
+    results = []
+    for page in range(1, gcfg["max_pages_per_category"] + 1):
+        r = polite_get(session, f"{base}/products.json", gcfg["delay_seconds"], params={"limit": 250, "page": page})
+        payload = r.json()
+        if probe:
+            return payload
+        recs = shopify_parse(store, base, payload)
+        raw = payload.get("products", [])
+        print(f"  {store} page {page}: {len(raw)} listed, {len(recs)} usable", file=sys.stderr)
+        results += recs
+        if len(raw) < 250:
+            break
     return results
 
 
@@ -344,6 +396,174 @@ def load_json(path, default):
         return json.loads(path.read_text())
     except (FileNotFoundError, json.JSONDecodeError):
         return default
+
+
+
+# ---------------------------------------------------------------- cross-store matching
+# Pass 1: identical match_key (brand + name words + size). Pass 2 (fuzzy): same pack size and same brand, name words
+# similar, and no difference in a "variant" word (light, organic, vanilla, ...) or a number. Two products from the same
+# store are never merged. When unsure it does not match: a wrong match shows the shopper a false price comparison.
+
+NOISE = {"the", "and", "of", "with", "in", "for", "from", "a", "pack", "pk", "value", "fresh", "nz", "new", "zealand",
+         "each", "ea", "block", "approx", "size", "per", "kg", "g", "ml", "l"}
+VARIANT_WORDS = {
+    "light", "lite", "zero", "diet", "max", "sugar", "free", "unsweetened", "sweetened", "organic", "barn", "cage",
+    "range", "reduced", "low", "fat", "trim", "full", "standard", "mild", "tasty", "vintage", "extra", "salted",
+    "unsalted", "vanilla", "chocolate", "strawberry", "caramel", "original", "classic", "spicy", "hot", "medium",
+    "large", "small", "mini", "jumbo", "gluten", "vegan", "lactose", "dairy", "decaf", "whole", "skim", "protein",
+    "plus", "kid", "blue", "green", "yellow", "red", "gold", "silver", "purple", "pink", "black", "white", "wholemeal",
+    "wholegrain", "multigrain", "brown", "rye", "seeded", "sourdough", "toast", "thick", "thin", "crunchy", "smooth",
+    "chunky", "creamy", "soft", "firm", "sweet", "sour", "dark", "lemon", "lime", "orange", "apple", "berry",
+    "mango", "coconut", "honey", "chilli", "garlic", "onion", "tomato", "bbq", "salt", "vinegar",
+    "chicken", "beef", "lamb", "pork", "fish", "tuna", "salmon", "unscented", "sensitive", "ultra", "mega", "double",
+    "triple", "half", "mixed", "assorted", "roast", "raw", "smoked", "plain", "natural", "greek", "no", "added",
+    "oat", "almond", "soy", "rice", "lactofree", "mature", "tasty", "colby", "edam", "mozzarella", "parmesan",
+}
+_SIZE_IN_NAME = re.compile(r"\b\d+(?:\.\d+)?\s*(?:kg|g|ml|l|ltr|pk|pack|ea|each)\b|\b\d+\s*[x×]\s*\d+(?:\.\d+)?\s*(?:kg|g|ml|l)\b")
+
+
+def _stem(w):
+    return w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w
+
+
+def _words(text):
+    text = _SIZE_IN_NAME.sub(" ", str(text or "").lower().replace("'", ""))
+    return re.sub(r"[^a-z0-9 ]", " ", text).split()
+
+
+def _brand_key(brand):
+    return re.sub(r"[^a-z0-9]", "", str(brand or "").lower().replace("'", ""))
+
+
+def _size_key(rec):
+    s = parse_size(rec.get("size")) or parse_size(rec.get("name"))
+    return f"{s[0]:g}{s[1]}" if s else None
+
+
+def _features(rec, vocab):
+    words = _words(rec.get("name"))
+    brand = _brand_key(rec.get("brand"))
+    drop = {_stem(w) for w in _words(rec.get("brand"))}
+    if not brand:  # some stores put the brand only inside the name: use it when it is a brand seen elsewhere
+        for n in (2, 1):
+            cand = "".join(words[:n])
+            if len(words) > n and cand in vocab:
+                brand, drop = cand, {_stem(w) for w in words[:n]}
+                break
+    toks = {_stem(w) for w in words if w not in NOISE} - drop - NOISE
+    return {"brand": brand, "tokens": toks, "size": _size_key(rec)}
+
+
+def _similarity(a, b):
+    """0 when the two token sets must not be merged, else a score in (0, 1]."""
+    ta, tb = a["tokens"], b["tokens"]
+    if not ta or not tb:
+        return 0.0
+    diff = ta ^ tb
+    if any(w in VARIANT_WORDS or w.isdigit() for w in diff):
+        return 0.0
+    jac = len(ta & tb) / len(ta | tb)
+    if ta <= tb or tb <= ta:
+        jac = max(jac, 0.6)
+    return jac if jac >= 0.5 else 0.0
+
+
+def group_records(rows):
+    """Return {group_key: {store: record, '_m': 'exact'|'fuzzy'}} for every group found at 2 or more stores."""
+    vocab = {_brand_key(r.get("brand")) for r in rows if len(_brand_key(r.get("brand"))) >= 3}
+    clusters = {}          # key -> {store: rec}
+    order = []
+    for r in rows:
+        k = r["match_key"]
+        c = clusters.setdefault(k, {})
+        if r["store"] in c:
+            k = f"{k}#{len(clusters)}"          # a second product with the same key at one store stays separate
+            c = clusters.setdefault(k, {})
+        c[r["store"]] = r
+        order.append(k)
+    fuzzy_keys = set()
+    blocks = {}
+    for k, c in clusters.items():
+        for store, rec in c.items():
+            f = _features(rec, vocab)
+            if f["size"] and f["brand"]:
+                blocks.setdefault((f["size"], f["brand"]), []).append((k, store, f))
+    owner = {k: k for k in clusters}               # union-find over cluster keys
+
+    def find(x):
+        while owner[x] != x:
+            owner[x] = owner[owner[x]]
+            x = owner[x]
+        return x
+
+    for members in blocks.values():
+        if len(members) < 2:
+            continue
+        pairs = []
+        for i in range(len(members)):
+            for j in range(i + 1, len(members)):
+                (k1, s1, f1), (k2, s2, f2) = members[i], members[j]
+                if s1 == s2 or k1 == k2:
+                    continue
+                sim = _similarity(f1, f2)
+                if sim:
+                    pairs.append((sim, k1, k2))
+        for sim, k1, k2 in sorted(pairs, reverse=True):
+            a, b = find(k1), find(k2)
+            if a == b or set(clusters[a]) & set(clusters[b]):
+                continue
+            clusters[a].update(clusters[b])
+            del clusters[b]
+            owner[b] = a
+            fuzzy_keys.add(a)
+    out = {}
+    for k, c in clusters.items():
+        if len(c) >= 2:
+            g = dict(c)
+            g["_m"] = "fuzzy" if k in fuzzy_keys else "exact"
+            out[k] = g
+    return out
+
+
+def match_report(top=15):
+    """Print how well products line up. Run: python scraper.py --match-report  (after a scrape)."""
+    data = load_json(DATA / "latest.json", {"products": []})
+    rows = data.get("products", [])
+    groups = group_records(rows)
+    by_store = {}
+    for r in rows:
+        by_store[r["store"]] = by_store.get(r["store"], 0) + 1
+    matched = {(s, g[s]["id"]) for g in groups.values() for s in g if s != "_m"}
+    print("products per store:", by_store)
+    print(f"groups: {len(groups)} ({sum(1 for g in groups.values() if g['_m'] == 'exact')} exact, "
+          f"{sum(1 for g in groups.values() if g['_m'] == 'fuzzy')} fuzzy)")
+    for s, n in by_store.items():
+        m = sum(1 for r in rows if r["store"] == s and (s, r["id"]) in matched)
+        print(f"  {s}: {m} of {n} matched ({100 * m // max(n, 1)}%)")
+    print("\nsample fuzzy matches (check these are the same product):")
+    shown = 0
+    for k, g in groups.items():
+        if g["_m"] == "fuzzy" and shown < top:
+            print("  " + "  <->  ".join(f"[{s}] {g[s].get('brand') or ''} {g[s]['name']} {g[s].get('size') or ''}" for s in g if s != "_m"))
+            shown += 1
+    print("\nsample unmatched products, with the closest other-store product of the same size:")
+    vocab = {_brand_key(r.get("brand")) for r in rows if len(_brand_key(r.get("brand"))) >= 3}
+    feats = {(r["store"], r["id"]): _features(r, vocab) for r in rows}
+    unmatched = [r for r in rows if (r["store"], r["id"]) not in matched and feats[(r["store"], r["id"])]["size"]]
+    random.Random(1).shuffle(unmatched)
+    for r in unmatched[:top]:
+        f = feats[(r["store"], r["id"])]
+        best = None
+        for o in rows:
+            if o["store"] == r["store"]:
+                continue
+            fo = feats[(o["store"], o["id"])]
+            if fo["size"] == f["size"] and f["tokens"] and fo["tokens"]:
+                j = len(f["tokens"] & fo["tokens"]) / len(f["tokens"] | fo["tokens"])
+                if best is None or j > best[0]:
+                    best = (j, o)
+        near = f"closest: [{best[1]['store']}] {best[1].get('brand') or ''} {best[1]['name']} (brand key {feats[(best[1]['store'], best[1]['id'])]['brand'] or '-'}, overlap {best[0]:.2f})" if best else "no same-size product elsewhere"
+        print(f"  [{r['store']}] {r.get('brand') or ''} {r['name']} {r.get('size') or ''} (brand key {f['brand'] or '-'}) -> {near}")
 
 
 def write_outputs(records, now, store_times=None):
@@ -373,10 +593,9 @@ def write_outputs(records, now, store_times=None):
         "stores_scraped_this_run": sorted(scraped_stores),
         "products": all_rows}, separators=(",", ":")))
 
-    groups = {}
-    for r in all_rows:
-        groups.setdefault(r["match_key"], {})[r["store"]] = r
-    compare = {k: v for k, v in groups.items() if len(v) >= 2}
+    compare = group_records(all_rows)
+    print(f"  matching: {sum(1 for g in compare.values() if g['_m'] == 'exact')} exact groups, "
+          f"{sum(1 for g in compare.values() if g['_m'] == 'fuzzy')} fuzzy groups", file=sys.stderr)
     (DATA / "compare.json").write_text(json.dumps({"generated_at": now, "stores_scraped_this_run": sorted(scraped_stores),
                     "store_times": store_times or {}, "groups": compare}, separators=(",", ":")))
     return len(all_rows), len(changes), len(compare)
@@ -384,10 +603,15 @@ def write_outputs(records, now, store_times=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--store", choices=["woolworths", "newworld", "paknsave"])
-    ap.add_argument("--probe", choices=["woolworths", "newworld", "paknsave"])
+    ap.add_argument("--store", choices=["woolworths", "newworld", "paknsave", "newgumsarn"])
+    ap.add_argument("--probe", choices=["woolworths", "newworld", "paknsave", "newgumsarn"])
+    ap.add_argument("--match-report", action="store_true", help="show how well products match across stores, from the last scrape")
     ap.add_argument("--fixture", help="directory of saved raw responses (<store>.json) for an offline run")
     args = ap.parse_args()
+
+    if args.match_report:
+        match_report()
+        return
 
     cfg = json.loads((ROOT / "config.json").read_text())
     gcfg = {k: cfg[k] for k in ("max_pages_per_category", "delay_seconds")}
@@ -419,6 +643,8 @@ def main():
                     print(f"  woolworths: using uploaded woolworths.json from {manual[1]} ({len(manual[0])} products)", file=sys.stderr)
                     return manual[0]
             return scrape_woolworths(c, gcfg, session, probe)
+        if store == "newgumsarn":
+            return scrape_shopify(store, c, gcfg, session, probe)
         return scrape_foodstuffs(store, c, gcfg, session, probe)
 
     if args.probe:

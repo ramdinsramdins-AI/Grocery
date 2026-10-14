@@ -30,9 +30,14 @@
         "Bakery",
         "Frozen",
         "Pantry",
-        "Drinks",
+        "Hot & Cold Drinks",
+        "Beer, Wine & Cider",
+        "Snacks, Treats & Easy Meals",
         "Health & Body",
-        "Household & Cleaning"
+        "Baby & Toddler",
+        "Pets",
+        "Household & Cleaning",
+        "Homewares"
       ]
     },
     "paknsave": {
@@ -45,19 +50,19 @@
         "Bakery",
         "Frozen",
         "Pantry",
-        "Drinks",
+        "Hot & Cold Drinks",
+        "Beer, Wine & Cider",
+        "Snacks, Treats & Easy Meals",
         "Health & Body",
-        "Household & Cleaning"
+        "Baby & Toddler",
+        "Pets",
+        "Household & Cleaning",
+        "Homewares"
       ]
+    },
+    "newgumsarn": {
+      "enabled": true,
+      "base_url": "https://www.newgumsarn.co.nz"
     }
-  },
-  "category_aliases": {
-    "Drinks": [
-      "Beer, Wine & Cider",
-      "Soft Drinks, Juice & Water",
-      "Drinks, Juice & Water",
-      "Tea, Coffee & Hot Drinks",
-      "Water, Juice & Soft Drinks"
-    ]
   }
 }
