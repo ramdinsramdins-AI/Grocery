@@ -37,6 +37,13 @@ crontab -e
 0 6,12,18 * * * cd /path/to/shelf-check-scraper && SCRAPER_CONTACT=you@example.com python3 scraper.py >> scrape.log 2>&1
 ```
 
+## Woolworths (collected from your own browser)
+
+Woolworths does not answer requests from GitHub's servers, so the scheduled run cannot fetch it.
+Instead, run `collect-woolworths.js` in your browser console on https://www.woolworths.co.nz. It downloads `woolworths.json`.
+Upload that file to the main folder of the repo (not inside `docs`). The next scrape reads it, skips the network call, and the site shows the date the Woolworths prices are from.
+The scraper ignores the file once it is more than 7 days old, so stale prices are never shown as current. Repeat the collection whenever you want to refresh Woolworths.
+
 ## The website
 
 `docs/index.html` is the Shelf Check site. It reads `docs/data/compare.json` and `docs/data/latest.json`, which the scraper rewrites on every run.
@@ -57,5 +64,5 @@ To look at it locally: `cd docs && python3 -m http.server 8000`, then open http:
 
 - **Terms of use.** Read each store's website terms before you run this or publish the data. robots.txt does not block the product API paths for Woolworths or PAK'nSAVE, but robots.txt is a courtesy signal and not permission, and the terms may restrict automated access or reuse. The scraper waits 2 to 4 seconds between requests, identifies itself, and stops on 403 or 429 instead of working around a block. Keep it that way.
 - **Prices vary by store.** Each run uses one New World and one PAK'nSAVE store (set `store_id` in `config.json`; the defaults are Papakura). Woolworths prices are whatever its site shows by default. Say which stores the numbers come from on your site.
-- **Matching products across stores is the hard part.** `compare.json` groups by brand, name words and size, which will miss a lot (for example "Butter Block" at one store and "Butter" at another). Improve it with barcodes if the API exposes them, or by hand-curating a list of common items.
+- **Matching products across stores.** Pass 1 groups identical brand + name words + size. Pass 2 (fuzzy) merges products with the same pack size and brand whose names are similar, and refuses when a variant word (light, organic, vanilla...) or a number differs. Fuzzy groups are tagged `"_m": "fuzzy"` and the site shows "Check it is the same product". After a scrape run `python scraper.py --match-report` to see match rates per store, sample fuzzy matches and the nearest misses. Barcodes would be better if an API exposes them.
 - **Endpoints can change** without notice. When a store starts returning empty results, run `--probe` again and compare.
