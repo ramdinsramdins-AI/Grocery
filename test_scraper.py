@@ -176,6 +176,47 @@ for a, b in [
 _g = s.group_records([_R("woolworths", "1", "Anchor Blue Top Milk 2L", "Anchor", "2L"), _R("newworld", "2", "Blue Top Milk", "Anchor", "2L")])
 assert [g["_m"] for g in _g.values()] in (["exact"], ["fuzzy"])
 
+# Woolworths-style names from the real data (2026-10-15): brand carries the product line, multipacks, loose produce
+def _loose(store, id, name, brand, size, price, per, category=None):
+    return s.make_record(store, id, name, brand, size, price, store_unit_text=f"${price}/{per}", category=category)
+for a, b in [
+    # brand prefix: the longer brand's extra words count as name words
+    (_R("woolworths", "1", "sealord sensations tuna smoked flavour", "sealord sensations", "185g"), _R("newworld", "2", "Smoked Flavour Tuna", "Sealord", "185g")),
+    (_R("woolworths", "1", "jed's plunger grind coffee 3 strong", "jed's", "200g"), _R("newworld", "2", "3 Strong Plunger Coffee", "Jed's Coffee Co.", "200g")),
+    (_R("woolworths", "1", "homegrown fruit juice apple 100% pure", "homegrown", "1L"), _R("paknsave", "2", "100% NZ Apple Juice", "The Homegrown Juice Company", "1l")),
+    (_R("woolworths", "1", "mccain super fries straight cut", "mccain super", "900g"), _R("newworld", "2", "Superfries Straight Cut Chips", "McCain", "900g")),
+    # accents and words written together or apart
+    (_R("woolworths", "1", "nescafé classic instant coffee", "nescafé", "100g"), _R("newworld", "2", "Classic Instant Coffee", "Nescafe", "100g")),
+    (_R("woolworths", "1", "havana coffee beans kick start", "havana", "180g"), _R("newworld", "2", "KickStart Coffee Beans", "Havana", "180g")),
+    # "original" left unsaid on one side
+    (_R("woolworths", "1", "trident sweet chilli sauce", "trident", "285mL"), _R("newworld", "2", "Original Sweet Chilli Sauce", "Trident", "285ml")),
+    # multipacks: '10pack' = '10 x 100ml'; weight in the name for the whole pack ('71g') or for one item ('24g')
+    (_R("woolworths", "1", "juicies tropical ice blocks", "juicies", "10pack"), _R("newworld", "2", "Tropical Ice Blocks", "Juicies", "10 x 100ml")),
+    (_R("woolworths", "1", "oxo beef stock cubes 71g", "oxo", "12pack"), _R("newworld", "2", "Beef Flavour Stock Cubes", "Oxo", "71g")),
+    (_R("woolworths", "1", "maggi instant gravy mix roast chicken 24g", "maggi", "3pack"), _R("paknsave", "2", "Roast Chicken Flavoured Gravy Mix", "Maggi", "3 x 24g")),
+    (_R("woolworths", "1", "vista sparkling water blood orange 330ml", "vista", "8pack"), _R("newworld", "2", "Blood Orange Sparkling Water", "Vista", "8 x 330ml")),
+    # loose produce: no pack size, matched per kg or each
+    (_loose("woolworths", "1", "fresh fruit bananas yellow loose", "fresh fruit", None, 3.99, "1kg"), _loose("newworld", "2", "Bananas", None, "kg", 3.79, "kg", "Fruit & Vegetables")),
+    (_loose("woolworths", "1", "fresh vegetable broccoli head", "fresh vegetable", None, 2.0, "1ea"), _loose("paknsave", "2", "Broccoli", None, "ea", 1.89, "ea", "Fruit & Vegetables")),
+]:
+    assert _joined(a, b), (a["name"], b["name"])
+for a, b in [
+    (_R("woolworths", "1", "doritos corn chips original", "doritos", "170g"), _R("paknsave", "2", "Salsa Corn Chips", "Doritos", "170g")),
+    (_R("woolworths", "1", "palmolive foaming hand wash raspberry", "palmolive foaming", "250mL"), _R("paknsave", "2", "Foaming Fresh Watermelon Hand Wash", "Palmolive", "250ml")),
+    (_R("woolworths", "1", "loreal revitalift anti-wrinkle extra firming day cream", "loreal", "50mL"), _R("newworld", "2", "Revitalift Anti-Wrinkle Extra Firming SPF30 Day Cream", "Loreal", "50ml")),
+    (_R("woolworths", "1", "ocean spray low sugar fruit drink cranberry", "ocean spray low sugar", "1.5L"), _R("newworld", "2", "Cranberry Fruit Drink", "Ocean Spray", "1.5l")),
+    (_R("woolworths", "1", "anchor sour cream lite 250g", "anchor", "2pack"), _R("newworld", "2", "Lite Sour Cream", "Anchor", "500g")),          # 2 x 250g or 2 x 125g: not a 500g tub
+    (_R("woolworths", "1", "vista sparkling water blood orange 330ml", "vista", "8pack"), _R("newworld", "2", "Blood Orange Sparkling Water", "Vista", "330ml")),  # one can
+    (_R("newworld", "1", "Ultra Dry Nappies Size 3 6-11kg", "Huggies", "22pk"), _R("paknsave", "2", "Ultra Dry Nappies Size 3 6-11kg", "Huggies", "90pk")),
+    (_loose("woolworths", "1", "fresh vegetable cauliflower half", "fresh vegetable", None, 2.2, "1ea"), _loose("newworld", "2", "Cauliflower", None, "ea", 2.59, "ea", "Fruit & Vegetables")),
+    (_loose("woolworths", "1", "fresh vegetable carrots", "fresh vegetable", None, 2.19, "1kg"), _loose("newworld", "2", "Carrots", None, "ea", 2.49, "ea", "Fruit & Vegetables")),  # per kg vs each
+]:
+    assert not _joined(a, b), (a["name"], b["name"])
+# a '6pack' with no can size must not pick between two can sizes
+_g = s.group_records([_R("woolworths", "1", "coca cola soft drink", "coca cola", "6pack"),
+                      _R("newworld", "2", "Soft Drink Cans", "Coca-Cola", "6 x 250ml"), _R("newworld", "3", "Soft Drink Cans", "Coca-Cola", "6 x 330ml")])
+assert not any("woolworths" in g for g in _g.values()), _g
+
 # speed: a full-size run (30k products, many sharing a size) must group in a few seconds
 import random, time
 _rnd = random.Random(3)

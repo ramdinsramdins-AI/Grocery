@@ -50,6 +50,7 @@ cases = [
  ("sugar",1,"White Sugar","Chelsea","1.5kg"), ("sugar",0,"Sugar Free Gum","Extra","14pk"), ("baking-powder",1,"Baking Powder","Edmonds","200g"), ("cornflour",1,"Cornflour","Edmonds","300g"),
  ("curry-powder",1,"Curry Powder","Masterfoods","50g"), ("garam-masala",1,"Garam Masala","Masterfoods","40g"), ("ground-cumin",1,"Ground Cumin","Masterfoods","30g"), ("paprika",1,"Paprika","Masterfoods","30g"),
  ("chilli-powder",1,"Chilli Powder","Masterfoods","30g"), ("mixed-herbs",1,"Mixed Herbs","Masterfoods","15g"), ("tomato-paste",1,"Tomato Paste","Pams","140g"),
+ ("tomato-paste",0,"watties chopped tomatoes in purée","watties","400g"),
  ("vegetable-oil",1,"Canola Oil","Pams","1L"), ("vegetable-oil",0,"Olive Oil","Bertolli","500ml"), ("flatbread",1,"Pita Bread","Mission","6 pack"), ("frozen-peas",1,"Frozen Peas","Pams","1kg"), ("frozen-peas",0,"Frozen Peas & Corn","Pams","1kg"),
  ("frozen-mixed-veg",1,"Frozen Mixed Vegetables","Pams","1kg"), ("garlic",1,"Garlic Bulb","","each"), ("garlic",0,"Garlic Bread","Pams","350g"), ("beef-strips",1,"Beef Stir Fry Strips","","400g"),
  # look-alikes seen in the first real scrape (October 2026)

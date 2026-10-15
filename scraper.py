@@ -436,16 +436,19 @@ def load_json(path, default):
 
 
 # ---------------------------------------------------------------- cross-store matching
-# Pass 1: identical match_key (brand + name words + size). Pass 2 (fuzzy): same pack size and same brand, name words
-# similar, and no difference in a "variant" word (light, organic, vanilla, ...) or a number. Two products from the same
-# store are never merged. When unsure it does not match: a wrong match shows the shopper a false price comparison.
+# Pass 1: identical match_key (brand + name words + size). Pass 2 (fuzzy): same pack size and same brand (or one brand
+# plus product-line words, "mccain pub style" vs "McCain"), name words similar, and no difference in a "variant" word
+# (light, organic, vanilla, ...) or a number. Multipack sizes and loose produce have their own, stricter rules (see
+# _size_keys and _loose). Two products from the same store are never merged. When unsure it does not match: a wrong
+# match shows the shopper a false price comparison.
 
 NOISE = {"the", "and", "of", "with", "in", "for", "from", "a", "pack", "pk", "value", "fresh", "nz", "new", "zealand",
          "each", "ea", "block", "approx", "size", "per", "kg", "g", "ml", "l"}
+BRAND_NOISE = {"co", "company", "ltd", "limited", "food", "brand"}   # extra brand words that say nothing about the product
 VARIANT_WORDS = {
     "light", "lite", "zero", "diet", "max", "sugar", "free", "unsweetened", "sweetened", "organic", "barn", "cage",
     "range", "reduced", "low", "fat", "trim", "full", "standard", "mild", "tasty", "vintage", "extra", "salted",
-    "unsalted", "vanilla", "chocolate", "strawberry", "caramel", "original", "classic", "spicy", "hot", "medium",
+    "unsalted", "vanilla", "chocolate", "strawberry", "caramel", "spicy", "hot", "medium",
     "large", "small", "mini", "jumbo", "gluten", "vegan", "lactose", "dairy", "decaf", "whole", "skim", "protein",
     "plus", "kid", "blue", "green", "yellow", "red", "gold", "silver", "purple", "pink", "black", "white", "wholemeal",
     "wholegrain", "multigrain", "brown", "rye", "seeded", "sourdough", "toast", "thick", "thin", "crunchy", "smooth",
@@ -454,6 +457,20 @@ VARIANT_WORDS = {
     "chicken", "beef", "lamb", "pork", "fish", "tuna", "salmon", "unscented", "sensitive", "ultra", "mega", "double",
     "triple", "half", "mixed", "assorted", "roast", "raw", "smoked", "plain", "natural", "greek", "no", "added",
     "oat", "almond", "soy", "rice", "lactofree", "mature", "tasty", "colby", "edam", "mozzarella", "parmesan",
+}
+DEFAULT_WORDS = {"original", "classic"}   # the plain variant, often left unsaid: may be missing on one side only
+# Flavours and ingredients. One store often names one that the other leaves out ("Arepa The Brain" is blackcurrant), so
+# only a flavour on each side that the other lacks blocks a match: raspberry vs watermelon hand wash.
+FLAVOUR_WORDS = {
+    "raspberry", "raspberrie", "blueberry", "blueberrie", "berrie", "cherry", "cherrie", "cranberry", "cranberrie",
+    "boysenberry", "blackcurrant", "passionfruit", "peach", "pineapple", "banana", "grape", "watermelon", "kiwifruit",
+    "feijoa", "apricot", "pear", "plum", "fig", "pomegranate", "mandarin", "grapefruit", "guava", "lychee", "rhubarb",
+    "elderflower", "lavender", "rose", "mint", "peppermint", "spearmint", "menthol", "ginger", "cinnamon", "vanilla",
+    "teriyaki", "satay", "curry", "pepper", "cheese", "bacon", "ham", "prawn", "mushroom", "basil", "sesame", "cocoa",
+    "coffee", "mocha", "latte", "cappuccino", "espresso", "matcha", "chai", "turmeric", "hazelnut", "peanut", "cashew",
+    "macadamia", "walnut", "pistachio", "toffee", "butterscotch", "cookie", "churro", "hokey", "jalapeno", "chipotle",
+    "sriracha", "kimchi", "cumin", "paprika", "rosemary", "thyme", "parsley", "coriander", "dill", "chive", "corn",
+    "sweetcorn", "pumpkin", "kumara", "beetroot", "spinach", "kale", "carrot", "potato", "cola", "lemonade",
 }
 _SIZE_IN_NAME = re.compile(r"\b\d+(?:\.\d+)?\s*(?:kg|g|ml|l|ltr|pk|pack|ea|each)\b|\b\d+\s*[x×]\s*\d+(?:\.\d+)?\s*(?:kg|g|ml|l)\b")
 
@@ -464,13 +481,22 @@ def _stem(w):
     return w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w
 
 
+_PLAIN = str.maketrans("éèêëàâäôöñüûçíï’‘", "eeeeaaaoonuucii''")   # Woolworths writes "nestlé", Foodstuffs "Nestle"
+
+
 def _words(text):
-    text = _SIZE_IN_NAME.sub(" ", str(text or "").lower().replace("'", ""))
+    text = _SIZE_IN_NAME.sub(" ", str(text or "").lower().translate(_PLAIN).replace("'", ""))
     return re.sub(r"[^a-z0-9 ]", " ", text).split()
 
 
+def _brand_words(brand):
+    """Stemmed brand words without a leading 'the': "The Homegrown Juice Company" -> ['homegrown', 'juice', 'company']."""
+    w = [_stem(x) for x in _words(brand)]
+    return w[1:] if len(w) > 1 and w[0] == "the" else w
+
+
 def _brand_key(brand):
-    return re.sub(r"[^a-z0-9]", "", str(brand or "").lower().replace("'", ""))
+    return "".join(_brand_words(brand))
 
 
 def _size_key(rec):
@@ -478,18 +504,86 @@ def _size_key(rec):
     return f"{s[0]:g}{s[1]}" if s else None
 
 
+_MULTIPACK = re.compile(r"^\s*(\d+)\s*[x×]\s*\d", re.I)
+
+
+def _size_keys(rec):
+    """[(key, kind)]: the size key ('main') plus multipack alternatives. Woolworths says '8pack' where Foodstuffs says
+    '8 x 73ml' ('count'), and often puts the weight only in the name: 'oxo beef stock cubes 71g', size '12pack'. That
+    weight may be the whole pack ('total') or one item ('unit'); _alt_ok decides which other sizes each may meet."""
+    main = _size_key(rec)
+    if not main:
+        return []
+    keys = [(main, "main")]
+    m = _MULTIPACK.search(rec.get("size") or "")
+    s = parse_size(rec.get("size"))
+    if m:
+        keys.append((f"{int(m.group(1))}ea", "count"))
+    elif s and s[1] == "ea":
+        w = parse_size(rec.get("name"))
+        if w and w[1] == "g":
+            keys.append((f"{w[0]:g}g", "total"))
+        if w and w[1] != "ea":   # a volume is always per item: 'vista sparkling water 330ml', size '8pack'
+            keys.append((f"{w[0] * s[0]:g}{w[1]}", "unit"))
+    return keys
+
+
+def _alt_ok(kind, f_alt, f_main):
+    """May f_alt's alternative size of this kind stand for f_main's main size?"""
+    if kind in ("count", "loose"):
+        return True
+    if kind == "total":   # '160g' in the name of an '8pack' = a 160g pack, or 8 x 20g
+        return f_main["multi"] in (None, f_alt["count"])
+    return f_main["multi"] == f_alt["count"]   # 'unit': '24g' in the name of a '3pack' = 3 x 24g only
+
+
+_PRODUCE = re.compile(r"\bfresh (?:fruit|vegetable|herb)\b")
+PRODUCE_NOISE = {"fruit", "vegetable", "herb", "loose", "whole", "head", "yellow"}
+
+
+def _loose(rec):
+    """'kg' or 'ea' for fruit and vegetables sold loose (no pack size), else None."""
+    if _size_key(rec):
+        return None
+    if rec.get("store") == "woolworths":
+        produce = _PRODUCE.search(str(rec.get("name") or "").lower()) or str(rec.get("brand") or "").lower() == "fresh"
+        unit = {"100g": "kg", "ea": "ea"}.get(rec.get("unit_basis"))
+    else:
+        produce = rec.get("category") == "Fruit & Vegetables"
+        unit = str(rec.get("size") or "").strip().lower()
+    return unit if produce and unit in ("kg", "ea") else None
+
+
 def _features(rec, vocab):
     words = _words(rec.get("name"))
-    brand = _brand_key(rec.get("brand"))
-    drop = {_stem(w) for w in _words(rec.get("brand"))}
-    if not brand:  # some stores put the brand only inside the name: use it when it is a brand seen elsewhere
+    bw = _brand_words(rec.get("brand"))
+    loose = _loose(rec)
+    if loose:   # bananas, lemons, broccoli: no pack size and no brand worth comparing, so match on the name alone
+        key = f"loose-{loose}"
+        return {"brand": "produce", "bwords": [], "tokens": {_stem(w) for w in words} - set(bw) - NOISE - PRODUCE_NOISE,
+                "size": key, "sizes": [(key, "loose")], "count": None, "multi": None}
+    if not bw:  # some stores put the brand only inside the name: use it when it is a brand seen elsewhere
         for n in (2, 1):
-            cand = "".join(words[:n])
-            if len(words) > n and cand in vocab:
-                brand, drop = cand, {_stem(w) for w in words[:n]}
+            cand = [_stem(w) for w in words[:n]]
+            if len(words) > n and "".join(cand) in vocab:
+                bw = cand
                 break
-    toks = {_stem(w) for w in words if w not in NOISE} - drop - NOISE
-    return {"brand": brand, "tokens": toks, "size": _size_key(rec)}
+    toks = {_stem(w) for w in words if w not in NOISE} - set(bw) - NOISE   # Woolworths names repeat the brand
+    sizes = _size_keys(rec)
+    s, m = parse_size(rec.get("size")), _MULTIPACK.search(rec.get("size") or "")
+    return {"brand": "".join(bw), "bwords": bw, "tokens": toks, "size": sizes[0][0] if sizes else None, "sizes": sizes,
+            "count": int(s[0]) if s and s[1] == "ea" else None, "multi": int(m.group(1)) if m else None}
+
+
+def _split_compounds(x, y):
+    """x with each word that y has as two words split up: 'meganut' vs 'mega nut', 'nutrigrain' vs 'nutri grain'."""
+    out = set(x)
+    for w in x - y:
+        for i in range(2, len(w) - 1):
+            if w[:i] in y and w[i:] in y:
+                out = (out - {w}) | {w[:i], w[i:]}
+                break
+    return out
 
 
 def _similarity(a, b):
@@ -497,8 +591,15 @@ def _similarity(a, b):
     ta, tb = a["tokens"], b["tokens"]
     if not ta or not tb:
         return 0.0
+    ta, tb = _split_compounds(ta, tb), _split_compounds(tb, ta)
     diff = ta ^ tb
-    if any(w in VARIANT_WORDS or w.isdigit() for w in diff):
+    if any(w in VARIANT_WORDS or w.isdigit() or w.startswith("spf") for w in diff):
+        return 0.0
+    for w in diff & DEFAULT_WORDS:   # "Original Sweet Chilli Sauce" = "Sweet Chilli Sauce", but not "Salsa Corn Chips"
+        has, lacks = (ta, tb) if w in ta else (tb, ta)
+        if not lacks <= has:
+            return 0.0
+    if (ta - tb) & FLAVOUR_WORDS and (tb - ta) & FLAVOUR_WORDS:
         return 0.0
     jac = len(ta & tb) / len(ta | tb)
     if ta <= tb or tb <= ta:
@@ -524,8 +625,9 @@ def group_records(rows):
     for k, c in clusters.items():
         for store, rec in c.items():
             f = _features(rec, vocab)
-            if f["size"] and f["brand"]:
-                blocks.setdefault((f["size"], f["brand"]), []).append((k, store, f))
+            if f["brand"]:
+                for size, kind in f["sizes"]:
+                    blocks.setdefault((size, f["brand"]), []).append((k, store, f, kind))
     owner = {k: k for k in clusters}               # union-find over cluster keys
 
     def find(x):
@@ -534,26 +636,52 @@ def group_records(rows):
             x = owner[x]
         return x
 
-    for members in blocks.values():
-        if len(members) < 2:
-            continue
-        pairs = []
+    pairs, alt_pairs, cands = [], [], {}
+
+    def consider(a, b, fa=None):
+        (k1, s1, f1, kind1), (k2, s2, f2, kind2) = a, b
+        if s1 == s2 or k1 == k2 or (kind1 != "main" and kind2 != "main" and kind1 != "loose"):
+            return
+        if (kind1 != "main" and not _alt_ok(kind1, f1, f2)) or (kind2 != "main" and not _alt_ok(kind2, f2, f1)):
+            return
+        sim = _similarity(fa or f1, f2)
+        if not sim:
+            return
+        for k, store, other in ((k1, s2, k2), (k2, s1, k1)):   # every candidate per product and other store
+            c = cands.setdefault((k, store), {})
+            c[other] = max(sim, c.get(other, 0))
+        (pairs if kind1 == kind2 == "main" else alt_pairs).append((sim, k1, k2, s1, s2))
+
+    for (size, brand), members in blocks.items():
         for i in range(len(members)):
             for j in range(i + 1, len(members)):
-                (k1, s1, f1), (k2, s2, f2) = members[i], members[j]
-                if s1 == s2 or k1 == k2:
+                consider(members[i], members[j])
+        # Brand prefix: Woolworths' brand often carries the product line ("mccain pub style", "mrs rogers eco pack").
+        # When one brand is the other plus whole extra words, those extra words count as name words.
+        for a in members:
+            bw = a[2]["bwords"]
+            for n in range(1, len(bw)):
+                short = "".join(bw[:n])
+                if len(short) < 3 or (size, short) not in blocks:
                     continue
-                sim = _similarity(f1, f2)
-                if sim:
-                    pairs.append((sim, k1, k2))
-        for sim, k1, k2 in sorted(pairs, reverse=True):
-            a, b = find(k1), find(k2)
-            if a == b or set(clusters[a]) & set(clusters[b]):
-                continue
-            clusters[a].update(clusters[b])
-            del clusters[b]
-            owner[b] = a
-            fuzzy_keys.add(a)
+                fa = dict(a[2], tokens=a[2]["tokens"] | (set(bw[n:]) - BRAND_NOISE - NOISE))
+                for b in blocks[(size, short)]:
+                    consider(a, b, fa)
+
+    def clear_best(k, store, other, sim):
+        return all(o == other or s < sim - 0.1 for o, s in cands[(k, store)].items())
+
+    # A multipack alternative size or a loose-produce pair is only trusted when each product is the other's clear best
+    # match at that store (a '6pack' must not pick between '6 x 250ml' and '6 x 330ml', nor 'apples' between varieties).
+    pairs += [p for p in alt_pairs if clear_best(p[1], p[4], p[2], p[0]) and clear_best(p[2], p[3], p[1], p[0])]
+    for sim, k1, k2, _, _ in sorted(pairs, reverse=True):   # best pairs first, so a weaker pair cannot take a store's slot
+        a, b = find(k1), find(k2)
+        if a == b or set(clusters[a]) & set(clusters[b]):
+            continue
+        clusters[a].update(clusters[b])
+        del clusters[b]
+        owner[b] = a
+        fuzzy_keys.add(a)
     out = {}
     for k, c in clusters.items():
         if len(c) >= 2:

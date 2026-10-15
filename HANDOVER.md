@@ -19,7 +19,7 @@ ingredients.json      rules mapping recipe ingredients to supermarket products (
 collect-woolworths.js browser snippet that collects Woolworths from the user's own browser -> woolworths.json
 woolworths.json       uploaded by the user to repo root (not docs). Used if < 7 days old
 test_scraper.py       offline tests. Run: python test_scraper.py   (must print "all checks passed")
-test_ingredients.py   138 product-name cases for the ingredient rules. Run: python test_ingredients.py
+test_ingredients.py   170 product-name cases for the ingredient rules. Run: python test_ingredients.py
 test_recipes.js       tests the JS pack-size calculator. Run: node test_recipes.js
 .github/workflows/scrape.yml   cron 0 17,23,5 * * * UTC (6am/12pm/6pm NZ), workflow_dispatch, commits data
 docs/index.html       static site, single file, no build step
@@ -43,7 +43,7 @@ docs/data/compare.json   groups seen at 2+ stores, plus generated_at, stores_scr
 | Woolworths | GET `/api/v1/products?target=browse...` needs header `x-requested-with: OverlayScrollbars` | GitHub's servers time out against it, but a home connection works. So it is collected in the user's browser and uploaded. The scraper skips the network call when a fresh `woolworths.json` exists |
 | New Gum Sarn | Shopify `/products.json?limit=250&page=N` on `www.newgumsarn.co.nz` (function `scrape_shopify`) | Added 2026-10-12. Not yet run against the real shop. Size is parsed from the title (the `grams` field includes packaging). Carton/case variants are skipped. Single Auckland shop; frozen/chilled is click and collect only |
 
-Unit prices are normalised to `100g`, `100ml` or `ea`. Cross-store matching uses `match_key` (brand + name words minus stopwords, plural-stripped, size words removed, plus normalised size).
+Unit prices are normalised to `100g`, `100ml` or `ea`. Cross-store matching uses `match_key` (brand + name words minus stopwords, plural-stripped, size words removed, plus normalised size), then a guarded fuzzy pass; see "Cross-store matching" below.
 
 ### Scraper behaviour you should preserve
 
@@ -59,7 +59,7 @@ Unit prices are normalised to `100g`, `100ml` or `ea`. Cross-store matching uses
   1. Category fix: "Fruit & Veg" is really **"Fruit & Vegetables"** at New World and PAK'nSAVE (it returned 0 before). Config updated.
   2. Categories fixed from the real New World list the user pasted: top-level names are Fruit & Vegetables; Meat, Poultry & Seafood; Fridge, Deli & Eggs; Bakery; Frozen; Pantry; **Hot & Cold Drinks**; **Beer, Wine & Cider**; Snacks, Treats & Easy Meals; Health & Body; Baby & Toddler; Pets; Household & Cleaning; Homewares (there is no "Drinks"). `config.json` now uses these for both Foodstuffs stores (PAK'nSAVE's list was not pasted; a name with no results costs one request and logs `0 usable products`). The scraper de-duplicates products across overlapping categories. Not yet confirmed by a real run.
   3. Connection drops (PAK'nSAVE failed at Pantry page 5 with `RemoteDisconnected`) now retry.
-  4. Matching rebuilt (2026-10-15): `group_records()` does exact `match_key` grouping, then a guarded fuzzy pass (same size + brand, similar name tokens, blocked when a `VARIANT_WORDS` word or a number differs, never two products from one store). compare.json groups carry `"_m": "exact"|"fuzzy"`. Tested offline on synthetic pairs only. **Real-data quality is unmeasured**: run `python scraper.py --match-report` on real `latest.json` and tune `VARIANT_WORDS`, the 0.5 similarity threshold and `NOISE`. Known gap: loose produce sold per kg has no pack size, so it only matches on an identical key.
+  4. Matching rebuilt (2026-10-15): `group_records()` does exact `match_key` grouping, then a guarded fuzzy pass (same size + brand, similar name tokens, blocked when a `VARIANT_WORDS` word or a number differs, never two products from one store). compare.json groups carry `"_m": "exact"|"fuzzy"`. Measured and extended on real data later the same day: see "Cross-store matching" below.
   5. Site: aisle category bar under the header, four-store layout, "Cheapest across N stores" plan, footer note about New Gum Sarn, "Specials only" filter, sort (A to Z / lowest per 100g-ml / biggest saving), and a "Matched by name and size" warning on fuzzy groups.
   6. New Gum Sarn scraper and config entry (`base_url`).
   7. Recipe feature (built 2026-10-15, see below). Tested offline and in a headless browser with sample data only.
@@ -68,7 +68,7 @@ Unit prices are normalised to `100g`, `100ml` or `ea`. Cross-store matching uses
 
 The user's PC now has Git, Python 3.12, Node 24 and GitHub CLI, and a clone at `Documents\Grocery`. Woolworths and the Foodstuffs sites answer this home connection, so it could run the scraper (not done: ask first).
 - `main` already had items 1 to 6 above (the 2026-10-14 runs scraped all four stores: 10,640 Woolworths, 8,790 New World, 7,628 PAK'nSAVE, 3,158 New Gum Sarn; 6,171 groups). Missing were the newer `docs/index.html` and the whole recipe feature; both went in with this session's commit. A stray copy of an old `index.html` sat in the repo root (Pages serves `/docs`); removed.
-- Match report on real data: New World 66%, PAK'nSAVE 74%, **Woolworths 18%**, New Gum Sarn 0% (specialty grocer, expected). Sample fuzzy matches looked right. Woolworths `brand` often carries the product line ("head & shoulders ultra men", "mrs rogers eco pack"), so `_brand_key` differs from the Foodstuffs brand and fuzzy matching refuses; a brand-prefix rule is the obvious next step.
+- Match report on real data: New World 66%, PAK'nSAVE 74%, **Woolworths 18%**, New Gum Sarn 0% (specialty grocer, expected). Sample fuzzy matches looked right. Woolworths `brand` often carries the product line ("head & shoulders ultra men", "mrs rogers eco pack"), so `_brand_key` differs from the Foodstuffs brand and fuzzy matching refuses. **Raised to 26% later the same day, see "Cross-store matching".**
 - **Foodstuffs API caps a search at 1,000 results**: Pantry, Hot & Cold Drinks, Health & Body, Household and Beer/Wine all stopped near 980. Spices, sauces and canned goods beyond that were missing (no curry powder or garam masala at New World or PAK'nSAVE). **Fixed later the same day, see next section.**
 - Fixed in `scraper.py`: Foodstuffs loose produce comes as size `kg` or `ea` with no comparative price (625 products had no unit price); `foodstuffs_parse` now derives one. Woolworths `min order 1.8kg` items are priced **per kg**; the recipe builder treats them as by-weight with a minimum (`m`), and `recipes.html` `cover()` respects it.
 - Recipe ingredient rules rebuilt against real names: ~25 of 68 ingredients picked wrong products (bin liners for lemons, sunscreen for bananas, face creams for cream). Now: non-food aisles are skipped (`NOT_FOOD_AISLE`), a shared `NOT_INGREDIENT` word list applies unless the ingredient's own include asks for the word, `"fresh": true` limits produce to the Fruit & Vegetables aisle (Woolworths: "fresh vegetable/fruit/herb" names), `"by_weight": true` (bananas) ignores bunches sold each, and the price-outlier floor is 0.15 x median (0.35 dropped loose carrots and bananas). All 68 ingredients now find products. `test_ingredients.py` has 31 new cases from real names.
@@ -86,10 +86,45 @@ Cost: New World Pantry goes from 21 requests to about 125 (all 37 facet values, 
 
 To check after the next run: the Actions log should show "search stops at 1000 results, splitting into N sub-categories" lines, the Pantry counts in `latest.json` should go well above 980, and `python scraper.py --ingredient-report` should find curry powder and garam masala at New World and PAK'nSAVE.
 
+## Cross-store matching: Woolworths 18% to 26% (2026-10-15)
+
+Measured offline on the real `docs/data/latest.json` (2026-10-14 runs, Woolworths file of 2026-10-12) with `python scraper.py --match-report`:
+
+| | before | after |
+|---|---|---|
+| Woolworths matched | 1,983 of 10,640 (18.6%) | 2,790 (26.2%) |
+| New World | 5,810 of 8,790 (66.1%) | 5,995 (68.2%) |
+| PAK'nSAVE | 5,656 of 7,628 (74.1%) | 5,780 (75.8%) |
+| groups | 6,171 (1,135 fuzzy) | 6,483 (1,936 fuzzy) |
+
+816 new Woolworths links; 9 old links dropped, 7 of which were wrong (Carefree regular vs super tampons, Nurofen plain vs Cold & Flu, Dole pieces vs slices, Monster Ultra Vice vs Ultra Violet, Nivea Men vs women's roll-on). Two random samples of 30 new links checked by eye: 26/30 right (2 wrong, both then fixed by the SPF and drink-volume rules below; 2 unsure), then 29/30 right.
+
+What `group_records()` does now, on top of exact `match_key` grouping (all in the cross-store matching section of `scraper.py`):
+- **Brand prefix.** When one brand key is the other plus whole extra words ("mccain pub style" vs "McCain", "jed's" vs "Jed's Coffee Co."), the extra words count as name words; `BRAND_NOISE` (co, company, food, ...) is dropped from them. Brand keys are built from stemmed words without a leading "the" (`_brand_words`). The brand's words are also removed from the name, which handles Woolworths repeating the brand in every name.
+- **Accents and joined words.** `_PLAIN` folds é, è, ’ and similar ("nescafé" = "Nescafe"); `_split_compounds` treats "supersoft"/"super soft", "kickstart"/"kick start", "spf30"/"spf 30" as the same words. `match_key` is unchanged on purpose (group keys stay stable).
+- **Default words.** "original"/"classic" are no longer variant words but `DEFAULT_WORDS`: missing on one side is fine only when that side has no other words of its own ("Sweet Chilli Sauce" = "Original Sweet Chilli Sauce", but "Doritos Original" is not "Doritos Salsa").
+- **Flavour on both sides.** `FLAVOUR_WORDS` block a match only when each name has a flavour the other lacks (raspberry vs watermelon). Tried as plain variant words first: that lost 186 mostly-correct links ("Arepa The Brain" vs "... blackcurrant"), so do not move them into `VARIANT_WORDS`.
+- **SPF counts as a number** (day cream vs SPF30 day cream).
+- **Multipacks** (`_size_keys`, `_alt_ok`): Woolworths "10pack" may meet Foodstuffs "10 x 100ml"; a weight in a Woolworths multipack name ("oxo beef stock cubes 71g", size "12pack") may be the whole pack or one item ("24g", "3pack" = "3 x 24g"); a volume in the name is always one item ("330ml", "8pack" = "8 x 330ml", never a single can). An alternative size only meets the other product's main size, and is only used when each product is the other's clear best match at that store (a "6pack" with no can size never picks between 6 x 250ml and 6 x 330ml).
+- **Loose produce** (`_loose`): fruit and veg with no pack size (Woolworths "fresh fruit/vegetable/herb" names, Foodstuffs Fruit & Vegetables sized "kg"/"ea") match by name within per-kg or each, brand ignored, `PRODUCE_NOISE` words dropped, clear-best rule as above. 45 Woolworths produce lines now match (bananas, lemons, carrots, onions, apples by variety, broccoli...).
+- Fuzzy pairs are now merged best-first across all blocks, which fixed a few old wrong groups (New World Mediterranean tonic was grouped with PAK'nSAVE Elderflower tonic).
+
+Tests: `test_scraper.py` has 13 new must-match pairs taken from real names (all fail on the old code) and 10 must-not-match cases. The accent fix made Woolworths "chopped tomatoes in purée" count as tomato paste; `ingredients.json` tomato-paste now excludes "chopped" (plus a test case), and recipe picks on real data are identical to before.
+
+Known wrong or doubtful matches left (all low-frequency, roughly 1 in 30 of the new fuzzy links):
+- Made-up flavour names no word list knows: The Collective Splitz "bickies'n'cream" vs "Churro".
+- Descriptor swaps at the 0.5 threshold: Nivea "Hydrating" vs "Caring" day cream, Banana Boat "smartmist" spray vs lotion. Raising the threshold to 0.6 when both names have their own extra words would fix these but lose about 150 mostly-correct links ("tub" vs "simply", "herbal tea" vs "tea bags"); not done.
+- "fresh" is in `NOISE`, so Nivea "Invisible" vs "Invisible Fresh" can match.
+- A Woolworths single 1.5 L bottle can meet Foodstuffs "6 x 250ml" cans (same 1,500 ml total). Adding "can"/"bottle" as variant words would lose 19 correct links for 1 fix; not done.
+
+Where the rest are: of the 7,850 Woolworths products still unmatched, 1,241 are Woolworths' own brands (woolworths, macro, essentials) and 1,545 are brands New World / PAK'nSAVE do not stock, so they cannot match. Most of the other 5,064 have no same-brand product of the same pack size at Foodstuffs (different sizes, or not stocked). The Foodstuffs 1,000-result cap fix above should add products and raise this further after the next run. Ideas not done: a parent-brand suffix rule ("so good" vs "Sanitarium So Good", only about 10 products), "ies" plural stemming (berries/berry; `_stem` is shared with the recipe rules, so check `test_ingredients.py`), barcodes if a store ever exposes them.
+
+How to measure a matching change: compare `group_records()` from `git show <old>:scraper.py` against the working copy on the same `latest.json` and list new, lost and changed links (the scripts used are not in the repo; about 40 lines each). Always read a sample of the new links, not just the percentage.
+
 ## Known issues and next steps (priority order)
 
 1. **Verify the live run.** After each change to the scraper, read the Actions log: the `newgumsarn` lines, every `0 usable products` category and the matched-group count. `gh run view --log` works on the user's PC once they run `gh auth login`.
-2. **Improve Woolworths matching (18%).** See the brand-key note above. For Woolworths products with no match, look at the nearest New World / PAK'nSAVE name and tune `match_key`. Barcodes would be better if any API exposes them. Consider a hand-curated staples list as a second matching layer. (The Foodstuffs 1,000-result cap is lifted, see above; confirm it in the next run.)
+2. **Woolworths matching (now 26%, was 18%).** See "Cross-store matching" above for what is left. After the next run (more Foodstuffs products from the cap fix), rerun `python scraper.py --match-report` and read the fuzzy samples. Barcodes would be better if any API exposes them. Consider a hand-curated staples list as a second matching layer.
 3. **Sanity-check unit prices** against shelf labels for a handful of products (the user was asked to do this and has not yet).
 4. **Woolworths freshness.** Refresh is manual (run `collect-woolworths.js` in the browser on woolworths.co.nz, upload `woolworths.json` to the repo root). The scraper ignores it after 7 days. The best fix is running the scraper from a home machine (cron, Raspberry Pi) or a self-hosted GitHub runner, since Woolworths answers home connections. Ask the user whether they have an always-on computer.
 5. **Terms of use.** None of the stores' terms have been reviewed. The site republishes scraped prices publicly. Flag this to the user before they promote the site.
@@ -117,7 +152,8 @@ How it works:
 - A trailing newline in the `SCRAPER_CONTACT` secret caused `InvalidHeader`. The code now sanitises it.
 - Woolworths from GitHub Actions: `ReadTimeout`. Do not retry harder; use the uploaded file.
 - Chrome blocks pasting into the DevTools console. Tell the user to use DevTools > Sources > Snippets instead.
-- Test fixtures need identical product names to produce a match group (fuzzy matching is weak).
+- Test fixtures need identical product names (or a case like those in the matching block of `test_scraper.py`) to produce a match group.
+- A matching rule that looks right on a few examples can still lose hundreds of correct links (flavour words as variant words: -186). Measure lost links on the real `latest.json` before keeping a rule.
 - The Claude sandbox cannot reach the supermarket sites or `raw.githubusercontent.com`, so live behaviour can only be checked from the user's logs or from a real machine.
 
 ## How to work with the user
