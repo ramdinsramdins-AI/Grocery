@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Woolworths price button</title>
+<style>
+  body { font: 17px/1.5 system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; color: #1b1b1b; background: #fafaf7; }
+  h1 { font-size: 26px; margin-bottom: 4px; }
+  .btn { display: inline-block; margin: 18px 0; padding: 14px 22px; border-radius: 10px; background: #1d5c2e; color: #fff;
+         font-weight: 700; text-decoration: none; cursor: grab; }
+  ol li { margin-bottom: 10px; }
+  .note { color: #555; font-size: 15px; }
+  code { background: #eee; padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<h1>Woolworths price button</h1>
+<p>Shelf Check uses this button to collect Woolworths prices once a week.</p>
+
+<h2>Set it up (once)</h2>
+<ol>
+  <li>Show your bookmarks bar: press <b>Ctrl + Shift + B</b>.</li>
+  <li>Drag this green button up onto the bookmarks bar:<br>
+      <a class="btn" href="javascript:(async () =&gt; {%0A  if (!/(%5E|%5C.)woolworths%5C.co%5C.nz$/.test(location.hostname)) {%0A    alert(&quot;Shelf Check: open www.woolworths.co.nz first, then click the button again.&quot;);%0A    return;%0A  }%0A  if (window.__shelfCheckRunning) {%0A    alert(&quot;Shelf Check is already collecting prices in this tab. Wait for it to finish.&quot;);%0A    return;%0A  }%0A  window.__shelfCheckRunning = true;%0A  const bar = document.createElement(&quot;div&quot;);%0A  bar.style.cssText = &quot;position:fixed;top:0;left:0;right:0;z-index:2147483647;padding:12px 16px;background:%231d5c2e;color:%23fff;&quot; +%0A    &quot;font:600 15px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.3)&quot;;%0A  document.body.appendChild(bar);%0A  const say = (t, done) =&gt; { bar.textContent = &quot;Shelf Check: &quot; + t; if (done) bar.style.background = &quot;%23333&quot;; console.log(t); };%0A%0A  const DEPARTMENTS = [&quot;fruit-veg&quot;, &quot;meat-poultry&quot;, &quot;fish-seafood&quot;, &quot;fridge-deli&quot;, &quot;bakery&quot;, &quot;frozen&quot;, &quot;pantry&quot;, &quot;drinks&quot;, &quot;health-body&quot;, &quot;cleaning-homeware&quot;];%0A  const MAX_PAGES = 60;%0A  const sleep = (ms) =&gt; new Promise((r) =&gt; setTimeout(r, ms));%0A  const items = [];%0A  const seen = new Set();%0A%0A  for (const [n, dept] of DEPARTMENTS.entries()) {%0A    let got = 0;%0A    for (let page = 1; page &lt;= MAX_PAGES; page++) {%0A      say(`collecting prices, aisle ${n + 1} of ${DEPARTMENTS.length} (${dept}). ${items.length} products so far. ` +%0A        &quot;Keep this tab open; it takes about 10 to 15 minutes.&quot;);%0A      await sleep(2000 + Math.random() * 2000);%0A      const url = `/api/v1/products?target=browse&amp;inStockProductsOnly=false&amp;size=48&amp;page=${page}&amp;dasFilter=Department;;${dept};false`;%0A      let r;%0A      try {%0A        r = await fetch(url, { headers: { &quot;x-requested-with&quot;: &quot;OverlayScrollbars&quot;, accept: &quot;application/json&quot; } });%0A      } catch (e) {%0A        console.log(`${dept} page ${page}: ${e}. Skipping the rest of this aisle.`);%0A        break;%0A      }%0A      if (r.status === 403 || r.status === 429) {%0A        say(`Woolworths said no (HTTP ${r.status}), so it stopped. Nothing was downloaded.`, true);%0A        window.__shelfCheckRunning = false;%0A        return;%0A      }%0A      if (!r.ok) {%0A        console.log(`${dept} page ${page}: HTTP ${r.status}. Skipping the rest of this aisle.`);%0A        break;%0A      }%0A      const data = await r.json();%0A      const list = (data.products &amp;&amp; data.products.items) || [];%0A      if (!list.length) break;%0A      for (const it of list) {%0A        if (it.type &amp;&amp; it.type !== &quot;Product&quot;) continue;%0A        if (!it.sku || seen.has(it.sku)) continue;%0A        seen.add(it.sku);%0A        const s = it.size || {};%0A        const p = it.price || {};%0A        items.push({%0A          type: &quot;Product&quot;,%0A          sku: it.sku,%0A          name: it.name,%0A          brand: it.brand,%0A          size: { volumeSize: s.volumeSize, cupPrice: s.cupPrice, cupMeasure: s.cupMeasure },%0A          price: { originalPrice: p.originalPrice, salePrice: p.salePrice, isSpecial: p.isSpecial, isClubPrice: p.isClubPrice },%0A        });%0A        got++;%0A      }%0A    }%0A    console.log(`${dept}: ${got} products (${items.length} so far)`);%0A  }%0A%0A  window.__shelfCheckRunning = false;%0A  if (!items.length) {%0A    say(&quot;no products were collected, so nothing was downloaded. Try again later.&quot;, true);%0A    return;%0A  }%0A  const blob = new Blob([JSON.stringify({ collected_at: new Date().toISOString(), products: { items } })], { type: &quot;application/json&quot; });%0A  const a = document.createElement(&quot;a&quot;);%0A  a.href = URL.createObjectURL(blob);%0A  a.download = &quot;woolworths.json&quot;;%0A  document.body.appendChild(a);%0A  a.click();%0A  a.remove();%0A  say(`done. ${items.length} products saved to your Downloads folder as woolworths.json. ` +%0A    &quot;Your PC sends it to GitHub within 10 minutes. You can close this tab.&quot;, true);%0A})();" onclick="alert('Drag this button onto your bookmarks bar instead of clicking it here.'); return false;">Collect Woolworths prices</a></li>
+</ol>
+
+<h2>Use it (about once a week)</h2>
+<ol>
+  <li>Go to <b>www.woolworths.co.nz</b> (any page).</li>
+  <li>Click <b>Collect Woolworths prices</b> on your bookmarks bar. A green bar appears at the top of the page and shows progress.</li>
+  <li>Leave the tab open for 10 to 15 minutes. When it says <b>done</b>, the prices are saved in your Downloads folder.</li>
+  <li>That's it. Within 10 minutes your PC sends them to GitHub, shows a message in the corner of your screen,
+      and moves the old price files to the Recycle Bin. Your website uses the new prices at its next update (6am, 12pm or 6pm).</li>
+</ol>
+
+<p class="note">If clicking the button does nothing on the Woolworths site, use the old way instead: open DevTools &gt; Sources &gt; Snippets
+and run <code>collect-woolworths.js</code>. Your PC still uploads the file for you.</p>
+</body>
+</html>

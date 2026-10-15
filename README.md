@@ -39,10 +39,14 @@ crontab -e
 
 ## Woolworths (collected from your own browser)
 
-Woolworths does not answer requests from GitHub's servers, so the scheduled run cannot fetch it.
-Instead, run `collect-woolworths.js` in your browser console on https://www.woolworths.co.nz. It downloads `woolworths.json`.
-Upload that file to the main folder of the repo (not inside `docs`). The next scrape reads it, skips the network call, and the site shows the date the Woolworths prices are from.
-The scraper ignores the file once it is more than 7 days old, so stale prices are never shown as current. Repeat the collection whenever you want to refresh Woolworths.
+Woolworths answers only real web browsers (not GitHub's servers, and not scripts on a home computer either), so the scheduled run cannot fetch it.
+Instead, about once a week:
+
+1. Open https://www.woolworths.co.nz and click the **Collect Woolworths prices** button on your bookmarks bar (set it up once from `woolworths-button.html`). Keep the tab open for 10 to 15 minutes; it downloads `woolworths.json`.
+2. On the home PC, the Windows task "Shelf Check - upload Woolworths prices" notices the new file within 10 minutes, sends it to the repo's main folder, moves old price files to the Recycle Bin, and shows a message. Switch it on or off with `install-woolworths-uploader.ps1` (`-Remove` to switch off).
+
+Without the task, upload `woolworths.json` to the main folder of the repo (not inside `docs`) by hand. The next scrape reads it, skips the network call, and the site shows the date the Woolworths prices are from.
+The scraper ignores the file once it is more than 7 days old, so stale prices are never shown as current.
 
 ## The website
 
