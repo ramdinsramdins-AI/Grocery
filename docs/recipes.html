@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shelf Check Recipes</title>
+<meta name="description" content="Pick recipes and get one shopping list with the cheapest packs across NZ supermarkets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Same look as the price comparison page: recipe cards on the left, the combined shopping list and store plans on the right. */
+:root{
+  color-scheme:light;
+  --bg:#F2F4EF; --surface:#FFFFFF; --ink:#16201A; --muted:#5B675F; --line:#D8DDD3;
+  --tag:#FFD84A; --tag-ink:#2A2200; --good:#1C7A45; --warn:#9A5B00; --soft:#E8ECE3;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1511; --surface:#18211B; --ink:#EAF0E6; --muted:#9AA79E; --line:#2B382F;
+  --tag:#E9BE2A; --tag-ink:#1F1800; --good:#5CC98B; --warn:#E3A24A; --soft:#202B24; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1511; --surface:#18211B; --ink:#EAF0E6; --muted:#9AA79E; --line:#2B382F;
+  --tag:#E9BE2A; --tag-ink:#1F1800; --good:#5CC98B; --warn:#E3A24A; --soft:#202B24; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;padding-inline:16px;padding-block:20px 48px}
+.wrap{max-width:1180px;margin-inline:auto}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;padding-bottom:16px;border-bottom:2px solid var(--ink)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(34px,6vw,52px);line-height:.95;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.sub{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.navlink{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--ink)}
+.status{font-family:var(--f-mono);font-size:12px;max-width:42ch;padding:6px 10px;background:var(--soft);border:1px solid var(--line)}
+.status.sample{background:var(--tag);color:var(--tag-ink);border-color:var(--tag)}
+.status.err{background:transparent;color:var(--warn);border-color:var(--warn)}
+main{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:28px;margin-top:20px;align-items:start}
+@media (max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+input[type=search],input[type=number]{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:10px 12px;border-radius:4px;min-width:0}
+input[type=search]{flex:1 1 220px}
+input:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.toggle{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);cursor:pointer}
+.toggle input{width:18px;height:18px;accent-color:var(--ink)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;scrollbar-width:thin}
+.chip{flex:0 0 auto;font:inherit;font-size:13px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:5px 11px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--tag);color:var(--tag-ink);border-color:var(--tag)}
+.count{font-size:13px;color:var(--muted);margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.card.on{border:2px solid var(--ink)}
+.ph{aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;color:#16201A;font-family:var(--f-display);font-weight:700;font-size:40px;letter-spacing:.02em}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.cb{padding:12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{margin:0;font-size:16px;font-weight:600;overflow-wrap:anywhere}
+.meta{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.blurb{font-size:13px;color:var(--muted);margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font-size:11px;background:var(--soft);border:1px solid var(--line);padding:1px 6px;border-radius:3px;color:var(--muted)}
+.btn{font:inherit;font-weight:600;background:var(--ink);color:var(--bg);border:0;padding:8px 14px;border-radius:4px;cursor:pointer}
+.btn.in{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+details.rd{border-top:1px solid var(--line);padding:8px 12px 12px;font-size:13.5px}
+details.rd summary{cursor:pointer;font-weight:600;font-size:13px}
+details.rd h4{margin:10px 0 4px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+details.rd ul,details.rd ol{margin:0;padding-left:18px}
+details.rd li{margin-bottom:3px}
+aside{position:sticky;top:env(safe-area-inset-top,0px);background:var(--surface);border:2px solid var(--ink);padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0;max-height:calc(100vh - 24px);overflow:auto}
+@media (max-width:900px){aside{position:static;max-height:none}}
+aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;margin:0;letter-spacing:.02em}
+aside h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.items{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.items li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;font-size:14px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.items li span:first-child{overflow-wrap:anywhere}
+.qty{display:flex;align-items:center;gap:6px;font-family:var(--f-mono)}
+.qty button{width:26px;height:26px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer;font:inherit}
+.empty{color:var(--muted);font-size:14px;margin:0}
+.plans{display:flex;flex-direction:column;gap:8px}
+.plan{text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:10px 12px;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:baseline}
+.plan[aria-pressed=true]{border:2px solid var(--ink);padding:9px 11px}
+.plan .pn{font-weight:600}
+.plan .tot{font-family:var(--f-display);font-weight:700;font-size:30px;font-variant-numeric:tabular-nums;line-height:1}
+.plan .nt{grid-column:1/-1;font-size:12.5px;color:var(--muted)}
+.rec{font-family:var(--f-mono);font-size:11px;background:var(--tag);color:var(--tag-ink);padding:1px 6px;margin-left:6px;vertical-align:2px}
+.stop{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.stop input{width:76px;padding:6px 8px}
+.bk h4{margin:12px 0 4px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;gap:8px}
+.ln{padding:6px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.ln .top{display:flex;justify-content:space-between;gap:10px}
+.ln .top span:first-child{overflow-wrap:anywhere;font-weight:500}
+.ln .top span:last-child{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ln .sm{font-size:12px;color:var(--muted);margin-top:1px}
+.ln .lo{color:var(--warn)}
+.pantry{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:4px 10px;font-size:13px}
+.pantry label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.pantry input{accent-color:var(--ink)}
+.warn{font-size:13px;color:var(--warn);margin:0}
+.foot{margin-top:28px;font-size:13px;color:var(--muted);max-width:75ch}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <h1>Shelf Check Recipes</h1>
+    <p class="sub">Pick the meals you want to cook. You get one shopping list, with the cheapest packs for what you need, and the cheapest store or stores to buy it from.</p>
+    <a class="navlink" href="index.html">Compare individual products</a>
+  </div>
+  <div class="status" id="status" role="status">Loading...</div>
+</header>
+
+<main>
+  <section aria-label="Recipes">
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search recipes or ingredients" aria-label="Search recipes">
+      <label class="toggle"><input type="checkbox" id="member"> Use club prices</label>
+    </div>
+    <div class="chips" id="chips" aria-label="Filter by type"></div>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <aside aria-label="Your recipes and shopping list">
+    <h2>Your recipes</h2>
+    <ul class="items" id="sel"></ul>
+    <div id="after"></div>
+  </aside>
+</main>
+
+<p class="foot">Quantities are for the servings shown and scale when you change them. For each ingredient the site adds up what every chosen recipe needs, then finds the cheapest combination of pack sizes that covers it, and says what is left over. Products are picked by matching names, so check the pack you are buying. Items sold each (an onion, a lemon) use an average weight. Recipes do not include nutrition or allergen information. Prices come from one store per chain, so your local store may differ.</p>
+</div>
+
+<script>
+var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE", newgumsarn:"New Gum Sarn"};
+var KEYS = Object.keys(STORES);
+var GLOBAL_UNITS = {tsp:5, tbsp:15, cup:250, pinch:0.4};
+var RECIPES = [], BYID = {}, ING = {};
+var state = {q:"", tag:"", sel:{}, have:{}, stop:4, member:false, plan:null};
+try{
+  var saved = JSON.parse(localStorage.getItem("shelfcheck-recipes")||"null");
+  if(saved){ state.sel=saved.sel||{}; state.have=saved.have||{}; if(typeof saved.stop==="number")state.stop=saved.stop; }
+}catch(e){}
+function save(){try{localStorage.setItem("shelfcheck-recipes",JSON.stringify({sel:state.sel,have:state.have,stop:state.stop}));}catch(e){}}
+
+function money(n){return "$"+n.toFixed(2);}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function enc(k){return encodeURIComponent(k);}
+function hue(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))%360;return h;}
+function fmtAmt(base,a){
+  if(base==="ea"){var r=Math.round(a*10)/10;return (r%1===0?r:r.toFixed(1))+" each";}
+  if(a>=1000)return (Math.round(a/10)/100)+(base==="g"?" kg":" L");
+  return Math.round(a)+(base==="g"?" g":" ml");
+}
+function toBase(ing,qty,unit){
+  if(unit===ing.base)return qty;
+  var u=ing.units||{};
+  if(u[unit]!=null)return qty*u[unit];
+  if(GLOBAL_UNITS[unit]!=null&&ing.base!=="ea")return qty*GLOBAL_UNITS[unit];
+  return qty;
+}
+function isHave(id){return state.have[id]!==undefined?state.have[id]:!!ING[id].pantry;}
+function packPrice(p){return state.member&&p.c!=null&&p.c<p.p?p.c:p.p;}
+
+// what every chosen recipe needs, added up per ingredient, in grams, millilitres or "each"
+function needs(){
+  var out={};
+  Object.keys(state.sel).forEach(function(rid){
+    var r=BYID[rid]; if(!r)return;
+    var f=state.sel[rid]/r.serves;
+    r.ingredients.forEach(function(x){
+      var ing=ING[x.item]; if(!ing)return;
+      var a=toBase(ing,x.qty,x.unit)*f;
+      var o=out[x.item]||(out[x.item]={amt:0,uses:[]});
+      o.amt+=a; o.uses.push({rid:rid,name:r.name,amt:a});
+    });
+  });
+  return out;
+}
+
+// cheapest combination of this store's packs that covers `need`. Loose items (sold by weight) are bought exactly,
+// or at the minimum order (m) when there is one.
+function cover(need,packs){
+  var best=null;
+  packs.filter(function(p){return p.l;}).forEach(function(p){
+    var amt=Math.max(need,p.m||0),c=packPrice(p)*amt/100;
+    if(!best||c<best.cost-1e-9)best={cost:c,picks:[{pack:p,count:amt/100,loose:true}],bought:amt,left:amt-need};
+  });
+  var fixed=packs.filter(function(p){return !p.l&&p.q>0;});
+  if(fixed.length){
+    var sizes=fixed.map(function(p){return Math.max(1,Math.round(p.q));});
+    var cap=Math.ceil(need)+Math.max.apply(null,sizes);
+    if(cap<=80000){
+      var INF=1e18,dp=new Float64Array(cap+1).fill(INF),from=new Int16Array(cap+1).fill(-1);
+      dp[0]=0;
+      for(var j=1;j<=cap;j++){
+        for(var k=0;k<fixed.length;k++){
+          var q=sizes[k];
+          if(q<=j&&dp[j-q]<INF){var c=dp[j-q]+packPrice(fixed[k]); if(c<dp[j]-1e-9){dp[j]=c;from[j]=k;}}
+        }
+      }
+      var bj=-1;
+      for(var t=Math.ceil(need-1e-9);t<=cap;t++){if(dp[t]<INF&&(bj<0||dp[t]<dp[bj]-1e-9))bj=t;}
+      if(bj>=0){
+        var counts={},jj=bj,bought=0;
+        while(jj>0){var kk=from[jj];counts[kk]=(counts[kk]||0)+1;jj-=sizes[kk];}
+        var picks=Object.keys(counts).map(function(kk){bought+=counts[kk]*fixed[kk].q;return {pack:fixed[kk],count:counts[kk],loose:false};});
+        var cand={cost:dp[bj],picks:picks,bought:bought,left:Math.max(0,bought-need)};
+        if(!best||cand.cost<best.cost-1e-9)best=cand;
+      }
+    }
+  }
+  return best;
+}
+
+function planData(){
+  var N=needs(),lines=[],missing=[],have=[];
+  Object.keys(N).forEach(function(id){
+    var ing=ING[id];
+    if(isHave(id)){have.push(id);return;}
+    if(!KEYS.some(function(k){return ing.stores[k]&&ing.stores[k].length;})){missing.push(id);return;}
+    var byStore={};
+    KEYS.forEach(function(k){var pk=ing.stores[k]; if(pk&&pk.length){var c=cover(N[id].amt,pk); if(c)byStore[k]=c;}});
+    lines.push({id:id,need:N[id].amt,uses:N[id].uses,byStore:byStore});
+  });
+  function assign(set){
+    var by={},total=0;
+    for(var n=0;n<lines.length;n++){
+      var ln=lines[n],best=null,bk=null;
+      set.forEach(function(k){var c=ln.byStore[k]; if(c&&(best==null||c.cost<best)){best=c.cost;bk=k;}});
+      if(best==null)return null;
+      total+=best;(by[bk]=by[bk]||[]).push({line:ln,c:ln.byStore[bk]});
+    }
+    return {by:by,total:total,stores:Object.keys(by).length};
+  }
+  var out=[];
+  if(lines.length){
+    var singles=KEYS.map(function(k){var a=assign([k]);return a?{k:k,a:a}:null;}).filter(Boolean).sort(function(a,b){return a.a.total-b.a.total;});
+    if(singles.length)out.push({id:"one",name:"One store: "+STORES[singles[0].k],a:singles[0].a,note:singles.length>1?"Dearest single store is "+money(singles[singles.length-1].a.total)+".":"Only store that has everything."});
+    var pairBest=null;
+    for(var x=0;x<KEYS.length;x++)for(var y=x+1;y<KEYS.length;y++){var a=assign([KEYS[x],KEYS[y]]); if(a&&a.stores===2&&(!pairBest||a.total<pairBest.total))pairBest=a;}
+    if(pairBest)out.push({id:"two",name:"Two stores: "+Object.keys(pairBest.by).map(function(k){return STORES[k];}).join(" + "),a:pairBest,note:""});
+    var all=assign(KEYS);
+    if(all&&(all.stores>=3||!out.length))out.push({id:"all",name:"Cheapest across "+all.stores+" store"+(all.stores===1?"":"s"),a:all,note:""});
+  }
+  out.forEach(function(p){
+    p.net=p.a.total+(p.a.stores-1)*state.stop;
+    p.note=(p.note?p.note+" ":"")+(p.a.stores>1?(p.a.stores-1)+" extra stop"+(p.a.stores>2?"s":"")+" at "+money(state.stop)+" each: "+money(p.net)+" all in.":"");
+  });
+  var rec=out.slice().sort(function(a,b){return a.net-b.net;})[0]; if(rec)rec.rec=true;
+  return {plans:out,lines:lines,missing:missing,have:have,need:N};
+}
+
+function allTags(){
+  var c={};RECIPES.forEach(function(r){r.tags.forEach(function(t){c[t]=(c[t]||0)+1;});});
+  return Object.keys(c).sort(function(a,b){return c[b]-c[a]||a.localeCompare(b);}).slice(0,14).map(function(t){return [t,c[t]];});
+}
+function renderChips(){
+  var html='<button class="chip" type="button" data-tag="" aria-pressed="'+(state.tag===""?"true":"false")+'">All ('+RECIPES.length+')</button>';
+  allTags().forEach(function(t){html+='<button class="chip" type="button" data-tag="'+esc(t[0])+'" aria-pressed="'+(state.tag===t[0]?"true":"false")+'">'+esc(t[0])+' ('+t[1]+')</button>';});
+  document.getElementById("chips").innerHTML=html;
+}
+function filtered(){
+  var words=state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  return RECIPES.filter(function(r){
+    if(state.tag&&r.tags.indexOf(state.tag)<0)return false;
+    var hay=(r.name+" "+r.tags.join(" ")+" "+r.ingredients.map(function(i){return (ING[i.item]||{}).name||"";}).join(" ")).toLowerCase();
+    return words.every(function(w){return hay.indexOf(w)>-1;});
+  });
+}
+function photoHtml(r){
+  var h=hue(r.id),ini=r.name.split(/\s+/).filter(function(w){return w.length>2;}).slice(0,2).map(function(w){return w[0].toUpperCase();}).join("")||r.name[0];
+  var bg='background:linear-gradient(135deg,hsl('+h+' 55% 82%),hsl('+((h+40)%360)+' 50% 70%))';
+  var img=r.photo?'<img src="'+esc(r.photo)+'" alt="'+esc(r.name)+'" loading="lazy" onerror="this.remove()">':'';
+  return '<div class="ph" style="'+bg+'" aria-hidden="'+(r.photo?"false":"true")+'">'+(r.photo?img:esc(ini))+'</div>';
+}
+function recipeDetail(r){
+  var f=(state.sel[r.id]||r.serves)/r.serves;
+  var ings=r.ingredients.map(function(x){
+    var ing=ING[x.item]; var q=Math.round(x.qty*f*100)/100;
+    return '<li>'+esc(q+" "+(x.unit==="ea"?"":x.unit+" ")+(ing?ing.name:x.item).toLowerCase())+(x.note?', '+esc(x.note):'')+'</li>';
+  }).join("");
+  var steps=r.method.map(function(m){return '<li>'+esc(m)+'</li>';}).join("");
+  return '<details class="rd"><summary>Ingredients and method</summary><h4>Ingredients (serves '+Math.round((state.sel[r.id]||r.serves))+')</h4><ul>'+ings+'</ul><h4>Method</h4><ol>'+steps+'</ol></details>';
+}
+function renderGrid(){
+  var rows=filtered();
+  document.getElementById("count").textContent=rows.length+" recipe"+(rows.length===1?"":"s");
+  if(!rows.length){document.getElementById("grid").innerHTML='<p class="empty">No recipes match. Try a shorter search.</p>';return;}
+  document.getElementById("grid").innerHTML=rows.map(function(r){
+    var on=!!state.sel[r.id];
+    return '<article class="card'+(on?' on':'')+'">'+photoHtml(r)+'<div class="cb"><h3>'+esc(r.name)+'</h3><div class="meta">'+r.minutes+' min &middot; serves '+r.serves+'</div>'
+      +(r.blurb?'<p class="blurb">'+esc(r.blurb)+'</p>':'')
+      +'<div class="tags">'+r.tags.map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("")+'</div>'
+      +'<button class="btn'+(on?' in':'')+'" data-toggle="'+enc(r.id)+'">'+(on?'Added. Remove':'Add to my list')+'</button></div>'+recipeDetail(r)+'</article>';
+  }).join("");
+}
+
+function leftoverHint(id,left){
+  var ing=ING[id],bits=[];
+  if(ing.perishable)bits.push("Perishable: use or freeze soon.");
+  var other=RECIPES.filter(function(r){return !state.sel[r.id]&&r.ingredients.some(function(i){return i.item===id;});}).slice(0,2).map(function(r){return r.name;});
+  if(other.length)bits.push("Could also use it in: "+other.join(", ")+".");
+  return bits.join(" ");
+}
+function lineHtml(r){
+  var ing=ING[r.line.id],c=r.c;
+  var buy=c.picks.map(function(p){
+    return p.loose?'about '+esc(fmtAmt(ing.base,p.count*100))+' loose, '+esc(p.pack.n)+' ('+money(packPrice(p.pack)*(ing.base==="g"?10:10))+(ing.base==="g"?'/kg':'/L')+')'
+                  :p.count+' &times; '+esc(p.pack.n)+' ('+money(packPrice(p.pack))+' each)';
+  }).join(" + ");
+  var left=c.left>0.5?'<div class="sm lo">'+esc(fmtAmt(ing.base,c.left))+' left over. '+esc(leftoverHint(r.line.id,c.left))+'</div>':'';
+  return '<div class="ln"><div class="top"><span>'+esc(ing.name)+'</span><span>'+money(c.cost)+'</span></div><div class="sm">Need '+esc(fmtAmt(ing.base,r.line.need))+'. Buy '+buy+'</div>'+left+'</div>';
+}
+function renderAside(){
+  var ids=Object.keys(state.sel).filter(function(id){return BYID[id];});
+  document.getElementById("sel").innerHTML=ids.length?ids.map(function(id){
+    var r=BYID[id];
+    return '<li><span>'+esc(r.name)+'</span><span class="qty"><button data-dec="'+enc(id)+'" aria-label="Fewer servings of '+esc(r.name)+'">-</button><span title="servings">'+state.sel[id]+'</span><button data-inc="'+enc(id)+'" aria-label="More servings of '+esc(r.name)+'">+</button></span></li>';
+  }).join(""):'<li style="display:block;border:0"><p class="empty">Add recipes to build your shopping list.</p></li>';
+  var after=document.getElementById("after");
+  if(!ids.length){after.innerHTML="";return;}
+  var d=planData(),html="";
+  var servings=ids.reduce(function(s,id){return s+state.sel[id];},0);
+  html+='<div class="stop"><label for="stopCost">Cost of each extra stop</label> $<input type="number" id="stopCost" min="0" step="0.5" value="'+state.stop+'"></div>';
+  if(!d.plans.length){
+    html+='<p class="warn">No store has the products for this list yet. '+(d.lines.length?'Try ticking items you already have.':'')+'</p>';
+  }else{
+    var rec=d.plans.filter(function(p){return p.rec;})[0];
+    if(!state.plan||!d.plans.some(function(p){return p.id===state.plan;}))state.plan=rec.id;
+    html+='<div class="plans">'+d.plans.map(function(p){
+      return '<button class="plan" data-plan="'+p.id+'" aria-pressed="'+(p.id===state.plan)+'"><span class="pn">'+esc(p.name)+(p.rec?'<span class="rec">BEST VALUE</span>':'')+'</span><span class="tot">'+money(p.a.total)+'</span><span class="nt">'+esc(p.note)+'</span></button>';
+    }).join("")+'</div>';
+    var cur=d.plans.filter(function(p){return p.id===state.plan;})[0];
+    html+='<p class="count">About '+money(cur.a.total/servings)+' per serving, counting whole packs. Total servings: '+servings+'.</p>';
+    html+='<div class="bk">'+Object.keys(cur.a.by).map(function(k){
+      var sub=0;cur.a.by[k].forEach(function(r){sub+=r.c.cost;});
+      return '<h4><span>'+esc(STORES[k])+'</span><span>'+money(sub)+'</span></h4>'+cur.a.by[k].map(lineHtml).join("");
+    }).join("")+'</div>';
+  }
+  if(d.missing.length)html+='<p class="warn">No supermarket product found yet for: '+d.missing.map(function(id){return esc(ING[id].name);}).join(", ")+'. Add these by hand.</p>';
+  var all=Object.keys(d.need).sort(function(a,b){return ING[a].name.localeCompare(ING[b].name);});
+  html+='<div><h3>Tick what you already have</h3><div class="pantry">'+all.map(function(id){
+    return '<label><input type="checkbox" data-have="'+enc(id)+'"'+(isHave(id)?' checked':'')+'> '+esc(ING[id].name)+'</label>';
+  }).join("")+'</div></div>';
+  after.innerHTML=html;
+}
+function renderAll(){renderGrid();renderAside();}
+
+function showStatus(p){
+  var el=document.getElementById("status");
+  if(p.generated_at==="sample"){el.className="status sample";el.textContent="Sample prices for testing. Run the scraper to load real prices.";return;}
+  var txt;try{txt=new Intl.DateTimeFormat("en-NZ",{dateStyle:"medium",timeStyle:"short",timeZone:"Pacific/Auckland"}).format(new Date(p.generated_at));}catch(e){txt=p.generated_at;}
+  var wt=p.store_times&&p.store_times.woolworths,wtxt="";
+  if(wt){try{wtxt=" Woolworths prices are from "+new Intl.DateTimeFormat("en-NZ",{dateStyle:"medium",timeZone:"Pacific/Auckland"}).format(new Date(wt))+".";}catch(e){}}
+  el.className="status";el.textContent="Prices updated "+txt+"."+wtxt;
+}
+
+document.getElementById("q").addEventListener("input",function(e){state.q=e.target.value;renderGrid();});
+document.getElementById("member").addEventListener("change",function(e){state.member=e.target.checked;renderAside();});
+document.addEventListener("input",function(e){
+  if(e.target.id==="stopCost"){var v=parseFloat(e.target.value);state.stop=isNaN(v)||v<0?0:v;save();
+    var pos=e.target.selectionStart;renderAside();var n=document.getElementById("stopCost");if(n){n.focus();try{n.setSelectionRange(pos,pos);}catch(x){}}}
+});
+document.addEventListener("change",function(e){
+  var h=e.target.dataset&&e.target.dataset.have;
+  if(h){state.have[decodeURIComponent(h)]=e.target.checked;save();renderAside();}
+});
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button"); if(!t)return;
+  var d=t.dataset,id;
+  if(d.tag!==undefined&&t.classList.contains("chip")){state.tag=d.tag;renderChips();renderGrid();return;}
+  if(d.toggle){id=decodeURIComponent(d.toggle);if(state.sel[id])delete state.sel[id];else state.sel[id]=BYID[id].serves;}
+  else if(d.inc){id=decodeURIComponent(d.inc);state.sel[id]=Math.min(24,state.sel[id]+1);}
+  else if(d.dec){id=decodeURIComponent(d.dec);state.sel[id]--;if(state.sel[id]<=0)delete state.sel[id];}
+  else if(d.plan){state.plan=d.plan;renderAside();return;}
+  else return;
+  save();renderAll();
+});
+
+Promise.all([
+  fetch("data/recipes.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("recipes");return r.json();}),
+  fetch("data/ingredient_products.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("prices");return r.json();})
+]).then(function(a){
+  RECIPES=a[0].recipes.slice().sort(function(x,y){return x.name.localeCompare(y.name);});
+  RECIPES.forEach(function(r){BYID[r.id]=r;});
+  ING=a[1].ingredients;
+  Object.keys(state.sel).forEach(function(id){if(!BYID[id])delete state.sel[id];});
+  showStatus(a[1]);renderChips();renderAll();
+}).catch(function(){
+  var el=document.getElementById("status");el.className="status err";
+  el.textContent="Could not load recipes or prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.";
+});
+</script>
+</body>
+</html>

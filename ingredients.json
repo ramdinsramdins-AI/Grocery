@@ -1,0 +1,2839 @@
+{
+ "note": "Rules the scraper uses to find supermarket products for each recipe ingredient. 'include' is a list of groups: a product must contain at least one word from EVERY group. 'exclude' words rule a product out. base is g, ml or ea (each). units converts recipe units to the base amount. pantry=true means the site assumes you already own it.",
+ "ingredients": {
+  "chicken-breast": {
+   "name": "Chicken breast",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "chicken"
+    ],
+    [
+     "breast"
+    ]
+   ],
+   "exclude": [
+    "nugget",
+    "crumbed",
+    "schnitzel",
+    "stock",
+    "noodle",
+    "soup",
+    "pie",
+    "cooked",
+    "roast",
+    "sandwich",
+    "wrap",
+    "salad",
+    "kiev",
+    "burger",
+    "patty",
+    "parmigiana",
+    "cat",
+    "dog",
+    "pet",
+    "satay",
+    "flavoured",
+    "marinated",
+    "bbq",
+    "teriyaki",
+    "butter chicken",
+    "kyiv",
+    "smoked",
+    "shaved",
+    "mince",
+    "deli"
+   ]
+  },
+  "chicken-thigh": {
+   "name": "Chicken thigh",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "chicken"
+    ],
+    [
+     "thigh"
+    ]
+   ],
+   "exclude": [
+    "nugget",
+    "crumbed",
+    "schnitzel",
+    "stock",
+    "noodle",
+    "soup",
+    "pie",
+    "cooked",
+    "roast",
+    "sandwich",
+    "wrap",
+    "salad",
+    "kiev",
+    "burger",
+    "patty",
+    "parmigiana",
+    "cat",
+    "dog",
+    "pet",
+    "satay",
+    "flavoured",
+    "marinated",
+    "bbq",
+    "teriyaki",
+    "butter chicken"
+   ]
+  },
+  "beef-mince": {
+   "name": "Beef mince",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "beef"
+    ],
+    [
+     "mince"
+    ]
+   ],
+   "exclude": [
+    "pie",
+    "burger",
+    "patty",
+    "sausage",
+    "meatball",
+    "stock",
+    "pasta",
+    "sauce",
+    "pastie",
+    "roll",
+    "lasagne",
+    "bolognese",
+    "cat",
+    "dog",
+    "pet",
+    "pet"
+   ]
+  },
+  "beef-strips": {
+   "name": "Beef stir fry strips",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "beef"
+    ],
+    [
+     "strip",
+     "stir"
+    ]
+   ],
+   "exclude": [
+    "jerky",
+    "sauce",
+    "noodle",
+    "kit",
+    "pie",
+    "stock",
+    "marinated",
+    "cat",
+    "dog"
+   ]
+  },
+  "sausages": {
+   "name": "Sausages",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "each": 70
+   },
+   "include": [
+    [
+     "sausage"
+    ]
+   ],
+   "exclude": [
+    "roll",
+    "vegetarian",
+    "vegan",
+    "plant",
+    "dog",
+    "bun",
+    "hotdog",
+    "cocktail",
+    "chorizo",
+    "salami",
+    "vienna",
+    "bread",
+    "recipe",
+    "bean",
+    "luncheon",
+    "rookworst",
+    "alternative",
+    "spaghetti",
+    "meat",
+    "cooked",
+    "precooked",
+    "tofu",
+    "chinese"
+   ]
+  },
+  "bacon": {
+   "name": "Bacon",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "bacon"
+    ]
+   ],
+   "exclude": [
+    "bit",
+    "flavour",
+    "chip",
+    "dog",
+    "sauce",
+    "sandwich",
+    "wrap",
+    "burger",
+    "bun",
+    "jam",
+    "dressing",
+    "cheese",
+    "crisp",
+    "salad",
+    "hock",
+    "bone"
+   ]
+  },
+  "ham": {
+   "name": "Ham",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "ham"
+    ]
+   ],
+   "exclude": [
+    "pizza",
+    "sandwich",
+    "roll",
+    "hock",
+    "cat",
+    "dog",
+    "pet",
+    "luncheon",
+    "sausage",
+    "stackers",
+    "chicken",
+    "spam",
+    "spiced",
+    "ham bone"
+   ]
+  },
+  "salmon-fillet": {
+   "name": "Salmon fillets",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "salmon"
+    ],
+    [
+     "fillet"
+    ]
+   ],
+   "exclude": [
+    "smoked",
+    "can",
+    "tin",
+    "cat",
+    "dog",
+    "crumbed",
+    "patty",
+    "cake",
+    "pate",
+    "pet",
+    "spread"
+   ]
+  },
+  "tuna-can": {
+   "name": "Canned tuna",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "tuna"
+    ]
+   ],
+   "exclude": [
+    "cat",
+    "dog",
+    "pet",
+    "salad",
+    "fresh",
+    "steak",
+    "pasta",
+    "kit",
+    "meal",
+    "sandwich",
+    "smoked",
+    "spreadable",
+    "sensation",
+    "lemon",
+    "chilli",
+    "tomato",
+    "onion",
+    "basil",
+    "tulingan",
+    "loin",
+    "head"
+   ]
+  },
+  "eggs": {
+   "name": "Eggs",
+   "base": "ea",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "egg"
+    ]
+   ],
+   "exclude": [
+    "noodle",
+    "mayo",
+    "mayonnaise",
+    "chocolate",
+    "easter",
+    "custard",
+    "pasta",
+    "free from",
+    "white",
+    "yolk",
+    "substitute",
+    "replacer",
+    "roll",
+    "sandwich",
+    "salad",
+    "bun",
+    "bread",
+    "pie",
+    "tart",
+    "muffin",
+    "cake",
+    "wrap",
+    "sushi",
+    "omelette",
+    "plant",
+    "vegan",
+    "boiled",
+    "hard",
+    "pickled",
+    "cadbury",
+    "cream",
+    "ring"
+   ]
+  },
+  "milk": {
+   "name": "Milk",
+   "base": "ml",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "milk"
+    ]
+   ],
+   "exclude": [
+    "powder",
+    "chocolate",
+    "condensed",
+    "evaporated",
+    "coconut",
+    "almond",
+    "oat",
+    "soy",
+    "rice",
+    "flavoured",
+    "shake",
+    "custard",
+    "yoghurt",
+    "cream",
+    "formula",
+    "hot",
+    "caramel",
+    "strawberry",
+    "banana",
+    "kefir",
+    "bath",
+    "body",
+    "hair",
+    "cat",
+    "dog",
+    "pet",
+    "coffee",
+    "tea",
+    "protein",
+    "oreo",
+    "bar",
+    "biscuit",
+    "cereal",
+    "pudding",
+    "soup",
+    "bottle"
+   ]
+  },
+  "butter": {
+   "name": "Butter",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "tbsp": 14,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "butter"
+    ]
+   ],
+   "exclude": [
+    "peanut",
+    "almond",
+    "cashew",
+    "chicken",
+    "cookie",
+    "biscuit",
+    "popcorn",
+    "garlic",
+    "shea",
+    "cocoa",
+    "body",
+    "nut",
+    "seed",
+    "croissant",
+    "cracker",
+    "chip",
+    "crisp",
+    "cream",
+    "lip",
+    "bean",
+    "cup",
+    "beer",
+    "pastry",
+    "toffee",
+    "shortbread",
+    "drops",
+    "menthol",
+    "cheese",
+    "cucumber"
+   ]
+  },
+  "cream": {
+   "name": "Cream",
+   "base": "ml",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "cream"
+    ]
+   ],
+   "exclude": [
+    "sour",
+    "ice",
+    "cheese",
+    "coconut",
+    "hand",
+    "body",
+    "face",
+    "skin",
+    "soup",
+    "custard",
+    "cake",
+    "biscuit",
+    "cracker",
+    "corn",
+    "creamed",
+    "dessert",
+    "dressing",
+    "liqueur",
+    "baileys",
+    "mushroom",
+    "chicken",
+    "sauce",
+    "tartar",
+    "wafer",
+    "cookie",
+    "oreo",
+    "cleanser",
+    "moisturiser",
+    "sun",
+    "tomato",
+    "pasta",
+    "hair",
+    "treatment",
+    "emollient",
+    "eye",
+    "night",
+    "foot",
+    "nappy",
+    "barrier",
+    "strawberries",
+    "soda",
+    "reduced",
+    "energy",
+    "repair",
+    "shaving",
+    "cleansing",
+    "soy",
+    "soya"
+   ]
+  },
+  "cheese": {
+   "name": "Tasty cheese",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "cheese"
+    ],
+    [
+     "tasty",
+     "cheddar",
+     "colby",
+     "mild",
+     "mature",
+     "grated",
+     "shredded"
+    ]
+   ],
+   "exclude": [
+    "cream",
+    "cottage",
+    "feta",
+    "slice",
+    "cracker",
+    "biscuit",
+    "sauce",
+    "dip",
+    "spread",
+    "chip",
+    "puff",
+    "string",
+    "kid",
+    "cauliflower",
+    "macaroni",
+    "toastie",
+    "pizza",
+    "bun",
+    "bread",
+    "scone",
+    "twist",
+    "snack",
+    "popcorn",
+    "sausage",
+    "pie",
+    "mac",
+    "kit",
+    "vegan",
+    "plant",
+    "alternative",
+    "dairy free",
+    "parmesan",
+    "mozzarella",
+    "gouda"
+   ]
+  },
+  "mozzarella": {
+   "name": "Mozzarella",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "mozzarella"
+    ]
+   ],
+   "exclude": [
+    "pizza",
+    "stick",
+    "bite",
+    "cracker",
+    "chip",
+    "burger",
+    "sauce",
+    "vegan",
+    "plant",
+    "pasta",
+    "dairy free"
+   ]
+  },
+  "parmesan": {
+   "name": "Parmesan",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "parmesan",
+     "parmigiano"
+    ]
+   ],
+   "exclude": [
+    "crumb",
+    "chip",
+    "crisp",
+    "cracker",
+    "pasta",
+    "sauce",
+    "crumbed",
+    "dressing",
+    "caesar",
+    "salad",
+    "kit",
+    "chicken",
+    "bread",
+    "vegan"
+   ]
+  },
+  "yoghurt": {
+   "name": "Plain yoghurt",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "yoghurt",
+     "yogurt"
+    ],
+    [
+     "natural",
+     "plain",
+     "greek",
+     "unsweetened"
+    ]
+   ],
+   "exclude": [
+    "drink",
+    "fruit",
+    "vanilla",
+    "chocolate",
+    "strawberry",
+    "frozen",
+    "coconut",
+    "dairy free",
+    "plant",
+    "kids",
+    "pouch",
+    "tube",
+    "berries",
+    "berry",
+    "mango",
+    "passionfruit",
+    "choc",
+    "sundae",
+    "honey",
+    "apricot",
+    "peach",
+    "lemon",
+    "caramel",
+    "splitz",
+    "churro",
+    "cookie",
+    "bits"
+   ]
+  },
+  "onion": {
+   "name": "Onions",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "each": 150
+   },
+   "include": [
+    [
+     "onion"
+    ]
+   ],
+   "exclude": [
+    "spring",
+    "pickled",
+    "pickle",
+    "ring",
+    "soup",
+    "dip",
+    "dried",
+    "powder",
+    "salt",
+    "flake",
+    "crispy",
+    "fried",
+    "jam",
+    "relish",
+    "chip",
+    "crisp",
+    "chutney",
+    "stuffing",
+    "sauce",
+    "gravy",
+    "bhaji",
+    "pie",
+    "gherkin",
+    "cocktail",
+    "cracker",
+    "sausage",
+    "seasoning",
+    "mix",
+    "cheese",
+    "bagel",
+    "dressing",
+    "chive",
+    "marmalade"
+   ],
+   "fresh": true
+  },
+  "garlic": {
+   "name": "Garlic",
+   "base": "ea",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "clove": 0.1
+   },
+   "include": [
+    [
+     "garlic"
+    ]
+   ],
+   "exclude": [
+    "bread",
+    "butter",
+    "sauce",
+    "powder",
+    "salt",
+    "granule",
+    "minced",
+    "paste",
+    "crushed",
+    "chip",
+    "naan",
+    "prawn",
+    "dressing",
+    "mayo",
+    "aioli",
+    "oil",
+    "pizza",
+    "chicken",
+    "mushroom",
+    "baguette",
+    "stick",
+    "flakes",
+    "dip",
+    "seasoning",
+    "crouton",
+    "prawns",
+    "sausage",
+    "olive",
+    "kiev",
+    "herb",
+    "pepper",
+    "chive",
+    "sprout"
+   ],
+   "fresh": true
+  },
+  "potato": {
+   "name": "Potatoes",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "each": 180
+   },
+   "include": [
+    [
+     "potato"
+    ]
+   ],
+   "exclude": [
+    "chip",
+    "crisp",
+    "wedge",
+    "fries",
+    "mash",
+    "salad",
+    "gnocchi",
+    "bake",
+    "scallop",
+    "hash",
+    "starch",
+    "flour",
+    "bread",
+    "rosti",
+    "croquette",
+    "topped",
+    "waffle",
+    "gratin",
+    "snack",
+    "puff",
+    "stick",
+    "sweet",
+    "soup",
+    "dauphinoise",
+    "roast",
+    "seasoning",
+    "cheese",
+    "boiled",
+    "baby",
+    "parmesan",
+    "garlic"
+   ],
+   "fresh": true
+  },
+  "pumpkin": {
+   "name": "Pumpkin",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "pumpkin"
+    ]
+   ],
+   "exclude": [
+    "soup",
+    "seed",
+    "pie",
+    "scone",
+    "chip",
+    "crisp",
+    "pastry",
+    "bread",
+    "puree",
+    "pasta",
+    "spice",
+    "loaf",
+    "muffin",
+    "sauce"
+   ],
+   "fresh": true
+  },
+  "carrot": {
+   "name": "Carrots",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "each": 100
+   },
+   "include": [
+    [
+     "carrot"
+    ]
+   ],
+   "exclude": [
+    "cake",
+    "juice",
+    "soup",
+    "chip",
+    "cracker",
+    "dog",
+    "sauce",
+    "pea",
+    "mixed",
+    "ginger",
+    "muffin",
+    "salad",
+    "pickled",
+    "stick",
+    "baby food",
+    "slaw",
+    "puree",
+    "snack"
+   ],
+   "fresh": true
+  },
+  "broccoli": {
+   "name": "Broccoli",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "each": 350
+   },
+   "include": [
+    [
+     "broccoli"
+    ]
+   ],
+   "exclude": [
+    "soup",
+    "cheese",
+    "pasta",
+    "bake",
+    "cauli",
+    "slaw",
+    "salad",
+    "stir",
+    "kit",
+    "mix",
+    "mixed",
+    "sprout",
+    "microgreen",
+    "baby food",
+    "pizza",
+    "dip",
+    "chip",
+    "sauce"
+   ],
+   "fresh": true
+  },
+  "mushroom": {
+   "name": "Mushrooms",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "mushroom"
+    ]
+   ],
+   "exclude": [
+    "soup",
+    "sauce",
+    "pasta",
+    "chicken",
+    "stock",
+    "risotto",
+    "pie",
+    "pate",
+    "dried",
+    "ketchup",
+    "burger",
+    "gravy",
+    "stuffed",
+    "pizza",
+    "dip",
+    "flavour",
+    "seasoning",
+    "noodle",
+    "mix",
+    "bacon",
+    "cheese",
+    "beef",
+    "garlic",
+    "po ku",
+    "pork",
+    "leg",
+    "bun",
+    "vegan"
+   ],
+   "fresh": true
+  },
+  "spinach": {
+   "name": "Baby spinach",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "spinach"
+    ]
+   ],
+   "exclude": [
+    "pie",
+    "dip",
+    "ricotta",
+    "feta",
+    "roll",
+    "pastry",
+    "pasta",
+    "soup",
+    "sauce",
+    "wrap",
+    "bun",
+    "bread",
+    "pizza",
+    "naan",
+    "cake",
+    "kit",
+    "frozen"
+   ],
+   "fresh": true
+  },
+  "capsicum": {
+   "name": "Capsicum",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "each": 200
+   },
+   "include": [
+    [
+     "capsicum"
+    ]
+   ],
+   "exclude": [
+    "chilli",
+    "sauce",
+    "pickled",
+    "roasted",
+    "dip",
+    "relish",
+    "jar",
+    "pesto",
+    "antipasti",
+    "hummus",
+    "stuffed",
+    "paste",
+    "soup",
+    "pasta",
+    "spread",
+    "mix",
+    "stir",
+    "kit",
+    "seasoning",
+    "bean",
+    "chip",
+    "salsa"
+   ],
+   "fresh": true
+  },
+  "tomato-fresh": {
+   "name": "Fresh tomatoes",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "each": 130
+   },
+   "include": [
+    [
+     "tomato"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "paste",
+    "can",
+    "canned",
+    "tin",
+    "diced",
+    "chopped",
+    "crushed",
+    "sun",
+    "dried",
+    "puree",
+    "ketchup",
+    "soup",
+    "relish",
+    "chutney",
+    "juice",
+    "pasta",
+    "bolognese",
+    "salsa",
+    "passata",
+    "pesto",
+    "dip",
+    "chip",
+    "seasoning",
+    "bread",
+    "seed",
+    "plant",
+    "bruschetta",
+    "spread",
+    "sachet",
+    "jar",
+    "stir",
+    "mix",
+    "mixed",
+    "bean"
+   ],
+   "fresh": true
+  },
+  "zucchini": {
+   "name": "Zucchini",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "each": 200
+   },
+   "include": [
+    [
+     "zucchini",
+     "courgette"
+    ]
+   ],
+   "exclude": [
+    "fritter",
+    "chip",
+    "pasta",
+    "noodle",
+    "slice",
+    "bake",
+    "spiral",
+    "soup",
+    "stir",
+    "kit",
+    "mix",
+    "mixed",
+    "pizza",
+    "sauce",
+    "relish"
+   ],
+   "fresh": true
+  },
+  "frozen-peas": {
+   "name": "Frozen peas",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "pea"
+    ],
+    [
+     "frozen"
+    ]
+   ],
+   "exclude": [
+    "corn",
+    "carrot",
+    "mixed",
+    "pasta",
+    "mushy",
+    "wasabi",
+    "snow",
+    "sugar",
+    "snap",
+    "chick",
+    "split",
+    "meal",
+    "pie",
+    "kit",
+    "risotto",
+    "rice"
+   ]
+  },
+  "frozen-mixed-veg": {
+   "name": "Frozen mixed vegetables",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "mixed",
+     "stir",
+     "stirfry"
+    ],
+    [
+     "vegetable",
+     "veg"
+    ],
+    [
+     "frozen"
+    ]
+   ],
+   "exclude": [
+    "juice",
+    "pasta",
+    "pie",
+    "meal",
+    "kit",
+    "rice",
+    "noodle",
+    "sauce",
+    "soup",
+    "fritter",
+    "burger",
+    "patty",
+    "samosa",
+    "bake"
+   ]
+  },
+  "lettuce": {
+   "name": "Lettuce",
+   "base": "ea",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "lettuce",
+     "cos",
+     "romaine"
+    ]
+   ],
+   "exclude": [
+    "dressing",
+    "kit",
+    "caesar",
+    "burger",
+    "wrap",
+    "sandwich",
+    "salad",
+    "seed",
+    "plant",
+    "mix",
+    "mixed",
+    "chicken",
+    "sauce"
+   ],
+   "fresh": true
+  },
+  "avocado": {
+   "name": "Avocado",
+   "base": "ea",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "avocado"
+    ]
+   ],
+   "exclude": [
+    "oil",
+    "dip",
+    "guacamole",
+    "spread",
+    "toast",
+    "salsa",
+    "hummus",
+    "dressing",
+    "smash",
+    "mash",
+    "mayo",
+    "body",
+    "hair",
+    "wrap",
+    "sushi",
+    "pasta",
+    "chip",
+    "crisp",
+    "salad",
+    "frozen",
+    "pulp",
+    "face",
+    "skin",
+    "lotion",
+    "soap",
+    "shampoo",
+    "cream"
+   ],
+   "fresh": true
+  },
+  "lemon": {
+   "name": "Lemons",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "ea": 120,
+    "each": 120
+   },
+   "include": [
+    [
+     "lemon"
+    ]
+   ],
+   "exclude": [
+    "juice",
+    "curd",
+    "tea",
+    "drink",
+    "cordial",
+    "sorbet",
+    "dressing",
+    "pepper",
+    "chicken",
+    "cleaner",
+    "detergent",
+    "dish",
+    "dishwash",
+    "scent",
+    "cake",
+    "slice",
+    "honey",
+    "ginger",
+    "soda",
+    "sparkling",
+    "water",
+    "wash",
+    "liquid",
+    "spray",
+    "bleach",
+    "gel",
+    "tablet",
+    "biscuit",
+    "lime",
+    "grass",
+    "myrtle",
+    "iced",
+    "balm",
+    "essence",
+    "zest",
+    "peel",
+    "mayonnaise",
+    "salad"
+   ],
+   "fresh": true
+  },
+  "banana": {
+   "name": "Bananas",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "each": 120
+   },
+   "include": [
+    [
+     "banana"
+    ]
+   ],
+   "exclude": [
+    "chip",
+    "bread",
+    "muffin",
+    "yoghurt",
+    "milk",
+    "smoothie",
+    "cake",
+    "bar",
+    "flavour",
+    "baby",
+    "puree",
+    "dried",
+    "split",
+    "choc",
+    "loaf",
+    "pancake",
+    "cereal",
+    "cookie",
+    "lolly",
+    "lollies",
+    "custard",
+    "green",
+    "cooking",
+    "plantain",
+    "cardava"
+   ],
+   "fresh": true,
+   "by_weight": true
+  },
+  "ginger": {
+   "name": "Fresh ginger",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "ginger"
+    ]
+   ],
+   "exclude": [
+    "beer",
+    "ale",
+    "biscuit",
+    "nut",
+    "crystallised",
+    "ground",
+    "powder",
+    "paste",
+    "tea",
+    "cake",
+    "snap",
+    "bread",
+    "gingerbread",
+    "syrup",
+    "shot",
+    "lemon",
+    "honey",
+    "juice",
+    "wine",
+    "brew",
+    "chew",
+    "lolly",
+    "candy",
+    "sweet",
+    "chicken",
+    "pickled",
+    "minced",
+    "crushed",
+    "stem",
+    "flake",
+    "cookie",
+    "kombucha",
+    "drink",
+    "soda",
+    "sachet",
+    "tonic",
+    "mix"
+   ],
+   "fresh": true
+  },
+  "coriander": {
+   "name": "Fresh coriander",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "ea": 30,
+    "each": 30,
+    "bunch": 30
+   },
+   "include": [
+    [
+     "coriander",
+     "cilantro"
+    ]
+   ],
+   "exclude": [
+    "ground",
+    "seed",
+    "powder",
+    "paste",
+    "dressing",
+    "chutney",
+    "lime",
+    "pesto",
+    "dried",
+    "chilli",
+    "sauce",
+    "dip",
+    "chicken",
+    "spice",
+    "mix",
+    "kit",
+    "mixed",
+    "italian",
+    "mixed",
+    "italian",
+    "mixed",
+    "italian",
+    "mixed",
+    "italian",
+    "mixed",
+    "italian"
+   ],
+   "fresh": true
+  },
+  "basil": {
+   "name": "Fresh basil",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "ea": 30,
+    "each": 30,
+    "bunch": 30
+   },
+   "include": [
+    [
+     "basil"
+    ]
+   ],
+   "exclude": [
+    "pesto",
+    "dried",
+    "sauce",
+    "tomato",
+    "pasta",
+    "seed",
+    "oil",
+    "pizza",
+    "flake",
+    "chicken",
+    "dip",
+    "cheese",
+    "vinegar",
+    "mix",
+    "dressing",
+    "mixed",
+    "italian",
+    "mixed",
+    "italian",
+    "mixed",
+    "italian",
+    "mixed",
+    "italian",
+    "mixed",
+    "italian"
+   ],
+   "fresh": true
+  },
+  "olive-oil": {
+   "name": "Olive oil",
+   "base": "ml",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "oil"
+    ],
+    [
+     "olive"
+    ]
+   ],
+   "exclude": [
+    "spray",
+    "tuna",
+    "sardine",
+    "tomato",
+    "dressing",
+    "feta",
+    "hair",
+    "body",
+    "skin",
+    "face",
+    "tapenade",
+    "chip",
+    "mayo",
+    "mayonnaise",
+    "salmon",
+    "anchov",
+    "pasta",
+    "wipes",
+    "soap",
+    "hummus",
+    "bread"
+   ]
+  },
+  "vegetable-oil": {
+   "name": "Vegetable oil",
+   "base": "ml",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "oil"
+    ],
+    [
+     "vegetable",
+     "canola",
+     "sunflower",
+     "rice bran"
+    ]
+   ],
+   "exclude": [
+    "spray",
+    "olive",
+    "hair",
+    "body",
+    "skin",
+    "face",
+    "tuna",
+    "sardine",
+    "mayo",
+    "mayonnaise",
+    "dressing",
+    "cooking spray",
+    "essential",
+    "soap"
+   ]
+  },
+  "soy-sauce": {
+   "name": "Soy sauce",
+   "base": "ml",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "soy"
+    ],
+    [
+     "sauce"
+    ]
+   ],
+   "exclude": [
+    "chip",
+    "noodle",
+    "rice",
+    "cracker",
+    "snack",
+    "chicken",
+    "bean",
+    "milk",
+    "marinade",
+    "kit",
+    "stir",
+    "mix"
+   ]
+  },
+  "salt": {
+   "name": "Salt",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 6,
+    "tbsp": 18,
+    "pinch": 0.4
+   },
+   "include": [
+    [
+     "salt"
+    ]
+   ],
+   "exclude": [
+    "vinegar",
+    "pepper",
+    "caramel",
+    "chip",
+    "popcorn",
+    "bath",
+    "epsom",
+    "dishwasher",
+    "lick",
+    "liquorice",
+    "dessert",
+    "nut",
+    "cracker",
+    "cashew",
+    "almond",
+    "pretzel",
+    "crisp",
+    "bar",
+    "water",
+    "lime",
+    "garlic",
+    "celery",
+    "onion",
+    "scrub",
+    "soak",
+    "salted",
+    "tablet",
+    "dishwash",
+    "chicken",
+    "canned",
+    "no added",
+    "reduced",
+    "crackle",
+    "pork",
+    "cheese",
+    "feta",
+    "butter",
+    "peanut",
+    "fries"
+   ]
+  },
+  "pepper": {
+   "name": "Black pepper",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 2.5,
+    "pinch": 0.3
+   },
+   "include": [
+    [
+     "pepper"
+    ],
+    [
+     "black",
+     "ground",
+     "cracked",
+     "grinder",
+     "peppercorn"
+    ]
+   ],
+   "exclude": [
+    "capsicum",
+    "chilli",
+    "sauce",
+    "cheese",
+    "salami",
+    "spray",
+    "mince",
+    "steak",
+    "mint",
+    "pasta",
+    "bean",
+    "dr",
+    "crisp",
+    "chip",
+    "jack",
+    "snack",
+    "salt",
+    "lemon",
+    "marinade",
+    "dip",
+    "mayo",
+    "cayenne",
+    "crispbread",
+    "salmon",
+    "smoked",
+    "white"
+   ]
+  },
+  "flour": {
+   "name": "Plain flour",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tbsp": 8,
+    "tsp": 3,
+    "cup": 125
+   },
+   "include": [
+    [
+     "flour"
+    ],
+    [
+     "plain",
+     "white",
+     "standard",
+     "wheat",
+     "all"
+    ]
+   ],
+   "exclude": [
+    "bread",
+    "mix",
+    "pasta",
+    "tortilla",
+    "cake",
+    "pancake",
+    "almond",
+    "coconut",
+    "rice",
+    "chickpea",
+    "besan",
+    "buckwheat",
+    "spelt",
+    "rye",
+    "gluten",
+    "self",
+    "raising",
+    "wholemeal",
+    "corn",
+    "pizza",
+    "cookie",
+    "muffin",
+    "scone",
+    "batter",
+    "premix",
+    "kit"
+   ]
+  },
+  "sugar": {
+   "name": "Sugar",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tbsp": 12,
+    "tsp": 4,
+    "cup": 200
+   },
+   "include": [
+    [
+     "sugar"
+    ],
+    [
+     "white",
+     "caster",
+     "raw",
+     "brown"
+    ]
+   ],
+   "exclude": [
+    "free",
+    "syrup",
+    "drink",
+    "cereal",
+    "soda",
+    "lollies",
+    "biscuit",
+    "sweet",
+    "snap",
+    "puff",
+    "icing",
+    "cube",
+    "sweetener",
+    "cinnamon",
+    "vanilla",
+    "bar",
+    "candy",
+    "cane",
+    "pea",
+    "nut",
+    "gum",
+    "pop",
+    "cookie",
+    "chocolate",
+    "jam",
+    "cola",
+    "lolly",
+    "milk",
+    "cake"
+   ]
+  },
+  "baking-powder": {
+   "name": "Baking powder",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 4
+   },
+   "include": [
+    [
+     "baking"
+    ],
+    [
+     "powder"
+    ]
+   ],
+   "exclude": [
+    "soda",
+    "cake",
+    "mix",
+    "cookie",
+    "pancake",
+    "muffin",
+    "biscuit",
+    "cocoa"
+   ]
+  },
+  "cornflour": {
+   "name": "Cornflour",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tbsp": 8,
+    "tsp": 3
+   },
+   "include": [
+    [
+     "cornflour"
+    ]
+   ],
+   "exclude": [
+    "chip",
+    "cereal",
+    "cake",
+    "mix",
+    "porridge",
+    "biscuit",
+    "bar"
+   ]
+  },
+  "rice": {
+   "name": "Rice",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "cup": 190
+   },
+   "include": [
+    [
+     "rice"
+    ],
+    [
+     "long",
+     "basmati",
+     "jasmine",
+     "white",
+     "brown",
+     "grain"
+    ]
+   ],
+   "exclude": [
+    "cake",
+    "cracker",
+    "crisp",
+    "bubble",
+    "pudding",
+    "milk",
+    "noodle",
+    "paper",
+    "flour",
+    "cereal",
+    "bran",
+    "oil",
+    "vinegar",
+    "wine",
+    "krispie",
+    "burrito",
+    "microwave",
+    "pouch",
+    "cup",
+    "sachet",
+    "fried",
+    "pilaf",
+    "flavoured",
+    "seasoned",
+    "meal",
+    "risotto",
+    "snack",
+    "puff",
+    "pop",
+    "bar",
+    "ball",
+    "cooker",
+    "kit",
+    "sushi seasoning",
+    "wrap",
+    "slice"
+   ]
+  },
+  "spaghetti": {
+   "name": "Spaghetti",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "spaghetti"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "can",
+    "canned",
+    "tin",
+    "tinned",
+    "bolognese",
+    "meatball",
+    "meal",
+    "kit",
+    "bake",
+    "tomato",
+    "cheese",
+    "noodle",
+    "wholemeal",
+    "gluten",
+    "squash",
+    "pie",
+    "pot",
+    "microwave",
+    "wattie",
+    "watties",
+    "sausage",
+    "sugar",
+    "cheesy"
+   ]
+  },
+  "penne": {
+   "name": "Penne or macaroni pasta",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "penne",
+     "fusilli",
+     "macaroni",
+     "rigatoni",
+     "spiral"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "can",
+    "canned",
+    "tin",
+    "tinned",
+    "bolognese",
+    "meatball",
+    "meal",
+    "kit",
+    "bake",
+    "tomato",
+    "cheese",
+    "noodle",
+    "gluten",
+    "pie",
+    "pot",
+    "microwave",
+    "mac",
+    "salad",
+    "pesto",
+    "soup"
+   ]
+  },
+  "noodles": {
+   "name": "Egg or hokkien noodles",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "noodle"
+    ],
+    [
+     "egg",
+     "hokkien",
+     "udon",
+     "wheat",
+     "stir"
+    ]
+   ],
+   "exclude": [
+    "instant",
+    "cup",
+    "soup",
+    "pot",
+    "bowl",
+    "flavour",
+    "laksa",
+    "tonkotsu",
+    "kit",
+    "meal",
+    "snack",
+    "cracker",
+    "cake",
+    "crispy",
+    "fried",
+    "sauce",
+    "rice",
+    "mi goreng",
+    "ramen",
+    "chicken",
+    "beef",
+    "satay",
+    "sweet",
+    "chilli"
+   ]
+  },
+  "tomato-can": {
+   "name": "Canned chopped tomatoes",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "can": 400
+   },
+   "include": [
+    [
+     "tomato"
+    ],
+    [
+     "chopped",
+     "diced",
+     "crushed",
+     "peeled",
+     "whole",
+     "tinned",
+     "canned"
+    ]
+   ],
+   "exclude": [
+    "soup",
+    "sauce",
+    "paste",
+    "sun",
+    "dried",
+    "pasta",
+    "bolognese",
+    "salsa",
+    "tomato juice",
+    "ketchup",
+    "relish",
+    "chutney",
+    "seed",
+    "plant",
+    "chilli",
+    "bean",
+    "curry",
+    "stew",
+    "pizza",
+    "passata",
+    "cherry",
+    "pesto",
+    "mince"
+   ]
+  },
+  "tomato-paste": {
+   "name": "Tomato paste",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tbsp": 16,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "tomato"
+    ],
+    [
+     "paste",
+     "puree"
+    ]
+   ],
+   "exclude": [
+    "pizza",
+    "passata",
+    "sun",
+    "dried",
+    "chilli",
+    "garlic",
+    "curry",
+    "sauce",
+    "soup",
+    "seed"
+   ]
+  },
+  "chicken-stock": {
+   "name": "Chicken stock (liquid)",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "cup": 250
+   },
+   "include": [
+    [
+     "stock"
+    ],
+    [
+     "chicken"
+    ]
+   ],
+   "exclude": [
+    "cube",
+    "powder",
+    "pot",
+    "gel",
+    "concentrate",
+    "noodle",
+    "soup",
+    "pie",
+    "bone",
+    "broth",
+    "rice",
+    "dog",
+    "cat",
+    "pet",
+    "tablet",
+    "sachet",
+    "instant",
+    "salt"
+   ]
+  },
+  "coconut-milk": {
+   "name": "Coconut milk",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "coconut"
+    ],
+    [
+     "milk",
+     "cream"
+    ]
+   ],
+   "exclude": [
+    "drink",
+    "yoghurt",
+    "ice",
+    "chocolate",
+    "water",
+    "powder",
+    "bar",
+    "biscuit",
+    "curry",
+    "soup",
+    "sauce",
+    "rice",
+    "kit",
+    "body",
+    "hair",
+    "shampoo",
+    "lotion",
+    "oil",
+    "dessert",
+    "custard",
+    "kefir",
+    "coffee",
+    "tea",
+    "banana",
+    "oat",
+    "almond",
+    "cereal",
+    "smoothie",
+    "cake",
+    "pudding",
+    "bean",
+    "skincare",
+    "face",
+    "skin"
+   ]
+  },
+  "curry-powder": {
+   "name": "Curry powder",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 2.5,
+    "tbsp": 7
+   },
+   "include": [
+    [
+     "curry"
+    ],
+    [
+     "powder"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "paste",
+    "kit",
+    "noodle",
+    "chip",
+    "rice",
+    "meal",
+    "soup",
+    "pot",
+    "cup",
+    "stir",
+    "simmer",
+    "dressing"
+   ]
+  },
+  "garam-masala": {
+   "name": "Garam masala",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 2.5
+   },
+   "include": [
+    [
+     "garam"
+    ],
+    [
+     "masala"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "paste",
+    "kit",
+    "curry",
+    "chip",
+    "rice",
+    "meal",
+    "soup",
+    "pot",
+    "cup",
+    "stir",
+    "simmer",
+    "noodle",
+    "chicken",
+    "tikka",
+    "butter"
+   ]
+  },
+  "ground-cumin": {
+   "name": "Ground cumin",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 2.5
+   },
+   "include": [
+    [
+     "cumin"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "paste",
+    "kit",
+    "seed",
+    "chip",
+    "rice",
+    "meal",
+    "soup",
+    "pot",
+    "stir",
+    "simmer",
+    "noodle",
+    "chicken",
+    "mix",
+    "blend",
+    "taco",
+    "fajita",
+    "seasoning",
+    "gouda",
+    "cheese",
+    "feta",
+    "kumara",
+    "pumpkin"
+   ]
+  },
+  "paprika": {
+   "name": "Paprika",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 2.5
+   },
+   "include": [
+    [
+     "paprika"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "paste",
+    "kit",
+    "chip",
+    "rice",
+    "meal",
+    "soup",
+    "pot",
+    "stir",
+    "simmer",
+    "noodle",
+    "chicken",
+    "mix",
+    "blend",
+    "seasoning",
+    "crisp",
+    "snack",
+    "dip",
+    "hummus",
+    "cracker",
+    "bierstick",
+    "potato"
+   ]
+  },
+  "chilli-powder": {
+   "name": "Chilli powder",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 2.5
+   },
+   "include": [
+    [
+     "chilli",
+     "chili"
+    ],
+    [
+     "powder",
+     "ground"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "paste",
+    "kit",
+    "chip",
+    "rice",
+    "meal",
+    "soup",
+    "pot",
+    "stir",
+    "simmer",
+    "noodle",
+    "chicken",
+    "mix",
+    "blend",
+    "seasoning",
+    "crisp",
+    "snack",
+    "dip",
+    "con carne",
+    "bean"
+   ]
+  },
+  "mixed-herbs": {
+   "name": "Mixed herbs",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tsp": 1.5
+   },
+   "include": [
+    [
+     "herb"
+    ],
+    [
+     "mixed",
+     "italian",
+     "dried"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "paste",
+    "kit",
+    "chip",
+    "rice",
+    "meal",
+    "soup",
+    "pot",
+    "stir",
+    "simmer",
+    "noodle",
+    "chicken",
+    "crisp",
+    "snack",
+    "dip",
+    "bread",
+    "butter",
+    "cracker",
+    "stuffing",
+    "crumb",
+    "garlic",
+    "salt",
+    "tea",
+    "fresh",
+    "parsley",
+    "cut",
+    "sausage",
+    "plant"
+   ]
+  },
+  "honey": {
+   "name": "Honey",
+   "base": "g",
+   "pantry": true,
+   "perishable": false,
+   "units": {
+    "tbsp": 21,
+    "tsp": 7
+   },
+   "include": [
+    [
+     "honey"
+    ]
+   ],
+   "exclude": [
+    "comb",
+    "mustard",
+    "roast",
+    "bbq",
+    "soy",
+    "cereal",
+    "biscuit",
+    "bar",
+    "nut",
+    "peanut",
+    "cracker",
+    "puff",
+    "bun",
+    "bread",
+    "chicken",
+    "ham",
+    "joy",
+    "oat",
+    "granola",
+    "lozenge",
+    "drop",
+    "candy",
+    "cough",
+    "sauce",
+    "dressing",
+    "glaze",
+    "shampoo",
+    "wax",
+    "soother",
+    "lemon",
+    "ginger",
+    "cake",
+    "dew",
+    "yoghurt",
+    "stick",
+    "smash",
+    "mead",
+    "sesame",
+    "smoked",
+    "loops",
+    "pop",
+    "flake",
+    "wheat",
+    "almond",
+    "mask",
+    "cream",
+    "lip",
+    "soap",
+    "body",
+    "hair",
+    "skin",
+    "face",
+    "wash",
+    "balm",
+    "balsamic",
+    "salad",
+    "roasted",
+    "cashew",
+    "hot",
+    "bacon",
+    "cured",
+    "sausage",
+    "pork",
+    "belly",
+    "bite",
+    "waffle",
+    "block"
+   ]
+  },
+  "oats": {
+   "name": "Rolled oats",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "cup": 90
+   },
+   "include": [
+    [
+     "oat"
+    ],
+    [
+     "rolled",
+     "quick",
+     "porridge"
+    ]
+   ],
+   "exclude": [
+    "milk",
+    "bar",
+    "biscuit",
+    "cereal",
+    "crunchy",
+    "muesli",
+    "granola",
+    "flake",
+    "instant",
+    "sachet",
+    "cookie",
+    "cracker",
+    "drink",
+    "cup",
+    "pot",
+    "bran",
+    "bake",
+    "slice",
+    "pancake",
+    "yoghurt",
+    "bite",
+    "ball",
+    "flapjack"
+   ]
+  },
+  "bread": {
+   "name": "Sliced bread",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "slice": 32
+   },
+   "include": [
+    [
+     "bread"
+    ],
+    [
+     "toast",
+     "white",
+     "wholemeal",
+     "sandwich",
+     "multigrain",
+     "sliced",
+     "loaf",
+     "mixed",
+     "toastie"
+    ]
+   ],
+   "exclude": [
+    "crumb",
+    "garlic",
+    "pita",
+    "naan",
+    "wrap",
+    "roll",
+    "bun",
+    "bagel",
+    "crumpet",
+    "flat",
+    "fruit",
+    "raisin",
+    "cheese",
+    "mix",
+    "pudding",
+    "stick",
+    "butter",
+    "sauce",
+    "dough",
+    "gluten",
+    "keto",
+    "flour",
+    "maker",
+    "board",
+    "bin",
+    "basket",
+    "pizza",
+    "rustic",
+    "baguette",
+    "ciabatta",
+    "focaccia",
+    "brioche",
+    "pie",
+    "banana",
+    "scone",
+    "muffin"
+   ]
+  },
+  "tortilla": {
+   "name": "Tortilla wraps",
+   "base": "ea",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "tortilla",
+     "wrap"
+    ]
+   ],
+   "exclude": [
+    "chip",
+    "crisp",
+    "pie",
+    "pizza",
+    "kit",
+    "taco",
+    "shell",
+    "burrito kit",
+    "gluten",
+    "keto",
+    "low carb",
+    "chicken",
+    "beef",
+    "salad",
+    "sandwich",
+    "ham",
+    "lunch",
+    "ready",
+    "food wrap",
+    "cling",
+    "plastic",
+    "bag",
+    "gift",
+    "paper",
+    "foil",
+    "beeswax",
+    "storage",
+    "film",
+    "snap",
+    "boat"
+   ]
+  },
+  "flatbread": {
+   "name": "Flatbread or pita",
+   "base": "ea",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "flatbread",
+     "pita",
+     "naan"
+    ]
+   ],
+   "exclude": [
+    "chip",
+    "crisp",
+    "kit",
+    "garlic",
+    "butter",
+    "chicken",
+    "gluten",
+    "keto",
+    "low carb",
+    "cracker",
+    "pizza",
+    "ready",
+    "cheese",
+    "dipper",
+    "bite",
+    "mini"
+   ]
+  },
+  "burger-buns": {
+   "name": "Burger buns",
+   "base": "ea",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "bun"
+    ],
+    [
+     "burger",
+     "hamburger"
+    ]
+   ],
+   "exclude": [
+    "hot dog",
+    "hotdog",
+    "sausage",
+    "cross",
+    "gluten",
+    "keto",
+    "low carb",
+    "sweet",
+    "patty",
+    "kit",
+    "cheese",
+    "ready",
+    "meal"
+   ]
+  },
+  "kidney-beans": {
+   "name": "Canned kidney beans",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "can": 400
+   },
+   "include": [
+    [
+     "kidney"
+    ],
+    [
+     "bean"
+    ]
+   ],
+   "exclude": [
+    "chilli",
+    "baked",
+    "salad",
+    "mix",
+    "soup",
+    "pasta",
+    "ready",
+    "meal",
+    "dried",
+    "spice",
+    "curry",
+    "stew",
+    "sauce",
+    "tomato",
+    "rice",
+    "burrito"
+   ]
+  },
+  "chickpeas": {
+   "name": "Canned chickpeas",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "can": 400
+   },
+   "include": [
+    [
+     "chickpea"
+    ]
+   ],
+   "exclude": [
+    "hummus",
+    "flour",
+    "chip",
+    "crisp",
+    "snack",
+    "roasted",
+    "falafel",
+    "salad",
+    "dip",
+    "pasta",
+    "curry",
+    "dried",
+    "mix",
+    "spread",
+    "curry",
+    "bean",
+    "soup",
+    "stew",
+    "snacks",
+    "crunch",
+    "puff",
+    "ball",
+    "chocolate",
+    "pot",
+    "sausage",
+    "roll"
+   ]
+  }
+ }
+}

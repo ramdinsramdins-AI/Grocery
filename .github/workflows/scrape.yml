@@ -2,6 +2,8 @@ name: Scrape prices
 
 on:
   schedule:
+    # GitHub cron runs in UTC. These are 6am, 12pm and 6pm New Zealand daylight time (UTC+13).
+    # In winter (UTC+12) they land an hour earlier, which does not matter for prices.
     - cron: "0 17,23,5 * * *"
   workflow_dispatch: {}
 
@@ -17,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install requests

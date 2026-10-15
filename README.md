@@ -66,3 +66,13 @@ To look at it locally: `cd docs && python3 -m http.server 8000`, then open http:
 - **Prices vary by store.** Each run uses one New World and one PAK'nSAVE store (set `store_id` in `config.json`; the defaults are Papakura). Woolworths prices are whatever its site shows by default. Say which stores the numbers come from on your site.
 - **Matching products across stores.** Pass 1 groups identical brand + name words + size. Pass 2 (fuzzy) merges products with the same pack size and brand whose names are similar, and refuses when a variant word (light, organic, vanilla...) or a number differs. Fuzzy groups are tagged `"_m": "fuzzy"` and the site shows "Check it is the same product". After a scrape run `python scraper.py --match-report` to see match rates per store, sample fuzzy matches and the nearest misses. Barcodes would be better if an API exposes them.
 - **Endpoints can change** without notice. When a store starts returning empty results, run `--probe` again and compare.
+
+## Recipes
+
+`docs/recipes.html` is a second page: pick recipes, set servings, and get one combined shopping list with the cheapest pack sizes and the cheapest store plans.
+
+- `docs/data/recipes.json` holds the recipes (27 so far, original text). Each has ingredients as `{item, qty, unit}` where `item` is an id from `ingredients.json`. Add a photo by setting `photo` (see `docs/photos/README.md`).
+- `ingredients.json` (repo root) says which supermarket products count as each ingredient (`include` groups, `exclude` words, `base` unit g/ml/ea, `units` conversions such as 1 onion = 150 g, `pantry` = assumed owned).
+- The scraper turns those rules into `docs/data/ingredient_products.json` (the pack sizes and prices on sale at each store). The sample file shipped in the repo is replaced on the first real run.
+- The page adds up what the chosen recipes need per ingredient, then finds the cheapest combination of that store's packs that covers it (for example 700 g of chicken with 500 g and 1 kg packs costs 1 x 1 kg, 300 g left over). Items sold loose by weight are priced exactly. It lists leftovers and other recipes that could use them.
+- To review what was picked: `python scraper.py --ingredient-report`. Tests: `python test_ingredients.py` (rules) and `node test_recipes.js` (pack calculator).

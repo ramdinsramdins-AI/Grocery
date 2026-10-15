@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shelf Check NZ</title>
-<meta name="description" content="Compare a grocery list across Woolworths, New World and PAK'nSAVE.">
+<meta name="description" content="Compare a grocery list across Woolworths, New World, PAK'nSAVE and New Gum Sarn.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -42,11 +42,15 @@ input[type=search]{flex:1 1 220px}
 input:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 .toggle{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);cursor:pointer}
 .toggle input{width:18px;height:18px;accent-color:var(--ink)}
+.sortlab{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:8px 10px;border-radius:4px;min-width:0}
+.fz{display:inline-block;margin-top:4px;font-size:12px;color:var(--warn)}
 .count{font-size:13px;color:var(--muted);margin:0 0 10px}
 .row{background:var(--surface);border:1px solid var(--line);padding:12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 14px;margin-bottom:8px}
 .row h3{margin:0;font-size:15px;font-weight:600;overflow-wrap:anywhere}
 .meta{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:2px}
-.prices{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.prices{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (min-width:700px){.prices{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .cell{border:1px solid var(--line);padding:7px 9px;min-width:0;background:var(--surface)}
 .cell.best{background:var(--tag);color:var(--tag-ink);border-color:var(--tag)}
 .cell.na{color:var(--muted);background:var(--soft);border-style:dashed}
@@ -101,7 +105,8 @@ aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;ma
 <header>
   <div>
     <h1>Shelf Check NZ</h1>
-    <p class="sub">Build a grocery list and see the cheapest way to buy it across Woolworths, New World and PAK'nSAVE, with prices per 100g.</p>
+    <p class="sub">Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and New Gum Sarn, with prices per 100g.</p>
+    <a href="recipes.html" style="display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--ink)">Shop by recipe</a>
   </div>
   <div class="status" id="status" role="status">Loading prices...</div>
 </header>
@@ -112,6 +117,8 @@ aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;ma
     <div class="controls">
       <input type="search" id="q" placeholder="Search butter, mince, toilet paper" aria-label="Search products">
       <label class="toggle"><input type="checkbox" id="member"> Use club prices (Everyday Rewards, Clubcard)</label>
+      <label class="toggle"><input type="checkbox" id="specials"> Specials only</label>
+      <label class="sortlab" for="sort">Sort <select id="sort"><option value="name">A to Z</option><option value="unit">Lowest price per 100g / 100ml</option><option value="saving">Biggest saving</option></select></label>
     </div>
     <p class="count" id="count"></p>
     <div id="list"></div>
@@ -126,15 +133,15 @@ aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;ma
   </aside>
 </main>
 
-<p class="foot">Only products found at two or more stores are listed, because those are the ones that can be compared. "Usual" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ.</p>
+<p class="foot">Only products found at two or more stores are listed, because those are the ones that can be compared. "Usual" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only.</p>
 </div>
 
 <script>
-var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE"};
+var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE", newgumsarn:"New Gum Sarn"};
 var KEYS = Object.keys(STORES);
 var PAGE = 40;
 var ITEMS = [], BYKEY = {};
-var state = {q:"", member:false, stop:4, list:{}, sel:null, shown:PAGE, aisle:""};
+var state = {sort:"name", specials:false, q:"", member:false, stop:4, list:{}, sel:null, shown:PAGE, aisle:""};
 try{var saved=JSON.parse(localStorage.getItem("shelfcheck-live")||"null"); if(saved&&saved.list){state.list=saved.list; if(typeof saved.stop==="number")state.stop=saved.stop;}}catch(e){}
 function save(){try{localStorage.setItem("shelfcheck-live",JSON.stringify({list:state.list,stop:state.stop}));}catch(e){}}
 
@@ -153,7 +160,7 @@ function buildItems(groups){
     });
     var name = first.name || "";
     if(first.brand && name.toLowerCase().indexOf(first.brand.toLowerCase())<0) name = first.brand+" "+name;
-    return {id:key, name:name, size:first.size||"", prices:prices, aisle:aisleOf(first.category,name)};
+    return {id:key, name:name, size:first.size||"", prices:prices, aisle:aisleOf(first.category,name), fuzzy:byStore._m==="fuzzy"};
   }).sort(function(a,b){return a.name.localeCompare(b.name);});
   BYKEY = {}; ITEMS.forEach(function(i){BYKEY[i.id]=i;});
   Object.keys(state.list).forEach(function(k){if(!BYKEY[k])delete state.list[k];});
@@ -221,14 +228,33 @@ function dealText(item,k){
   return {cls:"weak",t:"Only "+pct+"% under usual "+money(e[1])};
 }
 
+// biggest saving (0 to 1) across stores: shelf price against the store's own usual price
+function bestSaving(item){
+  var best=0;
+  KEYS.forEach(function(k){var e=item.prices[k],p=priceFor(item,k); if(e&&p!=null&&e[1]>p){var v=1-p/e[1]; if(v>best)best=v;}});
+  return best;
+}
+// lowest price per 100g or 100ml across stores (ml counted like g); items sold per each go last
+function bestUnit(item){
+  var best=Infinity;
+  KEYS.forEach(function(k){var e=item.prices[k],p=priceFor(item,k); if(e&&p!=null&&e[3]!=null&&e[4]!=="ea"){var v=e[3]*p/e[0]; if(v<best)best=v;}});
+  return best;
+}
 function filtered(){
   var words=state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  return ITEMS.filter(function(i){if(state.aisle&&i.aisle!==state.aisle)return false;var n=i.name.toLowerCase();return words.every(function(w){return n.indexOf(w)>-1;});});
+  var rows=ITEMS.filter(function(i){
+    if(state.aisle&&i.aisle!==state.aisle)return false;
+    if(state.specials&&bestSaving(i)<=0)return false;
+    var n=i.name.toLowerCase();return words.every(function(w){return n.indexOf(w)>-1;});
+  });
+  if(state.sort==="unit"){var u={};rows.forEach(function(i){u[i.id]=bestUnit(i);});rows.sort(function(a,b){return u[a.id]-u[b.id]||a.name.localeCompare(b.name);});}
+  else if(state.sort==="saving"){var sv={};rows.forEach(function(i){sv[i.id]=bestSaving(i);});rows.sort(function(a,b){return sv[b.id]-sv[a.id]||a.name.localeCompare(b.name);});}
+  return rows;
 }
 
 function renderList(){
   var rows=filtered(), shown=rows.slice(0,state.shown);
-  document.getElementById("count").textContent = rows.length ? (rows.length+" product"+(rows.length===1?"":"s")+" at 2 or more stores") : "";
+  document.getElementById("count").textContent = rows.length ? (rows.length+" product"+(rows.length===1?"":"s")+(state.specials?" on special":" at 2 or more stores")) : "";
   if(!rows.length){
     document.getElementById("list").innerHTML='<p class="empty">'+(ITEMS.length?'No products match. Try a shorter search or another aisle.':'No comparable products yet.')+'</p>';
     return;
@@ -243,7 +269,7 @@ function renderList(){
       return '<div class="cell'+(p===min?' best':'')+'"><div class="st">'+esc(STORES[k])+'</div><div class="pr">'+money(p)+'</div><div class="un">'+esc(unitLabel(i,k,p))+'</div>'+(d?'<div class="dl '+d.cls+'">'+esc(d.t)+'</div>':'')+'</div>';
     }).join("");
     var inList=state.list[i.id];
-    return '<article class="row"><div><h3>'+esc(i.name)+'</h3><div class="meta">'+esc(i.size)+'</div></div><button class="btn'+(inList?' in':'')+'" data-add="'+enc(i.id)+'">'+(inList?'In list ('+inList+')':'Add')+'</button><div class="prices">'+cells+'</div></article>';
+    return '<article class="row"><div><h3>'+esc(i.name)+'</h3><div class="meta">'+esc(i.size)+'</div>'+(i.fuzzy?'<div class="fz">Matched by name and size. Check it is the same product.</div>':'')+'</div><button class="btn'+(inList?' in':'')+'" data-add="'+enc(i.id)+'">'+(inList?'In list ('+inList+')':'Add')+'</button><div class="prices">'+cells+'</div></article>';
   }).join("");
   if(rows.length>shown.length) html+='<button class="btn more" data-more="1">Show more ('+(rows.length-shown.length)+' left)</button>';
   document.getElementById("list").innerHTML=html;
@@ -274,7 +300,7 @@ function plans(){
     var a=assign([KEYS[x],KEYS[y]]); if(a&&a.stores===2&&(!pairBest||a.total<pairBest.total))pairBest=a;
   }
   if(pairBest)out.push({id:"two",name:"Two stores: "+Object.keys(pairBest.by).map(function(k){return STORES[k];}).join(" + "),a:pairBest,note:""});
-  var all=assign(KEYS); if(all&&all.stores===3)out.push({id:"three",name:"Cheapest at all three",a:all,note:""});
+  var all=assign(KEYS); if(all&&all.stores>=3)out.push({id:"all",name:"Cheapest across "+all.stores+" stores",a:all,note:""});
   out.forEach(function(p){
     p.net=p.a.total+(p.a.stores-1)*state.stop;
     p.note=(p.note?p.note+" ":"")+(p.a.stores>1?(p.a.stores-1)+" extra stop"+(p.a.stores>2?"s":"")+" at "+money(state.stop)+" each: "+money(p.net)+" all in.":"");
@@ -293,7 +319,7 @@ function renderBasket(){
   el.innerHTML=ids.map(function(id){var i=BYKEY[id];return '<li><span>'+esc(i.name)+'</span><span class="qty"><button data-dec="'+enc(id)+'" aria-label="Fewer '+esc(i.name)+'">-</button>'+state.list[id]+'<button data-inc="'+enc(id)+'" aria-label="More '+esc(i.name)+'">+</button></span></li>';}).join("");
   var ps=plans();
   if(!ps.length){
-    document.getElementById("plans").innerHTML='<p class="empty">No combination of these three stores has everything on your list. Remove an item that shows "Not found" at a store to compare.</p>';
+    document.getElementById("plans").innerHTML='<p class="empty">No combination of these stores has everything on your list. Remove an item that shows "Not found" at a store to compare.</p>';
     document.getElementById("bk").innerHTML="";return;
   }
   var rec=ps.filter(function(p){return p.rec;})[0];
@@ -330,7 +356,9 @@ function showError(msg){
 }
 
 document.getElementById("q").addEventListener("input",function(e){state.q=e.target.value;state.shown=PAGE;renderList();});
-document.getElementById("member").addEventListener("change",function(e){state.member=e.target.checked;renderAll();});
+document.getElementById("specials").addEventListener("change",function(e){state.specials=e.target.checked;state.shown=PAGE;renderList();});
+document.getElementById("sort").addEventListener("change",function(e){state.sort=e.target.value;state.shown=PAGE;renderList();});
+document.getElementById("member").addEventListener("change",function(e){state.member=e.target.checked;state.shown=PAGE;renderAll();});
 document.getElementById("stopCost").value=state.stop;
 document.getElementById("stopCost").addEventListener("input",function(e){var v=parseFloat(e.target.value);state.stop=isNaN(v)||v<0?0:v;save();renderBasket();});
 document.addEventListener("click",function(e){

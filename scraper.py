@@ -257,6 +257,10 @@ def foodstuffs_parse(store, payload, category=None):
                     club = reward / 100
                 else:
                     was, price = price, reward / 100
+        # loose produce comes as size "kg" (price per kg) or "ea" with no comparative price; derive one
+        unit = str(p.get("displayName") or "").strip().lower()
+        if not cup and unit in ("kg", "ea"):
+            cup = f"${price}/{unit}"
         out.append(make_record(
             store, p.get("productId"), p.get("name"), p.get("brand"), p.get("displayName"),
             price, was, club, cup, category))
@@ -423,6 +427,8 @@ _SIZE_IN_NAME = re.compile(r"\b\d+(?:\.\d+)?\s*(?:kg|g|ml|l|ltr|pk|pack|ea|each)
 
 
 def _stem(w):
+    if w.endswith("oes") and len(w) > 4:      # potatoes -> potato, tomatoes -> tomato
+        return w[:-2]
     return w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w
 
 
@@ -566,6 +572,173 @@ def match_report(top=15):
         print(f"  [{r['store']}] {r.get('brand') or ''} {r['name']} {r.get('size') or ''} (brand key {f['brand'] or '-'}) -> {near}")
 
 
+# ---------------------------------------------------------------- recipe ingredients -> products
+# ingredients.json (repo root) says which supermarket products count as "chicken breast", "plain flour", and so on.
+# The scraper writes docs/data/ingredient_products.json: for each ingredient and store, the pack sizes on sale, which the
+# recipe page uses to work out the cheapest packs that cover what the chosen recipes need.
+INGREDIENTS = ROOT / "ingredients.json"
+MAX_PACKS_PER_STORE = 6
+
+
+# Store aisles that never hold a cooking ingredient (Foodstuffs top-level names, New Gum Sarn sub-categories).
+NOT_FOOD_AISLE = re.compile(r"^(pets|baby & toddler|health & body|household & cleaning|homewares|beer, wine & cider)$"
+                            r"|soap|dental|cough|massage|remed|insecticide|stomach|laundry|liner|cleaning|candle|incense", re.I)
+# Words that mark a product as something made from the ingredient, or not food at all. Applies to every ingredient
+# except where the ingredient's own include rule asks for the word (noodles may say "noodle", soy sauce "sauce").
+NOT_INGREDIENT = [
+    "sunscreen", "razor", "blade", "liner", "pod", "lozenge", "supplement", "tablet", "capsule", "vitamin", "shampoo",
+    "conditioner", "lotion", "moisturiser", "deodorant", "wipe", "detergent", "dishwasher", "cleaner", "beauty",
+    "bb cream", "day cream", "shave", "cat food", "dog food", "puppy", "kitten", "months", "kindy", "baby food",
+    "pizza", "pie", "quiche", "tortellini", "tortelloni", "ravioli", "risotto", "lasagne", "soup", "chowder", "meal",
+    "hummus", "dip", "chip", "crisp", "cracker", "biscuit", "pretzel", "popcorn", "chocolate", "donut", "muffin",
+    "cake", "kombucha", "drink", "smoothie", "shake", "cordial", "syrup", "lolly", "lollies", "candy",
+    "bar", "popper", "falafel", "focaccia", "wrap", "bun", "sauce", "paste", "powder", "seasoning", "stock", "cube",
+    "spread", "pate", "dressing", "mayo", "mayonnaise", "fries", "relish", "chutney", "jam", "pickle", "pickled", "salsa", "pesto",
+    "marinade", "gravy", "flavour", "flavoured", "mix", "kit", "sachet", "instant", "snack", "cereal", "muesli",
+    "granola", "sushi", "yoghurt", "yogurt", "milk", "evaporated", "stix", "stick", "cone",
+]
+FRESH_AISLE = {"fruit & vegetables"}   # New Gum Sarn's "Vegetables" and "Fruit" are canned and frozen goods
+WOOLWORTHS_FRESH = re.compile(r"\bfresh (?:fruit|vegetable|herb|salad)\b|^(?:fresh|the odd bunch|the fresh grower)$")
+
+
+def _has_term(term, words, text):
+    t = term.lower().replace("'", "")
+    return (t in text) if " " in t else (_stem(t) in words)
+
+
+def _in_fresh_aisle(rec):
+    cat = str(rec.get("category") or "").lower()
+    if cat and cat not in ("uploaded", "fixture"):
+        return cat in FRESH_AISLE
+    # Woolworths data has no aisle, but its produce is branded "fresh vegetable", "fresh fruit" and so on
+    return bool(WOOLWORTHS_FRESH.search(str(rec.get("name") or "").lower())
+                or WOOLWORTHS_FRESH.search(str(rec.get("brand") or "").lower()))
+
+
+def _ingredient_match(rec, spec):
+    if NOT_FOOD_AISLE.search(str(rec.get("category") or "")):
+        return False
+    if spec.get("fresh") and not _in_fresh_aisle(rec):
+        return False
+    words = {_stem(w) for w in _words(f"{rec.get('name') or ''} {rec.get('brand') or ''}")}
+    text = " ".join(_words(f"{rec.get('name') or ''} {rec.get('brand') or ''}"))
+    asked = {_stem(t.lower()) for group in spec.get("include", []) for t in group}
+    shared = [x for x in NOT_INGREDIENT if _stem(x) not in asked]
+    if any(_has_term(x, words, text) for x in spec.get("exclude", []) + shared):
+        return False
+    return all(any(_has_term(alt, words, text) for alt in group) for group in spec.get("include", []))
+
+
+def _ingredient_pack(rec, spec):
+    """(amount in the ingredient's base unit, loose?) for one product, or None when it cannot be used."""
+    base = spec["base"]
+    each = None if spec.get("by_weight") else (spec.get("units") or {}).get("each")
+    basis, up = rec.get("unit_basis"), rec.get("unit_price")
+    if "min order" in str(rec.get("size") or "").lower():   # Woolworths by-weight items: the price is per kg
+        return (100, True) if base in ("g", "ml") and basis == "100" + base and up else None
+    size = parse_size(rec.get("size")) or parse_size(rec.get("name"))
+    if size:
+        qty, unit = size
+        if unit == base:
+            return (qty, False)
+        if unit == "ea" and base in ("g", "ml") and each:
+            return (qty * each, False)
+        return None
+    if base in ("g", "ml") and basis == "100" + base and up:
+        return (100, True)                      # sold loose by weight: priced per 100 g, any amount can be bought
+    text = f"{rec.get('size') or ''} {rec.get('name') or ''}".lower()
+    if basis == "ea" or re.search(r"\b(each|ea)\b", text):
+        if base == "ea":
+            return (1, False)
+        if base == "g" and each:
+            return (each, False)
+    return None
+
+
+def _display_name(rec):
+    name = str(rec.get("name") or "").strip()
+    brand = str(rec.get("brand") or "").strip()
+    if brand and brand.lower() not in name.lower():
+        name = f"{brand} {name}"
+    size = str(rec.get("size") or "").strip()
+    if size and size.lower() not in name.lower():
+        name = f"{name} {size}"
+    return name
+
+
+def ingredient_candidates(rows, spec):
+    """{store: [pack, ...]} for one ingredient. A pack is {n, q, p, c, w, u, l}: name, amount, price, club, was, url, loose."""
+    by_store = {}
+    for r in rows:
+        if not _ingredient_match(r, spec):
+            continue
+        pack = _ingredient_pack(r, spec)
+        if not pack or pack[0] <= 0:
+            continue
+        qty, loose = pack
+        price = r["unit_price"] if loose else r["price"]
+        club = None if loose else r.get("club")
+        was = None if loose else r.get("was")
+        c = {"n": _display_name(r), "q": qty, "p": round(price, 4 if loose else 2), "c": club, "w": was, "u": r.get("url"), "l": 1 if loose else 0}
+        mo = re.search(r"min order\s*(.+)", str(r.get("size") or ""), re.I) if loose else None
+        least = parse_size(mo.group(1)) if mo else None
+        if least and least[1] == spec["base"]:
+            c["m"] = least[0]                    # Woolworths "min order 1.8kg": by weight, but at least this much
+        by_store.setdefault(r["store"], []).append(c)
+    out = {}
+    for store, packs in by_store.items():
+        per = lambda c: c["p"] / (100 if c["l"] else c["q"])
+        if len(packs) >= 3:                      # drop products priced far from the typical one: usually a wrong match
+            costs = sorted(per(c) for c in packs)
+            med = costs[len(costs) // 2]
+            # the low bound is loose: raw produce sold by weight is often a fifth of the price of the cut, snack-size packs
+            packs = [c for c in packs if 0.15 * med <= per(c) <= 3 * med]
+        loose = sorted((c for c in packs if c["l"]), key=lambda c: c["p"])
+        loose_best = loose[:1]
+        if loose and loose[0].get("m"):          # cheapest has a minimum order: also keep the cheapest that has none
+            loose_best += [c for c in loose if not c.get("m")][:1]
+        cheapest = {}
+        for c in packs:
+            if not c["l"] and (c["q"] not in cheapest or c["p"] < cheapest[c["q"]]["p"]):
+                cheapest[c["q"]] = c
+        kept = sorted(cheapest.values(), key=per)[:MAX_PACKS_PER_STORE]
+        if cheapest:
+            smallest = cheapest[min(cheapest)]
+            if smallest not in kept:
+                kept.append(smallest)
+        out[store] = loose_best + sorted(kept, key=lambda c: c["q"])
+    return out
+
+
+def build_ingredient_products(rows, now, store_times=None):
+    cat = load_json(INGREDIENTS, None)
+    if not cat:
+        return None
+    ings = {}
+    for iid, spec in cat["ingredients"].items():
+        ings[iid] = {"name": spec["name"], "base": spec["base"], "pantry": spec.get("pantry", False),
+                     "perishable": spec.get("perishable", False), "units": spec.get("units", {}),
+                     "stores": ingredient_candidates(rows, spec)}
+    DATA.mkdir(parents=True, exist_ok=True)
+    (DATA / "ingredient_products.json").write_text(json.dumps({"generated_at": now, "store_times": store_times or {}, "ingredients": ings}, separators=(",", ":")))
+    return ings
+
+
+def ingredient_report():
+    """Print, for every recipe ingredient, what the scraper picked at each store. Run: python scraper.py --ingredient-report"""
+    data = load_json(DATA / "latest.json", {"products": []})
+    ings = build_ingredient_products(data.get("products", []), data.get("generated_at", ""))
+    if ings is None:
+        print("ingredients.json not found")
+        return
+    for iid, v in ings.items():
+        print(f"\n{v['name']} ({iid}, base {v['base']})")
+        if not v["stores"]:
+            print("  NO PRODUCTS FOUND at any store: check the rules in ingredients.json")
+        for store, packs in v["stores"].items():
+            print(f"  {store}: " + "; ".join(f"{c['n']} = ${c['p']:.2f}" + (" per 100" if c["l"] else f" for {c['q']:g}") for c in packs))
+
+
 def write_outputs(records, now, store_times=None):
     DATA.mkdir(parents=True, exist_ok=True)
     prev = load_json(DATA / "latest.json", {"products": []})
@@ -598,6 +771,13 @@ def write_outputs(records, now, store_times=None):
           f"{sum(1 for g in compare.values() if g['_m'] == 'fuzzy')} fuzzy groups", file=sys.stderr)
     (DATA / "compare.json").write_text(json.dumps({"generated_at": now, "stores_scraped_this_run": sorted(scraped_stores),
                     "store_times": store_times or {}, "groups": compare}, separators=(",", ":")))
+    try:
+        ings = build_ingredient_products(all_rows, now, store_times)
+        if ings is not None:
+            found = sum(1 for v in ings.values() if v["stores"])
+            print(f"  recipe ingredients: products found for {found} of {len(ings)}", file=sys.stderr)
+    except Exception as e:   # recipes are optional: never lose the price data because of them
+        print(f"  recipe ingredient step failed: {e!r}", file=sys.stderr)
     return len(all_rows), len(changes), len(compare)
 
 
@@ -606,11 +786,15 @@ def main():
     ap.add_argument("--store", choices=["woolworths", "newworld", "paknsave", "newgumsarn"])
     ap.add_argument("--probe", choices=["woolworths", "newworld", "paknsave", "newgumsarn"])
     ap.add_argument("--match-report", action="store_true", help="show how well products match across stores, from the last scrape")
+    ap.add_argument("--ingredient-report", action="store_true", help="show which products were picked for each recipe ingredient")
     ap.add_argument("--fixture", help="directory of saved raw responses (<store>.json) for an offline run")
     args = ap.parse_args()
 
     if args.match_report:
         match_report()
+        return
+    if args.ingredient_report:
+        ingredient_report()
         return
 
     cfg = json.loads((ROOT / "config.json").read_text())

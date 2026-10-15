@@ -1,0 +1,1956 @@
+{
+ "note": "Original recipes. Quantities are for the stated number of servings. 'photo' is a path inside docs/, e.g. photos/butter-chicken.jpg. Leave it null for a placeholder.",
+ "recipes": [
+  {
+   "id": "butter-chicken",
+   "name": "Butter chicken with rice",
+   "minutes": 45,
+   "serves": 4,
+   "tags": [
+    "chicken",
+    "dinner",
+    "curry"
+   ],
+   "blurb": "A mild, creamy curry that is easy to make with pantry spices.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-thigh",
+     "qty": 700,
+     "unit": "g",
+     "note": "cut into chunks"
+    },
+    {
+     "item": "butter",
+     "qty": 40,
+     "unit": "g"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "finely diced"
+    },
+    {
+     "item": "garlic",
+     "qty": 4,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "ginger",
+     "qty": 15,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "curry-powder",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "garam-masala",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "tomato-can",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "cream",
+     "qty": 200,
+     "unit": "ml"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then cook it in twice its volume of water with a pinch of salt until tender, about 12 minutes. Keep covered.",
+    "Melt the butter in a large deep pan over medium heat. Cook the onion for 5 minutes until soft, then add the garlic and ginger for 1 minute.",
+    "Stir in the curry powder and garam masala and cook for 30 seconds until fragrant.",
+    "Add the chicken and turn it in the spices until it is no longer pink on the outside, about 4 minutes.",
+    "Pour in the tomatoes and 100 ml water, season with salt, and simmer gently for 20 minutes, stirring now and then, until the chicken is cooked through.",
+    "Stir in the cream and simmer for 5 more minutes until glossy. Taste and add salt if needed. Serve over the rice."
+   ]
+  },
+  {
+   "id": "spaghetti-bolognese",
+   "name": "Spaghetti bolognese",
+   "minutes": 50,
+   "serves": 4,
+   "tags": [
+    "beef",
+    "pasta",
+    "dinner"
+   ],
+   "blurb": "The weeknight classic. Freezes well.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-mince",
+     "qty": 500,
+     "unit": "g"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "carrot",
+     "qty": 1,
+     "unit": "each",
+     "note": "grated"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "tomato-can",
+     "qty": 800,
+     "unit": "g"
+    },
+    {
+     "item": "tomato-paste",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mixed-herbs",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "spaghetti",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "olive-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "parmesan",
+     "qty": 40,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.5,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Heat the oil in a large pan over medium-high heat. Cook the onion and carrot for 5 minutes until softened, then add the garlic for 1 minute.",
+    "Add the mince, breaking it up with a spoon, and cook until browned all over, about 8 minutes.",
+    "Stir in the tomato paste, then the tomatoes, herbs, salt and pepper. Simmer on low for 30 minutes, stirring occasionally, until thick.",
+    "Cook the spaghetti in a large pot of salted boiling water following the packet time. Reserve a cup of the pasta water, then drain.",
+    "Toss the pasta through the sauce, loosening with a splash of the pasta water if needed. Serve with the parmesan."
+   ]
+  },
+  {
+   "id": "chicken-fried-rice",
+   "name": "Chicken fried rice",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "chicken",
+    "rice",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "Uses up leftover rice and a bag of frozen veg.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "eggs",
+     "qty": 3,
+     "unit": "ea"
+    },
+    {
+     "item": "chicken-breast",
+     "qty": 400,
+     "unit": "g",
+     "note": "diced"
+    },
+    {
+     "item": "frozen-mixed-veg",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    }
+   ],
+   "method": [
+    "Cook the rice, spread it on a tray and let it cool for at least 20 minutes. Cold rice fries much better than hot rice.",
+    "Heat half the oil in a large pan or wok over high heat. Cook the chicken for 5 to 6 minutes until golden and cooked through, then move it to a plate.",
+    "Add the remaining oil, the garlic and ginger, and stir for 30 seconds. Tip in the frozen vegetables and cook for 3 minutes.",
+    "Push everything to the side, crack in the eggs and scramble them until just set.",
+    "Add the rice and chicken, pour over the soy sauce, and toss over high heat for 3 minutes until hot and lightly crisp."
+   ]
+  },
+  {
+   "id": "beef-tacos",
+   "name": "Soft beef tacos",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "beef",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "Cheap, fast and easy for kids to build themselves.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-mince",
+     "qty": 500,
+     "unit": "g"
+    },
+    {
+     "item": "tortilla",
+     "qty": 8,
+     "unit": "ea"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "tomato-fresh",
+     "qty": 2,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "lettuce",
+     "qty": 0.5,
+     "unit": "ea",
+     "note": "shredded"
+    },
+    {
+     "item": "cheese",
+     "qty": 100,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "chilli-powder",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "ground-cumin",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "paprika",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "avocado",
+     "qty": 1,
+     "unit": "ea"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "tomato-paste",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Heat the oil in a pan over medium-high heat and cook the onion for 4 minutes. Add the garlic for 30 seconds.",
+    "Add the mince and cook until browned, breaking it up as it cooks, about 8 minutes.",
+    "Stir in the chilli, cumin, paprika and tomato paste with 100 ml water. Simmer for 8 minutes until the sauce clings to the meat.",
+    "Warm the tortillas in a dry pan for 20 seconds each side, or wrapped in foil in the oven.",
+    "Mash the avocado with a pinch of salt. Fill each tortilla with mince, avocado, tomato, lettuce and cheese."
+   ]
+  },
+  {
+   "id": "creamy-chicken-mushroom-pasta",
+   "name": "Creamy chicken and mushroom pasta",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "chicken",
+    "pasta",
+    "dinner"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-breast",
+     "qty": 500,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "mushroom",
+     "qty": 250,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "penne",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "cream",
+     "qty": 300,
+     "unit": "ml"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 100,
+     "unit": "ml"
+    },
+    {
+     "item": "parmesan",
+     "qty": 30,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "olive-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "spinach",
+     "qty": 100,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Boil the pasta in salted water following the packet time. Drain, keeping a little of the water.",
+    "Heat the oil in a large pan over medium-high heat. Cook the chicken for 5 to 6 minutes until golden and cooked through, then set aside.",
+    "In the same pan cook the onion and mushrooms for 6 minutes until the mushrooms are golden. Add the garlic for 1 minute.",
+    "Pour in the stock and cream and simmer for 4 minutes until slightly thickened.",
+    "Return the chicken to the pan, add the pasta and spinach, and toss until the spinach wilts. Stir through the parmesan and loosen with pasta water if needed."
+   ]
+  },
+  {
+   "id": "sausage-tray-bake",
+   "name": "Sausage and vegetable tray bake",
+   "minutes": 50,
+   "serves": 4,
+   "tags": [
+    "sausages",
+    "dinner",
+    "one-pan",
+    "budget"
+   ],
+   "blurb": "One tray, minimal washing up.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "sausages",
+     "qty": 600,
+     "unit": "g"
+    },
+    {
+     "item": "potato",
+     "qty": 4,
+     "unit": "each",
+     "note": "cut into chunks"
+    },
+    {
+     "item": "carrot",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "capsicum",
+     "qty": 1,
+     "unit": "each",
+     "note": "chunked"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "wedges"
+    },
+    {
+     "item": "olive-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mixed-herbs",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Heat the oven to 220 C (200 C fan). Put the potato and carrot on a large tray with the oil, herbs and salt and toss well.",
+    "Roast for 15 minutes. Add the onion, capsicum and sausages to the tray and turn everything over.",
+    "Roast for another 25 to 30 minutes, turning once, until the sausages are browned and cooked through and the potatoes are crisp at the edges."
+   ]
+  },
+  {
+   "id": "salmon-rice-broccoli",
+   "name": "Honey soy salmon with rice and broccoli",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "fish",
+    "rice",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "salmon-fillet",
+     "qty": 500,
+     "unit": "g"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "broccoli",
+     "qty": 1,
+     "unit": "each",
+     "note": "cut into florets"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "honey",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "lemon",
+     "qty": 1,
+     "unit": "ea"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    }
+   ],
+   "method": [
+    "Cook the rice. Mix the soy sauce, honey, garlic, ginger and the juice of half the lemon in a small bowl.",
+    "Heat the oil in a non-stick pan over medium-high heat. Cook the salmon skin-side down for 4 minutes, turn, and cook for 2 more minutes.",
+    "Pour the sauce over the salmon and let it bubble for 1 minute, spooning it over the fish.",
+    "Steam or boil the broccoli for 3 to 4 minutes until bright green and just tender.",
+    "Serve the salmon over the rice with the broccoli and lemon wedges."
+   ]
+  },
+  {
+   "id": "veg-stir-fry-noodles",
+   "name": "Vegetable stir fry noodles",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "vegetarian",
+    "noodles",
+    "dinner",
+    "quick",
+    "budget"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "noodles",
+     "qty": 450,
+     "unit": "g"
+    },
+    {
+     "item": "broccoli",
+     "qty": 1,
+     "unit": "each",
+     "note": "small florets"
+    },
+    {
+     "item": "capsicum",
+     "qty": 1,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "carrot",
+     "qty": 2,
+     "unit": "each",
+     "note": "thinly sliced"
+    },
+    {
+     "item": "mushroom",
+     "qty": 150,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "honey",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Prepare the noodles as the packet says, drain and rinse under cold water.",
+    "Mix the soy sauce and honey with 3 tablespoons of water.",
+    "Heat the oil in a wok over high heat. Stir fry the carrot and broccoli for 3 minutes, then add the capsicum and mushrooms for 2 minutes.",
+    "Add the garlic and ginger for 30 seconds, then the noodles and sauce. Toss for 2 to 3 minutes until everything is hot and glossy."
+   ]
+  },
+  {
+   "id": "chicken-caesar-salad",
+   "name": "Chicken caesar salad",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "chicken",
+    "salad",
+    "lunch"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-breast",
+     "qty": 500,
+     "unit": "g"
+    },
+    {
+     "item": "lettuce",
+     "qty": 2,
+     "unit": "ea",
+     "note": "torn"
+    },
+    {
+     "item": "bacon",
+     "qty": 150,
+     "unit": "g",
+     "note": "chopped"
+    },
+    {
+     "item": "eggs",
+     "qty": 2,
+     "unit": "ea"
+    },
+    {
+     "item": "parmesan",
+     "qty": 40,
+     "unit": "g",
+     "note": "shaved"
+    },
+    {
+     "item": "bread",
+     "qty": 4,
+     "unit": "slice",
+     "note": "cubed for croutons"
+    },
+    {
+     "item": "olive-oil",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "lemon",
+     "qty": 1,
+     "unit": "ea"
+    },
+    {
+     "item": "garlic",
+     "qty": 1,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "salt",
+     "qty": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.5,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Heat the oven to 200 C. Toss the bread cubes with 1 tablespoon of oil and a pinch of salt and bake for 10 minutes until golden.",
+    "Season the chicken with salt and pepper. Cook in a pan with a little oil for 5 to 6 minutes each side until cooked through. Rest for 5 minutes, then slice.",
+    "Boil the eggs for 7 minutes, cool in cold water, peel and halve. Fry the bacon until crisp.",
+    "Whisk the remaining oil, the juice of the lemon, garlic and half the parmesan for the dressing.",
+    "Toss the lettuce with the dressing, then top with the chicken, bacon, eggs, croutons and remaining parmesan."
+   ]
+  },
+  {
+   "id": "beef-broccoli-stir-fry",
+   "name": "Beef and broccoli stir fry",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "beef",
+    "rice",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-strips",
+     "qty": 450,
+     "unit": "g"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "broccoli",
+     "qty": 1,
+     "unit": "each",
+     "note": "florets"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "cornflour",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "honey",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Cook the rice. Toss the beef with the cornflour and a tablespoon of the soy sauce. Mix the remaining soy sauce with the honey and 100 ml water.",
+    "Heat half the oil in a wok until very hot. Stir fry the beef in two batches for 1 to 2 minutes until browned, and set aside.",
+    "Add the remaining oil and cook the broccoli for 3 minutes with a splash of water. Add the garlic and ginger for 30 seconds.",
+    "Return the beef, pour in the sauce and cook for 1 to 2 minutes until it thickens. Serve over rice."
+   ]
+  },
+  {
+   "id": "cottage-pie",
+   "name": "Cottage pie",
+   "minutes": 70,
+   "serves": 4,
+   "tags": [
+    "beef",
+    "dinner",
+    "comfort"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-mince",
+     "qty": 500,
+     "unit": "g"
+    },
+    {
+     "item": "potato",
+     "qty": 1000,
+     "unit": "g",
+     "note": "peeled and chopped"
+    },
+    {
+     "item": "butter",
+     "qty": 40,
+     "unit": "g"
+    },
+    {
+     "item": "milk",
+     "qty": 100,
+     "unit": "ml"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "carrot",
+     "qty": 2,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "frozen-peas",
+     "qty": 150,
+     "unit": "g"
+    },
+    {
+     "item": "tomato-paste",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 250,
+     "unit": "ml"
+    },
+    {
+     "item": "flour",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "cheese",
+     "qty": 60,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.5,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Boil the potatoes in salted water for 15 to 20 minutes until soft. Drain, mash with the butter and milk, and season.",
+    "Meanwhile cook the onion and carrot in a large oven-proof pan for 6 minutes. Add the mince and brown it for 8 minutes.",
+    "Stir in the flour and tomato paste, then the stock. Simmer for 15 minutes until thick, adding the peas for the last 3 minutes. Season.",
+    "Heat the oven to 200 C. Spoon the mash over the mince, rough it up with a fork and scatter with the cheese.",
+    "Bake for 20 to 25 minutes until golden and bubbling."
+   ]
+  },
+  {
+   "id": "ham-cheese-omelette",
+   "name": "Ham and cheese omelette",
+   "minutes": 15,
+   "serves": 4,
+   "tags": [
+    "eggs",
+    "breakfast",
+    "quick",
+    "budget"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "eggs",
+     "qty": 8,
+     "unit": "ea"
+    },
+    {
+     "item": "ham",
+     "qty": 120,
+     "unit": "g",
+     "note": "diced"
+    },
+    {
+     "item": "cheese",
+     "qty": 80,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "butter",
+     "qty": 20,
+     "unit": "g"
+    },
+    {
+     "item": "milk",
+     "qty": 60,
+     "unit": "ml"
+    },
+    {
+     "item": "spinach",
+     "qty": 60,
+     "unit": "g"
+    },
+    {
+     "item": "salt",
+     "qty": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.25,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Whisk the eggs with the milk, salt and pepper.",
+    "Melt a quarter of the butter in a non-stick pan over medium heat. Pour in a quarter of the egg mixture and swirl.",
+    "When the base is set but the top is still slightly wet, scatter over a quarter of the ham, cheese and spinach.",
+    "Fold the omelette in half, slide it onto a plate and repeat for the others."
+   ]
+  },
+  {
+   "id": "pumpkin-soup",
+   "name": "Roast pumpkin soup",
+   "minutes": 55,
+   "serves": 4,
+   "tags": [
+    "vegetarian",
+    "soup",
+    "budget"
+   ],
+   "blurb": "Swap the stock for vegetable stock to make it vegetarian.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "pumpkin",
+     "qty": 1000,
+     "unit": "g",
+     "note": "peeled and cubed"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "chopped"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 800,
+     "unit": "ml"
+    },
+    {
+     "item": "cream",
+     "qty": 100,
+     "unit": "ml"
+    },
+    {
+     "item": "butter",
+     "qty": 20,
+     "unit": "g"
+    },
+    {
+     "item": "bread",
+     "qty": 4,
+     "unit": "slice",
+     "note": "to serve"
+    },
+    {
+     "item": "curry-powder",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.5,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Heat the oven to 200 C. Roast the pumpkin with a little oil and salt for 30 minutes until soft and golden.",
+    "Melt the butter in a large pot and cook the onion for 5 minutes. Add the garlic and curry powder for 1 minute.",
+    "Add the roasted pumpkin and the stock, bring to the boil, then simmer for 10 minutes.",
+    "Blend until smooth, stir through the cream and season to taste. Serve with toasted bread."
+   ]
+  },
+  {
+   "id": "chicken-noodle-soup",
+   "name": "Chicken noodle soup",
+   "minutes": 40,
+   "serves": 4,
+   "tags": [
+    "chicken",
+    "soup",
+    "noodles"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-breast",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "noodles",
+     "qty": 250,
+     "unit": "g"
+    },
+    {
+     "item": "carrot",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 1500,
+     "unit": "ml"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Put the stock, chicken, onion, carrot, garlic, ginger and salt in a large pot. Bring to a gentle simmer and cook for 15 to 20 minutes until the chicken is cooked through.",
+    "Lift the chicken out, shred it with two forks and return it to the pot.",
+    "Add the noodles and cook for the time on the packet. Taste and adjust the salt, then serve."
+   ]
+  },
+  {
+   "id": "mac-and-cheese",
+   "name": "Baked mac and cheese",
+   "minutes": 40,
+   "serves": 4,
+   "tags": [
+    "pasta",
+    "vegetarian",
+    "dinner",
+    "budget",
+    "comfort"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "penne",
+     "qty": 400,
+     "unit": "g",
+     "note": "macaroni or similar"
+    },
+    {
+     "item": "cheese",
+     "qty": 250,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "milk",
+     "qty": 600,
+     "unit": "ml"
+    },
+    {
+     "item": "butter",
+     "qty": 50,
+     "unit": "g"
+    },
+    {
+     "item": "flour",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "frozen-peas",
+     "qty": 100,
+     "unit": "g"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.25,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Cook the pasta 2 minutes short of the packet time, then drain.",
+    "Melt the butter in a pot, stir in the flour and cook for 1 minute. Gradually whisk in the milk and simmer for 5 minutes until thickened.",
+    "Take off the heat and stir in three quarters of the cheese, the salt and pepper. Fold in the pasta and peas.",
+    "Tip into a baking dish, top with the remaining cheese and bake at 200 C for 15 to 20 minutes until golden."
+   ]
+  },
+  {
+   "id": "flatbread-pizzas",
+   "name": "Margherita flatbread pizzas",
+   "minutes": 20,
+   "serves": 4,
+   "tags": [
+    "vegetarian",
+    "quick",
+    "lunch"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "flatbread",
+     "qty": 4,
+     "unit": "ea"
+    },
+    {
+     "item": "tomato-paste",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mozzarella",
+     "qty": 250,
+     "unit": "g"
+    },
+    {
+     "item": "tomato-fresh",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "basil",
+     "qty": 1,
+     "unit": "ea"
+    },
+    {
+     "item": "olive-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "ham",
+     "qty": 100,
+     "unit": "g",
+     "note": "optional"
+    }
+   ],
+   "method": [
+    "Heat the oven to 220 C. Place the flatbreads on trays and brush lightly with oil.",
+    "Mix the tomato paste with 2 tablespoons of water and spread over the flatbreads.",
+    "Top with the mozzarella, tomato slices and ham if using.",
+    "Bake for 8 to 10 minutes until the cheese is bubbling and the edges are crisp. Scatter with basil."
+   ]
+  },
+  {
+   "id": "chilli-con-carne",
+   "name": "Chilli con carne",
+   "minutes": 60,
+   "serves": 4,
+   "tags": [
+    "beef",
+    "rice",
+    "dinner",
+    "comfort"
+   ],
+   "blurb": "Better the next day. Freezes well.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-mince",
+     "qty": 500,
+     "unit": "g"
+    },
+    {
+     "item": "kidney-beans",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "tomato-can",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "capsicum",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "chilli-powder",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "ground-cumin",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "paprika",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "tomato-paste",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Heat the oil in a large pot and cook the onion and capsicum for 6 minutes. Add the garlic and spices for 1 minute.",
+    "Add the mince and brown it for 8 minutes, breaking it up.",
+    "Stir in the tomato paste, tomatoes, drained beans, salt and 150 ml water. Simmer with the lid slightly off for 35 to 40 minutes until thick.",
+    "Cook the rice and serve the chilli on top."
+   ]
+  },
+  {
+   "id": "honey-soy-chicken-thighs",
+   "name": "Honey soy chicken thighs",
+   "minutes": 45,
+   "serves": 4,
+   "tags": [
+    "chicken",
+    "rice",
+    "dinner"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-thigh",
+     "qty": 800,
+     "unit": "g"
+    },
+    {
+     "item": "honey",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "broccoli",
+     "qty": 1,
+     "unit": "each"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Whisk the honey, soy sauce, garlic and ginger. Pour over the chicken and marinate for 15 minutes, or overnight in the fridge.",
+    "Heat the oven to 200 C. Arrange the chicken on a lined tray, pour over the marinade and roast for 30 to 35 minutes, basting once, until sticky and cooked through.",
+    "Cook the rice and steam the broccoli. Serve the chicken with the pan juices spooned over."
+   ]
+  },
+  {
+   "id": "zucchini-fritters",
+   "name": "Zucchini and cheese fritters",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "vegetarian",
+    "lunch",
+    "budget"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "zucchini",
+     "qty": 3,
+     "unit": "each",
+     "note": "grated"
+    },
+    {
+     "item": "eggs",
+     "qty": 3,
+     "unit": "ea"
+    },
+    {
+     "item": "flour",
+     "qty": 100,
+     "unit": "g"
+    },
+    {
+     "item": "cheese",
+     "qty": 100,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "baking-powder",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "yoghurt",
+     "qty": 150,
+     "unit": "g",
+     "note": "to serve"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "lemon",
+     "qty": 1,
+     "unit": "ea"
+    }
+   ],
+   "method": [
+    "Toss the grated zucchini with half the salt and leave for 10 minutes. Squeeze out as much liquid as you can in a clean tea towel.",
+    "Mix the zucchini with the eggs, flour, baking powder, cheese and remaining salt.",
+    "Heat the oil in a pan over medium heat. Drop in heaped spoonfuls and flatten slightly. Cook 3 minutes each side until golden.",
+    "Serve with the yoghurt and a squeeze of lemon."
+   ]
+  },
+  {
+   "id": "tuna-pasta-bake",
+   "name": "Creamy tuna pasta bake",
+   "minutes": 40,
+   "serves": 4,
+   "tags": [
+    "fish",
+    "pasta",
+    "dinner",
+    "budget"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "penne",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "tuna-can",
+     "qty": 370,
+     "unit": "g",
+     "note": "2 cans, drained"
+    },
+    {
+     "item": "cream",
+     "qty": 200,
+     "unit": "ml"
+    },
+    {
+     "item": "cheese",
+     "qty": 150,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "frozen-peas",
+     "qty": 150,
+     "unit": "g"
+    },
+    {
+     "item": "tomato-can",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "olive-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Heat the oven to 200 C. Cook the pasta 2 minutes short of the packet time and drain.",
+    "Cook the onion in the oil for 5 minutes, add the garlic for 1 minute, then the tomatoes and cream. Simmer for 5 minutes.",
+    "Stir in the tuna, peas and pasta and tip into a baking dish.",
+    "Scatter with the cheese and bake for 15 to 20 minutes until golden."
+   ]
+  },
+  {
+   "id": "sausages-and-mash",
+   "name": "Sausages, mash and onion gravy",
+   "minutes": 45,
+   "serves": 4,
+   "tags": [
+    "sausages",
+    "dinner",
+    "comfort",
+    "budget"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "sausages",
+     "qty": 600,
+     "unit": "g"
+    },
+    {
+     "item": "potato",
+     "qty": 1000,
+     "unit": "g"
+    },
+    {
+     "item": "butter",
+     "qty": 50,
+     "unit": "g"
+    },
+    {
+     "item": "milk",
+     "qty": 100,
+     "unit": "ml"
+    },
+    {
+     "item": "frozen-peas",
+     "qty": 200,
+     "unit": "g"
+    },
+    {
+     "item": "onion",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "flour",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 300,
+     "unit": "ml"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Boil the potatoes in salted water for 15 to 20 minutes. Drain and mash with the butter and milk.",
+    "Brown the sausages in a pan with the oil, turning, for about 12 minutes until cooked through. Remove and keep warm.",
+    "In the same pan cook the onions for 10 minutes until soft and golden. Stir in the flour, then gradually add the stock and simmer for 5 minutes until thick.",
+    "Cook the peas, and serve everything together."
+   ]
+  },
+  {
+   "id": "beef-burgers",
+   "name": "Homemade beef burgers",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "beef",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-mince",
+     "qty": 600,
+     "unit": "g"
+    },
+    {
+     "item": "burger-buns",
+     "qty": 4,
+     "unit": "ea"
+    },
+    {
+     "item": "lettuce",
+     "qty": 0.5,
+     "unit": "ea"
+    },
+    {
+     "item": "tomato-fresh",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "cheese",
+     "qty": 80,
+     "unit": "g",
+     "note": "sliced or grated"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "half grated, half sliced"
+    },
+    {
+     "item": "eggs",
+     "qty": 1,
+     "unit": "ea"
+    },
+    {
+     "item": "olive-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.5,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Mix the mince with the grated onion, egg, salt and pepper. Shape into 4 patties slightly wider than the buns and chill for 10 minutes.",
+    "Heat the oil in a pan over medium-high heat. Cook the patties for 4 to 5 minutes each side until cooked through, adding the cheese for the last minute.",
+    "Toast the buns, then fill with lettuce, tomato, onion and the patties."
+   ]
+  },
+  {
+   "id": "scrambled-eggs-avocado-toast",
+   "name": "Scrambled eggs and avocado on toast",
+   "minutes": 15,
+   "serves": 4,
+   "tags": [
+    "eggs",
+    "breakfast",
+    "quick",
+    "vegetarian"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "eggs",
+     "qty": 8,
+     "unit": "ea"
+    },
+    {
+     "item": "bread",
+     "qty": 8,
+     "unit": "slice"
+    },
+    {
+     "item": "butter",
+     "qty": 30,
+     "unit": "g"
+    },
+    {
+     "item": "milk",
+     "qty": 60,
+     "unit": "ml"
+    },
+    {
+     "item": "avocado",
+     "qty": 2,
+     "unit": "ea"
+    },
+    {
+     "item": "salt",
+     "qty": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.25,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Whisk the eggs with the milk, salt and pepper. Toast the bread.",
+    "Melt the butter in a non-stick pan over low heat, add the eggs and stir slowly with a spatula for 3 to 4 minutes until softly set.",
+    "Mash the avocado with a pinch of salt and spread over the toast. Top with the eggs."
+   ]
+  },
+  {
+   "id": "banana-pancakes",
+   "name": "Banana pancakes",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "breakfast",
+    "vegetarian",
+    "budget"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "flour",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "baking-powder",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "eggs",
+     "qty": 2,
+     "unit": "ea"
+    },
+    {
+     "item": "milk",
+     "qty": 400,
+     "unit": "ml"
+    },
+    {
+     "item": "butter",
+     "qty": 40,
+     "unit": "g",
+     "note": "melted"
+    },
+    {
+     "item": "banana",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "honey",
+     "qty": 2,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Mix the flour, baking powder and sugar in a bowl. Whisk the eggs, milk and 30 g of the melted butter, then stir into the dry mix until just combined. A few lumps are fine.",
+    "Heat a non-stick pan over medium heat with a little of the remaining butter. Pour in 1/4 cup of batter per pancake.",
+    "Cook for 2 minutes until bubbles appear, flip and cook for 1 to 2 minutes more. Repeat with the rest.",
+    "Serve with the banana and a drizzle of honey."
+   ]
+  },
+  {
+   "id": "chicken-wraps",
+   "name": "Spiced chicken wraps",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "chicken",
+    "lunch",
+    "quick"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-breast",
+     "qty": 500,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "tortilla",
+     "qty": 8,
+     "unit": "ea"
+    },
+    {
+     "item": "lettuce",
+     "qty": 0.5,
+     "unit": "ea",
+     "note": "shredded"
+    },
+    {
+     "item": "tomato-fresh",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "cheese",
+     "qty": 80,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "yoghurt",
+     "qty": 100,
+     "unit": "g"
+    },
+    {
+     "item": "paprika",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "olive-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "lemon",
+     "qty": 1,
+     "unit": "ea"
+    },
+    {
+     "item": "garlic",
+     "qty": 1,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "salt",
+     "qty": 0.5,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Toss the chicken with the paprika, oil, salt and the juice of half the lemon. Cook in a hot pan for 6 to 8 minutes until golden and cooked through.",
+    "Stir the garlic and a squeeze of lemon into the yoghurt for the sauce.",
+    "Warm the tortillas, spread with the yoghurt sauce and fill with the chicken, lettuce, tomato and cheese. Roll up and serve."
+   ]
+  },
+  {
+   "id": "banana-honey-porridge",
+   "name": "Banana and honey porridge",
+   "minutes": 10,
+   "serves": 4,
+   "tags": [
+    "breakfast",
+    "vegetarian",
+    "budget",
+    "quick"
+   ],
+   "blurb": "",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "oats",
+     "qty": 200,
+     "unit": "g"
+    },
+    {
+     "item": "milk",
+     "qty": 800,
+     "unit": "ml"
+    },
+    {
+     "item": "banana",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "honey",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "salt",
+     "qty": 0.25,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Put the oats, milk and salt in a pot and bring to a gentle simmer over medium heat.",
+    "Cook for 5 to 7 minutes, stirring often, until thick and creamy.",
+    "Spoon into bowls and top with the banana and honey."
+   ]
+  },
+  {
+   "id": "chickpea-spinach-curry",
+   "name": "Chickpea and spinach coconut curry",
+   "minutes": 35,
+   "serves": 4,
+   "tags": [
+    "vegetarian",
+    "curry",
+    "rice",
+    "dinner",
+    "budget"
+   ],
+   "blurb": "Vegan as written.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chickpeas",
+     "qty": 800,
+     "unit": "g",
+     "note": "2 cans, drained"
+    },
+    {
+     "item": "coconut-milk",
+     "qty": 400,
+     "unit": "ml"
+    },
+    {
+     "item": "spinach",
+     "qty": 150,
+     "unit": "g"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "ginger",
+     "qty": 15,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "curry-powder",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "tomato-can",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    }
+   ],
+   "method": [
+    "Cook the rice. Heat the oil in a large pan and cook the onion for 5 minutes. Add the garlic, ginger and curry powder for 1 minute.",
+    "Add the tomatoes, coconut milk, chickpeas and salt. Simmer for 15 minutes until thickened.",
+    "Stir in the spinach and cook for 2 minutes until wilted. Taste, adjust the salt, and serve with the rice."
+   ]
+  }
+ ]
+}
