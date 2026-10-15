@@ -286,6 +286,23 @@ def _category_names(obj, depth=0):
     return seen[:300]
 
 
+FOODSTUFFS_CAP = 1000   # the search never returns more than 1,000 hits for one query (totalHits stops at 1000)
+FOODSTUFFS_LEVELS = 3   # category0NI > category1NI > category2NI
+
+
+def _category_filter(path):
+    """'Pantry > Herbs & Spices' -> category0NI:"Pantry" AND category1NI:"Herbs & Spices"."""
+    names = [n.strip().replace('"', '\\"') for n in path.split(" > ")]
+    return " AND ".join(f'category{i}NI:"{n}"' for i, n in enumerate(names))
+
+
+def _subcategories(payload, level):
+    """Category names one level down, from the search's own facet counts. They include names from a product's other
+    category trees (a chips packet is under Pantry and Snacks), which only adds duplicates, so nothing is missed."""
+    facets = (payload.get("algoliaSearchResult") or {}).get("facets") or {}
+    return list(facets.get(f"category{level}NI") or {})
+
+
 def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
     domain = {"newworld": "newworld.co.nz", "paknsave": "paknsave.co.nz"}[store]
     tok = polite_post(session, f"https://www.{domain}/api/user/get-current-user", gcfg["delay_seconds"]).json()
@@ -299,6 +316,9 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
         if r.ok:
             names = _category_names(r.json())
             print(f"  {store} top-level category names on the site: {names or r.text[:600]}", file=sys.stderr)
+            if probe:
+                RAW.mkdir(parents=True, exist_ok=True)
+                (RAW / f"{store}-categories.json").write_text(json.dumps(r.json(), indent=2))
     except Exception as e:
         print(f"  {store}: could not list categories ({e!r})", file=sys.stderr)
     results = []
@@ -312,8 +332,8 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
                 "algoliaQuery": {
                     "attributesToHighlight": [],
                     "attributesToRetrieve": ["productID", "Type", "sponsored", "category0NI"],
-                    "facets": ["brand", "category2NI", "onPromotion", "productFacets"],
-                    "filters": f'stores:{cfg["store_id"]} AND category0NI:"{cat}"',
+                    "facets": ["brand", "category1NI", "category2NI", "onPromotion", "productFacets"],
+                    "filters": f'stores:{cfg["store_id"]} AND {_category_filter(cat)}',
                     "hitsPerPage": 50,
                     "page": page,
                 },
@@ -326,7 +346,17 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
             payload = polite_post(session, f"{base}/search/paginated/products", gcfg["delay_seconds"], json=body).json()
             if probe:
                 return payload
-            recs = foodstuffs_parse(store, payload, cat)
+            if page == 0 and (payload.get("totalHits") or 0) >= FOODSTUFFS_CAP:
+                level = cat.count(" > ") + 1
+                subs = _subcategories(payload, level) if level < FOODSTUFFS_LEVELS else []
+                if subs:   # re-query each sub-category instead; they are processed next, de-duplicated as usual
+                    print(f"  {store} {cat}: search stops at {FOODSTUFFS_CAP} results, "
+                          f"splitting into {len(subs)} sub-categories", file=sys.stderr)
+                    todo = [f"{cat} > {s}" for s in subs] + todo
+                    break
+                print(f"  {store} {cat}: search stops at {FOODSTUFFS_CAP} results and cannot be split further; "
+                      f"some products will be missing", file=sys.stderr)
+            recs = foodstuffs_parse(store, payload, cat.split(" > ")[0])
             if not recs:
                 if page == 0:
                     raw = payload.get("products") or []
@@ -341,6 +371,8 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
             seen_ids.update(r["id"] for r in fresh)
             results += fresh
             print(f"  {store} {cat} page {page}: {len(recs)}", file=sys.stderr)
+            if page + 1 >= (payload.get("totalPages") or page + 2):   # last page: skip the request for an empty one
+                break
     return results
 
 
@@ -785,6 +817,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--store", choices=["woolworths", "newworld", "paknsave", "newgumsarn"])
     ap.add_argument("--probe", choices=["woolworths", "newworld", "paknsave", "newgumsarn"])
+    ap.add_argument("--category", help='with --probe newworld/paknsave: the category to fetch, e.g. "Pantry" or "Pantry > Herbs & Spices"')
     ap.add_argument("--match-report", action="store_true", help="show how well products match across stores, from the last scrape")
     ap.add_argument("--ingredient-report", action="store_true", help="show which products were picked for each recipe ingredient")
     ap.add_argument("--fixture", help="directory of saved raw responses (<store>.json) for an offline run")
@@ -819,6 +852,8 @@ def main():
 
     def run(store, probe=False):
         c = cfg["stores"][store]
+        if probe and args.category:
+            c = dict(c, categories=[args.category])
         if store == "woolworths":
             if not probe:
                 manual = load_manual_woolworths()

@@ -71,6 +71,58 @@ with tempfile.TemporaryDirectory() as d:
 
 assert s._category_names({"categories": [{"name": "Fruit & Veg", "children": [{"name": "Apples"}]}, {"name": "Bakery"}]}) == ["Fruit & Veg", "Bakery"]
 
+# Foodstuffs search stops at 1,000 hits: a capped category is re-queried per sub-category (saved responses, no network)
+import copy
+assert s._category_filter('Pantry > Say "cheese"') == 'category0NI:"Pantry" AND category1NI:"Say \\"cheese\\""'
+_fx = json.loads((pathlib.Path(__file__).parent / "fixtures" / "foodstuffs_split.json").read_text(encoding="utf-8"))["responses"]
+
+
+class _FakeSession:
+    def __init__(self):
+        self.headers = {}
+
+    def get(self, *a, **kw):   # the category list is optional; pretend it is unavailable
+        return type("R", (), {"ok": False})()
+
+
+def _scrape_fixture(responses, categories):
+    calls = []
+
+    def post(session, url, delay, **kw):
+        if url.endswith("get-current-user"):
+            data = {"access_token": "test"}
+        else:
+            filt, page = kw["json"]["algoliaQuery"]["filters"].split(" AND ", 1)[1], kw["json"]["page"]
+            calls.append((filt, page))
+            data = responses[filt][page]
+        return type("R", (), {"json": lambda self: data})()
+    real, s.polite_post = s.polite_post, post
+    try:
+        recs = s.scrape_foodstuffs("newworld", {"store_id": "x", "categories": categories},
+                                   {"max_pages_per_category": 30, "delay_seconds": [0, 0]}, _FakeSession())
+    finally:
+        s.polite_post = real
+    return recs, calls
+
+
+_P = 'category0NI:"Pantry"'
+_CHOC = _P + ' AND category1NI:"Chocolate, Sweets & Chewing Gum"'
+_SPICE = _P + ' AND category1NI:"Spices, Seasoning & Coatings"'
+recs, calls = _scrape_fixture(_fx, ["Pantry"])
+assert calls == [(_P, 0), (_P + ' AND category1NI:"Chips, Nuts & Snacks"', 0),
+                 (_CHOC, 0), (_CHOC + ' AND category2NI:"Single Chocolate Bars & Sweets"', 0),
+                 (_CHOC + ' AND category2NI:"Chocolate Blocks"', 0),
+                 (_SPICE, 0), (_SPICE, 1), (_P + ' AND category1NI:"World Foods"', 0)], calls
+ids = [r["id"] for r in recs]
+assert len(ids) == len(set(ids)) == 14, ids   # Taco Spice Mix is under Spices and World Foods, Bluebird chips under Pantry and Chips
+assert {r["category"] for r in recs} == {"Pantry"}
+assert {"Mild Curry Powder", "Fajita Spice Mix", "Chocolate Block"} <= {r["name"] for r in recs}
+# the deepest level (category2NI) has nothing below it to split by: keep what the search gives
+_deep = copy.deepcopy(_fx)
+_deep[_CHOC + ' AND category2NI:"Chocolate Blocks"'][0]["totalHits"] = 1000
+recs, calls = _scrape_fixture(_deep, ["Pantry > Chocolate, Sweets & Chewing Gum > Chocolate Blocks"])
+assert len(calls) == 1 and len(recs) == 2, (calls, recs)
+
 # uploaded woolworths.json: used when fresh, ignored when old or malformed
 import datetime as dt
 with tempfile.TemporaryDirectory() as d:

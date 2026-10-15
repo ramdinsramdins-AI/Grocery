@@ -1,0 +1,1236 @@
+{
+ "_note": "Trimmed real search responses from New World and PAK'nSAVE (probes on 2026-10-15). The product objects and response shape are real; product lists and facet counts are cut down, and 'Chocolate, Sweets & Chewing Gum' is marked as hitting the 1,000 cap so the second-level split is exercised. Keys are the search filter without the 'stores:<id> AND ' prefix; values are pages 0, 1, ...",
+ "responses": {
+  "category0NI:\"Pantry\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5010717-EA-000",
+      "brand": "Bluebird",
+      "name": "Originals Ready Salted Potato Chips",
+      "displayName": "150g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "0000",
+        "initiativeCode": "AOV"
+       },
+       {
+        "initiativeCode": "AOV"
+       }
+      ],
+      "singlePrice": {
+       "price": 199,
+       "promoId": "130443784",
+       "comparativePrice": {
+        "pricePerUnit": 133,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443784",
+        "rewardValue": 199,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 133,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020004",
+        "itemDescription": "Gluten Free"
+       },
+       {
+        "itemCode": "00020013",
+        "itemDescription": "Vegan"
+       },
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chips, Nuts & Snacks",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {
+      "category1NI": {
+       "Chips, Nuts & Snacks": 651,
+       "Chocolate, Sweets & Chewing Gum": 365,
+       "Spices, Seasoning & Coatings": 253,
+       "World Foods": 184
+      }
+     }
+    },
+    "totalHits": 1000,
+    "page": 0,
+    "totalPages": 20,
+    "hitsPerPage": 50
+   }
+  ],
+  "category0NI:\"Pantry\" AND category1NI:\"Chips, Nuts & Snacks\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5010717-EA-000",
+      "brand": "Bluebird",
+      "name": "Originals Ready Salted Potato Chips",
+      "displayName": "150g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "0000",
+        "initiativeCode": "AOV"
+       },
+       {
+        "initiativeCode": "AOV"
+       }
+      ],
+      "singlePrice": {
+       "price": 199,
+       "promoId": "130443784",
+       "comparativePrice": {
+        "pricePerUnit": 133,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443784",
+        "rewardValue": 199,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 133,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020004",
+        "itemDescription": "Gluten Free"
+       },
+       {
+        "itemCode": "00020013",
+        "itemDescription": "Vegan"
+       },
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chips, Nuts & Snacks",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5010716-EA-000",
+      "brand": "Bluebird",
+      "name": "Originals Chicken Potato Chips",
+      "displayName": "150g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "0000",
+        "initiativeCode": "AOV"
+       },
+       {
+        "initiativeCode": "AOV"
+       }
+      ],
+      "singlePrice": {
+       "price": 199,
+       "promoId": "130443784",
+       "comparativePrice": {
+        "pricePerUnit": 133,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443784",
+        "rewardValue": 199,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 133,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020004",
+        "itemDescription": "Gluten Free"
+       },
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chips, Nuts & Snacks",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {
+      "category1NI": {
+       "Chips, Nuts & Snacks": 2
+      }
+     }
+    },
+    "totalHits": 2,
+    "page": 0,
+    "totalPages": 1,
+    "hitsPerPage": 50
+   }
+  ],
+  "category0NI:\"Pantry\" AND category1NI:\"Chocolate, Sweets & Chewing Gum\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5010481-EA-000",
+      "brand": "Cadbury",
+      "name": "Dairy Milk Chocolate Bar",
+      "displayName": "45g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 89,
+       "promoId": "130433104",
+       "comparativePrice": {
+        "pricePerUnit": 198,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130433104",
+        "rewardValue": 89,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 198,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Single Chocolate Bars & Sweets"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Single Chocolate Bars & Sweets"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {
+      "category1NI": {
+       "Chocolate, Sweets & Chewing Gum": 365
+      },
+      "category2NI": {
+       "Single Chocolate Bars & Sweets": 74,
+       "Chocolate Blocks": 78
+      }
+     }
+    },
+    "totalHits": 1000,
+    "page": 0,
+    "totalPages": 20,
+    "hitsPerPage": 50
+   }
+  ],
+  "category0NI:\"Pantry\" AND category1NI:\"Chocolate, Sweets & Chewing Gum\" AND category2NI:\"Single Chocolate Bars & Sweets\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5010481-EA-000",
+      "brand": "Cadbury",
+      "name": "Dairy Milk Chocolate Bar",
+      "displayName": "45g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 89,
+       "promoId": "130433104",
+       "comparativePrice": {
+        "pricePerUnit": 198,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130433104",
+        "rewardValue": 89,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 198,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Single Chocolate Bars & Sweets"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Single Chocolate Bars & Sweets"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5005217-EA-000",
+      "brand": "Cadbury",
+      "name": "Crunchie Chocolate Bar",
+      "displayName": "50g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 89,
+       "promoId": "130433106",
+       "comparativePrice": {
+        "pricePerUnit": 178,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130433106",
+        "rewardValue": 89,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 178,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Single Chocolate Bars & Sweets"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Single Chocolate Bars & Sweets"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {}
+    },
+    "totalHits": 2,
+    "page": 0,
+    "totalPages": 1,
+    "hitsPerPage": 50
+   }
+  ],
+  "category0NI:\"Pantry\" AND category1NI:\"Chocolate, Sweets & Chewing Gum\" AND category2NI:\"Chocolate Blocks\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5009651-EA-000",
+      "brand": "Whittaker's",
+      "name": "Creamy Milk 33% Cocoa Milk Chocolate Block",
+      "displayName": "250g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 709,
+       "comparativePrice": {
+        "pricePerUnit": 284,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Chocolate Blocks"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Chocolate Blocks"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chocolate, Sweets & Chewing Gum",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5249650-EA-000",
+      "brand": "Cadbury Dairy Milk",
+      "name": "Chocolate Block",
+      "displayName": "180g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 439,
+       "promoId": "130433120",
+       "comparativePrice": {
+        "pricePerUnit": 244,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130433120",
+        "rewardValue": 439,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 244,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Chocolate Blocks"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Chocolate Blocks"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chocolate, Sweets & Chewing Gum",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {}
+    },
+    "totalHits": 2,
+    "page": 0,
+    "totalPages": 1,
+    "hitsPerPage": 50
+   }
+  ],
+  "category0NI:\"Pantry\" AND category1NI:\"Spices, Seasoning & Coatings\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5219807-EA-000",
+      "brand": "Mrs Rogers",
+      "name": "Naturals Eco Onion Powder Fine",
+      "displayName": "40g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 279,
+       "comparativePrice": {
+        "pricePerUnit": 70,
+        "unitQuantity": 10,
+        "unitQuantityUom": "g",
+        "measureDescription": "10g"
+       }
+      },
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Dried Spices"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5008899-EA-000",
+      "brand": "Pams",
+      "name": "Crushed Garlic",
+      "displayName": "230g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "4700",
+        "initiativeCode": "EDV"
+       }
+      ],
+      "singlePrice": {
+       "price": 249,
+       "comparativePrice": {
+        "pricePerUnit": 1083,
+        "unitQuantity": 1,
+        "unitQuantityUom": "kg",
+        "measureDescription": "1kg"
+       }
+      },
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       },
+       {
+        "itemCode": "00020007",
+        "itemDescription": "Dairy Free"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Garlic & Ginger"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5026706-EA-000",
+      "brand": "Mrs Rogers",
+      "name": "Naturals Eco Mixed Herbs",
+      "displayName": "10g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 279,
+       "comparativePrice": {
+        "pricePerUnit": 279,
+        "unitQuantity": 10,
+        "unitQuantityUom": "g",
+        "measureDescription": "10g"
+       }
+      },
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Dried Herbs"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5334358-EA-000",
+      "brand": "Masterfoods",
+      "name": "Onion Powder",
+      "displayName": "44g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "4700",
+        "initiativeCode": "EDV"
+       }
+      ],
+      "singlePrice": {
+       "price": 289,
+       "comparativePrice": {
+        "pricePerUnit": 66,
+        "unitQuantity": 10,
+        "unitQuantityUom": "g",
+        "measureDescription": "10g"
+       }
+      },
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Dried Spices"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5001484-EA-000",
+      "brand": "Old El Paso",
+      "name": "Taco Spice Mix",
+      "displayName": "30g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 299,
+       "comparativePrice": {
+        "pricePerUnit": 997,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443570",
+        "rewardValue": 249,
+        "decal": "4000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "multiProducts": true,
+        "cardDependencyFlag": true,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 830,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020013",
+        "itemDescription": "Vegan"
+       },
+       {
+        "itemCode": "00020014",
+        "itemDescription": "Vegetarian"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "World Foods",
+        "level2": "Mexican"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Rubs & Blends"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {
+      "category1NI": {
+       "Spices, Seasoning & Coatings": 7,
+       "World Foods": 5
+      }
+     }
+    },
+    "totalHits": 7,
+    "page": 0,
+    "totalPages": 2,
+    "hitsPerPage": 50
+   },
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5010565-EA-000",
+      "brand": "Empire",
+      "name": "Mild Curry Powder",
+      "displayName": "100g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 519,
+       "comparativePrice": {
+        "pricePerUnit": 52,
+        "unitQuantity": 10,
+        "unitQuantityUom": "g",
+        "measureDescription": "10g"
+       }
+      },
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Dried Spices"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5046576-KGM-000",
+      "name": "Ginger",
+      "displayName": "kg",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "WEIGHT",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": true,
+      "originStatement": "Product of Thailand",
+      "variableWeight": {
+       "minOrderQuantity": 80,
+       "stepSize": 20,
+       "stepUnitOfMeasure": "g"
+      },
+      "singlePrice": {
+       "price": 899,
+       "comparativePrice": {
+        "pricePerUnit": 899,
+        "unitQuantity": 1,
+        "unitQuantityUom": "kg",
+        "measureDescription": "1kg"
+       }
+      },
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Garlic & Ginger"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {
+      "category1NI": {
+       "Spices, Seasoning & Coatings": 7,
+       "World Foods": 5
+      }
+     }
+    },
+    "totalHits": 7,
+    "page": 1,
+    "totalPages": 2,
+    "hitsPerPage": 50
+   }
+  ],
+  "category0NI:\"Pantry\" AND category1NI:\"World Foods\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5001484-EA-000",
+      "brand": "Old El Paso",
+      "name": "Taco Spice Mix",
+      "displayName": "30g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 299,
+       "comparativePrice": {
+        "pricePerUnit": 997,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443570",
+        "rewardValue": 249,
+        "decal": "4000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "multiProducts": true,
+        "cardDependencyFlag": true,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 830,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020013",
+        "itemDescription": "Vegan"
+       },
+       {
+        "itemCode": "00020014",
+        "itemDescription": "Vegetarian"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "World Foods",
+        "level2": "Mexican"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Rubs & Blends"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5012775-EA-000",
+      "brand": "Old El Paso",
+      "name": "Fajita Spice Mix",
+      "displayName": "40g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 299,
+       "comparativePrice": {
+        "pricePerUnit": 748,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443570",
+        "rewardValue": 249,
+        "decal": "4000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "multiProducts": true,
+        "cardDependencyFlag": true,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 623,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020014",
+        "itemDescription": "Vegetarian"
+       },
+       {
+        "itemCode": "00020013",
+        "itemDescription": "Vegan"
+       },
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "World Foods",
+        "level2": "Mexican"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Rubs & Blends"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {
+      "category1NI": {
+       "World Foods": 2,
+       "Spices, Seasoning & Coatings": 2
+      }
+     }
+    },
+    "totalHits": 2,
+    "page": 0,
+    "totalPages": 1,
+    "hitsPerPage": 50
+   }
+  ]
+ }
+}
