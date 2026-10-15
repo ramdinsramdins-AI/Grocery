@@ -62,7 +62,26 @@
     },
     "newgumsarn": {
       "enabled": true,
+      "platform": "shopify",
       "base_url": "https://www.newgumsarn.co.nz"
+    },
+    "txgmall": {
+      "enabled": true,
+      "platform": "shopify",
+      "base_url": "https://txgmall.co.nz",
+      "vendor_is_brand": false
+    },
+    "njk": {
+      "enabled": true,
+      "platform": "magento",
+      "base_url": "https://www.njk.co.nz",
+      "store_view": "nz",
+      "root_category": "2"
+    },
+    "fromk": {
+      "enabled": true,
+      "platform": "woocommerce",
+      "base_url": "https://fromk.co.nz"
     }
   }
 }

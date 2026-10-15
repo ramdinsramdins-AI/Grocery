@@ -1,6 +1,6 @@
 # Shelf Check scraper
 
-Collects shelf prices from Woolworths NZ, New World and PAK'nSAVE three times a day and writes JSON that the site in `docs/` reads.
+Collects shelf prices from Woolworths NZ, New World and PAK'nSAVE, and from the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, three times a day and writes JSON that the site in `docs/` reads. The stores and how each is read are listed in `config.json` (`platform`: shopify, woocommerce or magento; Foodstuffs and Woolworths have their own code).
 
 ## Status: untested against the live sites
 
@@ -75,7 +75,7 @@ To look at it locally: `cd docs && python3 -m http.server 8000`, then open http:
 
 `docs/recipes.html` is a second page: pick recipes, set servings, and get one combined shopping list with the cheapest pack sizes and the cheapest store plans.
 
-- `docs/data/recipes.json` holds the recipes (27 so far, original text). Each has ingredients as `{item, qty, unit}` where `item` is an id from `ingredients.json`. Add a photo by setting `photo` (see `docs/photos/README.md`).
+- `docs/data/recipes.json` holds the recipes (57 so far, original text, including 10 each Chinese, Japanese and Thai, tagged by cuisine). Each has ingredients as `{item, qty, unit}` where `item` is an id from `ingredients.json`. Add a photo by setting `photo` (see `docs/photos/README.md`).
 - `ingredients.json` (repo root) says which supermarket products count as each ingredient (`include` groups, `exclude` words, `base` unit g/ml/ea, `units` conversions such as 1 onion = 150 g, `pantry` = assumed owned).
 - The scraper turns those rules into `docs/data/ingredient_products.json` (the pack sizes and prices on sale at each store). The sample file shipped in the repo is replaced on the first real run.
 - The page adds up what the chosen recipes need per ingredient, then finds the cheapest combination of that store's packs that covers it (for example 700 g of chicken with 500 g and 1 kg packs costs 1 x 1 kg, 300 g left over). Items sold loose by weight are priced exactly. It lists leftovers and other recipes that could use them.

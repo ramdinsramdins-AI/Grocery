@@ -148,6 +148,37 @@ sp = {"products": [{"id": 1, "title": "Coconut Milk UHT 1L", "vendor": "AROY-D",
      {"title": "Bulk only", "vendor": "X", "handle": "b", "variants": [{"title": "CARTON/12", "price": "50", "sku": "2", "available": True}]}]}
 r = s.shopify_parse("newgumsarn", "https://x.nz", sp)
 assert len(r) == 1 and r[0]["price"] == 6.99 and r[0]["was"] == 8.5 and r[0]["unit_basis"] == "100ml", r
+# TXG Mall puts its own name in "vendor": not a brand
+r = s.shopify_parse("txgmall", "https://x.nz", sp, vendor_is_brand=False)
+assert r[0]["brand"] is None, r
+
+# WooCommerce Store API (FromK): cents, "[Brand] English / Korean – size", size*count, sale price, out of stock skipped
+wp = [{"id": 1, "sku": "F1", "is_in_stock": True, "permalink": "https://fromk.co.nz/shop/grocery/seaweed/x/",
+       "name": "[Kwangcheonkim] Lightly Salted Roasted Seaweed / [광천김] 짜지않은 김 &#8211; 4g*16pk",
+       "prices": {"price": "1520", "regular_price": "1790", "currency_minor_unit": 2}, "categories": [{"name": "Seaweed"}]},
+      {"id": 2, "sku": "F2", "is_in_stock": True, "permalink": "https://fromk.co.nz/shop/grocery/soups-stews/y/",
+       "name": "Smart Saving &#8211; [Singsong] Soybean Paste Soup with Crab &#8211; 10g",
+       "prices": {"price": "240", "regular_price": "240", "currency_minor_unit": 2}, "categories": [{"name": "Smart Saving"}]},
+      {"id": 3, "sku": "F3", "is_in_stock": False, "name": "[X] Gone &#8211; 1kg", "prices": {"price": "100", "currency_minor_unit": 2}}]
+r = s.woocommerce_parse("fromk", wp)
+assert len(r) == 2, r
+assert (r[0]["brand"], r[0]["name"], r[0]["size"], r[0]["price"], r[0]["was"]) == ("Kwangcheonkim", "Lightly Salted Roasted Seaweed", "16 x 4g", 15.2, 17.9), r[0]
+assert r[0]["unit_basis"] == "100g" and r[0]["category"] == "Grocery > Seaweed", r[0]
+assert (r[1]["brand"], r[1]["name"], r[1]["size"], r[1]["was"]) == ("Singsong", "Soybean Paste Soup with Crab", "10g", None), r[1]
+
+# Magento GraphQL (NJK): in-stock items only, special price as "was", "600ml*12" read as 12 x 600ml
+mg = {"data": {"products": {"page_info": {"total_pages": 1}, "items": [
+    {"sku": "SP1", "name": "Yueyan Iodized Low Sodium Salt 250g", "stock_status": "IN_STOCK", "url_key": "sp1",
+     "categories": [{"name": "Food & Drinks"}, {"name": "Salt & MSG"}],
+     "price_range": {"minimum_price": {"final_price": {"value": 0.89}, "regular_price": {"value": 1.49}}}},
+    {"sku": "SP2", "name": "TTL Cooking Wine 600ml*12", "stock_status": "IN_STOCK", "url_key": "sp2", "categories": [],
+     "price_range": {"minimum_price": {"final_price": {"value": 30.0}, "regular_price": {"value": 30.0}}}},
+    {"sku": "SP3", "name": "Sold Out 1kg", "stock_status": "OUT_OF_STOCK", "url_key": "sp3", "categories": [],
+     "price_range": {"minimum_price": {"final_price": {"value": 1.0}, "regular_price": {"value": 1.0}}}}]}}}
+r = s.magento_parse("njk", "https://www.njk.co.nz", mg)
+assert len(r) == 2 and r[0]["price"] == 0.89 and r[0]["was"] == 1.49 and r[0]["unit_price"] == 0.356, r
+assert r[0]["category"] == "Food & Drinks > Salt & MSG" and r[0]["url"] == "https://www.njk.co.nz/sp1.html", r[0]
+assert s.parse_size(r[1]["size"]) == (7200, "ml"), r[1]
 
 # cross-store matching: real differences in wording still match, look-alike products do not
 def _R(store, id, name, brand, size):

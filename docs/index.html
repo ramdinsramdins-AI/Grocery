@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shelf Check NZ</title>
-<meta name="description" content="Compare a grocery list across Woolworths, New World, PAK'nSAVE and New Gum Sarn.">
+<meta name="description" content="Compare a grocery list across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -53,7 +53,7 @@ select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid 
 @media (min-width:700px){.prices{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .cell{border:1px solid var(--line);padding:7px 9px;min-width:0;background:var(--surface)}
 .cell.best{background:var(--tag);color:var(--tag-ink);border-color:var(--tag)}
-.cell.na{color:var(--muted);background:var(--soft);border-style:dashed}
+.nf{grid-column:1/-1;color:var(--muted);font-size:12px}
 .cell .st{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
 .cell .pr{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.05;font-variant-numeric:tabular-nums}
 .cell .un{font-family:var(--f-mono);font-size:11.5px;font-variant-numeric:tabular-nums}
@@ -105,7 +105,7 @@ aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;ma
 <header>
   <div>
     <h1>Shelf Check NZ</h1>
-    <p class="sub">Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and New Gum Sarn, with prices per 100g.</p>
+    <p class="sub">Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, with prices per 100g.</p>
     <a href="recipes.html" style="display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--ink)">Shop by recipe</a>
   </div>
   <div class="status" id="status" role="status">Loading prices...</div>
@@ -133,11 +133,11 @@ aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;ma
   </aside>
 </main>
 
-<p class="foot">Only products found at two or more stores are listed, because those are the ones that can be compared. "Usual" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only.</p>
+<p class="foot">Only products found at two or more stores are listed, because those are the ones that can be compared. "Usual" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only. TXG Mall, NJK and FromK prices are from their online shops; check delivery or pickup with each shop.</p>
 </div>
 
 <script>
-var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE", newgumsarn:"New Gum Sarn"};
+var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE", newgumsarn:"New Gum Sarn", txgmall:"TXG Mall", njk:"NJK", fromk:"FromK"};
 var KEYS = Object.keys(STORES);
 var PAGE = 40;
 var ITEMS = [], BYKEY = {};
@@ -193,8 +193,8 @@ function aisleOf(cat,name){
   if(/fruit|veg/.test(c))return "Fruit & Veg";
   if(/meat|seafood|poultry/.test(c))return "Meat & Seafood";
   if(/bakery/.test(c))return "Bakery";
-  if(/health|body|beauty/.test(c))return "Health & Beauty";
-  if(/household|cleaning|homeware/.test(c))return "Household";
+  if(/health|body|beauty|personal care|cosmetic|medicine|mum & baby|baby & kids/.test(c))return "Health & Beauty";
+  if(/household|cleaning|homeware|kitchenware|daily necessities|everyday essentials/.test(c))return "Household";
   for(var i=0;i<NAME_AISLE.length;i++)if(NAME_AISLE[i][1].test(n))return NAME_AISLE[i][0];
   if(/fridge|deli|chilled/.test(c))return "Deli & Chilled";
   for(var j=0;j<AISLES.length;j++)if(AISLES[j][1].test(c))return AISLES[j][0];
@@ -262,12 +262,12 @@ function renderList(){
   var html=shown.map(function(i){
     var ps=KEYS.map(function(k){return priceFor(i,k);}).filter(function(p){return p!=null;});
     var min=Math.min.apply(null,ps);
-    var cells=KEYS.map(function(k){
-      var p=priceFor(i,k);
-      if(p==null)return '<div class="cell na"><div class="st">'+esc(STORES[k])+'</div><div class="un">Not found</div></div>';
-      var d=dealText(i,k);
+    // a box for each store that has it, then one line for the rest (with seven stores most would say "Not found")
+    var missing=KEYS.filter(function(k){return priceFor(i,k)==null;}).map(function(k){return STORES[k];});
+    var cells=KEYS.filter(function(k){return priceFor(i,k)!=null;}).map(function(k){
+      var p=priceFor(i,k), d=dealText(i,k);
       return '<div class="cell'+(p===min?' best':'')+'"><div class="st">'+esc(STORES[k])+'</div><div class="pr">'+money(p)+'</div><div class="un">'+esc(unitLabel(i,k,p))+'</div>'+(d?'<div class="dl '+d.cls+'">'+esc(d.t)+'</div>':'')+'</div>';
-    }).join("");
+    }).join("")+(missing.length?'<div class="nf">Not found at '+esc(missing.join(", "))+'</div>':'');
     var inList=state.list[i.id];
     return '<article class="row"><div><h3>'+esc(i.name)+'</h3><div class="meta">'+esc(i.size)+'</div>'+(i.fuzzy?'<div class="fz">Matched by name and size. Check it is the same product.</div>':'')+'</div><button class="btn'+(inList?' in':'')+'" data-add="'+enc(i.id)+'">'+(inList?'In list ('+inList+')':'Add')+'</button><div class="prices">'+cells+'</div></article>';
   }).join("");

@@ -17,6 +17,7 @@ instead of trying to get around the block.
 """
 import argparse
 import datetime as dt
+import html
 import json
 import os
 import pathlib
@@ -24,6 +25,7 @@ import random
 import re
 import sys
 import time
+import urllib.parse
 
 import requests
 
@@ -382,7 +384,7 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
 BULK_VARIANT = re.compile(r"carton|case|box|ctn|bulk|pallet|/\s*\d+|\bx\s*\d+", re.I)
 
 
-def shopify_parse(store, base, payload):
+def shopify_parse(store, base, payload, vendor_is_brand=True):
     out = []
     for p in payload.get("products", []):
         variants = [v for v in p.get("variants", []) if v.get("available", True)]
@@ -402,7 +404,8 @@ def shopify_parse(store, base, payload):
             cmp_price = 0
         title = p.get("title") or ""
         # size comes from the title (the grams field includes packaging); unit price is worked out from it
-        out.append(make_record(store, v.get("sku") or p.get("id"), title, p.get("vendor"), title, price,
+        brand = p.get("vendor") if vendor_is_brand else None   # some shops put their own name in "vendor"
+        out.append(make_record(store, v.get("sku") or p.get("id"), title, brand, title, price,
                                cmp_price if cmp_price > price else None, None, None,
                                p.get("product_type"), f"{base}/products/{p.get('handle')}"))
     return out
@@ -416,11 +419,110 @@ def scrape_shopify(store, cfg, gcfg, session, probe=False):
         payload = r.json()
         if probe:
             return payload
-        recs = shopify_parse(store, base, payload)
+        recs = shopify_parse(store, base, payload, cfg.get("vendor_is_brand", True))
         raw = payload.get("products", [])
         print(f"  {store} page {page}: {len(raw)} listed, {len(recs)} usable", file=sys.stderr)
         results += recs
         if len(raw) < 250:
+            break
+    return results
+
+
+# ---------------------------------------------------------------- WooCommerce stores (FromK)
+# The WooCommerce Store API (/wp-json/wc/store/v1/products) is the public feed the shop's own pages use; prices are in
+# cents. robots.txt for fromk.co.nz does not cover /wp-json and asks for a 2 s crawl delay (the delay here is 2 to 4 s).
+# Names look like "[Brand] English name / [브랜드] Korean name – 4g*16pk".
+WOO_NAME = re.compile(r"^\s*(?:\[(?P<brand>[^\]]+)\]\s*)?(?P<name>.*?)(?:\s+/\s+.*?)?(?:\s+[–-]\s+(?P<size>[^–]+))?\s*$")
+EACH_TIMES_COUNT = re.compile(r"(\d+(?:\.\d+)?)\s*(kg|g|ml|l)\s*[*x×]\s*(\d+)\s*(?:pk|p|pcs|ea|bags?)?\b", re.I)
+
+
+def woocommerce_parse(store, payload):
+    out = []
+    for p in payload:
+        if not p.get("is_in_stock", True):
+            continue
+        pr = p.get("prices") or {}
+        unit = 10 ** int(pr.get("currency_minor_unit") or 0)
+        try:
+            price, regular = int(pr["price"]) / unit, int(pr.get("regular_price") or 0) / unit
+        except (KeyError, TypeError, ValueError):
+            continue
+        if price <= 0:
+            continue
+        raw = re.sub(r"^[^\[]{1,40}?\s[–-]\s(?=\[)", "", html.unescape(p.get("name") or ""))   # "Smart Saving – [Brand] ..."
+        m = WOO_NAME.match(raw)
+        name, brand, size = m.group("name").strip(), m.group("brand"), (m.group("size") or "").strip()
+        size = EACH_TIMES_COUNT.sub(lambda s: f"{s.group(3)} x {s.group(1)}{s.group(2)}", size)   # 4g*16pk -> 16 x 4g
+        path = urllib.parse.urlparse(p.get("permalink") or "").path.strip("/").split("/")
+        top = path[1].replace("-", " ").title() if len(path) > 2 and path[0] == "shop" else ""
+        leaf = ((p.get("categories") or [{}])[0]).get("name") or ""
+        category = " > ".join(x for x in (top, html.unescape(leaf)) if x)
+        out.append(make_record(store, p.get("sku") or p.get("id"), name, brand, size or name, price,
+                               regular if regular > price else None, None, None, category, p.get("permalink")))
+    return out
+
+
+def scrape_woocommerce(store, cfg, gcfg, session, probe=False):
+    base = cfg["base_url"].rstrip("/")
+    results = []
+    for page in range(1, 200):
+        r = polite_get(session, f"{base}/wp-json/wc/store/v1/products", gcfg["delay_seconds"],
+                       params={"per_page": 100, "page": page})
+        payload = r.json()
+        if probe:
+            return payload
+        recs = woocommerce_parse(store, payload)
+        print(f"  {store} page {page}: {len(payload)} listed, {len(recs)} usable", file=sys.stderr)
+        results += recs
+        if page >= int(r.headers.get("X-WP-TotalPages") or page) or not payload:
+            break
+    return results
+
+
+# ---------------------------------------------------------------- Magento stores (NJK)
+# Magento's storefront GraphQL endpoint (POST /graphql) is what the shop's own pages call. robots.txt for njk.co.nz blocks
+# page URLs with "?" and catalogue pages but not /graphql. The "Store" header picks the English store view.
+MAGENTO_QUERY = """{ products(filter: {category_id: {eq: "%s"}}, pageSize: 100, currentPage: %d) {
+  page_info { total_pages }
+  items { sku name stock_status url_key categories { name }
+    price_range { minimum_price { final_price { value } regular_price { value } } } } } }"""
+
+
+def magento_parse(store, base, payload):
+    out = []
+    for p in ((payload.get("data") or {}).get("products") or {}).get("items") or []:
+        if p.get("stock_status") != "IN_STOCK":
+            continue
+        mp = ((p.get("price_range") or {}).get("minimum_price") or {})
+        price = ((mp.get("final_price") or {}).get("value")) or 0
+        regular = ((mp.get("regular_price") or {}).get("value")) or 0
+        if price <= 0:
+            continue
+        cats = [c.get("name") for c in p.get("categories") or [] if c.get("name")]
+        size = EACH_TIMES_COUNT.sub(lambda s: f"{s.group(3)} x {s.group(1)}{s.group(2)}", p.get("name") or "")  # 600ml*12
+        out.append(make_record(store, p.get("sku"), p.get("name"), None, size, price,
+                               regular if regular > price else None, None, None, " > ".join(cats[:2]),
+                               f"{base}/{urllib.parse.quote(p.get('url_key') or '')}.html"))
+    return out
+
+
+def scrape_magento(store, cfg, gcfg, session, probe=False):
+    base = cfg["base_url"].rstrip("/")
+    headers = {"Store": cfg.get("store_view", "default")}
+    results = []
+    for page in range(1, 200):
+        r = polite_post(session, f"{base}/graphql", gcfg["delay_seconds"], headers=headers,
+                        json={"query": MAGENTO_QUERY % (cfg.get("root_category", "2"), page)})
+        payload = r.json()
+        if probe:
+            return payload
+        if payload.get("errors"):
+            raise RuntimeError(f"{store} GraphQL error: {payload['errors'][0].get('message')}")
+        recs = magento_parse(store, base, payload)
+        listed = ((payload.get("data") or {}).get("products") or {})
+        print(f"  {store} page {page}: {len(listed.get('items') or [])} listed, {len(recs)} usable", file=sys.stderr)
+        results += recs
+        if page >= ((listed.get("page_info") or {}).get("total_pages") or page):
             break
     return results
 
@@ -738,11 +840,15 @@ def match_report(top=15):
 # recipe page uses to work out the cheapest packs that cover what the chosen recipes need.
 INGREDIENTS = ROOT / "ingredients.json"
 MAX_PACKS_PER_STORE = 6
+WEIGHT_RANGE = re.compile(r"\d\s*(?:kg|g)?\s*-\s*\d+(?:\.\d+)?\s*(?:kg|g)\b")
 
 
-# Store aisles that never hold a cooking ingredient (Foodstuffs top-level names, New Gum Sarn sub-categories).
+# Store aisles that never hold a cooking ingredient (Foodstuffs top-level names; New Gum Sarn, TXG Mall, NJK and
+# FromK categories, which for NJK and FromK read "Top > Leaf").
 NOT_FOOD_AISLE = re.compile(r"^(pets|baby & toddler|health & body|household & cleaning|homewares|beer, wine & cider)$"
-                            r"|soap|dental|cough|massage|remed|insecticide|stomach|laundry|liner|cleaning|candle|incense", re.I)
+                            r"|soap|dental|cough|massage|remed|insecticide|stomach|laundry|liner|cleaning|candle|incense"
+                            r"|everyday essentials|mum & baby|baby & kids|personal care|cosmetic|beauty|household"
+                            r"|kitchenware|daily necessities|medicine", re.I)
 # Words that mark a product as something made from the ingredient, or not food at all. Applies to every ingredient
 # except where the ingredient's own include rule asks for the word (noodles may say "noodle", soy sauce "sauce").
 NOT_INGREDIENT = [
@@ -757,7 +863,8 @@ NOT_INGREDIENT = [
     "marinade", "gravy", "flavour", "flavoured", "mix", "kit", "sachet", "instant", "snack", "cereal", "muesli",
     "granola", "sushi", "yoghurt", "yogurt", "milk", "evaporated", "stix", "stick", "cone",
 ]
-FRESH_AISLE = {"fruit & vegetables"}   # New Gum Sarn's "Vegetables" and "Fruit" are canned and frozen goods
+# New Gum Sarn's "Vegetables" and "Fruit" are canned and frozen goods; TXG Mall's are fresh
+FRESH_AISLE = {"fruit & vegetables", "txgmall:vegetables", "txgmall:fruits"}
 WOOLWORTHS_FRESH = re.compile(r"\bfresh (?:fruit|vegetable|herb|salad)\b|^(?:fresh|the odd bunch|the fresh grower)$")
 
 
@@ -769,7 +876,7 @@ def _has_term(term, words, text):
 def _in_fresh_aisle(rec):
     cat = str(rec.get("category") or "").lower()
     if cat and cat not in ("uploaded", "fixture"):
-        return cat in FRESH_AISLE
+        return cat in FRESH_AISLE or f"{rec.get('store')}:{cat}" in FRESH_AISLE
     # Woolworths data has no aisle, but its produce is branded "fresh vegetable", "fresh fruit" and so on
     return bool(WOOLWORTHS_FRESH.search(str(rec.get("name") or "").lower())
                 or WOOLWORTHS_FRESH.search(str(rec.get("brand") or "").lower()))
@@ -782,8 +889,9 @@ def _ingredient_match(rec, spec):
         return False
     words = {_stem(w) for w in _words(f"{rec.get('name') or ''} {rec.get('brand') or ''}")}
     text = " ".join(_words(f"{rec.get('name') or ''} {rec.get('brand') or ''}"))
-    asked = {_stem(t.lower()) for group in spec.get("include", []) for t in group}
-    shared = [x for x in NOT_INGREDIENT if _stem(x) not in asked]
+    # an ingredient's own words ("sauce" in fish sauce) and its "allow" list are exempt from the shared list
+    asked = {_stem(w) for group in spec.get("include", []) for t in group for w in t.lower().split()}
+    shared = [x for x in NOT_INGREDIENT if _stem(x) not in asked and x not in spec.get("allow", [])]
     if any(_has_term(x, words, text) for x in spec.get("exclude", []) + shared):
         return False
     return all(any(_has_term(alt, words, text) for alt in group) for group in spec.get("include", []))
@@ -794,12 +902,16 @@ def _ingredient_pack(rec, spec):
     base = spec["base"]
     each = None if spec.get("by_weight") else (spec.get("units") or {}).get("each")
     basis, up = rec.get("unit_basis"), rec.get("unit_price")
-    if "min order" in str(rec.get("size") or "").lower():   # Woolworths by-weight items: the price is per kg
+    size_text = str(rec.get("size") or "").lower()
+    # Woolworths by-weight items ("min order 850g", "0.35-0.6kg 5-8pc", "580g - 800g"): the price is per kg
+    if "min order" in size_text or WEIGHT_RANGE.search(size_text):
         return (100, True) if base in ("g", "ml") and basis == "100" + base and up else None
     size = parse_size(rec.get("size")) or parse_size(rec.get("name"))
     if size:
         qty, unit = size
         if unit == base:
+            return (qty, False)
+        if spec.get("g_or_ml") and {unit, base} == {"g", "ml"}:   # sauces are sold by weight or by volume; close enough
             return (qty, False)
         if unit == "ea" and base in ("g", "ml") and each:
             return (qty * each, False)
@@ -942,9 +1054,10 @@ def write_outputs(records, now, store_times=None):
 
 
 def main():
+    cfg = json.loads((ROOT / "config.json").read_text())
     ap = argparse.ArgumentParser()
-    ap.add_argument("--store", choices=["woolworths", "newworld", "paknsave", "newgumsarn"])
-    ap.add_argument("--probe", choices=["woolworths", "newworld", "paknsave", "newgumsarn"])
+    ap.add_argument("--store", choices=list(cfg["stores"]))
+    ap.add_argument("--probe", choices=list(cfg["stores"]))
     ap.add_argument("--category", help='with --probe newworld/paknsave: the category to fetch, e.g. "Pantry" or "Pantry > Herbs & Spices"')
     ap.add_argument("--match-report", action="store_true", help="show how well products match across stores, from the last scrape")
     ap.add_argument("--ingredient-report", action="store_true", help="show which products were picked for each recipe ingredient")
@@ -958,7 +1071,6 @@ def main():
         ingredient_report()
         return
 
-    cfg = json.loads((ROOT / "config.json").read_text())
     gcfg = {k: cfg[k] for k in ("max_pages_per_category", "delay_seconds")}
     now = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
@@ -990,8 +1102,9 @@ def main():
                     print(f"  woolworths: using uploaded woolworths.json from {manual[1]} ({len(manual[0])} products)", file=sys.stderr)
                     return manual[0]
             return scrape_woolworths(c, gcfg, session, probe)
-        if store == "newgumsarn":
-            return scrape_shopify(store, c, gcfg, session, probe)
+        platform = {"shopify": scrape_shopify, "woocommerce": scrape_woocommerce, "magento": scrape_magento}
+        if c.get("platform") in platform:
+            return platform[c["platform"]](store, c, gcfg, session, probe)
         return scrape_foodstuffs(store, c, gcfg, session, probe)
 
     if args.probe:

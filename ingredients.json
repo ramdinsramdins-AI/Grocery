@@ -1,5 +1,5 @@
 {
- "note": "Rules the scraper uses to find supermarket products for each recipe ingredient. 'include' is a list of groups: a product must contain at least one word from EVERY group. 'exclude' words rule a product out. base is g, ml or ea (each). units converts recipe units to the base amount. pantry=true means the site assumes you already own it.",
+ "note": "Rules the scraper uses to find supermarket products for each recipe ingredient. 'include' is a list of groups: a product must contain at least one word from EVERY group. 'exclude' words rule a product out. base is g, ml or ea (each). units converts recipe units to the base amount. pantry=true means the site assumes you already own it. fresh=true only takes products from a fresh produce aisle. by_weight=true ignores products sold by count (a bunch of bananas is not one banana). g_or_ml=true treats grams and millilitres as equal (sauces are sold both ways). The scraper also skips products named with words like sauce, powder or snack (NOT_INGREDIENT in scraper.py) unless the ingredient's include words or its 'allow' list name them.",
  "ingredients": {
   "chicken-breast": {
    "name": "Chicken breast",
@@ -2834,6 +2834,946 @@
     "pot",
     "sausage",
     "roll"
+   ]
+  },
+  "spring-onion": {
+   "name": "Spring onions",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "ea": 120,
+    "each": 120,
+    "bunch": 120,
+    "stalk": 15
+   },
+   "include": [
+    [
+     "spring onion",
+     "scallion",
+     "green onion"
+    ]
+   ],
+   "exclude": [
+    "pancake",
+    "oil",
+    "noodle",
+    "roti",
+    "seasoning",
+    "bread",
+    "floss",
+    "dumpling",
+    "beef",
+    "broth"
+   ],
+   "fresh": true
+  },
+  "sesame-oil": {
+   "name": "Sesame oil",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "sesame"
+    ],
+    [
+     "oil"
+    ]
+   ],
+   "exclude": [
+    "seaweed",
+    "noodle",
+    "bean curd",
+    "hot pot",
+    "corn",
+    "chilli",
+    "chili",
+    "black",
+    "braised",
+    "chicken"
+   ],
+   "g_or_ml": true
+  },
+  "oyster-sauce": {
+   "name": "Oyster sauce",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "oyster"
+    ],
+    [
+     "sauce"
+    ]
+   ],
+   "exclude": [
+    "noodle",
+    "pump",
+    "bottle",
+    "spring onion",
+    "fried",
+    "chicken",
+    "beef",
+    "king oyster"
+   ],
+   "g_or_ml": true
+  },
+  "fish-sauce": {
+   "name": "Fish sauce",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "fish sauce"
+    ]
+   ],
+   "exclude": [
+    "vegan",
+    "truffle",
+    "spicy",
+    "sand lance",
+    "anchovy",
+    "chilli",
+    "dipping"
+   ],
+   "g_or_ml": true
+  },
+  "rice-vinegar": {
+   "name": "Rice vinegar",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "vinegar"
+    ],
+    [
+     "rice"
+    ]
+   ],
+   "exclude": [
+    "balsamic",
+    "cake",
+    "brown",
+    "sushi seasoning"
+   ],
+   "g_or_ml": true
+  },
+  "mirin": {
+   "name": "Mirin",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "mirin"
+    ]
+   ],
+   "exclude": [
+    "sauce",
+    "teriyaki"
+   ],
+   "g_or_ml": true,
+   "allow": [
+    "seasoning"
+   ]
+  },
+  "shaoxing-wine": {
+   "name": "Shaoxing or Chinese cooking wine",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "cooking wine",
+     "shaoxing",
+     "shao hsing",
+     "huadiao",
+     "hua tiao"
+    ]
+   ],
+   "exclude": [
+    "vinegar",
+    "bay leaf",
+    "mirin",
+    "sauce",
+    "chicken"
+   ],
+   "g_or_ml": true
+  },
+  "hoisin-sauce": {
+   "name": "Hoisin sauce",
+   "base": "ml",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "hoisin"
+    ],
+    [
+     "sauce"
+    ]
+   ],
+   "exclude": [
+    "dumpling",
+    "potsticker",
+    "tofu",
+    "pork",
+    "chicken",
+    "marinated",
+    "noodle"
+   ],
+   "g_or_ml": true
+  },
+  "chilli-bean-paste": {
+   "name": "Chilli bean paste (doubanjiang)",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 18,
+    "tsp": 6
+   },
+   "include": [
+    [
+     "bean"
+    ],
+    [
+     "chilli",
+     "chili",
+     "dou ban",
+     "doubanjiang",
+     "toban"
+    ],
+    [
+     "paste",
+     "sauce"
+    ]
+   ],
+   "exclude": [
+    "dan dan",
+    "noodle",
+    "sweet",
+    "black",
+    "soybean",
+    "kidney",
+    "baked",
+    "salad",
+    "mexican",
+    "fermented"
+   ],
+   "g_or_ml": true
+  },
+  "five-spice": {
+   "name": "Chinese five spice",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tsp": 2.5
+   },
+   "include": [
+    [
+     "five spice",
+     "5 spice",
+     "five spices"
+    ]
+   ],
+   "exclude": [
+    "peanut",
+    "bean",
+    "seed",
+    "sausage",
+    "marinade",
+    "curd",
+    "tofu",
+    "gluten",
+    "bbq",
+    "broad",
+    "sunflower",
+    "noodle",
+    "egg",
+    "ball",
+    "braised",
+    "chicken"
+   ],
+   "allow": [
+    "powder"
+   ]
+  },
+  "tofu": {
+   "name": "Tofu",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "tofu"
+    ]
+   ],
+   "exclude": [
+    "sausage",
+    "konjac",
+    "noodle",
+    "teriyaki",
+    "marinated",
+    "hoisin",
+    "cube",
+    "fried",
+    "dried",
+    "fermented",
+    "kimbap",
+    "puff",
+    "skin",
+    "sheet",
+    "spicy",
+    "flavoured",
+    "litter",
+    "smoked",
+    "five spice",
+    "jerky",
+    "pudding",
+    "cake",
+    "bowl",
+    "rice",
+    "roll",
+    "frozen",
+    "jelly",
+    "spinach",
+    "egg",
+    "seafood",
+    "stinky",
+    "juicy"
+   ]
+  },
+  "pork-mince": {
+   "name": "Pork mince",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "pork"
+    ],
+    [
+     "mince",
+     "minced"
+    ]
+   ],
+   "exclude": [
+    "beef",
+    "noodle",
+    "chilli",
+    "instant",
+    "dumpling",
+    "sausage",
+    "chicken",
+    "soybean",
+    "onion"
+   ]
+  },
+  "pork-belly": {
+   "name": "Pork belly",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "pork"
+    ],
+    [
+     "belly"
+    ]
+   ],
+   "exclude": [
+    "bbq",
+    "bite",
+    "crackle",
+    "crackling",
+    "strip",
+    "braised",
+    "seasoning",
+    "soup",
+    "smoky",
+    "roast",
+    "marinated",
+    "cooked",
+    "hot pot",
+    "chicken",
+    "bacon",
+    "smokehouse",
+    "mince"
+   ]
+  },
+  "prawns": {
+   "name": "Raw prawns",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "prawn",
+     "prawns",
+     "shrimp"
+    ],
+    [
+     "raw",
+     "cutlet",
+     "cutlets",
+     "meat",
+     "stirfry",
+     "stir fry",
+     "peeled",
+     "tail"
+    ]
+   ],
+   "exclude": [
+    "cracker",
+    "skewer",
+    "shaomai",
+    "chilli",
+    "noodle",
+    "dumpling",
+    "bite",
+    "crumbed",
+    "panko",
+    "garlic",
+    "cooked",
+    "whole",
+    "dried",
+    "toast",
+    "wonton",
+    "gyoza",
+    "har gow",
+    "ball",
+    "head"
+   ]
+  },
+  "bok-choy": {
+   "name": "Bok choy",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "each": 300,
+    "ea": 300
+   },
+   "include": [
+    [
+     "bok choy",
+     "pak choy",
+     "bok choi",
+     "pak choi"
+    ]
+   ],
+   "exclude": [],
+   "fresh": true
+  },
+  "cabbage": {
+   "name": "Cabbage (wombok or green)",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "each": 1200,
+    "ea": 1200
+   },
+   "include": [
+    [
+     "cabbage",
+     "wombok",
+     "wong bok",
+     "napa"
+    ]
+   ],
+   "exclude": [
+    "half",
+    "quarter",
+    "red",
+    "kimchi",
+    "pickled",
+    "slaw",
+    "dumpling",
+    "salad"
+   ],
+   "fresh": true
+  },
+  "cucumber": {
+   "name": "Cucumber",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "each": 350,
+    "ea": 350
+   },
+   "include": [
+    [
+     "cucumber",
+     "cucumbers"
+    ]
+   ],
+   "exclude": [
+    "snack",
+    "hummus",
+    "pickled",
+    "bread & butter",
+    "stick",
+    "mint",
+    "wipes"
+   ],
+   "fresh": true
+  },
+  "eggplant": {
+   "name": "Eggplant",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "each": 350,
+    "ea": 350
+   },
+   "include": [
+    [
+     "eggplant",
+     "aubergine"
+    ]
+   ],
+   "exclude": [
+    "baba"
+   ],
+   "fresh": true
+  },
+  "bean-sprouts": {
+   "name": "Bean sprouts",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {},
+   "include": [
+    [
+     "sprout",
+     "sprouts"
+    ],
+    [
+     "bean",
+     "mung"
+    ]
+   ],
+   "exclude": [
+    "brussels",
+    "alfalfa"
+   ],
+   "fresh": true
+  },
+  "red-chilli": {
+   "name": "Fresh red chillies",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "each": 10,
+    "ea": 10
+   },
+   "include": [
+    [
+     "chilli",
+     "chillies",
+     "chili",
+     "chilies"
+    ]
+   ],
+   "exclude": [
+    "crushed",
+    "flake",
+    "dried",
+    "jam",
+    "sweet",
+    "frozen",
+    "oil",
+    "vegetables",
+    "jalapeno"
+   ],
+   "fresh": true
+  },
+  "lime": {
+   "name": "Limes",
+   "base": "g",
+   "pantry": false,
+   "perishable": true,
+   "units": {
+    "ea": 80,
+    "each": 80
+   },
+   "include": [
+    [
+     "lime",
+     "limes"
+    ]
+   ],
+   "exclude": [
+    "juice",
+    "kaffir",
+    "leaves",
+    "cordial",
+    "soda"
+   ],
+   "fresh": true
+  },
+  "lemongrass": {
+   "name": "Lemongrass",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "stalk": 25
+   },
+   "include": [
+    [
+     "lemongrass",
+     "lemon grass"
+    ]
+   ],
+   "exclude": [
+    "dumpling",
+    "roll",
+    "wash",
+    "tea",
+    "chicken",
+    "candle",
+    "oil",
+    "diffuser",
+    "soap"
+   ],
+   "allow": [
+    "stick"
+   ]
+  },
+  "red-curry-paste": {
+   "name": "Thai red curry paste",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "curry paste"
+    ],
+    [
+     "red"
+    ]
+   ],
+   "exclude": [
+    "yellow",
+    "green",
+    "laksa",
+    "massaman"
+   ]
+  },
+  "green-curry-paste": {
+   "name": "Thai green curry paste",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 15,
+    "tsp": 5
+   },
+   "include": [
+    [
+     "curry paste"
+    ],
+    [
+     "green"
+    ]
+   ],
+   "exclude": [
+    "yellow",
+    "red",
+    "laksa",
+    "massaman"
+   ]
+  },
+  "japanese-curry-roux": {
+   "name": "Japanese curry roux (e.g. Golden Curry)",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "curry"
+    ],
+    [
+     "golden",
+     "vermont",
+     "java",
+     "roux",
+     "kokumaro"
+    ]
+   ],
+   "exclude": [
+    "chicken",
+    "noodle",
+    "rice",
+    "cup",
+    "instant",
+    "ready",
+    "pouch",
+    "laksa",
+    "retort"
+   ],
+   "allow": [
+    "sauce",
+    "mix"
+   ]
+  },
+  "rice-noodles": {
+   "name": "Dried rice noodles",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "rice"
+    ],
+    [
+     "noodle",
+     "stick",
+     "vermicelli"
+    ]
+   ],
+   "exclude": [
+    "pho",
+    "tom yum",
+    "cup",
+    "bowl",
+    "instant",
+    "snail",
+    "crossing bridge",
+    "spicy",
+    "sour",
+    "hot",
+    "beef",
+    "chicken",
+    "deep fried",
+    "monster",
+    "mamee",
+    "kit",
+    "broth",
+    "yukgaejang",
+    "viet",
+    "char kway teow",
+    "feizhi",
+    "glutinous",
+    "sesame",
+    "konjac",
+    "pepper",
+    "mini pot",
+    "liu zhou",
+    "liuzhou"
+   ]
+  },
+  "udon": {
+   "name": "Udon noodles",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "udon"
+    ]
+   ],
+   "exclude": [
+    "tempura",
+    "soup",
+    "cup",
+    "bowl",
+    "kit",
+    "katsuo",
+    "seafood",
+    "monocup",
+    "curry",
+    "sweet & sour"
+   ]
+  },
+  "sushi-rice": {
+   "name": "Japanese short or medium grain rice",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "cup": 200
+   },
+   "include": [
+    [
+     "rice"
+    ],
+    [
+     "sushi",
+     "calrose",
+     "short grain",
+     "japanese",
+     "medium grain"
+    ]
+   ],
+   "exclude": [
+    "brown",
+    "seasoning",
+    "vinegar",
+    "cracker",
+    "paper",
+    "seaweed",
+    "cake",
+    "onigiri",
+    "ready",
+    "microwave",
+    "cooked"
+   ]
+  },
+  "panko": {
+   "name": "Panko breadcrumbs",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "panko"
+    ]
+   ],
+   "exclude": [
+    "chicken",
+    "prawn",
+    "scallop",
+    "bite",
+    "crumbed",
+    "tender",
+    "fish",
+    "fillet",
+    "nugget"
+   ]
+  },
+  "peanuts": {
+   "name": "Roasted peanuts",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {},
+   "include": [
+    [
+     "peanut",
+     "peanuts"
+    ]
+   ],
+   "exclude": [
+    "butter",
+    "honey",
+    "spicy",
+    "fish skin",
+    "gluten",
+    "candy",
+    "oil",
+    "shell",
+    "five spice",
+    "garlic",
+    "coated",
+    "brittle",
+    "cookie",
+    "satay",
+    "trail",
+    "wasabi",
+    "broad bean",
+    "cashew",
+    "almond",
+    "mixed",
+    "raisin",
+    "pouch",
+    "m ms",
+    "chilli",
+    "sand",
+    "pudding",
+    "jelly",
+    "ma la",
+    "mala",
+    "mochi",
+    "ball",
+    "beer",
+    "pecan"
+   ]
+  },
+  "sesame-seeds": {
+   "name": "Sesame seeds",
+   "base": "g",
+   "pantry": false,
+   "perishable": false,
+   "units": {
+    "tbsp": 9,
+    "tsp": 3
+   },
+   "include": [
+    [
+     "sesame"
+    ],
+    [
+     "seed",
+     "seeds"
+    ]
+   ],
+   "exclude": [
+    "bun",
+    "roll",
+    "bagel",
+    "salmon",
+    "crisp",
+    "pita",
+    "bread",
+    "oil",
+    "dressing",
+    "brittle",
+    "long",
+    "candy",
+    "cracker"
    ]
   }
  }

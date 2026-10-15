@@ -17,7 +17,7 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90   # seven stores, with New World / PAK'nSAVE split into sub-categories
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6

@@ -1951,6 +1951,2472 @@
     "Add the tomatoes, coconut milk, chickpeas and salt. Simmer for 15 minutes until thickened.",
     "Stir in the spinach and cook for 2 minutes until wilted. Taste, adjust the salt, and serve with the rice."
    ]
+  },
+  {
+   "id": "kung-pao-chicken",
+   "name": "Kung pao chicken",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "chicken",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "Sichuan-style chicken stir fry with peanuts, chilli and a glossy sweet and sour sauce.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-thigh",
+     "qty": 600,
+     "unit": "g",
+     "note": "cut into 2 cm pieces"
+    },
+    {
+     "item": "cornflour",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "shaoxing-wine",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice-vinegar",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "red-chilli",
+     "qty": 3,
+     "unit": "each",
+     "note": "sliced (or a handful of dried chillies)"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "sliced"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "finely chopped"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 4,
+     "unit": "stalk",
+     "note": "cut into 3 cm lengths"
+    },
+    {
+     "item": "peanuts",
+     "qty": 60,
+     "unit": "g"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Toss the chicken with 1 tbsp of the soy sauce, the Shaoxing wine and half the cornflour.",
+    "Mix the sauce: the rest of the soy sauce, the vinegar, sugar, the rest of the cornflour and 3 tbsp water.",
+    "Heat the oil in a wok over high heat and stir-fry the chicken for 5 to 6 minutes until browned and cooked through. Lift it out.",
+    "Add the chilli, garlic, ginger and the white parts of the spring onion and stir-fry for 30 seconds.",
+    "Return the chicken, pour in the sauce and toss for about a minute until thick and glossy. Stir through the peanuts and the green spring onion and serve with the rice."
+   ]
+  },
+  {
+   "id": "mapo-tofu",
+   "name": "Mapo tofu",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "pork",
+    "dinner",
+    "quick",
+    "budget"
+   ],
+   "blurb": "Soft tofu in a spicy, savoury pork and chilli bean sauce. A Sichuan classic that comes together fast.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "tofu",
+     "qty": 600,
+     "unit": "g",
+     "note": "soft or firm, cut into 2 cm cubes"
+    },
+    {
+     "item": "pork-mince",
+     "qty": 200,
+     "unit": "g"
+    },
+    {
+     "item": "chilli-bean-paste",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "chopped"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "chopped"
+    },
+    {
+     "item": "chilli-powder",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 250,
+     "unit": "ml"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "cornflour",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 3,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Simmer the tofu cubes in lightly salted water for 2 minutes to firm them up, then drain.",
+    "Heat the oil in a wok over medium-high heat and fry the pork, breaking it up, for about 4 minutes until browned.",
+    "Add the chilli bean paste, garlic, ginger and chilli powder and fry for a minute until the oil turns red.",
+    "Pour in the stock, soy sauce and sugar and bring to a simmer. Slide in the tofu and simmer for 4 minutes, nudging it gently rather than stirring.",
+    "Mix the cornflour with 2 tbsp water, stir it in gently and simmer until the sauce thickens. Scatter over the spring onion and serve over rice. Ground Sichuan pepper on top is traditional if you have it."
+   ]
+  },
+  {
+   "id": "tomato-egg-stir-fry",
+   "name": "Tomato and egg stir fry",
+   "minutes": 15,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "vegetarian",
+    "eggs",
+    "quick",
+    "budget"
+   ],
+   "blurb": "Soft scrambled egg and juicy tomato in a light sweet-savoury sauce. Everyday home cooking in China.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "eggs",
+     "qty": 6,
+     "unit": "ea"
+    },
+    {
+     "item": "tomato-fresh",
+     "qty": 4,
+     "unit": "each",
+     "note": "cut into wedges"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 2,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sesame-oil",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Beat the eggs with a pinch of the salt.",
+    "Heat 1 tbsp oil in a wok over medium-high heat, pour in the eggs and stir gently until just set in large soft curds. Tip onto a plate.",
+    "Add the rest of the oil and the tomatoes and stir-fry for about 3 minutes until they soften and release their juice.",
+    "Add the sugar, the rest of the salt and 3 tbsp water and simmer for 2 minutes.",
+    "Return the eggs and fold everything together for 30 seconds. Drizzle with sesame oil, scatter over the spring onion and serve over rice."
+   ]
+  },
+  {
+   "id": "char-siu-pork",
+   "name": "Char siu pork with rice and greens",
+   "minutes": 90,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "pork",
+    "dinner"
+   ],
+   "blurb": "Sticky, sweet roast pork glazed with hoisin and honey. Marinate for at least an hour, or overnight.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "pork-belly",
+     "qty": 800,
+     "unit": "g",
+     "note": "or pork shoulder, cut into strips 4 cm thick"
+    },
+    {
+     "item": "hoisin-sauce",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "honey",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "five-spice",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "shaoxing-wine",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "bok-choy",
+     "qty": 400,
+     "unit": "g",
+     "note": "halved"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Mix the hoisin sauce, soy sauce, 2 tbsp of the honey, the five spice, garlic, wine and sugar. Coat the pork and marinate in the fridge for at least an hour.",
+    "Heat the oven to 200°C. Line a roasting tray with foil and set a rack on it. Lay the pork on the rack and keep the leftover marinade.",
+    "Roast for 25 minutes, turn the pork, brush with the leftover marinade and roast for another 20 minutes.",
+    "Brush with the rest of the honey and roast for 5 to 10 minutes more until sticky and charred at the edges and cooked through. Rest for 5 minutes, then slice.",
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Stir-fry the bok choy in the oil over high heat for 2 to 3 minutes with a splash of water and a pinch of salt. Serve the pork over rice with the greens."
+   ]
+  },
+  {
+   "id": "steamed-egg-custard",
+   "name": "Chinese steamed egg custard",
+   "minutes": 20,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "eggs",
+    "quick",
+    "budget"
+   ],
+   "blurb": "Silky, savoury egg custard steamed in a bowl. Serve with rice and a stir fry.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "eggs",
+     "qty": 4,
+     "unit": "ea"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 400,
+     "unit": "ml",
+     "note": "warm"
+    },
+    {
+     "item": "salt",
+     "qty": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sesame-oil",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 1,
+     "unit": "stalk",
+     "note": "finely sliced"
+    }
+   ],
+   "method": [
+    "Beat the eggs gently so you do not whip in air, then whisk in the warm stock and salt.",
+    "Pour through a sieve into a shallow heatproof dish and skim off any bubbles. Cover with a plate or foil.",
+    "Steam over gently simmering water for 10 to 12 minutes until just set and still wobbly in the middle. A knife pushed into the centre should come out clean.",
+    "Drizzle with the soy sauce and sesame oil and scatter over the spring onion."
+   ]
+  },
+  {
+   "id": "pork-cabbage-dumplings",
+   "name": "Pork and cabbage dumplings",
+   "minutes": 75,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "pork",
+    "dinner"
+   ],
+   "blurb": "Homemade jiaozi with a simple flour and water dough. Makes about 40, and extras freeze well.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "flour",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "pork-mince",
+     "qty": 400,
+     "unit": "g"
+    },
+    {
+     "item": "cabbage",
+     "qty": 300,
+     "unit": "g",
+     "note": "finely chopped"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 3,
+     "unit": "stalk",
+     "note": "finely chopped"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sesame-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "shaoxing-wine",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice-vinegar",
+     "qty": 3,
+     "unit": "tbsp",
+     "note": "for dipping"
+    }
+   ],
+   "method": [
+    "Mix the flour with 150 ml cold water and knead for 5 minutes until smooth. Cover and rest for 30 minutes.",
+    "Toss the cabbage with the salt, leave for 10 minutes, then squeeze out as much water as you can.",
+    "Mix the pork, cabbage, spring onion, ginger, 1 tbsp of the soy sauce, the sesame oil, wine and 2 tbsp water, stirring in one direction until sticky.",
+    "Roll the dough into a long rope, cut it into 40 pieces and roll each into a thin circle about 8 cm across.",
+    "Put a heaped teaspoon of filling in the middle of each, fold in half and pinch the edges firmly to seal.",
+    "Boil in batches in a large pot of water. When they float, add a cup of cold water and bring back to the boil; do this twice, about 6 to 7 minutes in all, until the filling is cooked through.",
+    "Serve with the vinegar mixed with the rest of the soy sauce for dipping. Freeze any extras uncooked on a tray, then bag them."
+   ]
+  },
+  {
+   "id": "sweet-sour-chicken",
+   "name": "Sweet and sour chicken",
+   "minutes": 35,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "chicken",
+    "dinner"
+   ],
+   "blurb": "Crisp chicken pieces tossed with capsicum and onion in a tangy homemade sauce.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-breast",
+     "qty": 600,
+     "unit": "g",
+     "note": "cut into 2.5 cm pieces"
+    },
+    {
+     "item": "eggs",
+     "qty": 1,
+     "unit": "ea"
+    },
+    {
+     "item": "cornflour",
+     "qty": 6,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "capsicum",
+     "qty": 2,
+     "unit": "each",
+     "note": "cut into chunks"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "cut into chunks"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "chopped"
+    },
+    {
+     "item": "rice-vinegar",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "tomato-paste",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Mix the sauce: vinegar, sugar, tomato paste, soy sauce, 1 tbsp of the cornflour and 150 ml water.",
+    "Beat the egg. Dip the chicken in the egg, then toss it in the rest of the cornflour.",
+    "Shallow-fry the chicken in the oil over medium-high heat in batches for 5 to 6 minutes until golden and cooked through. Drain on paper towels.",
+    "Pour off all but 1 tbsp of the oil. Stir-fry the onion and capsicum for 3 minutes, then the garlic for 30 seconds.",
+    "Pour in the sauce and simmer for 1 to 2 minutes until thick and glossy. Toss the chicken through and serve with the rice."
+   ]
+  },
+  {
+   "id": "dan-dan-noodles",
+   "name": "Dan dan noodles",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "pork",
+    "noodles",
+    "quick"
+   ],
+   "blurb": "Noodles with crisp spiced pork, greens and a nutty, tangy chilli sauce. Toss everything before eating.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "noodles",
+     "qty": 400,
+     "unit": "g",
+     "note": "egg or wheat noodles"
+    },
+    {
+     "item": "pork-mince",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "chilli-bean-paste",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "shaoxing-wine",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "bok-choy",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice-vinegar",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sesame-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "chilli-powder",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "peanuts",
+     "qty": 40,
+     "unit": "g",
+     "note": "crushed"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 3,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Divide the soy sauce, vinegar, sesame oil, sugar, chilli powder and garlic between four bowls.",
+    "Fry the pork in the oil over medium-high heat with the chilli bean paste and wine for about 6 minutes until browned and crisp at the edges.",
+    "Cook the noodles as the packet says, adding the bok choy for the last minute. Stir 2 tbsp of the hot cooking water into each bowl of sauce, then drain the noodles.",
+    "Divide the noodles and greens between the bowls, top with the pork, peanuts and spring onion, and toss well before eating."
+   ]
+  },
+  {
+   "id": "fish-fragrant-eggplant",
+   "name": "Fish-fragrant eggplant",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "pork",
+    "dinner"
+   ],
+   "blurb": "Silky eggplant in a sweet, sour and spicy garlic sauce. There is no fish in it: the name comes from a Sichuan sauce once used for fish.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "eggplant",
+     "qty": 2,
+     "unit": "each",
+     "note": "cut into 6 cm batons"
+    },
+    {
+     "item": "salt",
+     "qty": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "pork-mince",
+     "qty": 150,
+     "unit": "g"
+    },
+    {
+     "item": "chilli-bean-paste",
+     "qty": 1.5,
+     "unit": "tbsp"
+    },
+    {
+     "item": "garlic",
+     "qty": 4,
+     "unit": "clove",
+     "note": "chopped"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "chopped"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 3,
+     "unit": "stalk",
+     "note": "sliced, white and green kept apart"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice-vinegar",
+     "qty": 1.5,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 1.5,
+     "unit": "tbsp"
+    },
+    {
+     "item": "cornflour",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Toss the eggplant with the salt, leave for 10 minutes, then pat dry.",
+    "Fry the eggplant in 2 tbsp of the oil over medium-high heat for 8 to 10 minutes until soft and golden. Lift it out.",
+    "Add the rest of the oil and fry the pork until browned. Add the chilli bean paste, garlic, ginger and white spring onion and fry for a minute.",
+    "Mix the soy sauce, vinegar, sugar, cornflour and 100 ml water, pour it in and bring to a simmer.",
+    "Return the eggplant and simmer for 2 minutes until the sauce coats it. Scatter over the green spring onion and serve over rice."
+   ]
+  },
+  {
+   "id": "hot-sour-soup",
+   "name": "Hot and sour soup",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "chinese",
+    "soup",
+    "quick",
+    "budget"
+   ],
+   "blurb": "A warming soup with tofu, mushroom and egg ribbons, sharp with vinegar and hot with pepper.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-stock",
+     "qty": 1000,
+     "unit": "ml"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "mushroom",
+     "qty": 150,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "tofu",
+     "qty": 200,
+     "unit": "g",
+     "note": "cut into thin strips"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice-vinegar",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 1,
+     "unit": "tsp",
+     "note": "white pepper if you have it"
+    },
+    {
+     "item": "cornflour",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "eggs",
+     "qty": 2,
+     "unit": "ea",
+     "note": "beaten"
+    },
+    {
+     "item": "sesame-oil",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 2,
+     "unit": "stalk",
+     "note": "sliced"
+    }
+   ],
+   "method": [
+    "Bring the stock to the boil with the ginger and mushrooms and simmer for 5 minutes.",
+    "Add the tofu, soy sauce, vinegar and pepper and simmer for 2 minutes.",
+    "Mix the cornflour with 4 tbsp water, stir it in and simmer for a minute until slightly thickened.",
+    "Turn the heat to low and pour in the beaten eggs in a thin stream while stirring slowly, so they set in ribbons.",
+    "Taste and add more vinegar or pepper if you like. Finish with the sesame oil and spring onion."
+   ]
+  },
+  {
+   "id": "teriyaki-chicken-don",
+   "name": "Teriyaki chicken rice bowl",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "chicken",
+    "rice",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "Pan-fried chicken thighs in a glossy homemade teriyaki sauce, over rice with broccoli.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-thigh",
+     "qty": 600,
+     "unit": "g"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mirin",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sushi-rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "broccoli",
+     "qty": 300,
+     "unit": "g",
+     "note": "cut into florets"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 2,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "sesame-seeds",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Rinse the rice until the water runs almost clear. Put it in a pot with 1.2 times its volume of water, bring to the boil, cover and cook on the lowest heat for 12 minutes, then leave it covered off the heat for 10 minutes.",
+    "Mix the soy sauce, mirin and sugar.",
+    "Fry the chicken in the oil over medium heat for 6 minutes, turn and cook for 5 minutes more until cooked through.",
+    "Pour off the fat, add the sauce and let it bubble for 2 to 3 minutes, turning the chicken, until glossy and sticky.",
+    "Boil or steam the broccoli for 3 minutes.",
+    "Slice the chicken and serve over the rice with the broccoli. Spoon over the sauce and top with spring onion and sesame seeds."
+   ]
+  },
+  {
+   "id": "chicken-katsu-curry",
+   "name": "Chicken katsu curry",
+   "minutes": 50,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "chicken",
+    "curry",
+    "dinner",
+    "comfort"
+   ],
+   "blurb": "Crisp panko-crumbed chicken with a mild, thick Japanese curry sauce and rice.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-breast",
+     "qty": 600,
+     "unit": "g",
+     "note": "2 breasts, halved through the middle"
+    },
+    {
+     "item": "flour",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "eggs",
+     "qty": 2,
+     "unit": "ea"
+    },
+    {
+     "item": "panko",
+     "qty": 100,
+     "unit": "g"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 6,
+     "unit": "tbsp"
+    },
+    {
+     "item": "japanese-curry-roux",
+     "qty": 92,
+     "unit": "g",
+     "note": "one 92 g box"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "diced"
+    },
+    {
+     "item": "carrot",
+     "qty": 2,
+     "unit": "each",
+     "note": "cut into chunks"
+    },
+    {
+     "item": "potato",
+     "qty": 2,
+     "unit": "each",
+     "note": "cut into chunks"
+    },
+    {
+     "item": "sushi-rice",
+     "qty": 300,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Rinse the rice until the water runs almost clear. Put it in a pot with 1.2 times its volume of water, bring to the boil, cover and cook on the lowest heat for 12 minutes, then leave it covered off the heat for 10 minutes.",
+    "Curry: soften the onion in 1 tbsp of the oil for 5 minutes. Add the carrot, potato and 700 ml water and simmer for 15 minutes until tender.",
+    "Turn off the heat, break in the curry roux and stir until it melts, then simmer for 5 minutes, stirring, until thick.",
+    "Season the chicken, dust it in the flour, dip it in the beaten eggs and press it into the panko.",
+    "Shallow-fry in the rest of the oil over medium heat for 4 to 5 minutes a side until golden and cooked through. Drain and slice.",
+    "Serve the chicken on the rice with the curry sauce alongside."
+   ]
+  },
+  {
+   "id": "teriyaki-tofu-bowl",
+   "name": "Teriyaki tofu rice bowl",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "vegetarian",
+    "rice",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "Crisp tofu in sticky teriyaki sauce with rice and vegetables.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "tofu",
+     "qty": 600,
+     "unit": "g",
+     "note": "firm"
+    },
+    {
+     "item": "cornflour",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mirin",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "sushi-rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "broccoli",
+     "qty": 300,
+     "unit": "g",
+     "note": "cut into florets"
+    },
+    {
+     "item": "carrot",
+     "qty": 1,
+     "unit": "each",
+     "note": "cut into thin sticks"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 2,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "sesame-seeds",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Rinse the rice until the water runs almost clear. Put it in a pot with 1.2 times its volume of water, bring to the boil, cover and cook on the lowest heat for 12 minutes, then leave it covered off the heat for 10 minutes.",
+    "Press the tofu between paper towels for 10 minutes, cut it into cubes and toss it in the cornflour.",
+    "Fry the tofu in the oil over medium-high heat, turning, for about 8 minutes until crisp all over.",
+    "Mix the soy sauce, mirin, sugar, ginger and 2 tbsp water, pour it over the tofu and toss for 1 to 2 minutes until sticky.",
+    "Steam or boil the broccoli and carrot for 3 minutes.",
+    "Serve the tofu and vegetables over the rice with the spring onion and sesame seeds."
+   ]
+  },
+  {
+   "id": "oyakodon",
+   "name": "Oyakodon (chicken and egg rice bowl)",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "chicken",
+    "eggs",
+    "rice",
+    "quick",
+    "budget"
+   ],
+   "blurb": "Chicken and onion simmered in a sweet soy broth, set with soft egg and spooned over rice.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-thigh",
+     "qty": 500,
+     "unit": "g",
+     "note": "cut into bite-size pieces"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "thinly sliced"
+    },
+    {
+     "item": "eggs",
+     "qty": 6,
+     "unit": "ea"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 300,
+     "unit": "ml"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mirin",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sushi-rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 2,
+     "unit": "stalk",
+     "note": "sliced"
+    }
+   ],
+   "method": [
+    "Rinse the rice until the water runs almost clear. Put it in a pot with 1.2 times its volume of water, bring to the boil, cover and cook on the lowest heat for 12 minutes, then leave it covered off the heat for 10 minutes.",
+    "Bring the stock, soy sauce, mirin and sugar to a simmer in a wide frying pan. Add the onion and simmer for 3 minutes.",
+    "Add the chicken and simmer for 6 to 8 minutes until cooked through.",
+    "Beat the eggs lightly so they stay streaky. Pour two thirds over the chicken, cover and cook on low for 1 minute, then add the rest, cover and cook for 30 seconds more so the egg is just set but still soft.",
+    "Spoon the chicken, egg and some of the broth over bowls of rice and top with spring onion. Japanese cooks use dashi stock; chicken stock works well at home."
+   ]
+  },
+  {
+   "id": "chicken-karaage",
+   "name": "Chicken karaage (Japanese fried chicken)",
+   "minutes": 45,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "chicken",
+    "dinner"
+   ],
+   "blurb": "Juicy chicken marinated in soy, ginger and garlic, fried until crisp. Serve with lemon, cabbage and rice.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-thigh",
+     "qty": 700,
+     "unit": "g",
+     "note": "cut into large bite-size pieces"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mirin",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "ginger",
+     "qty": 15,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "garlic",
+     "qty": 2,
+     "unit": "clove",
+     "note": "grated"
+    },
+    {
+     "item": "cornflour",
+     "qty": 8,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 500,
+     "unit": "ml",
+     "note": "for frying"
+    },
+    {
+     "item": "lemon",
+     "qty": 1,
+     "unit": "each",
+     "note": "cut into wedges"
+    },
+    {
+     "item": "cabbage",
+     "qty": 200,
+     "unit": "g",
+     "note": "finely shredded"
+    },
+    {
+     "item": "sushi-rice",
+     "qty": 300,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Mix the chicken with the soy sauce, mirin, ginger and garlic and leave for 20 minutes.",
+    "Rinse the rice until the water runs almost clear. Put it in a pot with 1.2 times its volume of water, bring to the boil, cover and cook on the lowest heat for 12 minutes, then leave it covered off the heat for 10 minutes.",
+    "Toss the chicken in the cornflour and shake off the excess.",
+    "Heat 2 to 3 cm of oil in a heavy pan to about 170°C. Fry the chicken in batches for 4 to 5 minutes until deep golden and cooked through. Drain on a rack. Never leave hot oil unattended.",
+    "For extra crunch, fry each batch again for 1 minute once all the chicken is done.",
+    "Serve with lemon wedges, the shredded cabbage and rice."
+   ]
+  },
+  {
+   "id": "okonomiyaki",
+   "name": "Okonomiyaki (cabbage pancakes)",
+   "minutes": 35,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "dinner",
+    "budget"
+   ],
+   "blurb": "Savoury cabbage pancakes topped with bacon and a sweet-savoury sauce.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "flour",
+     "qty": 150,
+     "unit": "g"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 150,
+     "unit": "ml"
+    },
+    {
+     "item": "eggs",
+     "qty": 4,
+     "unit": "ea"
+    },
+    {
+     "item": "salt",
+     "qty": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "item": "cabbage",
+     "qty": 400,
+     "unit": "g",
+     "note": "finely shredded"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 4,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "bacon",
+     "qty": 150,
+     "unit": "g",
+     "note": "in thin slices"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "tomato-paste",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "honey",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Whisk the flour, stock, eggs and salt into a thick batter. Fold in the cabbage and most of the spring onion.",
+    "Heat a little oil in a frying pan over medium heat. Spoon in a quarter of the batter and shape it into a round about 2 cm thick.",
+    "Lay a few bacon slices on top. Cook for about 5 minutes until golden underneath, flip and cook for 5 minutes more until cooked through. Repeat with the rest.",
+    "Mix the tomato paste, soy sauce, honey and 1 tbsp water and brush it over the pancakes.",
+    "Top with the rest of the spring onion, and Japanese mayonnaise if you like."
+   ]
+  },
+  {
+   "id": "yaki-udon",
+   "name": "Yaki udon (stir-fried udon noodles)",
+   "minutes": 20,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "noodles",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "Thick udon noodles stir-fried with bacon, cabbage and mushrooms in a soy and mirin sauce.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "udon",
+     "qty": 800,
+     "unit": "g"
+    },
+    {
+     "item": "bacon",
+     "qty": 150,
+     "unit": "g",
+     "note": "chopped"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "carrot",
+     "qty": 1,
+     "unit": "each",
+     "note": "cut into thin sticks"
+    },
+    {
+     "item": "mushroom",
+     "qty": 150,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "cabbage",
+     "qty": 250,
+     "unit": "g",
+     "note": "shredded"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mirin",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sesame-oil",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 2,
+     "unit": "stalk",
+     "note": "sliced"
+    }
+   ],
+   "method": [
+    "Loosen the udon in hot water for a minute, or cook dried udon as the packet says, then drain.",
+    "Fry the bacon in the oil over medium-high heat until golden. Add the onion, carrot and mushrooms and stir-fry for 3 minutes, then the cabbage for 2 minutes.",
+    "Add the noodles, soy sauce and mirin and toss over high heat for 2 to 3 minutes until hot and coated.",
+    "Finish with the sesame oil and spring onion."
+   ]
+  },
+  {
+   "id": "gyudon",
+   "name": "Gyudon (beef and onion rice bowl)",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "beef",
+    "rice",
+    "dinner",
+    "quick"
+   ],
+   "blurb": "Thin beef and soft onion simmered in a sweet soy broth over rice.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-strips",
+     "qty": 500,
+     "unit": "g",
+     "note": "thinly sliced"
+    },
+    {
+     "item": "onion",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 250,
+     "unit": "ml"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mirin",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "ginger",
+     "qty": 10,
+     "unit": "g",
+     "note": "grated"
+    },
+    {
+     "item": "sushi-rice",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 2,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "eggs",
+     "qty": 4,
+     "unit": "ea",
+     "note": "optional, soft-boiled"
+    }
+   ],
+   "method": [
+    "Rinse the rice until the water runs almost clear. Put it in a pot with 1.2 times its volume of water, bring to the boil, cover and cook on the lowest heat for 12 minutes, then leave it covered off the heat for 10 minutes.",
+    "Simmer the stock, soy sauce, mirin, sugar and ginger in a pan. Add the onion and simmer for 5 minutes until soft.",
+    "Add the beef, separating the slices, and simmer for 2 to 3 minutes until just cooked. Skim off any foam.",
+    "If you like, boil the eggs for 6 and a half minutes, cool them in cold water and peel.",
+    "Spoon the beef, onion and some of the broth over the rice and top with spring onion and a halved egg."
+   ]
+  },
+  {
+   "id": "tamagoyaki",
+   "name": "Tamagoyaki (rolled omelette)",
+   "minutes": 15,
+   "serves": 2,
+   "tags": [
+    "japanese",
+    "eggs",
+    "vegetarian",
+    "breakfast",
+    "quick"
+   ],
+   "blurb": "A lightly sweet omelette rolled in layers, sliced and served warm or cold.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "eggs",
+     "qty": 4,
+     "unit": "ea"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "mirin",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "salt",
+     "qty": 1,
+     "unit": "pinch"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Beat the eggs with the sugar, soy sauce, mirin, salt and 2 tbsp water without making them frothy.",
+    "Heat a small frying pan (square is ideal) over medium-low heat and wipe it with oiled paper towel.",
+    "Pour in a thin layer of egg and tilt to cover the pan. When it is almost set but still wet on top, roll it up from the far side towards you.",
+    "Push the roll to the far side, wipe the pan with oil again and pour in another thin layer, lifting the roll so egg runs underneath. Roll back up.",
+    "Repeat until all the egg is used. Rest the omelette for 2 minutes wrapped in paper towel to firm its shape, then slice."
+   ]
+  },
+  {
+   "id": "nikujaga",
+   "name": "Nikujaga (beef and potato stew)",
+   "minutes": 40,
+   "serves": 4,
+   "tags": [
+    "japanese",
+    "beef",
+    "comfort",
+    "dinner"
+   ],
+   "blurb": "Japanese home-style beef, potato and carrot simmered in a sweet soy broth.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-strips",
+     "qty": 400,
+     "unit": "g",
+     "note": "thinly sliced"
+    },
+    {
+     "item": "potato",
+     "qty": 4,
+     "unit": "each",
+     "note": "cut into large chunks"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "cut into wedges"
+    },
+    {
+     "item": "carrot",
+     "qty": 2,
+     "unit": "each",
+     "note": "cut into chunks"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 500,
+     "unit": "ml"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 4,
+     "unit": "tbsp"
+    },
+    {
+     "item": "mirin",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "frozen-peas",
+     "qty": 100,
+     "unit": "g"
+    },
+    {
+     "item": "sushi-rice",
+     "qty": 300,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Rinse the rice until the water runs almost clear. Put it in a pot with 1.2 times its volume of water, bring to the boil, cover and cook on the lowest heat for 12 minutes, then leave it covered off the heat for 10 minutes.",
+    "Fry the onion in the oil for 2 minutes, then add the beef and cook until browned.",
+    "Add the potato and carrot, the stock, sugar and mirin. Bring to the boil and skim.",
+    "Cover with a lid a little smaller than the pan (or a circle of baking paper) and simmer for 10 minutes.",
+    "Add the soy sauce and simmer for 10 minutes more until the potatoes are tender and the broth has reduced by about half.",
+    "Add the peas for the last 2 minutes. Serve in bowls with the rice."
+   ]
+  },
+  {
+   "id": "pad-thai",
+   "name": "Pad thai with prawns",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "seafood",
+    "noodles",
+    "dinner"
+   ],
+   "blurb": "Rice noodles stir-fried with prawns, egg and tofu, finished with peanuts, bean sprouts and lime.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "rice-noodles",
+     "qty": 300,
+     "unit": "g",
+     "note": "flat, about 5 mm wide"
+    },
+    {
+     "item": "prawns",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "eggs",
+     "qty": 2,
+     "unit": "ea"
+    },
+    {
+     "item": "tofu",
+     "qty": 150,
+     "unit": "g",
+     "note": "firm, in small cubes"
+    },
+    {
+     "item": "bean-sprouts",
+     "qty": 150,
+     "unit": "g"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 4,
+     "unit": "stalk",
+     "note": "cut into 3 cm lengths"
+    },
+    {
+     "item": "peanuts",
+     "qty": 50,
+     "unit": "g",
+     "note": "crushed"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "chopped"
+    },
+    {
+     "item": "fish-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tbsp",
+     "note": "brown or palm sugar"
+    },
+    {
+     "item": "lime",
+     "qty": 2,
+     "unit": "each"
+    },
+    {
+     "item": "rice-vinegar",
+     "qty": 1,
+     "unit": "tbsp",
+     "note": "or 2 tbsp tamarind paste if you have it"
+    },
+    {
+     "item": "chilli-powder",
+     "qty": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 3,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Soak the noodles in warm water for 20 to 30 minutes until bendy but still firm, then drain.",
+    "Mix the fish sauce, sugar, the juice of 1 lime, the vinegar and chilli powder.",
+    "Heat 2 tbsp of the oil in a wok over high heat. Fry the tofu for 3 minutes until golden, then add the garlic and prawns and stir-fry for 2 minutes until the prawns turn pink.",
+    "Push everything to one side, add the rest of the oil, crack in the eggs and scramble them.",
+    "Add the noodles and sauce and toss for 2 to 3 minutes until the noodles are soft and the sauce is absorbed. Add a splash of water if it looks dry.",
+    "Toss through the bean sprouts and spring onion for 30 seconds. Serve with the peanuts and lime wedges."
+   ]
+  },
+  {
+   "id": "green-chicken-curry",
+   "name": "Thai green chicken curry",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "chicken",
+    "curry",
+    "dinner"
+   ],
+   "blurb": "Chicken and vegetables simmered in coconut milk with green curry paste, basil and lime.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "green-curry-paste",
+     "qty": 3,
+     "unit": "tbsp",
+     "note": "use 2 for a milder curry"
+    },
+    {
+     "item": "coconut-milk",
+     "qty": 800,
+     "unit": "ml"
+    },
+    {
+     "item": "chicken-thigh",
+     "qty": 600,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "zucchini",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "capsicum",
+     "qty": 1,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "fish-sauce",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "lime",
+     "qty": 1,
+     "unit": "each"
+    },
+    {
+     "item": "basil",
+     "qty": 15,
+     "unit": "g",
+     "note": "Thai basil if you can find it"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g",
+     "note": "jasmine"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Fry the curry paste in the oil for 1 minute. Add 200 ml of the coconut milk (the thick part from the top of the can) and simmer for 2 minutes.",
+    "Add the chicken and stir for 3 minutes, then pour in the rest of the coconut milk and simmer for 10 minutes.",
+    "Add the zucchini and capsicum and simmer for 5 minutes until just tender.",
+    "Season with the fish sauce, sugar and lime juice. Stir in the basil leaves and serve over the rice."
+   ]
+  },
+  {
+   "id": "red-curry-pumpkin-tofu",
+   "name": "Red curry with pumpkin and tofu",
+   "minutes": 35,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "vegetarian",
+    "curry",
+    "dinner",
+    "budget"
+   ],
+   "blurb": "A rich coconut curry with sweet pumpkin, tofu and spinach. Most curry pastes contain shrimp paste, so check the label for vegetarians.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "red-curry-paste",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "coconut-milk",
+     "qty": 800,
+     "unit": "ml"
+    },
+    {
+     "item": "pumpkin",
+     "qty": 600,
+     "unit": "g",
+     "note": "peeled, in 3 cm chunks"
+    },
+    {
+     "item": "tofu",
+     "qty": 300,
+     "unit": "g",
+     "note": "firm, cubed"
+    },
+    {
+     "item": "spinach",
+     "qty": 120,
+     "unit": "g"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "lime",
+     "qty": 1,
+     "unit": "each"
+    },
+    {
+     "item": "basil",
+     "qty": 15,
+     "unit": "g"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g",
+     "note": "jasmine"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Fry the curry paste in the oil for 1 minute, then add 200 ml of the coconut milk and simmer for 2 minutes.",
+    "Add the pumpkin and the rest of the coconut milk and simmer for 12 to 15 minutes until the pumpkin is tender.",
+    "Add the tofu and simmer for 3 minutes, then stir in the spinach until it wilts.",
+    "Season with the soy sauce, sugar and lime juice, add the basil and serve with the rice."
+   ]
+  },
+  {
+   "id": "tom-yum-soup",
+   "name": "Tom yum soup with prawns",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "seafood",
+    "soup",
+    "quick"
+   ],
+   "blurb": "Hot and sour prawn soup fragrant with lemongrass, chilli and lime.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-stock",
+     "qty": 1000,
+     "unit": "ml"
+    },
+    {
+     "item": "lemongrass",
+     "qty": 2,
+     "unit": "stalk"
+    },
+    {
+     "item": "ginger",
+     "qty": 20,
+     "unit": "g",
+     "note": "sliced (galangal if you can find it)"
+    },
+    {
+     "item": "red-chilli",
+     "qty": 2,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "mushroom",
+     "qty": 200,
+     "unit": "g",
+     "note": "halved"
+    },
+    {
+     "item": "tomato-fresh",
+     "qty": 2,
+     "unit": "each",
+     "note": "cut into wedges"
+    },
+    {
+     "item": "prawns",
+     "qty": 300,
+     "unit": "g"
+    },
+    {
+     "item": "fish-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "lime",
+     "qty": 2,
+     "unit": "each"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "coriander",
+     "qty": 15,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Bash the lemongrass with a rolling pin and cut it into 5 cm lengths.",
+    "Simmer the stock with the lemongrass, ginger and chilli for 5 minutes.",
+    "Add the mushrooms and tomato and simmer for 3 minutes.",
+    "Add the prawns and simmer for 2 to 3 minutes until pink and cooked through.",
+    "Take off the heat and season with the fish sauce, sugar and lime juice: it should taste sour, salty and spicy. Add the coriander. The lemongrass and ginger pieces are not eaten."
+   ]
+  },
+  {
+   "id": "tom-kha-gai",
+   "name": "Tom kha gai (coconut chicken soup)",
+   "minutes": 30,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "chicken",
+    "soup"
+   ],
+   "blurb": "A gentle, creamy coconut soup with chicken, mushroom, lemongrass and lime.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-breast",
+     "qty": 400,
+     "unit": "g",
+     "note": "thinly sliced"
+    },
+    {
+     "item": "coconut-milk",
+     "qty": 400,
+     "unit": "ml"
+    },
+    {
+     "item": "chicken-stock",
+     "qty": 500,
+     "unit": "ml"
+    },
+    {
+     "item": "lemongrass",
+     "qty": 2,
+     "unit": "stalk"
+    },
+    {
+     "item": "ginger",
+     "qty": 25,
+     "unit": "g",
+     "note": "sliced (galangal if you can find it)"
+    },
+    {
+     "item": "mushroom",
+     "qty": 150,
+     "unit": "g",
+     "note": "sliced"
+    },
+    {
+     "item": "red-chilli",
+     "qty": 2,
+     "unit": "each",
+     "note": "halved"
+    },
+    {
+     "item": "fish-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "lime",
+     "qty": 2,
+     "unit": "each"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "coriander",
+     "qty": 15,
+     "unit": "g"
+    }
+   ],
+   "method": [
+    "Bash the lemongrass and cut it into 5 cm lengths. Simmer it in the stock with the ginger for 5 minutes.",
+    "Add the coconut milk and chicken and simmer gently, without boiling hard, for 6 to 8 minutes until the chicken is cooked.",
+    "Add the mushrooms and chilli and simmer for 3 minutes.",
+    "Take off the heat and season with the fish sauce, lime juice and sugar. Add the coriander. Leave the lemongrass and ginger pieces in the bowl."
+   ]
+  },
+  {
+   "id": "pad-kra-pao",
+   "name": "Thai basil chicken (pad kra pao)",
+   "minutes": 20,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "chicken",
+    "rice",
+    "quick",
+    "dinner"
+   ],
+   "blurb": "Spicy chopped chicken stir-fried with garlic, chilli and basil, topped with a crispy fried egg.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-thigh",
+     "qty": 600,
+     "unit": "g",
+     "note": "finely chopped"
+    },
+    {
+     "item": "garlic",
+     "qty": 5,
+     "unit": "clove"
+    },
+    {
+     "item": "red-chilli",
+     "qty": 3,
+     "unit": "each"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "oyster-sauce",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "fish-sauce",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "basil",
+     "qty": 30,
+     "unit": "g",
+     "note": "Thai holy basil is traditional"
+    },
+    {
+     "item": "eggs",
+     "qty": 4,
+     "unit": "ea"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g",
+     "note": "jasmine"
+    }
+   ],
+   "method": [
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Pound or finely chop the garlic and chilli together.",
+    "Heat 2 tbsp of the oil until very hot and fry the eggs one at a time until the edges are crisp. Keep them warm.",
+    "Heat the rest of the oil in a wok over high heat. Stir-fry the garlic and chilli for 30 seconds, then the chicken for 4 to 5 minutes, breaking it up, until cooked.",
+    "Add the oyster sauce, soy sauce, fish sauce, sugar and 2 tbsp water and toss for a minute.",
+    "Stir through the basil until it wilts. Serve over rice with a fried egg on top."
+   ]
+  },
+  {
+   "id": "thai-beef-salad",
+   "name": "Thai beef salad",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "beef",
+    "salad",
+    "quick"
+   ],
+   "blurb": "Seared beef tossed with crunchy vegetables, herbs and a sharp lime and chilli dressing.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "beef-strips",
+     "qty": 500,
+     "unit": "g"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "lettuce",
+     "qty": 1,
+     "unit": "ea",
+     "note": "torn"
+    },
+    {
+     "item": "cucumber",
+     "qty": 1,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "tomato-fresh",
+     "qty": 2,
+     "unit": "each",
+     "note": "cut into wedges"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "red, thinly sliced"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 2,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "coriander",
+     "qty": 15,
+     "unit": "g"
+    },
+    {
+     "item": "fish-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "lime",
+     "qty": 2,
+     "unit": "each"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "red-chilli",
+     "qty": 1,
+     "unit": "each",
+     "note": "finely chopped"
+    },
+    {
+     "item": "garlic",
+     "qty": 1,
+     "unit": "clove",
+     "note": "crushed"
+    },
+    {
+     "item": "peanuts",
+     "qty": 30,
+     "unit": "g",
+     "note": "crushed"
+    }
+   ],
+   "method": [
+    "Dressing: mix the lime juice, fish sauce, sugar, chilli and garlic.",
+    "Sear the beef in the oil in a very hot pan, in batches, for 1 to 2 minutes until browned outside and still pink inside. Rest for 3 minutes and toss with 2 tbsp of the dressing.",
+    "Combine the lettuce, cucumber, tomato, onion, spring onion and coriander.",
+    "Add the beef and the rest of the dressing, toss, and top with the peanuts."
+   ]
+  },
+  {
+   "id": "pork-larb",
+   "name": "Pork larb lettuce cups",
+   "minutes": 20,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "pork",
+    "salad",
+    "quick"
+   ],
+   "blurb": "Zesty minced pork with lime, chilli and herbs, eaten in crisp lettuce leaves.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "rice",
+     "qty": 330,
+     "unit": "g",
+     "note": "2 tbsp for toasting, the rest to serve"
+    },
+    {
+     "item": "pork-mince",
+     "qty": 500,
+     "unit": "g"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "fish-sauce",
+     "qty": 3,
+     "unit": "tbsp"
+    },
+    {
+     "item": "lime",
+     "qty": 2,
+     "unit": "each"
+    },
+    {
+     "item": "sugar",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "red-chilli",
+     "qty": 2,
+     "unit": "each",
+     "note": "finely chopped"
+    },
+    {
+     "item": "onion",
+     "qty": 1,
+     "unit": "each",
+     "note": "red, thinly sliced"
+    },
+    {
+     "item": "spring-onion",
+     "qty": 3,
+     "unit": "stalk",
+     "note": "sliced"
+    },
+    {
+     "item": "coriander",
+     "qty": 20,
+     "unit": "g"
+    },
+    {
+     "item": "basil",
+     "qty": 10,
+     "unit": "g",
+     "note": "mint is traditional if you have it"
+    },
+    {
+     "item": "lettuce",
+     "qty": 2,
+     "unit": "ea",
+     "note": "leaves separated"
+    }
+   ],
+   "method": [
+    "Dry-toast 2 tbsp of the uncooked rice in a frying pan, stirring, for about 5 minutes until deep golden. Crush it finely.",
+    "Cook the rest of the rice: rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Fry the pork in the oil over medium-high heat, breaking it up, for about 6 minutes until cooked. Add 2 tbsp water and take off the heat.",
+    "Stir in the fish sauce, lime juice, sugar and chilli, then the onion, spring onion, herbs and most of the toasted rice.",
+    "Spoon into lettuce leaves, sprinkle with the rest of the toasted rice and serve with the rice."
+   ]
+  },
+  {
+   "id": "chicken-satay",
+   "name": "Chicken satay with peanut sauce",
+   "minutes": 45,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "chicken",
+    "dinner"
+   ],
+   "blurb": "Grilled coconut-marinated chicken skewers with a homemade peanut sauce. Marinate for at least 30 minutes.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "chicken-thigh",
+     "qty": 700,
+     "unit": "g",
+     "note": "cut into strips"
+    },
+    {
+     "item": "coconut-milk",
+     "qty": 400,
+     "unit": "ml"
+    },
+    {
+     "item": "curry-powder",
+     "qty": 1,
+     "unit": "tsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "fish-sauce",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "red-curry-paste",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "peanuts",
+     "qty": 150,
+     "unit": "g",
+     "note": "roasted"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "lime",
+     "qty": 1,
+     "unit": "each"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 1,
+     "unit": "tbsp"
+    },
+    {
+     "item": "cucumber",
+     "qty": 1,
+     "unit": "each",
+     "note": "sliced"
+    },
+    {
+     "item": "rice",
+     "qty": 300,
+     "unit": "g",
+     "note": "jasmine"
+    }
+   ],
+   "method": [
+    "Mix the chicken with 100 ml of the coconut milk, the curry powder, 1 tbsp of the sugar and 1 tbsp of the fish sauce. Marinate for at least 30 minutes. Soak wooden skewers in water at the same time.",
+    "Rinse the rice, then simmer it in twice its volume of water with a pinch of salt, covered, for about 12 minutes until tender. Keep covered.",
+    "Peanut sauce: blitz or very finely chop the peanuts. Simmer the rest of the coconut milk with the curry paste for 2 minutes, then add the peanuts, the rest of the sugar, the soy sauce and the rest of the fish sauce. Simmer, stirring, for 5 minutes until thick. Add the lime juice and loosen with water if needed.",
+    "Thread the chicken onto the skewers, brush with the oil and grill, barbecue or pan-fry for 8 to 10 minutes, turning, until cooked through and charred in places.",
+    "Serve with the peanut sauce, cucumber and rice."
+   ]
+  },
+  {
+   "id": "pad-see-ew",
+   "name": "Pad see ew (stir-fried rice noodles with chicken)",
+   "minutes": 25,
+   "serves": 4,
+   "tags": [
+    "thai",
+    "chicken",
+    "noodles",
+    "quick"
+   ],
+   "blurb": "Wide rice noodles stir-fried until slightly charred with chicken, broccoli, egg and soy.",
+   "photo": null,
+   "ingredients": [
+    {
+     "item": "rice-noodles",
+     "qty": 400,
+     "unit": "g",
+     "note": "wide"
+    },
+    {
+     "item": "chicken-breast",
+     "qty": 400,
+     "unit": "g",
+     "note": "thinly sliced"
+    },
+    {
+     "item": "broccoli",
+     "qty": 300,
+     "unit": "g",
+     "note": "stems sliced, florets small"
+    },
+    {
+     "item": "eggs",
+     "qty": 2,
+     "unit": "ea"
+    },
+    {
+     "item": "garlic",
+     "qty": 3,
+     "unit": "clove",
+     "note": "chopped"
+    },
+    {
+     "item": "soy-sauce",
+     "qty": 3,
+     "unit": "tbsp",
+     "note": "a dash of dark soy sauce too if you have it"
+    },
+    {
+     "item": "oyster-sauce",
+     "qty": 2,
+     "unit": "tbsp"
+    },
+    {
+     "item": "sugar",
+     "qty": 2,
+     "unit": "tsp"
+    },
+    {
+     "item": "pepper",
+     "qty": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "item": "vegetable-oil",
+     "qty": 3,
+     "unit": "tbsp"
+    }
+   ],
+   "method": [
+    "Soak the noodles in warm water until bendy, then drain (fresh wide rice noodles just need separating).",
+    "Mix the soy sauce, oyster sauce, sugar and 2 tbsp water.",
+    "Heat the oil in a wok over high heat. Fry the garlic for 15 seconds, then the chicken for 4 minutes until cooked.",
+    "Add the broccoli stems, then the florets, with a splash of water and stir-fry for 2 minutes.",
+    "Push everything aside and scramble the eggs in the space.",
+    "Add the noodles and sauce and toss, letting the noodles sit for 30 seconds at a time so they char a little, for about 3 minutes. Finish with the pepper."
+   ]
   }
  ]
 }
