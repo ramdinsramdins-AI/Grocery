@@ -243,6 +243,74 @@ def load_manual_woolworths():
     return recs, at
 
 
+# ---------------------------------------------------------------- stores collected on the home PC
+# Stores marked "collect_at_home" in config.json refuse GitHub's servers but answer a home connection (NJK: 403 on every
+# scheduled run since 2026-10-15). A Windows task on the user's PC (collect-at-home.ps1) runs
+# `scraper.py --collect-home <folder>` and pushes <store>.json to the repo's main folder; the scheduled run reads that
+# file instead of asking the site.
+HOME_MIN_SHARE = 0.7       # a collection with fewer than 70% of the products already on GitHub looks cut short
+HOME_MIN_GAP_HOURS = 4     # GitHub's copy is newer than this: do not ask the site again yet
+
+
+def _age(at, now=None):
+    now = dt.datetime.fromisoformat(now) if now else dt.datetime.now(dt.timezone.utc)
+    return now - dt.datetime.fromisoformat(at.replace("Z", "+00:00"))
+
+
+def read_home_file(store, folder=ROOT):
+    """Return (records, collected_at) from <folder>/<store>.json, or None when it is missing or unreadable."""
+    path = pathlib.Path(folder) / f"{store}.json"
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return [r for r in payload["products"] if r.get("store") == store and r.get("price")], payload["collected_at"]
+    except Exception as e:
+        print(f"  {path.name} is not usable ({e!r}); ignoring it", file=sys.stderr)
+        return None
+
+
+def load_home_collection(store, folder=ROOT):
+    got = read_home_file(store, folder)
+    if not got or not got[0]:
+        raise RuntimeError(f"no usable {store}.json from the home PC")
+    age = _age(got[1])
+    if age.days > MAX_MANUAL_AGE_DAYS:
+        raise RuntimeError(f"{store}.json from the home PC is {age.days} days old (limit {MAX_MANUAL_AGE_DAYS})")
+    return got
+
+
+def collect_home(stores, scrape, out, now, repo=ROOT):
+    """Fetch each store live with scrape(store) and write <out>/<store>.json. Returns how many stores failed."""
+    failed = 0
+    for store in stores:
+        prev = read_home_file(store, repo)   # the copy on GitHub
+        if prev and _age(prev[1], now).total_seconds() < HOME_MIN_GAP_HOURS * 3600:
+            print(f"{store}: GitHub's copy was collected {prev[1]}, recently enough; not collecting again yet", file=sys.stderr)
+            continue
+        print(f"collecting {store}", file=sys.stderr)
+        try:
+            recs = scrape(store)
+        except Blocked as e:
+            print(f"{store}: blocked ({e}). Stopping this store; not retrying.", file=sys.stderr)
+            failed += 1
+            continue
+        except Exception as e:
+            print(f"{store}: failed ({e!r})", file=sys.stderr)
+            failed += 1
+            continue
+        if not recs or (prev and len(recs) < HOME_MIN_SHARE * len(prev[0])):
+            print(f"{store}: only {len(recs)} products (GitHub has {len(prev[0]) if prev else 0}); looks cut short, not saved",
+                  file=sys.stderr)
+            failed += 1
+            continue
+        path = pathlib.Path(out) / f"{store}.json"
+        path.write_text(json.dumps({"store": store, "collected_at": now, "products": recs}, separators=(",", ":")),
+                        encoding="utf-8")
+        print(f"{store}: {len(recs)} products saved to {path}", file=sys.stderr)
+    return failed
+
+
 # ---------------------------------------------------------------- Foodstuffs (New World and PAK'nSAVE share one platform)
 # Prices in the API are in cents. Check field names with --probe newworld before trusting a full run.
 
@@ -1069,6 +1137,7 @@ def main():
     ap.add_argument("--match-report", action="store_true", help="show how well products match across stores, from the last scrape")
     ap.add_argument("--ingredient-report", action="store_true", help="show which products were picked for each recipe ingredient")
     ap.add_argument("--fixture", help="directory of saved raw responses (<store>.json) for an offline run")
+    ap.add_argument("--collect-home", metavar="FOLDER", help='on the home PC: fetch the "collect_at_home" stores live and save <store>.json in FOLDER')
     args = ap.parse_args()
 
     if args.match_report:
@@ -1097,7 +1166,7 @@ def main():
 
     store_times = {}
 
-    def run(store, probe=False):
+    def run(store, probe=False, live=False):
         c = cfg["stores"][store]
         if probe and args.category:
             c = dict(c, categories=[args.category])
@@ -1109,6 +1178,11 @@ def main():
                     print(f"  woolworths: using uploaded woolworths.json from {manual[1]} ({len(manual[0])} products)", file=sys.stderr)
                     return manual[0]
             return scrape_woolworths(c, gcfg, session, probe)
+        if c.get("collect_at_home") and not (probe or live):
+            recs, at = load_home_collection(store)
+            store_times[store] = at
+            print(f"  {store}: using {store}.json from the home PC, collected {at} ({len(recs)} products)", file=sys.stderr)
+            return recs
         platform = {"shopify": scrape_shopify, "woocommerce": scrape_woocommerce, "magento": scrape_magento}
         if c.get("platform") in platform:
             return platform[c["platform"]](store, c, gcfg, session, probe)
@@ -1121,6 +1195,12 @@ def main():
         out.write_text(json.dumps(raw, indent=2))
         print(f"saved {out}. Open it and confirm the price, size and unit price fields match the parser.")
         return
+
+    if args.collect_home:
+        out = pathlib.Path(args.collect_home)
+        out.mkdir(parents=True, exist_ok=True)
+        homes = [s for s, c in cfg["stores"].items() if c.get("enabled") and c.get("collect_at_home")]
+        sys.exit(2 if collect_home(homes, lambda s: run(s, live=True), out, now) else 0)
 
     stores = [args.store] if args.store else [s for s, c in cfg["stores"].items() if c.get("enabled")]
     records, failed = [], []

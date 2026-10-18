@@ -48,6 +48,12 @@ Instead, about once a week:
 Without the task, upload `woolworths.json` to the main folder of the repo (not inside `docs`) by hand. The next scrape reads it, skips the network call, and the site shows the date the Woolworths prices are from.
 The scraper ignores the file once it is more than 7 days old, so stale prices are never shown as current.
 
+## NJK (collected on the home PC)
+
+NJK refuses GitHub's servers but answers a home connection, and plain scripts work there (no browser needed). So `config.json` marks it `"collect_at_home": true`, and the scheduled run reads `njk.json` from the repo's main folder instead of asking NJK.
+The Windows task "Shelf Check - collect NJK prices" makes that file at 11 am and 5 pm (or when the PC is next on): it runs `python scraper.py --collect-home <folder>` with the newest code from GitHub and pushes `njk.json`. Nothing to click. It shows a message only when something goes wrong, and it pauses itself if NJK ever blocks the home PC too.
+Switch it on (it also collects once straight away) or off with `install-collect-at-home.ps1` (`-Remove` to switch off). Log: `%LOCALAPPDATA%\ShelfCheck\collect-at-home.log`.
+
 ## The website
 
 `docs/index.html` is the Shelf Check site. It reads `docs/data/compare.json` and `docs/data/latest.json`, which the scraper rewrites on every run.

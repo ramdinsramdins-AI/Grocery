@@ -300,4 +300,48 @@ try:
 finally:
     s.time.sleep = _real_sleep
 
+# stores collected on the home PC (NJK): saved as <store>.json, read back by the scheduled run
+_now = "2026-10-18T08:00:00+00:00"
+_njk = [s.make_record("njk", str(i), f"Noodles {i} 100g", None, "100g", 1.5) for i in range(10)]
+with tempfile.TemporaryDirectory() as _repo, tempfile.TemporaryDirectory() as _out:
+    _asked = []
+
+    def _scrape(store, recs=_njk):
+        _asked.append(store)
+        return recs
+    assert s.collect_home(["njk"], _scrape, _out, _now, _repo) == 0 and _asked == ["njk"]
+    _recs, _at = s.read_home_file("njk", _out)
+    assert _at == _now and [r["id"] for r in _recs] == [r["id"] for r in _njk] and _recs[0]["unit_basis"] == "100g"
+    pathlib.Path(_out, "njk.json").replace(pathlib.Path(_repo, "njk.json"))   # now it is "on GitHub"
+    # collected 1 hour ago: the site is not asked again
+    assert s.collect_home(["njk"], _scrape, _out, "2026-10-18T09:00:00+00:00", _repo) == 0 and _asked == ["njk"]
+    assert not pathlib.Path(_out, "njk.json").exists()
+    # 6 hours later but only half the products: looks cut short, not saved
+    assert s.collect_home(["njk"], lambda st: _njk[:5], _out, "2026-10-18T14:00:00+00:00", _repo) == 1
+    assert not pathlib.Path(_out, "njk.json").exists()
+
+    def _blocked(store):
+        raise s.Blocked("403 from https://www.njk.co.nz/graphql")
+    assert s.collect_home(["njk"], _blocked, _out, "2026-10-18T14:00:00+00:00", _repo) == 1
+    assert not pathlib.Path(_out, "njk.json").exists()
+    # the scheduled run uses a file up to 7 days old, then reports the store as failed (its last rows are kept)
+    _p = pathlib.Path(_repo, "njk.json")
+    _fresh = (s.dt.datetime.now(s.dt.timezone.utc) - s.dt.timedelta(days=2)).isoformat(timespec="seconds")
+    _p.write_text(json.dumps({"store": "njk", "collected_at": _fresh, "products": _njk}), encoding="utf-8")
+    assert len(s.load_home_collection("njk", _repo)[0]) == 10
+    _old = (s.dt.datetime.now(s.dt.timezone.utc) - s.dt.timedelta(days=8)).isoformat(timespec="seconds")
+    _p.write_text(json.dumps({"store": "njk", "collected_at": _old, "products": _njk}), encoding="utf-8")
+    try:
+        s.load_home_collection("njk", _repo)
+        raise AssertionError("an 8-day-old file should not be used")
+    except RuntimeError as e:
+        assert "8 days old" in str(e), e
+    _p.unlink()
+    try:
+        s.load_home_collection("njk", _repo)
+        raise AssertionError("a missing file should fail the store")
+    except RuntimeError:
+        pass
+assert json.loads((pathlib.Path(__file__).parent / "config.json").read_text())["stores"]["njk"].get("collect_at_home")
+
 print("all checks passed")

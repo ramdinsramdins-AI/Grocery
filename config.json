@@ -76,7 +76,8 @@
       "platform": "magento",
       "base_url": "https://www.njk.co.nz",
       "store_view": "nz",
-      "root_category": "2"
+      "root_category": "2",
+      "collect_at_home": true
     },
     "fromk": {
       "enabled": true,
