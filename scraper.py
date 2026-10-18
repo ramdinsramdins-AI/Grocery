@@ -133,19 +133,26 @@ class Blocked(Exception):
     pass
 
 
+BUSY = (502, 503, 504)   # the shop's server is briefly down or overloaded (New Gum Sarn 503, 2026-10-18): wait and retry
+
+
 def _request(session, method, url, delay, **kw):
     time.sleep(random.uniform(*delay))
     for attempt in (1, 2, 3):
         try:
             r = session.request(method, url, timeout=30 if attempt == 1 else 60, **kw)
-            break
         except (requests.exceptions.Timeout, requests.exceptions.ConnectionError,
                 requests.exceptions.ChunkedEncodingError) as e:
             if attempt == 3:
                 raise
-            wait = 10 * attempt
-            print(f"  {type(e).__name__} on {url[:90]}, waiting {wait}s and retrying", file=sys.stderr)
-            time.sleep(wait)
+            problem, wait = type(e).__name__, 10 * attempt
+        else:
+            if r.status_code not in BUSY or attempt == 3:
+                break
+            after = r.headers.get("Retry-After", "")
+            problem, wait = str(r.status_code), max(10 * attempt, min(int(after), 120) if after.isdigit() else 0)
+        print(f"  {problem} on {url[:90]}, waiting {wait}s and retrying", file=sys.stderr)
+        time.sleep(wait)
     if r.status_code in (403, 429):
         raise Blocked(f"{r.status_code} from {url}")
     r.raise_for_status()

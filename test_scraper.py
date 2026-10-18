@@ -255,4 +255,49 @@ _big = [s.make_record(st, str(i), f"Product {_rnd.randint(0, 9000)} Item{_rnd.ra
         for st in ("woolworths", "newworld", "paknsave") for i in range(10000)]
 _t0 = time.time(); s.group_records(_big); assert time.time() - _t0 < 20, time.time() - _t0
 
+# a busy shop server (503) is retried after a wait; a block (403/429) is not retried
+import requests
+
+
+def _resp(code, headers=None):
+    r = requests.Response()
+    r.status_code, r.url, r.headers = code, "https://shop.test/products.json", requests.structures.CaseInsensitiveDict(headers or {})
+    return r
+
+
+class _Replies:
+    def __init__(self, *replies):   # status codes, or ready-made responses
+        self.replies, self.calls = [r if isinstance(r, requests.Response) else _resp(r) for r in replies], 0
+
+    def request(self, method, url, **kw):
+        self.calls += 1
+        return self.replies.pop(0)
+
+
+_waits, _real_sleep = [], s.time.sleep
+s.time.sleep = _waits.append
+try:
+    _sess = _Replies(503, 200)
+    assert s._request(_sess, "GET", "https://shop.test/products.json", [0, 0]).status_code == 200 and _sess.calls == 2
+    assert _waits[1:] == [10], _waits
+    _waits.clear()
+    _sess = _Replies(_resp(503, {"Retry-After": "45"}), 200)
+    s._request(_sess, "GET", "https://shop.test/products.json", [0, 0])
+    assert _waits[1:] == [45], _waits
+    _sess = _Replies(503, 503, 503)
+    try:
+        s._request(_sess, "GET", "https://shop.test/products.json", [0, 0])
+        raise AssertionError("three 503s should fail")
+    except requests.HTTPError:
+        assert _sess.calls == 3
+    for _code in (403, 429):
+        _sess = _Replies(_code, 200)
+        try:
+            s._request(_sess, "POST", "https://shop.test/graphql", [0, 0])
+            raise AssertionError(f"{_code} should stop the store")
+        except s.Blocked:
+            assert _sess.calls == 1
+finally:
+    s.time.sleep = _real_sleep
+
 print("all checks passed")
