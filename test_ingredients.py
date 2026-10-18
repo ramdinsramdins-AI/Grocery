@@ -105,7 +105,8 @@ for iid, want, name, brand, size in cases:
 # store aisle checks: fresh produce only from the produce aisle (or Woolworths' "fresh vegetable" brands); never from pet, baby or cleaning aisles
 aisle_cases = [(iid, 0, name, brand, size, aisle) for iid, name, brand, size, aisle in FRESH_ONLY] + [
  ("onion",1,"fresh vegetable onions brown","fresh vegetable","1.5kg","uploaded"), ("onion",0,"lisas hummus caramelised onion","lisas","380g","uploaded"),
- ("rice",0,"Chicken & Brown Rice Entree Wet Dog Food","Purina ONE","369g","Pets"), ("milk",0,"Toddler Milk Drink Stage 3","Karicare","900g","Baby & Toddler")]
+ ("rice",0,"Chicken & Brown Rice Entree Wet Dog Food","Purina ONE","369g","Pets"), ("milk",0,"Toddler Milk Drink Stage 3","Karicare","900g","Baby & Toddler"),
+ ("red-chilli",1,"fresh vegetable chilli red","fresh vegetable","3pack","uploaded"), ("red-chilli",0,"Red Chilli Vegetables","Check","200g","Frozen")]
 for iid, want, name, brand, size, aisle in aisle_cases:
     rec = R(name, brand, size); rec["category"] = aisle
     got = s._ingredient_match(rec, cat[iid]) and s._ingredient_pack(rec, cat[iid]) is not None

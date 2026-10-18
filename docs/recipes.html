@@ -224,20 +224,28 @@ function planData(){
     KEYS.forEach(function(k){var pk=ing.stores[k]; if(pk&&pk.length){var c=cover(N[id].amt,pk); if(c)byStore[k]=c;}});
     lines.push({id:id,need:N[id].amt,uses:N[id].uses,byStore:byStore});
   });
-  function assign(set){
-    var by={},total=0;
+  // cheapest store in `set` for each line; with `partial`, lines no store in the set sells go to `missing` instead of failing
+  function assign(set,partial){
+    var by={},total=0,miss=[];
     for(var n=0;n<lines.length;n++){
       var ln=lines[n],best=null,bk=null;
       set.forEach(function(k){var c=ln.byStore[k]; if(c&&(best==null||c.cost<best)){best=c.cost;bk=k;}});
-      if(best==null)return null;
+      if(best==null){if(!partial)return null;miss.push(ln.id);continue;}
       total+=best;(by[bk]=by[bk]||[]).push({line:ln,c:ln.byStore[bk]});
     }
-    return {by:by,total:total,stores:Object.keys(by).length};
+    return {by:by,total:total,stores:Object.keys(by).length,missing:miss};
   }
   var out=[];
   if(lines.length){
-    var singles=KEYS.map(function(k){var a=assign([k]);return a?{k:k,a:a}:null;}).filter(Boolean).sort(function(a,b){return a.a.total-b.a.total;});
-    if(singles.length)out.push({id:"one",name:"One store: "+STORES[singles[0].k],a:singles[0].a,note:singles.length>1?"Dearest single store is "+money(singles[singles.length-1].a.total)+".":"Only store that has everything."});
+    // always offer one store: the cheapest that sells everything, or else the one that sells the most, naming what it lacks
+    var singles=KEYS.map(function(k){return {k:k,a:assign([k],true)};}).filter(function(s){return s.a.stores;})
+      .sort(function(a,b){return a.a.missing.length-b.a.missing.length||a.a.total-b.a.total;});
+    var complete=singles.filter(function(s){return !s.a.missing.length;}), one=singles[0];
+    if(one&&!one.a.missing.length)out.push({id:"one",name:"One store: "+STORES[one.k],a:one.a,
+      note:complete.length>1?"Dearest store with everything is "+money(complete[complete.length-1].a.total)+".":"Only store that has everything."});
+    else if(one)out.push({id:"one",name:"One store: "+STORES[one.k],a:one.a,partial:true,
+      note:"No single store sells everything. "+STORES[one.k]+" has "+(lines.length-one.a.missing.length)+" of "+lines.length+
+        " items; not there: "+one.a.missing.map(function(id){return ING[id].name;}).join(", ")+"."});
     var pairBest=null;
     for(var x=0;x<KEYS.length;x++)for(var y=x+1;y<KEYS.length;y++){var a=assign([KEYS[x],KEYS[y]]); if(a&&a.stores===2&&(!pairBest||a.total<pairBest.total))pairBest=a;}
     if(pairBest)out.push({id:"two",name:"Two stores: "+Object.keys(pairBest.by).map(function(k){return STORES[k];}).join(" + "),a:pairBest,note:""});
@@ -248,7 +256,8 @@ function planData(){
     p.net=p.a.total+(p.a.stores-1)*state.stop;
     p.note=(p.note?p.note+" ":"")+(p.a.stores>1?(p.a.stores-1)+" extra stop"+(p.a.stores>2?"s":"")+" at "+money(state.stop)+" each: "+money(p.net)+" all in.":"");
   });
-  var rec=out.slice().sort(function(a,b){return a.net-b.net;})[0]; if(rec)rec.rec=true;
+  // best value only among plans that buy everything
+  var rec=out.filter(function(p){return !p.partial;}).sort(function(a,b){return a.net-b.net;})[0]; if(rec)rec.rec=true;
   return {plans:out,lines:lines,missing:missing,have:have,need:N};
 }
 
@@ -333,11 +342,15 @@ function renderAside(){
       return '<button class="plan" data-plan="'+p.id+'" aria-pressed="'+(p.id===state.plan)+'"><span class="pn">'+esc(p.name)+(p.rec?'<span class="rec">BEST VALUE</span>':'')+'</span><span class="tot">'+money(p.a.total)+'</span><span class="nt">'+esc(p.note)+'</span></button>';
     }).join("")+'</div>';
     var cur=d.plans.filter(function(p){return p.id===state.plan;})[0];
-    html+='<p class="count">About '+money(cur.a.total/servings)+' per serving, counting whole packs. Total servings: '+servings+'.</p>';
+    var lacking=cur.a.missing.map(function(id){return esc(ING[id].name);}).join(", ");
+    html+='<p class="count">About '+money(cur.a.total/servings)+' per serving, counting whole packs'+(cur.partial?', not counting '+lacking:'')+'. Total servings: '+servings+'.</p>';
     html+='<div class="bk">'+Object.keys(cur.a.by).map(function(k){
       var sub=0;cur.a.by[k].forEach(function(r){sub+=r.c.cost;});
       return '<h4><span>'+esc(STORES[k])+'</span><span>'+money(sub)+'</span></h4>'+cur.a.by[k].map(lineHtml).join("");
     }).join("")+'</div>';
+    var one1=cur.a.missing.length===1;
+    if(cur.partial)html+='<p class="warn">'+esc(STORES[Object.keys(cur.a.by)[0]])+' does not sell: '+lacking+'. Buy '+(one1?'it':'these')+
+      ' at another store (the other plans include '+(one1?'it':'them')+') or tick '+(one1?'it':'them')+' below if you already have '+(one1?'it':'them')+'.</p>';
   }
   if(d.missing.length)html+='<p class="warn">No supermarket product found yet for: '+d.missing.map(function(id){return esc(ING[id].name);}).join(", ")+'. Add these by hand.</p>';
   var all=Object.keys(d.need).sort(function(a,b){return ING[a].name.localeCompare(ING[b].name);});

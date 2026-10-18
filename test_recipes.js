@@ -23,4 +23,21 @@ assert.ok(Math.abs(r.cost - 25.6) < 1e-9 && r.left === 0);
 r = cover(500, [pk(100, 1.28, { l: 1, m: 1800 })]);
 assert.ok(Math.abs(r.cost - 23.04) < 1e-9 && r.left === 1300);
 assert.strictEqual(cover(100, []), null);
-console.log("recipe pack calculator: all checks passed");
+
+// store plans: there is always a one-store plan; when no store sells everything it names what is missing and is never "best value"
+const planSrc = src.match(/function planData[\s\S]*?\n}\n\nfunction allTags/)[0].replace(/\n\nfunction allTags$/, "");
+// (fn also carries the page's own needs(), so the stand-in is assigned over it)
+const plansFor = (ING) => new Function("STORES", "KEYS", "ING", "state", "fakeNeeds", "isHave", "money", fn + planSrc + "; needs = fakeNeeds; return planData;")(
+  { a: "Shop A", b: "Shop B", c: "Shop C" }, ["a", "b", "c"], ING, { member: false, stop: 4 },
+  () => Object.fromEntries(Object.keys(ING).map((id) => [id, { amt: 100, uses: [] }])), () => false, (n) => "$" + n.toFixed(2))().plans;
+let ps = plansFor({ x: { name: "X", stores: { a: [pk(100, 5)], b: [pk(100, 4)] } }, y: { name: "Y", stores: { c: [pk(100, 3)] } },
+                    z: { name: "Z", stores: { a: [pk(100, 2)], c: [pk(100, 2.5)] } } });
+let one = ps.find((p) => p.id === "one");
+assert.ok(one && one.partial && one.name === "One store: Shop C" && one.a.missing.join() === "x", one);   // C and A each lack one item; C is cheaper
+assert.ok(/No single store sells everything\. Shop C has 2 of 3 items; not there: X\./.test(one.note), one.note);
+assert.deepStrictEqual(ps.map((p) => p.id), ["one", "two", "all"]);
+assert.strictEqual(ps.find((p) => p.rec).id, "two");                                                    // B + C: $9.50 + one $4 stop
+ps = plansFor({ x: { name: "X", stores: { a: [pk(100, 5)], b: [pk(100, 6)] } }, y: { name: "Y", stores: { a: [pk(100, 3)], b: [pk(100, 2)] } } });
+one = ps.find((p) => p.id === "one");
+assert.ok(!one.partial && one.name === "One store: Shop A" && one.note.startsWith("Dearest store with everything is $8.00."), one);
+console.log("recipe pack calculator and store plans: all checks passed");
