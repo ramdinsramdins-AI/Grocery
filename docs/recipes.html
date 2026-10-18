@@ -147,6 +147,10 @@ function save(){try{localStorage.setItem("shelfcheck-recipes",JSON.stringify({se
 function money(n){return "$"+n.toFixed(2);}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function enc(k){return encodeURIComponent(k);}
+// A to Z, then names starting with a number, then names in other scripts; the same order as the product page
+function sortText(s){return String(s||"").replace(/^[\s"'‘’“”(\[{#*.\-–]+/,"");}   // leading quotes and brackets do not count
+function nameGroup(s){var t=sortText(s);return /^[A-Za-zÀ-ɏ]/.test(t)?0:/^[0-9]/.test(t)?1:2;}
+function byName(a,b){return nameGroup(a)-nameGroup(b)||sortText(a).localeCompare(sortText(b),"en",{numeric:true,sensitivity:"base"});}
 function hue(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))%360;return h;}
 function fmtAmt(base,a){
   if(base==="ea"){var r=Math.round(a*10)/10;return (r%1===0?r:r.toFixed(1))+" each";}
@@ -353,7 +357,7 @@ function renderAside(){
       ' at another store (the other plans include '+(one1?'it':'them')+') or tick '+(one1?'it':'them')+' below if you already have '+(one1?'it':'them')+'.</p>';
   }
   if(d.missing.length)html+='<p class="warn">No supermarket product found yet for: '+d.missing.map(function(id){return esc(ING[id].name);}).join(", ")+'. Add these by hand.</p>';
-  var all=Object.keys(d.need).sort(function(a,b){return ING[a].name.localeCompare(ING[b].name);});
+  var all=Object.keys(d.need).sort(function(a,b){return byName(ING[a].name,ING[b].name);});
   html+='<div><h3>Tick what you already have</h3><div class="pantry">'+all.map(function(id){
     return '<label><input type="checkbox" data-have="'+enc(id)+'"'+(isHave(id)?' checked':'')+'> '+esc(ING[id].name)+'</label>';
   }).join("")+'</div></div>';
@@ -396,7 +400,7 @@ Promise.all([
   fetch("data/recipes.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("recipes");return r.json();}),
   fetch("data/ingredient_products.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("prices");return r.json();})
 ]).then(function(a){
-  RECIPES=a[0].recipes.slice().sort(function(x,y){return x.name.localeCompare(y.name);});
+  RECIPES=a[0].recipes.slice().sort(function(x,y){return byName(x.name,y.name);});
   RECIPES.forEach(function(r){BYID[r.id]=r;});
   ING=a[1].ingredients;
   Object.keys(state.sel).forEach(function(id){if(!BYID[id])delete state.sel[id];});

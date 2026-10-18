@@ -148,6 +148,10 @@ function save(){try{localStorage.setItem("shelfcheck-live",JSON.stringify({list:
 function money(n){return "$"+n.toFixed(2);}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function enc(k){return encodeURIComponent(k);}
+// A to Z, then names starting with a number, then names in other scripts (Chinese, Korean); "2 x" before "10 x"
+function sortText(s){return String(s||"").replace(/^[\s"'‘’“”(\[{#*.\-–]+/,"");}   // leading quotes and brackets do not count
+function nameGroup(s){var t=sortText(s);return /^[A-Za-zÀ-ɏ]/.test(t)?0:/^[0-9]/.test(t)?1:2;}
+function byName(a,b){return nameGroup(a)-nameGroup(b)||sortText(a).localeCompare(sortText(b),"en",{numeric:true,sensitivity:"base"});}
 
 // each price entry: [shelfPrice, usualPrice, clubPrice|null, unitPrice|null, unitBasis|null]
 function buildItems(groups){
@@ -161,7 +165,7 @@ function buildItems(groups){
     var name = first.name || "";
     if(first.brand && name.toLowerCase().indexOf(first.brand.toLowerCase())<0) name = first.brand+" "+name;
     return {id:key, name:name, size:first.size||"", prices:prices, aisle:aisleOf(first.category,name), fuzzy:byStore._m==="fuzzy"};
-  }).sort(function(a,b){return a.name.localeCompare(b.name);});
+  }).sort(function(a,b){return byName(a.name,b.name);});
   BYKEY = {}; ITEMS.forEach(function(i){BYKEY[i.id]=i;});
   Object.keys(state.list).forEach(function(k){if(!BYKEY[k])delete state.list[k];});
 }
@@ -247,8 +251,8 @@ function filtered(){
     if(state.specials&&bestSaving(i)<=0)return false;
     var n=i.name.toLowerCase();return words.every(function(w){return n.indexOf(w)>-1;});
   });
-  if(state.sort==="unit"){var u={};rows.forEach(function(i){u[i.id]=bestUnit(i);});rows.sort(function(a,b){return u[a.id]-u[b.id]||a.name.localeCompare(b.name);});}
-  else if(state.sort==="saving"){var sv={};rows.forEach(function(i){sv[i.id]=bestSaving(i);});rows.sort(function(a,b){return sv[b.id]-sv[a.id]||a.name.localeCompare(b.name);});}
+  if(state.sort==="unit"){var u={};rows.forEach(function(i){u[i.id]=bestUnit(i);});rows.sort(function(a,b){return u[a.id]-u[b.id]||byName(a.name,b.name);});}
+  else if(state.sort==="saving"){var sv={};rows.forEach(function(i){sv[i.id]=bestSaving(i);});rows.sort(function(a,b){return sv[b.id]-sv[a.id]||byName(a.name,b.name);});}
   return rows;
 }
 

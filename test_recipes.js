@@ -40,4 +40,13 @@ assert.strictEqual(ps.find((p) => p.rec).id, "two");                            
 ps = plansFor({ x: { name: "X", stores: { a: [pk(100, 5)], b: [pk(100, 6)] } }, y: { name: "Y", stores: { a: [pk(100, 3)], b: [pk(100, 2)] } } });
 one = ps.find((p) => p.id === "one");
 assert.ok(!one.partial && one.name === "One store: Shop A" && one.note.startsWith("Dearest store with everything is $8.00."), one);
-console.log("recipe pack calculator and store plans: all checks passed");
+// A to Z order on both pages: letters first, then names starting with a number, then other scripts; numbers in natural order
+const sortSrc = (file) => {
+  const s = fs.readFileSync(__dirname + "/docs/" + file, "utf8").replace(/\r\n/g, "\n");
+  return ["sortText", "nameGroup", "byName"].map((f) => s.match(new RegExp("function " + f + "[\\s\\S]*?\\n"))[0]).join("");
+};
+assert.strictEqual(sortSrc("index.html"), sortSrc("recipes.html"));
+const byName = new Function(sortSrc("index.html") + "; return byName;")();
+assert.deepStrictEqual(["19 Crimes Red Blend", "金海林 海帶結50g", "Zucchini", "180 degrees crackers", "apple juice", "\"Pams\" Butter", "2 Minute Noodles", "Banana"].sort(byName),
+  ["apple juice", "Banana", "\"Pams\" Butter", "Zucchini", "2 Minute Noodles", "19 Crimes Red Blend", "180 degrees crackers", "金海林 海帶結50g"]);
+console.log("recipe pack calculator, store plans and A to Z order: all checks passed");
