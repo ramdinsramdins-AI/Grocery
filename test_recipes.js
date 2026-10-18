@@ -1,6 +1,6 @@
 // Checks the pack-size calculator in docs/recipes.html. Run: node test_recipes.js
 const fs = require("fs"), assert = require("assert");
-const html = fs.readFileSync(__dirname + "/docs/recipes.html", "utf8");
+const html = fs.readFileSync(__dirname + "/docs/recipes.html", "utf8").replace(/\r\n/g, "\n");   // Git on Windows checks out CRLF
 const src = html.match(/<script>([\s\S]*)<\/script>/)[1];
 const fn = src.match(/function packPrice[\s\S]*?\n}\n/)[0] + src.match(/function cover[\s\S]*?\n}\n\nfunction planData/)[0].replace(/\n\nfunction planData$/, "");
 const cover = new Function("state", fn + "; return cover;")({ member: false });
