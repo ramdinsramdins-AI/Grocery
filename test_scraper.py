@@ -180,6 +180,27 @@ assert len(r) == 2 and r[0]["price"] == 0.89 and r[0]["was"] == 1.49 and r[0]["u
 assert r[0]["category"] == "Food & Drinks > Salt & MSG" and r[0]["url"] == "https://www.njk.co.nz/sp1.html", r[0]
 assert s.parse_size(r[1]["size"]) == (7200, "ml"), r[1]
 
+# product names in English: the translations list first, then the English half of "Chinese English" names
+_tbl = {"金海林 海帶結50g": "Jinhailin Kelp Knots 50g"}
+for given, want in [
+    ("金海林 海帶結50g", "Jinhailin Kelp Knots 50g"),
+    ("東古 9°白米醋500ml Donggu 9° White Rice Vinegar 500ml", "Donggu 9° White Rice Vinegar 500ml"),
+    ("孔雀 咖啡口味卷心餅63g Peacock Coffee Flv Wafer Roll 63g", "Peacock Coffee Flv Wafer Roll 63g"),
+    ("【Best Before 23.10.2026】Meiji Almond Chocolate 79g", "Meiji Almond Chocolate 79g (best before 23.10.2026)"),
+    ("Mae 甜辣醬260g", "Mae 甜辣醬260g"),            # not in the list and no English half: left alone
+    ("Pams Butter 500g", "Pams Butter 500g")]:
+    assert s.english_name(given, _tbl) == want, (given, s.english_name(given, _tbl))
+with tempfile.TemporaryDirectory() as d:
+    real = s.TRANSLATIONS
+    s.TRANSLATIONS = pathlib.Path(d) / "translations.json"
+    s.TRANSLATIONS.write_text(json.dumps({"names": _tbl}, ensure_ascii=False), encoding="utf-8")
+    rows = [s.make_record("njk", "1", "金海林 海帶結50g", None, "金海林 海帶結50g", 3.29), s.make_record("woolworths", "2", "Kelp", "x", "50g", 3.0)]
+    assert s.translate_rows(rows) == 1 and rows[0]["name"] == rows[0]["size"] == "Jinhailin Kelp Knots 50g", rows[0]
+    assert rows[0]["match_key"] == s.match_key(None, "Jinhailin Kelp Knots 50g", "Jinhailin Kelp Knots 50g") and rows[1]["name"] == "Kelp"
+    s.TRANSLATIONS = real
+_names = json.loads(s.TRANSLATIONS.read_text(encoding="utf-8"))["names"]
+assert len(_names) > 400 and not any(s._CJK.search(v) for v in _names.values())
+
 # cross-store matching: real differences in wording still match, look-alike products do not
 def _R(store, id, name, brand, size):
     return s.make_record(store, id, name, brand, size, 5.0)

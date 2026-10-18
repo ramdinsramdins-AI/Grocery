@@ -1,0 +1,1170 @@
+{
+"ui":{
+"A to Z":"A hanggang Z",
+"About {price} per serving, counting whole packs, not counting {items}.":"Mga {price} bawat serving, binibilang ang buong pakete, hindi kasama ang {items}.",
+"About {price} per serving, counting whole packs.":"Mga {price} bawat serving, binibilang ang buong pakete.",
+"Add":"Idagdag",
+"Add recipes to build your shopping list.":"Magdagdag ng mga recipe para mabuo ang iyong listahan ng bibilhin.",
+"Add to my list":"Idagdag sa listahan ko",
+"Added. Remove":"Naidagdag na. Alisin",
+"All":"Lahat",
+"All ({n})":"Lahat ({n})",
+"All aisles":"Lahat ng aisle",
+"BEST VALUE":"PINAKAMURA",
+"Bakery":"Panaderya",
+"Biggest saving":"Pinakamalaking tipid",
+"Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, with prices per 100g.":"Gumawa ng listahan ng bibilhin at tingnan ang pinakamurang paraan para bilhin ito sa Woolworths, New World, PAK'nSAVE at sa mga Asian grocery na New Gum Sarn, TXG Mall, NJK at FromK, na may presyo bawat 100g.",
+"Cheapest across {n} store":"Pinakamura sa {n} tindahan",
+"Cheapest across {n} stores":"Pinakamura sa {n} na tindahan",
+"Compare individual products":"Paghambingin ang bawat produkto",
+"Cost of each extra stop":"Gastos ng bawat dagdag na hinto",
+"Could also use it in: {recipes}.":"Magagamit din sa: {recipes}.",
+"Could not load prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"Hindi ma-load ang mga presyo. Kung direkta mong binuksan ang file na ito, i-serve ang docs folder gamit ang web server (python3 -m http.server sa docs/) o gamitin ang GitHub Pages.",
+"Could not load recipes or prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"Hindi ma-load ang mga recipe o presyo. Kung direkta mong binuksan ang file na ito, i-serve ang docs folder gamit ang web server (python3 -m http.server sa docs/) o gamitin ang GitHub Pages.",
+"Dairy & Eggs":"Gatas at Itlog",
+"Dearest full-list store is {price}.":"Ang pinakamahal na tindahan para sa buong listahan ay {price}.",
+"Dearest store with everything is {price}.":"Ang pinakamahal na tindahang may lahat ay {price}.",
+"Deli & Chilled":"Deli at Malamig",
+"Drinks":"Inumin",
+"Fewer servings of {recipe}":"Bawasan ang serving ng {recipe}",
+"Fewer {item}":"Bawasan ang {item}",
+"Filter by type":"I-filter ayon sa uri",
+"Frozen":"Frozen",
+"Fruit & Veg":"Prutas at Gulay",
+"Health & Beauty":"Kalusugan at Kagandahan",
+"Household":"Gamit sa Bahay",
+"In list ({n})":"Nasa listahan ({n})",
+"Ingredients (serves {n})":"Mga sangkap (para sa {n})",
+"Ingredients and method":"Mga sangkap at paraan ng pagluluto",
+"Language":"Wika",
+"Loading prices...":"Nilo-load ang mga presyo...",
+"Loading...":"Nilo-load...",
+"Lowest price per 100g / 100ml":"Pinakamababang presyo bawat 100g / 100ml",
+"Matched by name and size. Check it is the same product.":"Itinugma ayon sa pangalan at laki. Tiyaking pareho ang produkto.",
+"Meat & Seafood":"Karne at Seafood",
+"Method":"Paraan ng pagluluto",
+"More servings of {recipe}":"Dagdagan ang serving ng {recipe}",
+"More {item}":"Dagdagan ang {item}",
+"Need {amt}. Buy {what}":"Kailangan ng {amt}. Bumili ng {what}",
+"No combination of these stores has everything on your list. Remove an item that shows \"Not found\" at a store to compare.":"Walang kombinasyon ng mga tindahang ito na may lahat ng nasa listahan mo. Alisin ang item na may \"Hindi nakita\" sa isang tindahan para makapaghambing.",
+"No comparable products yet.":"Wala pang maihahambing na produkto.",
+"No products match. Try a shorter search or another aisle.":"Walang tugmang produkto. Subukan ang mas maikling hanap o ibang aisle.",
+"No recipes match. Try a shorter search.":"Walang tugmang recipe. Subukan ang mas maikling hanap.",
+"No single store sells everything. {store} has {have} of {total} items; not there: {items}.":"Walang iisang tindahan na nagbebenta ng lahat. Ang {store} ay may {have} sa {total} na item; wala roon: {items}.",
+"No store has the products for this list yet.":"Wala pang tindahan na may mga produkto para sa listahang ito.",
+"No supermarket product found yet for: {items}. Add these by hand.":"Wala pang nakitang produkto sa supermarket para sa: {items}. Idagdag ang mga ito nang mano-mano.",
+"Not found at {stores}":"Hindi nakita sa {stores}",
+"Not refreshed last run: {stores}.":"Hindi na-refresh noong huling takbo: {stores}.",
+"One store: {store}":"Isang tindahan: {store}",
+"Only products found at two or more stores are listed, because those are the ones that can be compared. \"Usual\" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only. TXG Mall, NJK and FromK prices are from their online shops; check delivery or pickup with each shop.":"Ang ipinapakita lang ay mga produktong nasa dalawa o higit pang tindahan, dahil iyon lang ang maihahambing. Ang \"Karaniwan\" ay ang regular na presyo ng tindahan na ipinapakita katabi ng special, at itinuturing na totoong tipid ang special kapag mas mura ito nang hindi bababa sa 10%. Galing ang mga presyo sa isang tindahan bawat chain, kaya maaaring iba sa tindahan na malapit sa iyo. Ang New Gum Sarn ay iisang tindahan sa Point England, Auckland, at ang mga frozen at chilled na item nito ay click and collect lang. Ang mga presyo ng TXG Mall, NJK at FromK ay galing sa kanilang online shop; alamin ang delivery o pickup sa bawat tindahan.",
+"Only store that has everything.":"Ang tanging tindahang may lahat.",
+"Only {pct}% under usual {price}":"{pct}% lang na mas mura sa karaniwang {price}",
+"Pantry":"Pantry",
+"Perishable: use or freeze soon.":"Madaling masira: gamitin o i-freeze agad.",
+"Pick the meals you want to cook. You get one shopping list, with the cheapest packs for what you need, and the cheapest store or stores to buy it from.":"Piliin ang mga putaheng gusto mong lutuin. Makakakuha ka ng iisang listahan ng bibilhin, kasama ang pinakamurang pakete para sa kailangan mo, at ang pinakamurang tindahan o mga tindahan kung saan ito bibilhin.",
+"Prices updated {when}.":"Na-update ang mga presyo noong {when}.",
+"Products":"Mga produkto",
+"Quantities are for the servings shown and scale when you change them. For each ingredient the site adds up what every chosen recipe needs, then finds the cheapest combination of pack sizes that covers it, and says what is left over. Products are picked by matching names, so check the pack you are buying. Items sold each (an onion, a lemon) use an average weight. Recipes do not include nutrition or allergen information. Prices come from one store per chain, so your local store may differ.":"Ang dami ay para sa ipinapakitang bilang ng serving at nagbabago kapag binago mo ito. Para sa bawat sangkap, pinagsasama ng site ang kailangan ng bawat napiling recipe, hinahanap ang pinakamurang kombinasyon ng laki ng pakete na sasapat, at sinasabi kung gaano karami ang matitira. Pinipili ang mga produkto sa pagtutugma ng pangalan, kaya tingnan ang paketeng binibili mo. Ang mga item na binebenta nang isa-isa (isang sibuyas, isang lemon) ay gumagamit ng karaniwang timbang. Walang impormasyon sa nutrisyon o allergen ang mga recipe. Galing ang mga presyo sa isang tindahan bawat chain, kaya maaaring iba sa tindahan na malapit sa iyo.",
+"Real saving: {pct}% under usual {price}":"Totoong tipid: {pct}% na mas mura sa karaniwang {price}",
+"Recipes":"Mga recipe",
+"Sample prices for testing. Run the scraper to load real prices.":"Halimbawang presyo para sa testing. Patakbuhin ang scraper para ma-load ang totoong presyo.",
+"Search butter, mince, toilet paper":"Hanapin ang mantikilya, giniling, toilet paper",
+"Search for products and press Add to compare totals.":"Maghanap ng produkto at pindutin ang Idagdag para paghambingin ang kabuuan.",
+"Search products":"Maghanap ng produkto",
+"Search recipes":"Maghanap ng recipe",
+"Search recipes or ingredients":"Maghanap ng recipe o sangkap",
+"Shelf Check Recipes":"Mga Recipe ng Shelf Check",
+"Shop by aisle":"Mamili ayon sa aisle",
+"Shop by recipe":"Mamili ayon sa recipe",
+"Show more ({n} left)":"Magpakita pa ({n} pa ang natitira)",
+"Snacks & Confectionery":"Meryenda at Kendi",
+"Sort":"Ayusin",
+"Specials only":"Specials lang",
+"Tick what you already have":"Lagyan ng tsek ang mayroon ka na",
+"Total servings: {n}.":"Kabuuang serving: {n}.",
+"Try ticking items you already have.":"Subukang lagyan ng tsek ang mga item na mayroon ka na.",
+"Two stores: {stores}":"Dalawang tindahan: {stores}",
+"Use club prices":"Gamitin ang club price",
+"Use club prices (Everyday Rewards, Clubcard)":"Gamitin ang club price (Everyday Rewards, Clubcard)",
+"Woolworths prices are from {date}.":"Ang mga presyo ng Woolworths ay mula noong {date}.",
+"Your list":"Ang listahan mo",
+"Your recipes":"Ang mga recipe mo",
+"Your recipes and shopping list":"Ang mga recipe at listahan ng bibilhin mo",
+"about {amt} loose, {pack} ({price})":"mga {amt} na tingi, {pack} ({price})",
+"can":"lata",
+"clove":"butil",
+"cup":"tasa",
+"each":"piraso",
+"g":"g",
+"ml":"ml",
+"pinch":"kurot",
+"servings":"serving",
+"slice":"hiwa",
+"stalk":"tangkay",
+"tbsp":"kutsara",
+"tsp":"kutsarita",
+"{amt} left over.":"May matitirang {amt}.",
+"{min} min · serves {n}":"{min} min · para sa {n}",
+"{n} each":"{n} piraso",
+"{n} extra stop at {price} each: {total} all in.":"{n} dagdag na hinto sa halagang {price} bawat isa: {total} lahat-lahat.",
+"{n} extra stops at {price} each: {total} all in.":"{n} dagdag na hinto sa halagang {price} bawat isa: {total} lahat-lahat.",
+"{n} product at 2 or more stores":"{n} produkto sa 2 o higit pang tindahan",
+"{n} product on special":"{n} produkto na naka-special",
+"{n} products at 2 or more stores":"{n} produkto sa 2 o higit pang tindahan",
+"{n} products on special":"{n} produkto na naka-special",
+"{n} recipe":"{n} recipe",
+"{n} recipes":"{n} recipe",
+"{n} × {pack} ({price} each)":"{n} × {pack} ({price} bawat isa)",
+"{price} each":"{price} bawat isa",
+"{store} does not sell: {items}. Buy it at another store (the other plans include it) or tick it below if you already have it.":"Hindi nagbebenta ang {store} ng: {items}. Bilhin ito sa ibang tindahan (kasama ito sa ibang plano) o lagyan ng tsek sa ibaba kung mayroon ka na.",
+"{store} does not sell: {items}. Buy these at another store (the other plans include them) or tick them below if you already have them.":"Hindi nagbebenta ang {store} ng: {items}. Bilhin ang mga ito sa ibang tindahan (kasama ang mga ito sa ibang plano) o lagyan ng tsek sa ibaba kung mayroon ka na."
+},
+"tags":{
+"beef":"baka",
+"breakfast":"almusal",
+"budget":"tipid",
+"chicken":"manok",
+"chinese":"Chinese",
+"comfort":"pampainit ng loob",
+"curry":"curry",
+"dinner":"hapunan",
+"eggs":"itlog",
+"fish":"isda",
+"japanese":"Japanese",
+"lunch":"tanghalian",
+"noodles":"noodles",
+"one-pan":"isang kawali",
+"pasta":"pasta",
+"pork":"baboy",
+"quick":"mabilis",
+"rice":"kanin",
+"salad":"salad",
+"sausages":"sausage",
+"seafood":"seafood",
+"soup":"sabaw",
+"thai":"Thai",
+"vegetarian":"vegetarian"
+},
+"ingredients":{
+"chicken-breast":"Pitso ng manok",
+"chicken-thigh":"Hita ng manok",
+"beef-mince":"Giniling na baka",
+"beef-strips":"Hiniwang baka para sa stir fry",
+"sausages":"Sausage",
+"bacon":"Bacon",
+"ham":"Hamon",
+"salmon-fillet":"Fillet ng salmon",
+"tuna-can":"De-latang tuna",
+"eggs":"Itlog",
+"milk":"Gatas",
+"butter":"Mantikilya",
+"cream":"Cream",
+"cheese":"Cheddar cheese",
+"mozzarella":"Mozzarella",
+"parmesan":"Parmesan",
+"yoghurt":"Plain yogurt",
+"onion":"Sibuyas",
+"garlic":"Bawang",
+"potato":"Patatas",
+"pumpkin":"Kalabasa",
+"carrot":"Karot",
+"broccoli":"Broccoli",
+"mushroom":"Kabute",
+"spinach":"Batang spinach",
+"capsicum":"Bell pepper",
+"tomato-fresh":"Sariwang kamatis",
+"zucchini":"Zucchini",
+"frozen-peas":"Frozen na gisantes",
+"frozen-mixed-veg":"Frozen na halo-halong gulay",
+"lettuce":"Lettuce",
+"avocado":"Abokado",
+"lemon":"Lemon",
+"banana":"Saging",
+"ginger":"Sariwang luya",
+"coriander":"Sariwang wansoy",
+"basil":"Sariwang basil",
+"olive-oil":"Olive oil",
+"vegetable-oil":"Mantika",
+"soy-sauce":"Toyo",
+"salt":"Asin",
+"pepper":"Itim na paminta",
+"flour":"Harina",
+"sugar":"Asukal",
+"baking-powder":"Baking powder",
+"cornflour":"Gawgaw",
+"rice":"Bigas",
+"spaghetti":"Spaghetti",
+"penne":"Penne o macaroni",
+"noodles":"Egg noodles o hokkien noodles",
+"tomato-can":"De-latang tinadtad na kamatis",
+"tomato-paste":"Tomato paste",
+"chicken-stock":"Chicken stock (likido)",
+"coconut-milk":"Gata ng niyog",
+"curry-powder":"Curry powder",
+"garam-masala":"Garam masala",
+"ground-cumin":"Giniling na cumin",
+"paprika":"Paprika",
+"chilli-powder":"Chili powder",
+"mixed-herbs":"Halo-halong herbs",
+"honey":"Pulot",
+"oats":"Rolled oats",
+"bread":"Tinapay na hiniwa",
+"tortilla":"Tortilla wrap",
+"flatbread":"Flatbread o pita",
+"burger-buns":"Burger bun",
+"kidney-beans":"De-latang kidney beans",
+"chickpeas":"De-latang garbanzos",
+"spring-onion":"Dahon ng sibuyas",
+"sesame-oil":"Sesame oil",
+"oyster-sauce":"Oyster sauce",
+"fish-sauce":"Patis",
+"rice-vinegar":"Suka ng bigas",
+"mirin":"Mirin",
+"shaoxing-wine":"Shaoxing o Chinese cooking wine",
+"hoisin-sauce":"Hoisin sauce",
+"chilli-bean-paste":"Chili bean paste (doubanjiang)",
+"five-spice":"Chinese five spice",
+"tofu":"Tokwa",
+"pork-mince":"Giniling na baboy",
+"pork-belly":"Liempo",
+"prawns":"Hilaw na hipon",
+"bok-choy":"Pechay Tagalog (bok choy)",
+"cabbage":"Repolyo (pechay Baguio o berde)",
+"cucumber":"Pipino",
+"eggplant":"Talong",
+"bean-sprouts":"Toge",
+"red-chilli":"Sariwang pulang sili",
+"lime":"Dayap (lime)",
+"lemongrass":"Tanglad",
+"red-curry-paste":"Thai red curry paste",
+"green-curry-paste":"Thai green curry paste",
+"japanese-curry-roux":"Japanese curry roux (hal. Golden Curry)",
+"rice-noodles":"Tuyong rice noodles",
+"udon":"Udon noodles",
+"sushi-rice":"Japanese na bigas na maikli o katamtamang butil",
+"panko":"Panko breadcrumbs",
+"peanuts":"Inihaw na mani",
+"sesame-seeds":"Linga"
+},
+"recipes":{
+"butter-chicken":{
+"name":"Butter chicken at kanin",
+"method":[
+"Hugasan ang bigas, saka lutuin sa tubig na doble ng dami nito na may isang kurot na asin hanggang lumambot, mga 12 minuto. Panatilihing nakatakip.",
+"Tunawin ang mantikilya sa malaki at malalim na kawali sa katamtamang apoy. Lutuin ang sibuyas nang 5 minuto hanggang lumambot, saka idagdag ang bawang at luya nang 1 minuto.",
+"Ihalo ang curry powder at garam masala at lutuin nang 30 segundo hanggang bumango.",
+"Idagdag ang manok at haluin sa mga pampalasa hanggang hindi na kulay-rosas ang labas nito, mga 4 na minuto.",
+"Ibuhos ang kamatis at 100 ml na tubig, timplahan ng asin, at pakuluan nang mahina sa loob ng 20 minuto, hinahalo paminsan-minsan, hanggang maluto nang husto ang manok.",
+"Ihalo ang cream at pakuluan pa nang 5 minuto hanggang kumintab. Tikman at dagdagan ng asin kung kailangan. Ihain sa ibabaw ng kanin."
+],
+"notes":{
+"0":"hiniwa nang malalaking piraso",
+"2":"tinadtad nang pino",
+"3":"dinikdik",
+"4":"kinayod"
+},
+"blurb":"Isang banayad at malapot na curry na madaling gawin gamit ang mga pampalasang nasa pantry."
+},
+"spaghetti-bolognese":{
+"name":"Spaghetti bolognese",
+"method":[
+"Initin ang mantika sa malaking kawali sa katamtaman hanggang malakas na apoy. Lutuin ang sibuyas at karot nang 5 minuto hanggang lumambot, saka idagdag ang bawang nang 1 minuto.",
+"Idagdag ang giniling, durugin gamit ang kutsara, at lutuin hanggang pumula ang lahat, mga 8 minuto.",
+"Ihalo ang tomato paste, saka ang kamatis, herbs, asin at paminta. Pakuluan nang mahina sa loob ng 30 minuto, hinahalo paminsan-minsan, hanggang lumapot.",
+"Lutuin ang spaghetti sa malaking kaldero ng kumukulong tubig na may asin ayon sa oras sa pakete. Magtabi ng isang tasa ng pinaglagaan, saka salain.",
+"Ihalo ang pasta sa sarsa, at palabnawin ng kaunting pinaglagaan kung kailangan. Ihain kasama ang parmesan."
+],
+"notes":{
+"1":"hiniwa nang pa-cube",
+"2":"kinayod",
+"3":"dinikdik",
+"9":"kinayod"
+},
+"blurb":"Ang klasikong ulam sa gabi ng karaniwang araw. Mainam i-freeze."
+},
+"chicken-fried-rice":{
+"name":"Chicken fried rice",
+"method":[
+"Lutuin ang kanin, ikalat sa tray at palamigin nang hindi bababa sa 20 minuto. Mas masarap isangag ang malamig na kanin kaysa mainit.",
+"Initin ang kalahati ng mantika sa malaking kawali o wok sa malakas na apoy. Lutuin ang manok nang 5 hanggang 6 na minuto hanggang mag-golden at maluto nang husto, saka ilipat sa plato.",
+"Idagdag ang natitirang mantika, bawang at luya, at haluin nang 30 segundo. Ilagay ang frozen na gulay at lutuin nang 3 minuto.",
+"Itulak ang lahat sa gilid, basagin ang mga itlog at haluin hanggang halos maluto.",
+"Idagdag ang kanin at manok, buhusan ng toyo, at haluin sa malakas na apoy nang 3 minuto hanggang mainit at medyo malutong."
+],
+"notes":{
+"2":"hiniwa nang pa-cube",
+"6":"dinikdik",
+"7":"kinayod"
+},
+"blurb":"Nagagamit ang tirang kanin at isang supot ng frozen na gulay."
+},
+"beef-tacos":{
+"name":"Malambot na beef tacos",
+"method":[
+"Initin ang mantika sa kawali sa katamtaman hanggang malakas na apoy at lutuin ang sibuyas nang 4 na minuto. Idagdag ang bawang nang 30 segundo.",
+"Idagdag ang giniling at lutuin hanggang pumula, dinudurog habang niluluto, mga 8 minuto.",
+"Ihalo ang sili, cumin, paprika at tomato paste kasama ang 100 ml na tubig. Pakuluan nang mahina sa loob ng 8 minuto hanggang kumapit ang sarsa sa karne.",
+"Painitin ang tortilla sa tuyong kawali nang 20 segundo bawat gilid, o nakabalot sa foil sa oven.",
+"Durugin ang abokado na may isang kurot na asin. Lagyan ang bawat tortilla ng giniling, abokado, kamatis, lettuce at keso."
+],
+"notes":{
+"2":"hiniwa nang pa-cube",
+"3":"hiniwa nang pa-cube",
+"4":"ginayat nang manipis",
+"5":"kinayod",
+"10":"dinikdik"
+},
+"blurb":"Mura, mabilis at madaling buuin ng mga bata nang sila mismo."
+},
+"creamy-chicken-mushroom-pasta":{
+"name":"Creamy na pasta na may manok at kabute",
+"method":[
+"Pakuluan ang pasta sa tubig na may asin ayon sa oras sa pakete. Salain, at magtira ng kaunting tubig.",
+"Initin ang mantika sa malaking kawali sa katamtaman hanggang malakas na apoy. Lutuin ang manok nang 5 hanggang 6 na minuto hanggang mag-golden at maluto nang husto, saka itabi.",
+"Sa parehong kawali, lutuin ang sibuyas at kabute nang 6 na minuto hanggang mag-golden ang kabute. Idagdag ang bawang nang 1 minuto.",
+"Ibuhos ang stock at cream at pakuluan nang mahina sa loob ng 4 na minuto hanggang bahagyang lumapot.",
+"Ibalik ang manok sa kawali, idagdag ang pasta at spinach, at haluin hanggang malanta ang spinach. Ihalo ang parmesan at palabnawin ng pinaglagaan kung kailangan."
+],
+"notes":{
+"0":"hiniwa",
+"1":"hiniwa",
+"4":"dinikdik",
+"5":"hiniwa nang pa-cube",
+"7":"kinayod"
+}
+},
+"sausage-tray-bake":{
+"name":"Sausage at gulay sa isang tray",
+"method":[
+"Painitin ang oven sa 220 C (200 C kung fan). Ilagay ang patatas at karot sa malaking tray kasama ang mantika, herbs at asin at haluing mabuti.",
+"I-roast nang 15 minuto. Idagdag sa tray ang sibuyas, bell pepper at sausage at baligtarin ang lahat.",
+"I-roast pa nang 25 hanggang 30 minuto, baligtarin nang isang beses, hanggang pumula at maluto nang husto ang sausage at malutong ang gilid ng patatas."
+],
+"notes":{
+"1":"hiniwa nang malalaking piraso",
+"2":"hiniwa",
+"3":"hiniwa nang malalaki",
+"4":"hiniwa nang pahaba"
+},
+"blurb":"Isang tray, kaunting hugasin."
+},
+"salmon-rice-broccoli":{
+"name":"Honey soy salmon na may kanin at broccoli",
+"method":[
+"Lutuin ang kanin. Paghaluin ang toyo, pulot, bawang, luya at katas ng kalahating lemon sa maliit na mangkok.",
+"Initin ang mantika sa non-stick na kawali sa katamtaman hanggang malakas na apoy. Lutuin ang salmon nang nakababa ang balat sa loob ng 4 na minuto, baligtarin, at lutuin pa nang 2 minuto.",
+"Ibuhos ang sarsa sa salmon at hayaang kumulo nang 1 minuto, sinasandok ito sa ibabaw ng isda.",
+"Pasingawan o pakuluan ang broccoli nang 3 hanggang 4 na minuto hanggang matingkad na berde at bahagyang lumambot.",
+"Ihain ang salmon sa ibabaw ng kanin kasama ang broccoli at hiwa ng lemon."
+],
+"notes":{
+"2":"hinati sa maliliit na bulaklak",
+"5":"dinikdik",
+"8":"kinayod"
+}
+},
+"veg-stir-fry-noodles":{
+"name":"Stir fry noodles na may gulay",
+"method":[
+"Ihanda ang noodles ayon sa pakete, salain at banlawan sa malamig na tubig.",
+"Paghaluin ang toyo at pulot sa 3 kutsarang tubig.",
+"Initin ang mantika sa wok sa malakas na apoy. I-stir fry ang karot at broccoli nang 3 minuto, saka idagdag ang bell pepper at kabute nang 2 minuto.",
+"Idagdag ang bawang at luya nang 30 segundo, saka ang noodles at sarsa. Haluin nang 2 hanggang 3 minuto hanggang mainit at makintab ang lahat."
+],
+"notes":{
+"1":"maliliit na bulaklak",
+"2":"hiniwa",
+"3":"hiniwa nang manipis",
+"4":"hiniwa",
+"5":"dinikdik",
+"6":"kinayod"
+}
+},
+"chicken-caesar-salad":{
+"name":"Chicken caesar salad",
+"method":[
+"Painitin ang oven sa 200 C. Ihalo ang cubes ng tinapay sa 1 kutsarang mantika at isang kurot na asin at i-bake nang 10 minuto hanggang mag-golden.",
+"Timplahan ang manok ng asin at paminta. Lutuin sa kawali na may kaunting mantika nang 5 hanggang 6 na minuto bawat gilid hanggang maluto nang husto. Ipahinga nang 5 minuto, saka hiwain.",
+"Pakuluan ang itlog nang 7 minuto, palamigin sa malamig na tubig, balatan at hatiin. Iprito ang bacon hanggang malutong.",
+"Para sa dressing, batihin ang natitirang mantika, katas ng lemon, bawang at kalahati ng parmesan.",
+"Ihalo ang lettuce sa dressing, saka lagyan sa ibabaw ng manok, bacon, itlog, croutons at natitirang parmesan."
+],
+"notes":{
+"1":"pinunit",
+"2":"tinadtad",
+"4":"kinayod nang manipis",
+"5":"hiniwa nang pa-cube para sa croutons",
+"8":"dinikdik"
+}
+},
+"beef-broccoli-stir-fry":{
+"name":"Stir fry na baka at broccoli",
+"method":[
+"Lutuin ang kanin. Ihalo ang baka sa gawgaw at isang kutsarang toyo. Paghaluin ang natitirang toyo, pulot at 100 ml na tubig.",
+"Initin nang husto ang kalahati ng mantika sa wok. I-stir fry ang baka nang dalawang batch sa loob ng 1 hanggang 2 minuto hanggang pumula, at itabi.",
+"Idagdag ang natitirang mantika at lutuin ang broccoli nang 3 minuto na may kaunting tubig. Idagdag ang bawang at luya nang 30 segundo.",
+"Ibalik ang baka, ibuhos ang sarsa at lutuin nang 1 hanggang 2 minuto hanggang lumapot. Ihain sa ibabaw ng kanin."
+],
+"notes":{
+"2":"bulaklak",
+"5":"dinikdik",
+"6":"kinayod"
+}
+},
+"cottage-pie":{
+"name":"Cottage pie",
+"method":[
+"Pakuluan ang patatas sa tubig na may asin nang 15 hanggang 20 minuto hanggang lumambot. Salain, durugin kasama ang mantikilya at gatas, at timplahan.",
+"Samantala, lutuin ang sibuyas at karot sa malaking kawaling puwede sa oven nang 6 na minuto. Idagdag ang giniling at papulahin nang 8 minuto.",
+"Ihalo ang harina at tomato paste, saka ang stock. Pakuluan nang mahina sa loob ng 15 minuto hanggang lumapot, idagdag ang gisantes sa huling 3 minuto. Timplahan.",
+"Painitin ang oven sa 200 C. Isandok ang dinurog na patatas sa ibabaw ng giniling, gaspangin gamit ang tinidor at budburan ng keso.",
+"I-bake nang 20 hanggang 25 minuto hanggang mag-golden at kumulo-kulo."
+],
+"notes":{
+"1":"binalatan at hiniwa",
+"4":"hiniwa nang pa-cube",
+"5":"hiniwa nang pa-cube",
+"10":"kinayod"
+}
+},
+"ham-cheese-omelette":{
+"name":"Ham at cheese omelette",
+"method":[
+"Batihin ang itlog kasama ang gatas, asin at paminta.",
+"Tunawin ang sangkapat ng mantikilya sa non-stick na kawali sa katamtamang apoy. Ibuhos ang sangkapat ng binating itlog at ikutin ang kawali.",
+"Kapag luto na ang ilalim pero medyo basa pa ang ibabaw, ikalat ang sangkapat ng hamon, keso at spinach.",
+"Tiklupin sa kalahati ang omelette, ilipat sa plato at ulitin para sa iba."
+],
+"notes":{
+"1":"hiniwa nang pa-cube",
+"2":"kinayod"
+}
+},
+"pumpkin-soup":{
+"name":"Sopas na inihaw na kalabasa",
+"method":[
+"Painitin ang oven sa 200 C. I-roast ang kalabasa na may kaunting mantika at asin nang 30 minuto hanggang lumambot at mag-golden.",
+"Tunawin ang mantikilya sa malaking kaldero at lutuin ang sibuyas nang 5 minuto. Idagdag ang bawang at curry powder nang 1 minuto.",
+"Idagdag ang inihaw na kalabasa at stock, pakuluan, saka pakuluan nang mahina sa loob ng 10 minuto.",
+"I-blend hanggang makinis, ihalo ang cream at timplahan ayon sa panlasa. Ihain kasama ang tostadong tinapay."
+],
+"notes":{
+"0":"binalatan at hiniwa nang pa-cube",
+"1":"tinadtad",
+"6":"para sa paghahain"
+},
+"blurb":"Palitan ang stock ng vegetable stock para maging vegetarian."
+},
+"chicken-noodle-soup":{
+"name":"Chicken noodle soup",
+"method":[
+"Ilagay ang stock, manok, sibuyas, karot, bawang, luya at asin sa malaking kaldero. Pakuluan nang mahina at lutuin nang 15 hanggang 20 minuto hanggang maluto nang husto ang manok.",
+"Hanguin ang manok, himayin gamit ang dalawang tinidor at ibalik sa kaldero.",
+"Idagdag ang noodles at lutuin ayon sa oras sa pakete. Tikman at ayusin ang asin, saka ihain."
+],
+"notes":{
+"2":"hiniwa",
+"3":"hiniwa nang pa-cube",
+"4":"dinikdik",
+"6":"kinayod"
+}
+},
+"mac-and-cheese":{
+"name":"Baked mac and cheese",
+"method":[
+"Lutuin ang pasta nang 2 minutong kulang sa oras sa pakete, saka salain.",
+"Tunawin ang mantikilya sa kaldero, ihalo ang harina at lutuin nang 1 minuto. Unti-unting batihin papasok ang gatas at pakuluan nang mahina sa loob ng 5 minuto hanggang lumapot.",
+"Alisin sa apoy at ihalo ang tatlong-kapat ng keso, asin at paminta. Ihalo ang pasta at gisantes.",
+"Ilipat sa baking dish, lagyan ng natitirang keso sa ibabaw at i-bake sa 200 C nang 15 hanggang 20 minuto hanggang mag-golden."
+],
+"notes":{
+"0":"macaroni o katulad",
+"1":"kinayod"
+}
+},
+"flatbread-pizzas":{
+"name":"Margherita flatbread pizza",
+"method":[
+"Painitin ang oven sa 220 C. Ilagay ang flatbread sa mga tray at pahiran nang bahagya ng mantika.",
+"Paghaluin ang tomato paste at 2 kutsarang tubig at ipahid sa flatbread.",
+"Lagyan ng mozzarella, hiwa ng kamatis at hamon kung gagamit.",
+"I-bake nang 8 hanggang 10 minuto hanggang kumulo ang keso at malutong ang gilid. Budburan ng basil."
+],
+"notes":{
+"3":"hiniwa",
+"6":"opsyonal"
+}
+},
+"chilli-con-carne":{
+"name":"Chili con carne",
+"method":[
+"Initin ang mantika sa malaking kaldero at lutuin ang sibuyas at bell pepper nang 6 na minuto. Idagdag ang bawang at pampalasa nang 1 minuto.",
+"Idagdag ang giniling at papulahin nang 8 minuto, dinudurog ito.",
+"Ihalo ang tomato paste, kamatis, sinalang beans, asin at 150 ml na tubig. Pakuluan nang mahina na bahagyang nakabukas ang takip sa loob ng 35 hanggang 40 minuto hanggang lumapot.",
+"Lutuin ang kanin at ihain ang chili sa ibabaw."
+],
+"notes":{
+"3":"hiniwa nang pa-cube",
+"4":"hiniwa nang pa-cube",
+"5":"dinikdik"
+},
+"blurb":"Mas masarap kinabukasan. Mainam i-freeze."
+},
+"honey-soy-chicken-thighs":{
+"name":"Honey soy na hita ng manok",
+"method":[
+"Batihin ang pulot, toyo, bawang at luya. Ibuhos sa manok at i-marinate nang 15 minuto, o magdamag sa ref.",
+"Painitin ang oven sa 200 C. Ayusin ang manok sa tray na may sapin, ibuhos ang marinade at i-roast nang 30 hanggang 35 minuto, buhusan ng sarsa nang isang beses, hanggang malagkit at maluto nang husto.",
+"Lutuin ang kanin at pasingawan ang broccoli. Ihain ang manok na binuhusan ng katas mula sa tray."
+],
+"notes":{
+"3":"dinikdik",
+"4":"kinayod"
+}
+},
+"zucchini-fritters":{
+"name":"Zucchini at cheese fritters",
+"method":[
+"Ihalo ang kinayod na zucchini sa kalahati ng asin at iwan nang 10 minuto. Pigain hangga't kaya ang katas gamit ang malinis na pamunas.",
+"Paghaluin ang zucchini, itlog, harina, baking powder, keso at natitirang asin.",
+"Initin ang mantika sa kawali sa katamtamang apoy. Maghulog ng puno-punong kutsara at bahagyang yupiin. Lutuin nang 3 minuto bawat gilid hanggang mag-golden.",
+"Ihain kasama ang yogurt at kaunting piga ng lemon."
+],
+"notes":{
+"0":"kinayod",
+"3":"kinayod",
+"5":"para sa paghahain"
+}
+},
+"tuna-pasta-bake":{
+"name":"Creamy tuna pasta bake",
+"method":[
+"Painitin ang oven sa 200 C. Lutuin ang pasta nang 2 minutong kulang sa oras sa pakete at salain.",
+"Lutuin ang sibuyas sa mantika nang 5 minuto, idagdag ang bawang nang 1 minuto, saka ang kamatis at cream. Pakuluan nang mahina sa loob ng 5 minuto.",
+"Ihalo ang tuna, gisantes at pasta at ilipat sa baking dish.",
+"Budburan ng keso at i-bake nang 15 hanggang 20 minuto hanggang mag-golden."
+],
+"notes":{
+"1":"2 lata, sinala",
+"3":"kinayod",
+"4":"hiniwa nang pa-cube",
+"7":"dinikdik"
+}
+},
+"sausages-and-mash":{
+"name":"Sausage, mashed potato at onion gravy",
+"method":[
+"Pakuluan ang patatas sa tubig na may asin nang 15 hanggang 20 minuto. Salain at durugin kasama ang mantikilya at gatas.",
+"Papulahin ang sausage sa kawali na may mantika, binabaligtad, nang mga 12 minuto hanggang maluto nang husto. Hanguin at panatilihing mainit.",
+"Sa parehong kawali, lutuin ang sibuyas nang 10 minuto hanggang lumambot at mag-golden. Ihalo ang harina, saka unti-unting idagdag ang stock at pakuluan nang mahina sa loob ng 5 minuto hanggang lumapot.",
+"Lutuin ang gisantes, at ihain nang sabay-sabay ang lahat."
+],
+"notes":{
+"5":"hiniwa"
+}
+},
+"beef-burgers":{
+"name":"Lutong-bahay na beef burger",
+"method":[
+"Paghaluin ang giniling, kinayod na sibuyas, itlog, asin at paminta. Hubugin sa 4 na patty na bahagyang mas malapad sa bun at palamigin nang 10 minuto.",
+"Initin ang mantika sa kawali sa katamtaman hanggang malakas na apoy. Lutuin ang patty nang 4 hanggang 5 minuto bawat gilid hanggang maluto nang husto, at idagdag ang keso sa huling minuto.",
+"I-toast ang bun, saka lagyan ng lettuce, kamatis, sibuyas at patty."
+],
+"notes":{
+"3":"hiniwa",
+"4":"hiniwa o kinayod",
+"5":"kalahating kinayod, kalahating hiniwa"
+}
+},
+"scrambled-eggs-avocado-toast":{
+"name":"Scrambled egg at abokado sa toast",
+"method":[
+"Batihin ang itlog kasama ang gatas, asin at paminta. I-toast ang tinapay.",
+"Tunawin ang mantikilya sa non-stick na kawali sa mahinang apoy, idagdag ang itlog at dahan-dahang haluin gamit ang spatula nang 3 hanggang 4 na minuto hanggang malambot na maluto.",
+"Durugin ang abokado na may isang kurot na asin at ipahid sa toast. Ilagay ang itlog sa ibabaw."
+],
+"notes":{}
+},
+"banana-pancakes":{
+"name":"Banana pancakes",
+"method":[
+"Paghaluin ang harina, baking powder at asukal sa mangkok. Batihin ang itlog, gatas at 30 g ng tinunaw na mantikilya, saka ihalo sa tuyong sangkap hanggang magsama lang. Ayos lang kung may kaunting buo-buo.",
+"Initin ang non-stick na kawali sa katamtamang apoy na may kaunting natitirang mantikilya. Magbuhos ng 1/4 tasa ng batter bawat pancake.",
+"Lutuin nang 2 minuto hanggang may lumabas na bula, baligtarin at lutuin pa nang 1 hanggang 2 minuto. Ulitin sa natitira.",
+"Ihain kasama ang saging at kaunting pulot."
+],
+"notes":{
+"5":"tinunaw",
+"6":"hiniwa"
+}
+},
+"chicken-wraps":{
+"name":"Maanghang na chicken wrap",
+"method":[
+"Ihalo ang manok sa paprika, mantika, asin at katas ng kalahating lemon. Lutuin sa mainit na kawali nang 6 hanggang 8 minuto hanggang mag-golden at maluto nang husto.",
+"Para sa sarsa, ihalo ang bawang at kaunting piga ng lemon sa yogurt.",
+"Painitin ang tortilla, pahiran ng yogurt sauce at lagyan ng manok, lettuce, kamatis at keso. Irolyo at ihain."
+],
+"notes":{
+"0":"hiniwa",
+"2":"ginayat nang manipis",
+"3":"hiniwa",
+"4":"kinayod",
+"9":"dinikdik"
+}
+},
+"banana-honey-porridge":{
+"name":"Lugaw na oats na may saging at pulot",
+"method":[
+"Ilagay ang oats, gatas at asin sa kaldero at pakuluan nang mahina sa katamtamang apoy.",
+"Lutuin nang 5 hanggang 7 minuto, madalas haluin, hanggang malapot at creamy.",
+"Isandok sa mga mangkok at lagyan ng saging at pulot sa ibabaw."
+],
+"notes":{
+"2":"hiniwa"
+}
+},
+"chickpea-spinach-curry":{
+"name":"Curry na garbanzos at spinach sa gata",
+"method":[
+"Lutuin ang kanin. Initin ang mantika sa malaking kawali at lutuin ang sibuyas nang 5 minuto. Idagdag ang bawang, luya at curry powder nang 1 minuto.",
+"Idagdag ang kamatis, gata, garbanzos at asin. Pakuluan nang mahina sa loob ng 15 minuto hanggang lumapot.",
+"Ihalo ang spinach at lutuin nang 2 minuto hanggang malanta. Tikman, ayusin ang asin, at ihain kasama ang kanin."
+],
+"notes":{
+"0":"2 lata, sinala",
+"3":"hiniwa nang pa-cube",
+"4":"dinikdik",
+"5":"kinayod"
+},
+"blurb":"Vegan kapag sinunod ang recipe."
+},
+"kung-pao-chicken":{
+"name":"Kung pao chicken",
+"method":[
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Ihalo ang manok sa 1 kutsarang toyo, Shaoxing wine at kalahati ng gawgaw.",
+"Ihanda ang sarsa: ang natitirang toyo, suka, asukal, natitirang gawgaw at 3 kutsarang tubig.",
+"Initin ang mantika sa wok sa malakas na apoy at i-stir fry ang manok nang 5 hanggang 6 na minuto hanggang pumula at maluto nang husto. Hanguin.",
+"Idagdag ang sili, bawang, luya at ang puting bahagi ng dahon ng sibuyas at i-stir fry nang 30 segundo.",
+"Ibalik ang manok, ibuhos ang sarsa at haluin nang mga isang minuto hanggang lumapot at kumintab. Ihalo ang mani at ang berdeng bahagi ng dahon ng sibuyas at ihain kasama ang kanin."
+],
+"notes":{
+"0":"hiniwa nang 2 cm",
+"6":"hiniwa (o isang dakot na tuyong sili)",
+"7":"hiniwa",
+"8":"tinadtad nang pino",
+"9":"hiniwa nang 3 cm ang haba"
+},
+"blurb":"Stir fry na manok na istilong Sichuan, may mani, sili at makintab na sweet and sour na sarsa."
+},
+"mapo-tofu":{
+"name":"Mapo tofu",
+"method":[
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Pakuluan nang mahina ang cubes ng tokwa sa tubig na may kaunting asin nang 2 minuto para tumigas, saka salain.",
+"Initin ang mantika sa wok sa katamtaman hanggang malakas na apoy at iprito ang baboy, dinudurog, nang mga 4 na minuto hanggang pumula.",
+"Idagdag ang chili bean paste, bawang, luya at chili powder at iprito nang isang minuto hanggang mamula ang mantika.",
+"Ibuhos ang stock, toyo at asukal at pakuluan nang mahina. Ilagay nang dahan-dahan ang tokwa at pakuluan nang 4 na minuto, marahang itinutulak sa halip na hinahalo.",
+"Paghaluin ang gawgaw at 2 kutsarang tubig, dahan-dahang ihalo at pakuluan hanggang lumapot ang sarsa. Budburan ng dahon ng sibuyas at ihain sa ibabaw ng kanin. Tradisyonal ang giniling na Sichuan pepper sa ibabaw kung mayroon ka."
+],
+"notes":{
+"0":"malambot o matigas, hiniwa nang 2 cm na cubes",
+"3":"tinadtad",
+"4":"tinadtad",
+"10":"hiniwa"
+},
+"blurb":"Malambot na tokwa sa maanghang at malasang sarsa ng baboy at chili bean. Isang klasikong Sichuan na mabilis lutuin."
+},
+"tomato-egg-stir-fry":{
+"name":"Ginisang kamatis at itlog",
+"method":[
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Batihin ang itlog na may isang kurot na asin.",
+"Initin ang 1 kutsarang mantika sa wok sa katamtaman hanggang malakas na apoy, ibuhos ang itlog at dahan-dahang haluin hanggang halos maluto nang malalaking malambot na piraso. Ilipat sa plato.",
+"Idagdag ang natitirang mantika at kamatis at i-stir fry nang mga 3 minuto hanggang lumambot at lumabas ang katas.",
+"Idagdag ang asukal, natitirang asin at 3 kutsarang tubig at pakuluan nang mahina sa loob ng 2 minuto.",
+"Ibalik ang itlog at dahan-dahang paghaluin ang lahat nang 30 segundo. Patakan ng sesame oil, budburan ng dahon ng sibuyas at ihain sa ibabaw ng kanin."
+],
+"notes":{
+"1":"hiniwa nang pahaba",
+"4":"hiniwa"
+},
+"blurb":"Malambot na scrambled egg at makatas na kamatis sa magaan na matamis-maalat na sarsa. Pang-araw-araw na lutong-bahay sa China."
+},
+"char-siu-pork":{
+"name":"Char siu na baboy na may kanin at gulay",
+"method":[
+"Paghaluin ang hoisin sauce, toyo, 2 kutsarang pulot, five spice, bawang, wine at asukal. Pahiran ang baboy at i-marinate sa ref nang hindi bababa sa isang oras.",
+"Painitin ang oven sa 200°C. Sapinan ng foil ang roasting tray at maglagay ng rack sa ibabaw. Ilagay ang baboy sa rack at itabi ang natirang marinade.",
+"I-roast nang 25 minuto, baligtarin ang baboy, pahiran ng natirang marinade at i-roast pa nang 20 minuto.",
+"Pahiran ng natitirang pulot at i-roast pa nang 5 hanggang 10 minuto hanggang malagkit, bahagyang sunog ang gilid at maluto nang husto. Ipahinga nang 5 minuto, saka hiwain.",
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"I-stir fry ang bok choy sa mantika sa malakas na apoy nang 2 hanggang 3 minuto na may kaunting tubig at isang kurot na asin. Ihain ang baboy sa ibabaw ng kanin kasama ang gulay."
+],
+"notes":{
+"0":"o kasim ng baboy, hiniwa nang pahaba na 4 cm ang kapal",
+"5":"dinikdik",
+"9":"hinati sa dalawa"
+},
+"blurb":"Malagkit at matamis na inihaw na baboy na pinahiran ng hoisin at pulot. I-marinate nang hindi bababa sa isang oras, o magdamag."
+},
+"steamed-egg-custard":{
+"name":"Chinese steamed egg custard",
+"method":[
+"Dahan-dahang batihin ang itlog para hindi mapasukan ng hangin, saka batihin papasok ang maligamgam na stock at asin.",
+"Salain papunta sa mababaw na lalagyang hindi natutunaw sa init at alisin ang mga bula. Takpan ng plato o foil.",
+"Pasingawan sa tubig na mahinang kumukulo nang 10 hanggang 12 minuto hanggang halos luto at umaalog pa sa gitna. Dapat malinis ang kutsilyo kapag itinusok sa gitna.",
+"Patakan ng toyo at sesame oil at budburan ng dahon ng sibuyas."
+],
+"notes":{
+"1":"maligamgam",
+"5":"hiniwa nang pino"
+},
+"blurb":"Malambot at malasang egg custard na pinasingawan sa mangkok. Ihain kasama ang kanin at stir fry."
+},
+"pork-cabbage-dumplings":{
+"name":"Dumpling na baboy at repolyo",
+"method":[
+"Paghaluin ang harina at 150 ml na malamig na tubig at masahin nang 5 minuto hanggang kuminis. Takpan at ipahinga nang 30 minuto.",
+"Ihalo ang repolyo sa asin, iwan nang 10 minuto, saka pigain hangga't kaya ang tubig.",
+"Paghaluin ang baboy, repolyo, dahon ng sibuyas, luya, 1 kutsarang toyo, sesame oil, wine at 2 kutsarang tubig, hinahalo sa iisang direksyon hanggang lumagkit.",
+"Irolyo ang masa na parang mahabang lubid, hatiin sa 40 piraso at irolyo ang bawat isa na manipis na bilog na mga 8 cm ang lapad.",
+"Maglagay ng isang punong kutsarita ng palaman sa gitna ng bawat isa, tiklupin sa kalahati at kurutin nang mahigpit ang gilid para sumara.",
+"Pakuluan nang paisa-isang batch sa malaking kaldero ng tubig. Kapag lumutang na, magdagdag ng isang tasang malamig na tubig at pakuluan ulit; gawin ito nang dalawang beses, mga 6 hanggang 7 minuto lahat, hanggang maluto nang husto ang palaman.",
+"Ihain kasama ang suka na hinaluan ng natitirang toyo bilang sawsawan. I-freeze nang hilaw ang sobra sa tray, saka ilagay sa supot."
+],
+"notes":{
+"2":"tinadtad nang pino",
+"4":"tinadtad nang pino",
+"5":"kinayod",
+"9":"pansawsaw"
+},
+"blurb":"Lutong-bahay na jiaozi na may simpleng masa ng harina at tubig. Mga 40 piraso ang magagawa, at mainam i-freeze ang sobra."
+},
+"sweet-sour-chicken":{
+"name":"Sweet and sour chicken",
+"method":[
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Ihanda ang sarsa: suka, asukal, tomato paste, toyo, 1 kutsarang gawgaw at 150 ml na tubig.",
+"Batihin ang itlog. Isawsaw ang manok sa itlog, saka igulong sa natitirang gawgaw.",
+"Iprito ang manok sa mantika sa katamtaman hanggang malakas na apoy nang paisa-isang batch sa loob ng 5 hanggang 6 na minuto hanggang mag-golden at maluto nang husto. Patuluin sa paper towel.",
+"Itapon ang mantika at magtira lang ng 1 kutsara. I-stir fry ang sibuyas at bell pepper nang 3 minuto, saka ang bawang nang 30 segundo.",
+"Ibuhos ang sarsa at pakuluan nang mahina sa loob ng 1 hanggang 2 minuto hanggang lumapot at kumintab. Ihalo ang manok at ihain kasama ang kanin."
+],
+"notes":{
+"0":"hiniwa nang 2.5 cm",
+"4":"hiniwa nang malalaking piraso",
+"5":"hiniwa nang malalaking piraso",
+"6":"tinadtad"
+},
+"blurb":"Malutong na piraso ng manok na hinalo sa bell pepper at sibuyas sa maasim-tamis na lutong-bahay na sarsa."
+},
+"dan-dan-noodles":{
+"name":"Dan dan noodles",
+"method":[
+"Hatiin ang toyo, suka, sesame oil, asukal, chili powder at bawang sa apat na mangkok.",
+"Iprito ang baboy sa mantika sa katamtaman hanggang malakas na apoy kasama ang chili bean paste at wine nang mga 6 na minuto hanggang pumula at malutong ang gilid.",
+"Lutuin ang noodles ayon sa pakete, idagdag ang bok choy sa huling minuto. Maghalo ng 2 kutsarang mainit na pinaglagaan sa bawat mangkok ng sarsa, saka salain ang noodles.",
+"Hatiin ang noodles at gulay sa mga mangkok, lagyan ng baboy, mani at dahon ng sibuyas sa ibabaw, at haluing mabuti bago kainin."
+],
+"notes":{
+"0":"egg noodles o wheat noodles",
+"10":"dinikdik",
+"11":"dinikdik",
+"12":"hiniwa"
+},
+"blurb":"Noodles na may malutong at maanghang na baboy, gulay at malinamnam at maasim na chili sauce. Haluin ang lahat bago kainin."
+},
+"fish-fragrant-eggplant":{
+"name":"Talong na \"fish-fragrant\"",
+"method":[
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Ihalo ang talong sa asin, iwan nang 10 minuto, saka patuyuin.",
+"Iprito ang talong sa 2 kutsarang mantika sa katamtaman hanggang malakas na apoy nang 8 hanggang 10 minuto hanggang lumambot at mag-golden. Hanguin.",
+"Idagdag ang natitirang mantika at iprito ang baboy hanggang pumula. Idagdag ang chili bean paste, bawang, luya at puting bahagi ng dahon ng sibuyas at iprito nang isang minuto.",
+"Paghaluin ang toyo, suka, asukal, gawgaw at 100 ml na tubig, ibuhos at pakuluan nang mahina.",
+"Ibalik ang talong at pakuluan nang mahina sa loob ng 2 minuto hanggang mabalot ng sarsa. Budburan ng berdeng bahagi ng dahon ng sibuyas at ihain sa ibabaw ng kanin."
+],
+"notes":{
+"0":"hiniwa nang pahaba na 6 cm",
+"5":"tinadtad",
+"6":"tinadtad",
+"7":"hiniwa, magkahiwalay ang puti at berde"
+},
+"blurb":"Malambot na talong sa matamis, maasim at maanghang na sarsang may bawang. Walang isda rito: galing ang pangalan sa isang sarsang Sichuan na dating ginagamit sa isda."
+},
+"hot-sour-soup":{
+"name":"Hot and sour soup",
+"method":[
+"Pakuluan ang stock kasama ang luya at kabute at pakuluan nang mahina sa loob ng 5 minuto.",
+"Idagdag ang tokwa, toyo, suka at paminta at pakuluan nang mahina sa loob ng 2 minuto.",
+"Paghaluin ang gawgaw at 4 na kutsarang tubig, ihalo ito at pakuluan nang isang minuto hanggang bahagyang lumapot.",
+"Hinaan ang apoy at ibuhos nang manipis na agos ang binating itlog habang dahan-dahang hinahalo, para mabuo itong parang hibla.",
+"Tikman at dagdagan ng suka o paminta kung gusto. Tapusin ng sesame oil at dahon ng sibuyas."
+],
+"notes":{
+"1":"hiniwa",
+"2":"hiniwa",
+"3":"hiniwa nang manipis at pahaba",
+"6":"puting paminta kung mayroon",
+"8":"binati",
+"10":"hiniwa"
+},
+"blurb":"Nakapagpapainit na sabaw na may tokwa, kabute at hibla ng itlog, maasim sa suka at maanghang sa paminta."
+},
+"teriyaki-chicken-don":{
+"name":"Teriyaki chicken rice bowl",
+"method":[
+"Hugasan ang bigas hanggang halos luminaw ang tubig. Ilagay sa kaldero na may tubig na 1.2 beses ng dami nito, pakuluan, takpan at lutuin sa pinakamahinang apoy nang 12 minuto, saka iwang nakatakip nang walang apoy sa loob ng 10 minuto.",
+"Paghaluin ang toyo, mirin at asukal.",
+"Iprito ang manok sa mantika sa katamtamang apoy nang 6 na minuto, baligtarin at lutuin pa nang 5 minuto hanggang maluto nang husto.",
+"Itapon ang taba, idagdag ang sarsa at hayaang kumulo nang 2 hanggang 3 minuto, binabaligtad ang manok, hanggang kumintab at lumagkit.",
+"Pakuluan o pasingawan ang broccoli nang 3 minuto.",
+"Hiwain ang manok at ihain sa ibabaw ng kanin kasama ang broccoli. Buhusan ng sarsa at budburan ng dahon ng sibuyas at linga."
+],
+"notes":{
+"6":"hinati sa maliliit na bulaklak",
+"7":"hiniwa"
+},
+"blurb":"Pinritong hita ng manok sa makintab na lutong-bahay na teriyaki sauce, sa ibabaw ng kanin na may broccoli."
+},
+"chicken-katsu-curry":{
+"name":"Chicken katsu curry",
+"method":[
+"Hugasan ang bigas hanggang halos luminaw ang tubig. Ilagay sa kaldero na may tubig na 1.2 beses ng dami nito, pakuluan, takpan at lutuin sa pinakamahinang apoy nang 12 minuto, saka iwang nakatakip nang walang apoy sa loob ng 10 minuto.",
+"Curry: palambutin ang sibuyas sa 1 kutsarang mantika nang 5 minuto. Idagdag ang karot, patatas at 700 ml na tubig at pakuluan nang mahina sa loob ng 15 minuto hanggang lumambot.",
+"Patayin ang apoy, hatiin at ilagay ang curry roux at haluin hanggang matunaw, saka pakuluan nang mahina sa loob ng 5 minuto, hinahalo, hanggang lumapot.",
+"Timplahan ang manok, budburan ng harina, isawsaw sa binating itlog at idiin sa panko.",
+"Iprito sa natitirang mantika sa katamtamang apoy nang 4 hanggang 5 minuto bawat gilid hanggang mag-golden at maluto nang husto. Patuluin at hiwain.",
+"Ihain ang manok sa kanin na may curry sauce sa tabi."
+],
+"notes":{
+"0":"2 pitso, hinati sa gitna ng kapal",
+"5":"isang kahon na 92 g",
+"6":"hiniwa nang pa-cube",
+"7":"hiniwa nang malalaking piraso",
+"8":"hiniwa nang malalaking piraso"
+},
+"blurb":"Malutong na manok na binalot sa panko, may banayad at malapot na Japanese curry sauce at kanin."
+},
+"teriyaki-tofu-bowl":{
+"name":"Teriyaki tofu rice bowl",
+"method":[
+"Hugasan ang bigas hanggang halos luminaw ang tubig. Ilagay sa kaldero na may tubig na 1.2 beses ng dami nito, pakuluan, takpan at lutuin sa pinakamahinang apoy nang 12 minuto, saka iwang nakatakip nang walang apoy sa loob ng 10 minuto.",
+"Ipitin ang tokwa sa pagitan ng paper towel nang 10 minuto, hiwain nang pa-cube at igulong sa gawgaw.",
+"Iprito ang tokwa sa mantika sa katamtaman hanggang malakas na apoy, binabaligtad, nang mga 8 minuto hanggang malutong ang lahat ng gilid.",
+"Paghaluin ang toyo, mirin, asukal, luya at 2 kutsarang tubig, ibuhos sa tokwa at haluin nang 1 hanggang 2 minuto hanggang lumagkit.",
+"Pasingawan o pakuluan ang broccoli at karot nang 3 minuto.",
+"Ihain ang tokwa at gulay sa ibabaw ng kanin kasama ang dahon ng sibuyas at linga."
+],
+"notes":{
+"0":"matigas",
+"6":"kinayod",
+"8":"hinati sa maliliit na bulaklak",
+"9":"hiniwa nang maninipis na patpat",
+"10":"hiniwa"
+},
+"blurb":"Malutong na tokwa sa malagkit na teriyaki sauce na may kanin at gulay."
+},
+"oyakodon":{
+"name":"Oyakodon (rice bowl na manok at itlog)",
+"method":[
+"Hugasan ang bigas hanggang halos luminaw ang tubig. Ilagay sa kaldero na may tubig na 1.2 beses ng dami nito, pakuluan, takpan at lutuin sa pinakamahinang apoy nang 12 minuto, saka iwang nakatakip nang walang apoy sa loob ng 10 minuto.",
+"Pakuluan nang mahina ang stock, toyo, mirin at asukal sa malapad na kawali. Idagdag ang sibuyas at pakuluan nang mahina sa loob ng 3 minuto.",
+"Idagdag ang manok at pakuluan nang mahina sa loob ng 6 hanggang 8 minuto hanggang maluto nang husto.",
+"Batihin nang bahagya ang itlog para manatiling may guhit. Ibuhos ang dalawang-katlo sa manok, takpan at lutuin sa mahinang apoy nang 1 minuto, saka idagdag ang natitira, takpan at lutuin pa nang 30 segundo para halos luto pero malambot pa ang itlog.",
+"Isandok ang manok, itlog at kaunting sabaw sa mga mangkok ng kanin at lagyan ng dahon ng sibuyas. Dashi stock ang gamit ng mga Hapon; mainam din ang chicken stock sa bahay."
+],
+"notes":{
+"0":"hiniwa nang kasya sa isang subo",
+"1":"hiniwa nang manipis",
+"8":"hiniwa"
+},
+"blurb":"Manok at sibuyas na pinakuluan sa matamis na sabaw ng toyo, binalot ng malambot na itlog at isinandok sa kanin."
+},
+"chicken-karaage":{
+"name":"Chicken karaage (Japanese fried chicken)",
+"method":[
+"Paghaluin ang manok, toyo, mirin, luya at bawang at iwan nang 20 minuto.",
+"Hugasan ang bigas hanggang halos luminaw ang tubig. Ilagay sa kaldero na may tubig na 1.2 beses ng dami nito, pakuluan, takpan at lutuin sa pinakamahinang apoy nang 12 minuto, saka iwang nakatakip nang walang apoy sa loob ng 10 minuto.",
+"Igulong ang manok sa gawgaw at pagpagin ang sobra.",
+"Initin ang 2 hanggang 3 cm na mantika sa makapal na kaldero sa mga 170°C. Iprito ang manok nang paisa-isang batch sa loob ng 4 hanggang 5 minuto hanggang matingkad na golden at maluto nang husto. Patuluin sa rack. Huwag kailanman iwanang walang bantay ang mainit na mantika.",
+"Para mas malutong, iprito ulit ang bawat batch nang 1 minuto kapag tapos na ang lahat ng manok.",
+"Ihain kasama ang hiwa ng lemon, ginayat na repolyo at kanin."
+],
+"notes":{
+"0":"hiniwa nang malalaking subo",
+"3":"kinayod",
+"4":"kinayod",
+"6":"pamprito",
+"7":"hiniwa nang pahaba",
+"8":"ginayat nang napakanipis"
+},
+"blurb":"Makatas na manok na ibinabad sa toyo, luya at bawang, pinirito hanggang malutong. Ihain kasama ang lemon, repolyo at kanin."
+},
+"okonomiyaki":{
+"name":"Okonomiyaki (pancake na repolyo)",
+"method":[
+"Batihin ang harina, stock, itlog at asin hanggang maging malapot na batter. Ihalo ang repolyo at karamihan ng dahon ng sibuyas.",
+"Initin ang kaunting mantika sa kawali sa katamtamang apoy. Isandok ang sangkapat ng batter at hubugin na bilog na mga 2 cm ang kapal.",
+"Maglagay ng ilang hiwa ng bacon sa ibabaw. Lutuin nang mga 5 minuto hanggang mag-golden ang ilalim, baligtarin at lutuin pa nang 5 minuto hanggang maluto nang husto. Ulitin sa natitira.",
+"Paghaluin ang tomato paste, toyo, pulot at 1 kutsarang tubig at ipahid sa mga pancake.",
+"Lagyan ng natitirang dahon ng sibuyas, at Japanese mayonnaise kung gusto."
+],
+"notes":{
+"4":"ginayat nang napakanipis",
+"5":"hiniwa",
+"6":"hiniwa nang manipis"
+},
+"blurb":"Malasang pancake na repolyo na may bacon at matamis-maalat na sarsa sa ibabaw."
+},
+"yaki-udon":{
+"name":"Yaki udon (ginisang udon noodles)",
+"method":[
+"Paluwagin ang udon sa mainit na tubig nang isang minuto, o lutuin ang tuyong udon ayon sa pakete, saka salain.",
+"Iprito ang bacon sa mantika sa katamtaman hanggang malakas na apoy hanggang mag-golden. Idagdag ang sibuyas, karot at kabute at i-stir fry nang 3 minuto, saka ang repolyo nang 2 minuto.",
+"Idagdag ang noodles, toyo at mirin at haluin sa malakas na apoy nang 2 hanggang 3 minuto hanggang mainit at nababalot.",
+"Tapusin ng sesame oil at dahon ng sibuyas."
+],
+"notes":{
+"1":"tinadtad",
+"2":"hiniwa",
+"3":"hiniwa nang maninipis na patpat",
+"4":"hiniwa",
+"5":"ginayat nang manipis",
+"10":"hiniwa"
+},
+"blurb":"Makapal na udon noodles na ginisa kasama ang bacon, repolyo at kabute sa sarsang toyo at mirin."
+},
+"gyudon":{
+"name":"Gyudon (rice bowl na baka at sibuyas)",
+"method":[
+"Hugasan ang bigas hanggang halos luminaw ang tubig. Ilagay sa kaldero na may tubig na 1.2 beses ng dami nito, pakuluan, takpan at lutuin sa pinakamahinang apoy nang 12 minuto, saka iwang nakatakip nang walang apoy sa loob ng 10 minuto.",
+"Pakuluan nang mahina ang stock, toyo, mirin, asukal at luya sa kaldero. Idagdag ang sibuyas at pakuluan nang mahina sa loob ng 5 minuto hanggang lumambot.",
+"Idagdag ang baka, pinaghihiwalay ang mga hiwa, at pakuluan nang mahina sa loob ng 2 hanggang 3 minuto hanggang halos maluto. Alisin ang bula.",
+"Kung gusto, pakuluan ang itlog nang 6 at kalahating minuto, palamigin sa malamig na tubig at balatan.",
+"Isandok ang baka, sibuyas at kaunting sabaw sa kanin at lagyan ng dahon ng sibuyas at hinating itlog."
+],
+"notes":{
+"0":"hiniwa nang manipis",
+"1":"hiniwa",
+"6":"kinayod",
+"8":"hiniwa",
+"9":"opsyonal, malasado"
+},
+"blurb":"Manipis na baka at malambot na sibuyas na pinakuluan sa matamis na sabaw ng toyo, sa ibabaw ng kanin."
+},
+"tamagoyaki":{
+"name":"Tamagoyaki (inirolyong omelette)",
+"method":[
+"Batihin ang itlog kasama ang asukal, toyo, mirin, asin at 2 kutsarang tubig nang hindi bumubula.",
+"Initin ang maliit na kawali (pinakamainam ang parisukat) sa katamtaman hanggang mahinang apoy at punasan ng paper towel na may mantika.",
+"Magbuhos ng manipis na patong ng itlog at ikiling ang kawali para matakpan. Kapag halos luto na pero basa pa sa ibabaw, irolyo mula sa malayong gilid papunta sa iyo.",
+"Itulak ang rolyo sa malayong gilid, punasan ulit ng mantika ang kawali at magbuhos ng isa pang manipis na patong, iniaangat ang rolyo para dumaloy ang itlog sa ilalim. Irolyo ulit.",
+"Ulitin hanggang maubos ang itlog. Ipahinga ang omelette nang 2 minuto na nakabalot sa paper towel para tumibay ang hugis, saka hiwain."
+],
+"notes":{},
+"blurb":"Bahagyang matamis na omelette na inirolyo nang patong-patong, hiniwa at inihahain nang mainit o malamig."
+},
+"nikujaga":{
+"name":"Nikujaga (nilagang baka at patatas)",
+"method":[
+"Hugasan ang bigas hanggang halos luminaw ang tubig. Ilagay sa kaldero na may tubig na 1.2 beses ng dami nito, pakuluan, takpan at lutuin sa pinakamahinang apoy nang 12 minuto, saka iwang nakatakip nang walang apoy sa loob ng 10 minuto.",
+"Iprito ang sibuyas sa mantika nang 2 minuto, saka idagdag ang baka at lutuin hanggang pumula.",
+"Idagdag ang patatas at karot, stock, asukal at mirin. Pakuluan at alisin ang bula.",
+"Takpan ng takip na bahagyang mas maliit sa kaldero (o bilog na baking paper) at pakuluan nang mahina sa loob ng 10 minuto.",
+"Idagdag ang toyo at pakuluan nang mahina pa nang 10 minuto hanggang lumambot ang patatas at mabawasan nang mga kalahati ang sabaw.",
+"Idagdag ang gisantes sa huling 2 minuto. Ihain sa mga mangkok kasama ang kanin."
+],
+"notes":{
+"0":"hiniwa nang manipis",
+"1":"hiniwa nang malalaki",
+"2":"hiniwa nang pahaba",
+"3":"hiniwa nang malalaking piraso"
+},
+"blurb":"Baka, patatas at karot na istilong lutong-bahay ng Japan, pinakuluan sa matamis na sabaw ng toyo."
+},
+"pad-thai":{
+"name":"Pad thai na may hipon",
+"method":[
+"Ibabad ang noodles sa maligamgam na tubig nang 20 hanggang 30 minuto hanggang nababaluktot pero matigas pa, saka salain.",
+"Paghaluin ang patis, asukal, katas ng 1 dayap, suka at chili powder.",
+"Initin ang 2 kutsarang mantika sa wok sa malakas na apoy. Iprito ang tokwa nang 3 minuto hanggang mag-golden, saka idagdag ang bawang at hipon at i-stir fry nang 2 minuto hanggang mamula ang hipon.",
+"Itulak ang lahat sa isang gilid, idagdag ang natitirang mantika, basagin ang itlog at haluin.",
+"Idagdag ang noodles at sarsa at haluin nang 2 hanggang 3 minuto hanggang lumambot ang noodles at masipsip ang sarsa. Magdagdag ng kaunting tubig kung mukhang tuyo.",
+"Ihalo ang toge at dahon ng sibuyas nang 30 segundo. Ihain kasama ang mani at hiwa ng dayap."
+],
+"notes":{
+"0":"flat, mga 5 mm ang lapad",
+"3":"matigas, maliliit na cubes",
+"5":"hiniwa nang 3 cm ang haba",
+"6":"dinikdik",
+"7":"tinadtad",
+"9":"brown sugar o palm sugar",
+"11":"o 2 kutsarang sampalok paste kung mayroon"
+},
+"blurb":"Rice noodles na ginisa kasama ang hipon, itlog at tokwa, tinapos ng mani, toge at dayap."
+},
+"green-chicken-curry":{
+"name":"Thai green chicken curry",
+"method":[
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Iprito ang curry paste sa mantika nang 1 minuto. Idagdag ang 200 ml ng gata (ang malapot na bahagi sa ibabaw ng lata) at pakuluan nang mahina sa loob ng 2 minuto.",
+"Idagdag ang manok at haluin nang 3 minuto, saka ibuhos ang natitirang gata at pakuluan nang mahina sa loob ng 10 minuto.",
+"Idagdag ang zucchini at bell pepper at pakuluan nang mahina sa loob ng 5 minuto hanggang bahagyang lumambot.",
+"Timplahan ng patis, asukal at katas ng dayap. Ihalo ang dahon ng basil at ihain sa ibabaw ng kanin."
+],
+"notes":{
+"0":"gumamit ng 2 para hindi gaanong maanghang",
+"2":"hiniwa",
+"3":"hiniwa",
+"4":"hiniwa",
+"8":"Thai basil kung makakahanap",
+"10":"jasmine"
+},
+"blurb":"Manok at gulay na pinakuluan sa gata kasama ang green curry paste, basil at dayap."
+},
+"red-curry-pumpkin-tofu":{
+"name":"Red curry na may kalabasa at tokwa",
+"method":[
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Iprito ang curry paste sa mantika nang 1 minuto, saka idagdag ang 200 ml ng gata at pakuluan nang mahina sa loob ng 2 minuto.",
+"Idagdag ang kalabasa at natitirang gata at pakuluan nang mahina sa loob ng 12 hanggang 15 minuto hanggang lumambot ang kalabasa.",
+"Idagdag ang tokwa at pakuluan nang mahina sa loob ng 3 minuto, saka ihalo ang spinach hanggang malanta.",
+"Timplahan ng toyo, asukal at katas ng dayap, idagdag ang basil at ihain kasama ang kanin."
+],
+"notes":{
+"2":"binalatan, hiniwa nang 3 cm",
+"3":"matigas, hiniwa nang pa-cube",
+"10":"jasmine"
+},
+"blurb":"Malinamnam na curry sa gata na may matamis na kalabasa, tokwa at spinach. Karamihan ng curry paste ay may bagoong na hipon, kaya tingnan ang label kung vegetarian."
+},
+"tom-yum-soup":{
+"name":"Tom yum soup na may hipon",
+"method":[
+"Pukpukin ang tanglad gamit ang rolling pin at hiwain nang 5 cm ang haba.",
+"Pakuluan nang mahina ang stock kasama ang tanglad, luya at sili sa loob ng 5 minuto.",
+"Idagdag ang kabute at kamatis at pakuluan nang mahina sa loob ng 3 minuto.",
+"Idagdag ang hipon at pakuluan nang mahina sa loob ng 2 hanggang 3 minuto hanggang mamula at maluto nang husto.",
+"Alisin sa apoy at timplahan ng patis, asukal at katas ng dayap: dapat maasim, maalat at maanghang ang lasa. Idagdag ang wansoy. Hindi kinakain ang piraso ng tanglad at luya."
+],
+"notes":{
+"2":"hiniwa (galangal kung makakahanap)",
+"3":"hiniwa",
+"4":"hinati sa dalawa",
+"5":"hiniwa nang pahaba"
+},
+"blurb":"Maasim at maanghang na sabaw ng hipon na mabango sa tanglad, sili at dayap."
+},
+"tom-kha-gai":{
+"name":"Tom kha gai (sabaw ng manok sa gata)",
+"method":[
+"Pukpukin ang tanglad at hiwain nang 5 cm ang haba. Pakuluan nang mahina sa stock kasama ang luya sa loob ng 5 minuto.",
+"Idagdag ang gata at manok at pakuluan nang marahan, nang hindi malakas ang kulo, sa loob ng 6 hanggang 8 minuto hanggang maluto ang manok.",
+"Idagdag ang kabute at sili at pakuluan nang mahina sa loob ng 3 minuto.",
+"Alisin sa apoy at timplahan ng patis, katas ng dayap at asukal. Idagdag ang wansoy. Iwan sa mangkok ang piraso ng tanglad at luya."
+],
+"notes":{
+"0":"hiniwa nang manipis",
+"4":"hiniwa (galangal kung makakahanap)",
+"5":"hiniwa",
+"6":"hinati sa dalawa"
+},
+"blurb":"Banayad at creamy na sabaw sa gata na may manok, kabute, tanglad at dayap."
+},
+"pad-kra-pao":{
+"name":"Thai basil chicken (pad kra pao)",
+"method":[
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Dikdikin o tadtarin nang pino ang bawang at sili nang magkasama.",
+"Initin nang husto ang 2 kutsarang mantika at iprito ang itlog nang isa-isa hanggang malutong ang gilid. Panatilihing mainit.",
+"Initin ang natitirang mantika sa wok sa malakas na apoy. I-stir fry ang bawang at sili nang 30 segundo, saka ang manok nang 4 hanggang 5 minuto, dinudurog, hanggang maluto.",
+"Idagdag ang oyster sauce, toyo, patis, asukal at 2 kutsarang tubig at haluin nang isang minuto.",
+"Ihalo ang basil hanggang malanta. Ihain sa ibabaw ng kanin na may pritong itlog sa ibabaw."
+],
+"notes":{
+"0":"tinadtad nang pino",
+"8":"tradisyonal ang Thai holy basil",
+"10":"jasmine"
+},
+"blurb":"Maanghang na tinadtad na manok na ginisa sa bawang, sili at basil, may malutong na pritong itlog sa ibabaw."
+},
+"thai-beef-salad":{
+"name":"Thai beef salad",
+"method":[
+"Dressing: paghaluin ang katas ng dayap, patis, asukal, sili at bawang.",
+"Pasuin ang baka sa mantika sa napakainit na kawali, paisa-isang batch, nang 1 hanggang 2 minuto hanggang pula sa labas at kulay-rosas pa sa loob. Ipahinga nang 3 minuto at ihalo sa 2 kutsarang dressing.",
+"Pagsamahin ang lettuce, pipino, kamatis, sibuyas, dahon ng sibuyas at wansoy.",
+"Idagdag ang baka at natitirang dressing, haluin, at lagyan ng mani sa ibabaw."
+],
+"notes":{
+"2":"pinunit",
+"3":"hiniwa",
+"4":"hiniwa nang pahaba",
+"5":"pula, hiniwa nang manipis",
+"6":"hiniwa",
+"11":"tinadtad nang pino",
+"12":"dinikdik",
+"13":"dinikdik"
+},
+"blurb":"Pinasong baka na hinalo sa malulutong na gulay, herbs at matapang na dressing ng dayap at sili."
+},
+"pork-larb":{
+"name":"Pork larb sa lettuce cups",
+"method":[
+"Isangag nang walang mantika ang 2 kutsarang hilaw na bigas sa kawali, hinahalo, nang mga 5 minuto hanggang matingkad na golden. Dikdikin nang pino.",
+"Lutuin ang natitirang bigas: hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Iprito ang baboy sa mantika sa katamtaman hanggang malakas na apoy, dinudurog, nang mga 6 na minuto hanggang maluto. Magdagdag ng 2 kutsarang tubig at alisin sa apoy.",
+"Ihalo ang patis, katas ng dayap, asukal at sili, saka ang sibuyas, dahon ng sibuyas, herbs at karamihan ng sinangag na bigas.",
+"Isandok sa mga dahon ng lettuce, budburan ng natitirang sinangag na bigas at ihain kasama ang kanin."
+],
+"notes":{
+"0":"2 kutsara para isangag, ang natitira para ihain",
+"6":"tinadtad nang pino",
+"7":"pula, hiniwa nang manipis",
+"8":"hiniwa",
+"10":"tradisyonal ang mint kung mayroon",
+"11":"pinaghiwa-hiwalay ang dahon"
+},
+"blurb":"Maasim-anghang na giniling na baboy na may dayap, sili at herbs, kinakain sa malulutong na dahon ng lettuce."
+},
+"chicken-satay":{
+"name":"Chicken satay na may peanut sauce",
+"method":[
+"Paghaluin ang manok, 100 ml ng gata, curry powder, 1 kutsarang asukal at 1 kutsarang patis. I-marinate nang hindi bababa sa 30 minuto. Sabay ibabad sa tubig ang mga tuhog na kahoy.",
+"Hugasan ang bigas, saka pakuluan nang mahina sa tubig na doble ng dami nito na may isang kurot na asin, nakatakip, nang mga 12 minuto hanggang lumambot. Panatilihing nakatakip.",
+"Peanut sauce: gilingin o tadtarin nang napakapino ang mani. Pakuluan nang mahina ang natitirang gata kasama ang curry paste nang 2 minuto, saka idagdag ang mani, natitirang asukal, toyo at natitirang patis. Pakuluan nang mahina, hinahalo, nang 5 minuto hanggang lumapot. Idagdag ang katas ng dayap at palabnawin ng tubig kung kailangan.",
+"Itusok ang manok sa mga tuhog, pahiran ng mantika at ihawin, i-barbecue o iprito sa kawali nang 8 hanggang 10 minuto, binabaligtad, hanggang maluto nang husto at may sunog sa ilang bahagi.",
+"Ihain kasama ang peanut sauce, pipino at kanin."
+],
+"notes":{
+"0":"hiniwa nang pahaba",
+"6":"inihaw",
+"10":"hiniwa",
+"11":"jasmine"
+},
+"blurb":"Inihaw na tuhog ng manok na ibinabad sa gata, may lutong-bahay na peanut sauce. I-marinate nang hindi bababa sa 30 minuto."
+},
+"pad-see-ew":{
+"name":"Pad see ew (ginisang rice noodles na may manok)",
+"method":[
+"Ibabad ang noodles sa maligamgam na tubig hanggang nababaluktot, saka salain (paghiwa-hiwalayin lang ang sariwang malapad na rice noodles).",
+"Paghaluin ang toyo, oyster sauce, asukal at 2 kutsarang tubig.",
+"Initin ang mantika sa wok sa malakas na apoy. Iprito ang bawang nang 15 segundo, saka ang manok nang 4 na minuto hanggang maluto.",
+"Idagdag ang tangkay ng broccoli, saka ang mga bulaklak, na may kaunting tubig at i-stir fry nang 2 minuto.",
+"Itulak ang lahat sa gilid at haluin ang itlog sa bakanteng puwesto.",
+"Idagdag ang noodles at sarsa at haluin, hinahayaang nakapatong ang noodles nang 30 segundo bawat beses para bahagyang masunog, nang mga 3 minuto. Tapusin ng paminta."
+],
+"notes":{
+"0":"malapad",
+"1":"hiniwa nang manipis",
+"2":"hiniwa ang tangkay, maliliit ang bulaklak",
+"4":"tinadtad",
+"5":"at kaunting dark soy sauce din kung mayroon"
+},
+"blurb":"Malalapad na rice noodles na ginisa hanggang bahagyang masunog kasama ang manok, broccoli, itlog at toyo."
+}
+}
+}

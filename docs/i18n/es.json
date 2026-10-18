@@ -1,0 +1,1170 @@
+{
+"ui":{
+"A to Z":"De la A a la Z",
+"About {price} per serving, counting whole packs, not counting {items}.":"Unos {price} por ración, contando paquetes enteros, sin contar {items}.",
+"About {price} per serving, counting whole packs.":"Unos {price} por ración, contando paquetes enteros.",
+"Add":"Añadir",
+"Add recipes to build your shopping list.":"Añade recetas para crear tu lista de la compra.",
+"Add to my list":"Añadir a mi lista",
+"Added. Remove":"Añadida. Quitar",
+"All":"Todo",
+"All ({n})":"Todas ({n})",
+"All aisles":"Todos los pasillos",
+"BEST VALUE":"MEJOR PRECIO",
+"Bakery":"Panadería",
+"Biggest saving":"Mayor ahorro",
+"Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, with prices per 100g.":"Haz tu lista de la compra y descubre la forma más barata de comprarla en Woolworths, New World, PAK'nSAVE y las tiendas asiáticas New Gum Sarn, TXG Mall, NJK y FromK, con precios por 100 g.",
+"Cheapest across {n} store":"Lo más barato en {n} tienda",
+"Cheapest across {n} stores":"Lo más barato entre {n} tiendas",
+"Compare individual products":"Comparar productos uno a uno",
+"Cost of each extra stop":"Coste de cada parada extra",
+"Could also use it in: {recipes}.":"También sirve para: {recipes}.",
+"Could not load prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"No se pudieron cargar los precios. Si abriste este archivo directamente, sirve la carpeta docs con un servidor web (python3 -m http.server en docs/) o usa GitHub Pages.",
+"Could not load recipes or prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"No se pudieron cargar las recetas ni los precios. Si abriste este archivo directamente, sirve la carpeta docs con un servidor web (python3 -m http.server en docs/) o usa GitHub Pages.",
+"Dairy & Eggs":"Lácteos y huevos",
+"Dearest full-list store is {price}.":"La tienda más cara para toda la lista cuesta {price}.",
+"Dearest store with everything is {price}.":"La tienda más cara que tiene todo cuesta {price}.",
+"Deli & Chilled":"Charcutería y refrigerados",
+"Drinks":"Bebidas",
+"Fewer servings of {recipe}":"Menos raciones de {recipe}",
+"Fewer {item}":"Menos {item}",
+"Filter by type":"Filtrar por tipo",
+"Frozen":"Congelados",
+"Fruit & Veg":"Frutas y verduras",
+"Health & Beauty":"Salud y belleza",
+"Household":"Hogar",
+"In list ({n})":"En la lista ({n})",
+"Ingredients (serves {n})":"Ingredientes (para {n})",
+"Ingredients and method":"Ingredientes y preparación",
+"Language":"Idioma",
+"Loading prices...":"Cargando precios...",
+"Loading...":"Cargando...",
+"Lowest price per 100g / 100ml":"Precio más bajo por 100 g / 100 ml",
+"Matched by name and size. Check it is the same product.":"Emparejado por nombre y tamaño. Comprueba que sea el mismo producto.",
+"Meat & Seafood":"Carne y marisco",
+"Method":"Preparación",
+"More servings of {recipe}":"Más raciones de {recipe}",
+"More {item}":"Más {item}",
+"Need {amt}. Buy {what}":"Hace falta {amt}. Comprar {what}",
+"No combination of these stores has everything on your list. Remove an item that shows \"Not found\" at a store to compare.":"Ninguna combinación de estas tiendas tiene todo lo de tu lista. Quita un artículo que diga «No encontrado» en una tienda para comparar.",
+"No comparable products yet.":"Todavía no hay productos comparables.",
+"No products match. Try a shorter search or another aisle.":"Ningún producto coincide. Prueba una búsqueda más corta u otro pasillo.",
+"No recipes match. Try a shorter search.":"Ninguna receta coincide. Prueba una búsqueda más corta.",
+"No single store sells everything. {store} has {have} of {total} items; not there: {items}.":"Ninguna tienda vende todo. {store} tiene {have} de {total} artículos; faltan: {items}.",
+"No store has the products for this list yet.":"Ninguna tienda tiene aún los productos de esta lista.",
+"No supermarket product found yet for: {items}. Add these by hand.":"Aún no se encontró ningún producto de supermercado para: {items}. Añádelos a mano.",
+"Not found at {stores}":"No encontrado en {stores}",
+"Not refreshed last run: {stores}.":"No actualizado en la última consulta: {stores}.",
+"One store: {store}":"Una tienda: {store}",
+"Only products found at two or more stores are listed, because those are the ones that can be compared. \"Usual\" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only. TXG Mall, NJK and FromK prices are from their online shops; check delivery or pickup with each shop.":"Solo se muestran los productos que están en dos o más tiendas, porque son los que se pueden comparar. «Habitual» es el precio normal de la tienda, que aparece junto a una oferta, y una oferta cuenta como ahorro real cuando es al menos un 10 % más barata. Los precios son de una tienda por cadena, así que tu tienda local puede variar. New Gum Sarn es una sola tienda en Point England, Auckland, y sus congelados y refrigerados son solo para recoger tras pedido en línea. Los precios de TXG Mall, NJK y FromK son de sus tiendas en línea; consulta el envío o la recogida con cada tienda.",
+"Only store that has everything.":"La única tienda que tiene todo.",
+"Only {pct}% under usual {price}":"Solo un {pct} % por debajo del habitual de {price}",
+"Pantry":"Despensa",
+"Perishable: use or freeze soon.":"Perecedero: úsalo o congélalo pronto.",
+"Pick the meals you want to cook. You get one shopping list, with the cheapest packs for what you need, and the cheapest store or stores to buy it from.":"Elige los platos que quieres cocinar. Obtienes una sola lista de la compra, con los paquetes más baratos para lo que necesitas, y la tienda o tiendas más baratas donde comprarlo.",
+"Prices updated {when}.":"Precios actualizados el {when}.",
+"Products":"Productos",
+"Quantities are for the servings shown and scale when you change them. For each ingredient the site adds up what every chosen recipe needs, then finds the cheapest combination of pack sizes that covers it, and says what is left over. Products are picked by matching names, so check the pack you are buying. Items sold each (an onion, a lemon) use an average weight. Recipes do not include nutrition or allergen information. Prices come from one store per chain, so your local store may differ.":"Las cantidades son para las raciones indicadas y cambian cuando las modificas. Para cada ingrediente, el sitio suma lo que necesita cada receta elegida, busca la combinación de paquetes más barata que lo cubra e indica lo que sobra. Los productos se eligen por el nombre, así que revisa el paquete que compras. Los artículos que se venden por unidad (una cebolla, un limón) usan un peso medio. Las recetas no incluyen información nutricional ni de alérgenos. Los precios son de una tienda por cadena, así que tu tienda local puede variar.",
+"Real saving: {pct}% under usual {price}":"Ahorro real: {pct} % por debajo del habitual de {price}",
+"Recipes":"Recetas",
+"Sample prices for testing. Run the scraper to load real prices.":"Precios de ejemplo para pruebas. Ejecuta el scraper para cargar los precios reales.",
+"Search butter, mince, toilet paper":"Busca mantequilla, carne picada, papel higiénico",
+"Search for products and press Add to compare totals.":"Busca productos y pulsa Añadir para comparar totales.",
+"Search products":"Buscar productos",
+"Search recipes":"Buscar recetas",
+"Search recipes or ingredients":"Buscar recetas o ingredientes",
+"Shelf Check Recipes":"Recetas de Shelf Check",
+"Shop by aisle":"Comprar por pasillo",
+"Shop by recipe":"Comprar por receta",
+"Show more ({n} left)":"Ver más (quedan {n})",
+"Snacks & Confectionery":"Snacks y dulces",
+"Sort":"Ordenar",
+"Specials only":"Solo ofertas",
+"Tick what you already have":"Marca lo que ya tienes",
+"Total servings: {n}.":"Raciones en total: {n}.",
+"Try ticking items you already have.":"Prueba a marcar los artículos que ya tienes.",
+"Two stores: {stores}":"Dos tiendas: {stores}",
+"Use club prices":"Usar precios de socio",
+"Use club prices (Everyday Rewards, Clubcard)":"Usar precios de socio (Everyday Rewards, Clubcard)",
+"Woolworths prices are from {date}.":"Los precios de Woolworths son del {date}.",
+"Your list":"Tu lista",
+"Your recipes":"Tus recetas",
+"Your recipes and shopping list":"Tus recetas y tu lista de la compra",
+"about {amt} loose, {pack} ({price})":"unos {amt} a granel, {pack} ({price})",
+"can":"lata",
+"clove":"diente",
+"cup":"taza",
+"each":"unidad",
+"g":"g",
+"ml":"ml",
+"pinch":"pizca",
+"servings":"raciones",
+"slice":"rebanada",
+"stalk":"tallo",
+"tbsp":"cda.",
+"tsp":"cdta.",
+"{amt} left over.":"Sobran {amt}.",
+"{min} min · serves {n}":"{min} min · para {n}",
+"{n} each":"{n} unidad(es)",
+"{n} extra stop at {price} each: {total} all in.":"{n} parada extra a {price} cada una: {total} en total.",
+"{n} extra stops at {price} each: {total} all in.":"{n} paradas extra a {price} cada una: {total} en total.",
+"{n} product at 2 or more stores":"{n} producto en 2 o más tiendas",
+"{n} product on special":"{n} producto en oferta",
+"{n} products at 2 or more stores":"{n} productos en 2 o más tiendas",
+"{n} products on special":"{n} productos en oferta",
+"{n} recipe":"{n} receta",
+"{n} recipes":"{n} recetas",
+"{n} × {pack} ({price} each)":"{n} × {pack} ({price} cada uno)",
+"{price} each":"{price} cada uno",
+"{store} does not sell: {items}. Buy it at another store (the other plans include it) or tick it below if you already have it.":"{store} no vende: {items}. Cómpralo en otra tienda (los otros planes lo incluyen) o márcalo abajo si ya lo tienes.",
+"{store} does not sell: {items}. Buy these at another store (the other plans include them) or tick them below if you already have them.":"{store} no vende: {items}. Cómpralos en otra tienda (los otros planes los incluyen) o márcalos abajo si ya los tienes."
+},
+"tags":{
+"beef":"ternera",
+"breakfast":"desayuno",
+"budget":"económico",
+"chicken":"pollo",
+"chinese":"china",
+"comfort":"reconfortante",
+"curry":"curry",
+"dinner":"cena",
+"eggs":"huevos",
+"fish":"pescado",
+"japanese":"japonesa",
+"lunch":"almuerzo",
+"noodles":"fideos",
+"one-pan":"una sola sartén",
+"pasta":"pasta",
+"pork":"cerdo",
+"quick":"rápido",
+"rice":"arroz",
+"salad":"ensalada",
+"sausages":"salchichas",
+"seafood":"marisco",
+"soup":"sopa",
+"thai":"tailandesa",
+"vegetarian":"vegetariano"
+},
+"ingredients":{
+"chicken-breast":"Pechuga de pollo",
+"chicken-thigh":"Muslo de pollo",
+"beef-mince":"Carne picada de ternera",
+"beef-strips":"Tiras de ternera para saltear",
+"sausages":"Salchichas",
+"bacon":"Beicon",
+"ham":"Jamón cocido",
+"salmon-fillet":"Filetes de salmón",
+"tuna-can":"Atún en lata",
+"eggs":"Huevos",
+"milk":"Leche",
+"butter":"Mantequilla",
+"cream":"Nata",
+"cheese":"Queso cheddar",
+"mozzarella":"Mozzarella",
+"parmesan":"Parmesano",
+"yoghurt":"Yogur natural",
+"onion":"Cebollas",
+"garlic":"Ajo",
+"potato":"Patatas",
+"pumpkin":"Calabaza",
+"carrot":"Zanahorias",
+"broccoli":"Brócoli",
+"mushroom":"Champiñones",
+"spinach":"Espinacas baby",
+"capsicum":"Pimiento",
+"tomato-fresh":"Tomates frescos",
+"zucchini":"Calabacín",
+"frozen-peas":"Guisantes congelados",
+"frozen-mixed-veg":"Verduras variadas congeladas",
+"lettuce":"Lechuga",
+"avocado":"Aguacate",
+"lemon":"Limones",
+"banana":"Plátanos",
+"ginger":"Jengibre fresco",
+"coriander":"Cilantro fresco",
+"basil":"Albahaca fresca",
+"olive-oil":"Aceite de oliva",
+"vegetable-oil":"Aceite vegetal",
+"soy-sauce":"Salsa de soja",
+"salt":"Sal",
+"pepper":"Pimienta negra",
+"flour":"Harina de trigo",
+"sugar":"Azúcar",
+"baking-powder":"Levadura química",
+"cornflour":"Maicena",
+"rice":"Arroz",
+"spaghetti":"Espaguetis",
+"penne":"Macarrones o penne",
+"noodles":"Fideos de huevo o hokkien",
+"tomato-can":"Tomate troceado en lata",
+"tomato-paste":"Concentrado de tomate",
+"chicken-stock":"Caldo de pollo (líquido)",
+"coconut-milk":"Leche de coco",
+"curry-powder":"Curry en polvo",
+"garam-masala":"Garam masala",
+"ground-cumin":"Comino molido",
+"paprika":"Pimentón",
+"chilli-powder":"Chile en polvo",
+"mixed-herbs":"Hierbas mixtas",
+"honey":"Miel",
+"oats":"Copos de avena",
+"bread":"Pan de molde",
+"tortilla":"Tortillas de trigo",
+"flatbread":"Pan plano o pita",
+"burger-buns":"Panes de hamburguesa",
+"kidney-beans":"Alubias rojas en lata",
+"chickpeas":"Garbanzos en lata",
+"spring-onion":"Cebolletas",
+"sesame-oil":"Aceite de sésamo",
+"oyster-sauce":"Salsa de ostras",
+"fish-sauce":"Salsa de pescado",
+"rice-vinegar":"Vinagre de arroz",
+"mirin":"Mirin",
+"shaoxing-wine":"Vino de Shaoxing o vino chino para cocinar",
+"hoisin-sauce":"Salsa hoisin",
+"chilli-bean-paste":"Pasta de chile y habas (doubanjiang)",
+"five-spice":"Cinco especias chinas",
+"tofu":"Tofu",
+"pork-mince":"Carne picada de cerdo",
+"pork-belly":"Panceta de cerdo",
+"prawns":"Gambas crudas",
+"bok-choy":"Bok choy",
+"cabbage":"Col (china o verde)",
+"cucumber":"Pepino",
+"eggplant":"Berenjena",
+"bean-sprouts":"Brotes de soja",
+"red-chilli":"Chiles rojos frescos",
+"lime":"Limas",
+"lemongrass":"Hierba limón",
+"red-curry-paste":"Pasta de curry rojo tailandés",
+"green-curry-paste":"Pasta de curry verde tailandés",
+"japanese-curry-roux":"Roux de curry japonés (p. ej. Golden Curry)",
+"rice-noodles":"Fideos de arroz secos",
+"udon":"Fideos udon",
+"sushi-rice":"Arroz japonés de grano corto o medio",
+"panko":"Pan rallado panko",
+"peanuts":"Cacahuetes tostados",
+"sesame-seeds":"Semillas de sésamo"
+},
+"recipes":{
+"butter-chicken":{
+"name":"Pollo a la mantequilla con arroz",
+"method":[
+"Lava el arroz y cuécelo en el doble de su volumen de agua con una pizca de sal hasta que esté tierno, unos 12 minutos. Mantenlo tapado.",
+"Derrite la mantequilla en una sartén grande y honda a fuego medio. Cocina la cebolla 5 minutos hasta que esté blanda y añade el ajo y el jengibre durante 1 minuto.",
+"Incorpora el curry en polvo y el garam masala y cocina 30 segundos hasta que suelten su aroma.",
+"Añade el pollo y dale vueltas en las especias hasta que no esté rosado por fuera, unos 4 minutos.",
+"Vierte el tomate y 100 ml de agua, sala y cuece a fuego suave 20 minutos, removiendo de vez en cuando, hasta que el pollo esté bien hecho.",
+"Incorpora la nata y cuece 5 minutos más hasta que brille. Prueba y añade sal si hace falta. Sirve sobre el arroz."
+],
+"notes":{
+"0":"en trozos",
+"2":"picada fina",
+"3":"machacado",
+"4":"rallado"
+},
+"blurb":"Un curry suave y cremoso, fácil de hacer con especias de la despensa."
+},
+"spaghetti-bolognese":{
+"name":"Espaguetis a la boloñesa",
+"method":[
+"Calienta el aceite en una sartén grande a fuego medio-alto. Cocina la cebolla y la zanahoria 5 minutos hasta que se ablanden y añade el ajo durante 1 minuto.",
+"Añade la carne picada, deshaciéndola con una cuchara, y cocínala hasta que se dore por todas partes, unos 8 minutos.",
+"Incorpora el concentrado de tomate y luego el tomate, las hierbas, la sal y la pimienta. Cuece a fuego lento 30 minutos, removiendo de vez en cuando, hasta que espese.",
+"Cuece los espaguetis en una olla grande de agua hirviendo con sal según el tiempo del paquete. Guarda una taza del agua de cocción y escurre.",
+"Mezcla la pasta con la salsa, aligerándola con un poco del agua de cocción si hace falta. Sirve con el parmesano."
+],
+"notes":{
+"1":"en dados",
+"2":"rallado",
+"3":"machacado",
+"9":"rallado"
+},
+"blurb":"El clásico de entre semana. Se congela bien."
+},
+"chicken-fried-rice":{
+"name":"Arroz frito con pollo",
+"method":[
+"Cuece el arroz, extiéndelo en una bandeja y déjalo enfriar al menos 20 minutos. El arroz frío se fríe mucho mejor que el caliente.",
+"Calienta la mitad del aceite en una sartén grande o wok a fuego fuerte. Cocina el pollo 5 o 6 minutos hasta que esté dorado y bien hecho, y pásalo a un plato.",
+"Añade el resto del aceite, el ajo y el jengibre y remueve 30 segundos. Echa las verduras congeladas y cocina 3 minutos.",
+"Aparta todo a un lado, casca los huevos y revuélvelos hasta que justo cuajen.",
+"Añade el arroz y el pollo, riega con la salsa de soja y saltea a fuego fuerte 3 minutos hasta que esté caliente y algo crujiente."
+],
+"notes":{
+"2":"en dados",
+"6":"machacado",
+"7":"rallado"
+},
+"blurb":"Aprovecha el arroz sobrante y una bolsa de verduras congeladas."
+},
+"beef-tacos":{
+"name":"Tacos blandos de ternera",
+"method":[
+"Calienta el aceite en una sartén a fuego medio-alto y cocina la cebolla 4 minutos. Añade el ajo durante 30 segundos.",
+"Añade la carne picada y cocínala hasta que se dore, deshaciéndola mientras se hace, unos 8 minutos.",
+"Incorpora el chile, el comino, el pimentón y el concentrado de tomate con 100 ml de agua. Cuece 8 minutos hasta que la salsa se pegue a la carne.",
+"Calienta las tortillas en una sartén seca 20 segundos por lado, o envueltas en papel de aluminio en el horno.",
+"Machaca el aguacate con una pizca de sal. Rellena cada tortilla con carne, aguacate, tomate, lechuga y queso."
+],
+"notes":{
+"2":"en dados",
+"3":"en dados",
+"4":"en tiras finas",
+"5":"rallado",
+"10":"machacado"
+},
+"blurb":"Baratos, rápidos y fáciles de montar para los niños."
+},
+"creamy-chicken-mushroom-pasta":{
+"name":"Pasta cremosa con pollo y champiñones",
+"method":[
+"Cuece la pasta en agua con sal según el tiempo del paquete. Escúrrela guardando un poco del agua.",
+"Calienta el aceite en una sartén grande a fuego medio-alto. Cocina el pollo 5 o 6 minutos hasta que esté dorado y bien hecho, y resérvalo.",
+"En la misma sartén cocina la cebolla y los champiñones 6 minutos hasta que los champiñones se doren. Añade el ajo durante 1 minuto.",
+"Vierte el caldo y la nata y cuece 4 minutos hasta que espese un poco.",
+"Devuelve el pollo a la sartén, añade la pasta y las espinacas y mezcla hasta que las espinacas se ablanden. Incorpora el parmesano y aligera con agua de la pasta si hace falta."
+],
+"notes":{
+"0":"en láminas",
+"1":"en láminas",
+"4":"machacado",
+"5":"en dados",
+"7":"rallado"
+}
+},
+"sausage-tray-bake":{
+"name":"Salchichas y verduras a la bandeja",
+"method":[
+"Precalienta el horno a 220 C (200 C con ventilador). Pon la patata y la zanahoria en una bandeja grande con el aceite, las hierbas y la sal y mezcla bien.",
+"Asa 15 minutos. Añade la cebolla, el pimiento y las salchichas a la bandeja y da la vuelta a todo.",
+"Asa otros 25 a 30 minutos, girando una vez, hasta que las salchichas estén doradas y bien hechas y las patatas crujientes por los bordes."
+],
+"notes":{
+"1":"en trozos",
+"2":"en láminas",
+"3":"en trozos",
+"4":"en gajos"
+},
+"blurb":"Una sola bandeja, poco que fregar."
+},
+"salmon-rice-broccoli":{
+"name":"Salmón con miel y soja, arroz y brócoli",
+"method":[
+"Cuece el arroz. Mezcla la salsa de soja, la miel, el ajo, el jengibre y el zumo de medio limón en un cuenco pequeño.",
+"Calienta el aceite en una sartén antiadherente a fuego medio-alto. Cocina el salmón con la piel hacia abajo 4 minutos, dale la vuelta y cocina 2 minutos más.",
+"Vierte la salsa sobre el salmón y deja que burbujee 1 minuto, rociando el pescado con ella.",
+"Cuece el brócoli al vapor o hervido 3 o 4 minutos hasta que esté verde intenso y justo tierno.",
+"Sirve el salmón sobre el arroz con el brócoli y gajos de limón."
+],
+"notes":{
+"2":"en ramilletes",
+"5":"machacado",
+"8":"rallado"
+}
+},
+"veg-stir-fry-noodles":{
+"name":"Fideos salteados con verduras",
+"method":[
+"Prepara los fideos según el paquete, escúrrelos y pásalos por agua fría.",
+"Mezcla la salsa de soja y la miel con 3 cucharadas de agua.",
+"Calienta el aceite en un wok a fuego fuerte. Saltea la zanahoria y el brócoli 3 minutos y añade el pimiento y los champiñones durante 2 minutos.",
+"Añade el ajo y el jengibre 30 segundos y luego los fideos y la salsa. Saltea 2 o 3 minutos hasta que todo esté caliente y brillante."
+],
+"notes":{
+"1":"en ramilletes pequeños",
+"2":"en láminas",
+"3":"en láminas finas",
+"4":"en láminas",
+"5":"machacado",
+"6":"rallado"
+}
+},
+"chicken-caesar-salad":{
+"name":"Ensalada César con pollo",
+"method":[
+"Precalienta el horno a 200 C. Mezcla los dados de pan con 1 cucharada de aceite y una pizca de sal y hornea 10 minutos hasta que se doren.",
+"Salpimienta el pollo. Cocínalo en una sartén con un poco de aceite 5 o 6 minutos por lado hasta que esté bien hecho. Déjalo reposar 5 minutos y córtalo.",
+"Cuece los huevos 7 minutos, enfríalos en agua fría, pélalos y pártelos por la mitad. Fríe el beicon hasta que esté crujiente.",
+"Para el aliño, bate el resto del aceite, el zumo del limón, el ajo y la mitad del parmesano.",
+"Mezcla la lechuga con el aliño y cubre con el pollo, el beicon, los huevos, los picatostes y el resto del parmesano."
+],
+"notes":{
+"1":"troceada a mano",
+"2":"picado",
+"4":"en lascas",
+"5":"en dados para picatostes",
+"8":"machacado"
+}
+},
+"beef-broccoli-stir-fry":{
+"name":"Ternera salteada con brócoli",
+"method":[
+"Cuece el arroz. Mezcla la ternera con la maicena y una cucharada de salsa de soja. Mezcla el resto de la soja con la miel y 100 ml de agua.",
+"Calienta la mitad del aceite en un wok hasta que esté muy caliente. Saltea la ternera en dos tandas 1 o 2 minutos hasta que se dore y resérvala.",
+"Añade el resto del aceite y cocina el brócoli 3 minutos con un chorrito de agua. Añade el ajo y el jengibre durante 30 segundos.",
+"Devuelve la ternera, vierte la salsa y cocina 1 o 2 minutos hasta que espese. Sirve sobre arroz."
+],
+"notes":{
+"2":"en ramilletes",
+"5":"machacado",
+"6":"rallado"
+}
+},
+"cottage-pie":{
+"name":"Pastel de carne con puré",
+"method":[
+"Cuece las patatas en agua con sal 15 a 20 minutos hasta que estén tiernas. Escúrrelas, haz puré con la mantequilla y la leche y sazona.",
+"Mientras, cocina la cebolla y la zanahoria en una sartén grande apta para horno 6 minutos. Añade la carne picada y dórala 8 minutos.",
+"Incorpora la harina y el concentrado de tomate y luego el caldo. Cuece 15 minutos hasta que espese, añadiendo los guisantes los últimos 3 minutos. Sazona.",
+"Precalienta el horno a 200 C. Reparte el puré sobre la carne, márcalo con un tenedor y espolvorea el queso.",
+"Hornea 20 a 25 minutos hasta que esté dorado y burbujeante."
+],
+"notes":{
+"1":"peladas y troceadas",
+"4":"en dados",
+"5":"en dados",
+"10":"rallado"
+}
+},
+"ham-cheese-omelette":{
+"name":"Tortilla francesa de jamón y queso",
+"method":[
+"Bate los huevos con la leche, la sal y la pimienta.",
+"Derrite una cuarta parte de la mantequilla en una sartén antiadherente a fuego medio. Vierte una cuarta parte del huevo y muévela para repartirlo.",
+"Cuando la base haya cuajado pero la parte de arriba siga algo húmeda, reparte una cuarta parte del jamón, el queso y las espinacas.",
+"Dobla la tortilla por la mitad, pásala a un plato y repite con las demás."
+],
+"notes":{
+"1":"en dados",
+"2":"rallado"
+}
+},
+"pumpkin-soup":{
+"name":"Sopa de calabaza asada",
+"method":[
+"Precalienta el horno a 200 C. Asa la calabaza con un poco de aceite y sal 30 minutos hasta que esté tierna y dorada.",
+"Derrite la mantequilla en una olla grande y cocina la cebolla 5 minutos. Añade el ajo y el curry en polvo durante 1 minuto.",
+"Añade la calabaza asada y el caldo, lleva a ebullición y cuece a fuego suave 10 minutos.",
+"Tritura hasta que quede fina, incorpora la nata y sazona al gusto. Sirve con pan tostado."
+],
+"notes":{
+"0":"pelada y en dados",
+"1":"picado",
+"6":"para servir"
+},
+"blurb":"Cambia el caldo por caldo de verduras para que sea vegetariana."
+},
+"chicken-noodle-soup":{
+"name":"Sopa de pollo con fideos",
+"method":[
+"Pon el caldo, el pollo, la cebolla, la zanahoria, el ajo, el jengibre y la sal en una olla grande. Lleva a un hervor suave y cocina 15 a 20 minutos hasta que el pollo esté bien hecho.",
+"Saca el pollo, desmenúzalo con dos tenedores y devuélvelo a la olla.",
+"Añade los fideos y cuécelos el tiempo del paquete. Prueba, ajusta la sal y sirve."
+],
+"notes":{
+"2":"en láminas",
+"3":"en dados",
+"4":"machacado",
+"6":"rallado"
+}
+},
+"mac-and-cheese":{
+"name":"Macarrones con queso al horno",
+"method":[
+"Cuece la pasta 2 minutos menos del tiempo del paquete y escúrrela.",
+"Derrite la mantequilla en una olla, incorpora la harina y cocina 1 minuto. Añade la leche poco a poco batiendo y cuece 5 minutos hasta que espese.",
+"Retira del fuego e incorpora tres cuartas partes del queso, la sal y la pimienta. Mezcla con la pasta y los guisantes.",
+"Pásalo a una fuente de horno, cubre con el resto del queso y hornea a 200 C de 15 a 20 minutos hasta que se dore."
+],
+"notes":{
+"0":"macarrones o similar",
+"1":"rallado"
+}
+},
+"flatbread-pizzas":{
+"name":"Pizzas margarita sobre pan plano",
+"method":[
+"Precalienta el horno a 220 C. Pon los panes planos en bandejas y píntalos ligeramente con aceite.",
+"Mezcla el concentrado de tomate con 2 cucharadas de agua y extiéndelo sobre los panes.",
+"Cubre con la mozzarella, rodajas de tomate y jamón si lo usas.",
+"Hornea 8 a 10 minutos hasta que el queso burbujee y los bordes estén crujientes. Esparce la albahaca."
+],
+"notes":{
+"3":"en láminas",
+"6":"opcional"
+}
+},
+"chilli-con-carne":{
+"name":"Chili con carne",
+"method":[
+"Calienta el aceite en una olla grande y cocina la cebolla y el pimiento 6 minutos. Añade el ajo y las especias durante 1 minuto.",
+"Añade la carne picada y dórala 8 minutos, deshaciéndola.",
+"Incorpora el concentrado de tomate, el tomate, las alubias escurridas, la sal y 150 ml de agua. Cuece con la tapa entreabierta de 35 a 40 minutos hasta que espese.",
+"Cuece el arroz y sirve el chili encima."
+],
+"notes":{
+"3":"en dados",
+"4":"en dados",
+"5":"machacado"
+},
+"blurb":"Mejor al día siguiente. Se congela bien."
+},
+"honey-soy-chicken-thighs":{
+"name":"Muslos de pollo con miel y soja",
+"method":[
+"Bate la miel, la salsa de soja, el ajo y el jengibre. Viértelo sobre el pollo y deja marinar 15 minutos, o toda la noche en la nevera.",
+"Precalienta el horno a 200 C. Coloca el pollo en una bandeja forrada, vierte la marinada por encima y asa 30 a 35 minutos, regando una vez, hasta que esté glaseado y bien hecho.",
+"Cuece el arroz y el brócoli al vapor. Sirve el pollo regado con el jugo de la bandeja."
+],
+"notes":{
+"3":"machacado",
+"4":"rallado"
+}
+},
+"zucchini-fritters":{
+"name":"Buñuelos de calabacín y queso",
+"method":[
+"Mezcla el calabacín rallado con la mitad de la sal y déjalo 10 minutos. Escúrrelo bien en un paño limpio para quitar todo el líquido posible.",
+"Mezcla el calabacín con los huevos, la harina, la levadura, el queso y el resto de la sal.",
+"Calienta el aceite en una sartén a fuego medio. Echa cucharadas colmadas y aplánalas un poco. Cocina 3 minutos por lado hasta que se doren.",
+"Sirve con el yogur y un chorrito de limón."
+],
+"notes":{
+"0":"rallado",
+"3":"rallado",
+"5":"para servir"
+}
+},
+"tuna-pasta-bake":{
+"name":"Pasta con atún cremosa al horno",
+"method":[
+"Precalienta el horno a 200 C. Cuece la pasta 2 minutos menos del tiempo del paquete y escúrrela.",
+"Cocina la cebolla en el aceite 5 minutos, añade el ajo 1 minuto y luego el tomate y la nata. Cuece 5 minutos.",
+"Incorpora el atún, los guisantes y la pasta y pásalo a una fuente de horno.",
+"Esparce el queso y hornea 15 a 20 minutos hasta que se dore."
+],
+"notes":{
+"1":"2 latas, escurridas",
+"3":"rallado",
+"4":"en dados",
+"7":"machacado"
+}
+},
+"sausages-and-mash":{
+"name":"Salchichas con puré y salsa de cebolla",
+"method":[
+"Cuece las patatas en agua con sal 15 a 20 minutos. Escúrrelas y haz puré con la mantequilla y la leche.",
+"Dora las salchichas en una sartén con el aceite, girándolas, unos 12 minutos hasta que estén bien hechas. Sácalas y mantenlas calientes.",
+"En la misma sartén cocina las cebollas 10 minutos hasta que estén blandas y doradas. Incorpora la harina, añade el caldo poco a poco y cuece 5 minutos hasta que espese.",
+"Cuece los guisantes y sírvelo todo junto."
+],
+"notes":{
+"5":"en láminas"
+}
+},
+"beef-burgers":{
+"name":"Hamburguesas caseras de ternera",
+"method":[
+"Mezcla la carne picada con la cebolla rallada, el huevo, la sal y la pimienta. Forma 4 hamburguesas algo más anchas que los panes y enfríalas 10 minutos.",
+"Calienta el aceite en una sartén a fuego medio-alto. Cocina las hamburguesas 4 o 5 minutos por lado hasta que estén bien hechas, añadiendo el queso el último minuto.",
+"Tuesta los panes y rellénalos con lechuga, tomate, cebolla y las hamburguesas."
+],
+"notes":{
+"3":"en láminas",
+"4":"en lonchas o rallado",
+"5":"mitad rallada, mitad en rodajas"
+}
+},
+"scrambled-eggs-avocado-toast":{
+"name":"Huevos revueltos y aguacate sobre tostada",
+"method":[
+"Bate los huevos con la leche, la sal y la pimienta. Tuesta el pan.",
+"Derrite la mantequilla en una sartén antiadherente a fuego bajo, añade los huevos y remueve despacio con una espátula 3 o 4 minutos hasta que cuajen suavemente.",
+"Machaca el aguacate con una pizca de sal y úntalo en la tostada. Pon los huevos encima."
+],
+"notes":{}
+},
+"banana-pancakes":{
+"name":"Tortitas de plátano",
+"method":[
+"Mezcla la harina, la levadura y el azúcar en un cuenco. Bate los huevos, la leche y 30 g de la mantequilla derretida y únelo a la mezcla seca hasta que justo se integre. Unos grumos no importan.",
+"Calienta una sartén antiadherente a fuego medio con un poco del resto de la mantequilla. Vierte 1/4 de taza de masa por tortita.",
+"Cocina 2 minutos hasta que salgan burbujas, dale la vuelta y cocina 1 o 2 minutos más. Repite con el resto.",
+"Sirve con el plátano y un hilo de miel."
+],
+"notes":{
+"5":"derretida",
+"6":"en láminas"
+}
+},
+"chicken-wraps":{
+"name":"Wraps de pollo especiado",
+"method":[
+"Mezcla el pollo con el pimentón, el aceite, la sal y el zumo de medio limón. Cocínalo en una sartén caliente 6 a 8 minutos hasta que esté dorado y bien hecho.",
+"Para la salsa, mezcla el ajo y un chorrito de limón con el yogur.",
+"Calienta las tortillas, úntalas con la salsa de yogur y rellénalas con el pollo, la lechuga, el tomate y el queso. Enróllalas y sirve."
+],
+"notes":{
+"0":"en láminas",
+"2":"en tiras finas",
+"3":"en láminas",
+"4":"rallado",
+"9":"machacado"
+}
+},
+"banana-honey-porridge":{
+"name":"Gachas de avena con plátano y miel",
+"method":[
+"Pon la avena, la leche y la sal en una olla y lleva a un hervor suave a fuego medio.",
+"Cocina 5 a 7 minutos, removiendo a menudo, hasta que esté espeso y cremoso.",
+"Sirve en cuencos y cubre con el plátano y la miel."
+],
+"notes":{
+"2":"en láminas"
+}
+},
+"chickpea-spinach-curry":{
+"name":"Curry de garbanzos y espinacas con coco",
+"method":[
+"Cuece el arroz. Calienta el aceite en una sartén grande y cocina la cebolla 5 minutos. Añade el ajo, el jengibre y el curry en polvo durante 1 minuto.",
+"Añade el tomate, la leche de coco, los garbanzos y la sal. Cuece 15 minutos hasta que espese.",
+"Incorpora las espinacas y cocina 2 minutos hasta que se ablanden. Prueba, ajusta la sal y sirve con el arroz."
+],
+"notes":{
+"0":"2 latas, escurridas",
+"3":"en dados",
+"4":"machacado",
+"5":"rallado"
+},
+"blurb":"Vegano tal como está."
+},
+"kung-pao-chicken":{
+"name":"Pollo kung pao",
+"method":[
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Mezcla el pollo con 1 cda. de la salsa de soja, el vino de Shaoxing y la mitad de la maicena.",
+"Prepara la salsa: el resto de la salsa de soja, el vinagre, el azúcar, el resto de la maicena y 3 cdas. de agua.",
+"Calienta el aceite en un wok a fuego fuerte y saltea el pollo 5 o 6 minutos hasta que esté dorado y bien hecho. Sácalo.",
+"Añade el chile, el ajo, el jengibre y la parte blanca de la cebolleta y saltea 30 segundos.",
+"Devuelve el pollo, vierte la salsa y saltea un minuto hasta que espese y brille. Incorpora los cacahuetes y la parte verde de la cebolleta y sirve con el arroz."
+],
+"notes":{
+"0":"en trozos de 2 cm",
+"6":"en rodajas (o un puñado de chiles secos)",
+"7":"en láminas",
+"8":"picado fino",
+"9":"en trozos de 3 cm"
+},
+"blurb":"Pollo salteado al estilo de Sichuan con cacahuetes, chile y una salsa agridulce brillante."
+},
+"mapo-tofu":{
+"name":"Tofu mapo",
+"method":[
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Cuece los dados de tofu en agua con un poco de sal 2 minutos para que se afirmen y escúrrelos.",
+"Calienta el aceite en un wok a fuego medio-alto y fríe el cerdo, deshaciéndolo, unos 4 minutos hasta que se dore.",
+"Añade la pasta de chile y habas, el ajo, el jengibre y el chile en polvo y fríe un minuto hasta que el aceite se ponga rojo.",
+"Vierte el caldo, la salsa de soja y el azúcar y lleva a un hervor suave. Añade el tofu con cuidado y cuece 4 minutos, empujándolo suavemente en vez de removerlo.",
+"Mezcla la maicena con 2 cdas. de agua, incorpórala con cuidado y cuece hasta que la salsa espese. Esparce la cebolleta y sirve sobre arroz. La pimienta de Sichuan molida por encima es lo tradicional si la tienes."
+],
+"notes":{
+"0":"blando o firme, en dados de 2 cm",
+"3":"picado",
+"4":"picado",
+"10":"en láminas"
+},
+"blurb":"Tofu suave en una salsa picante y sabrosa de cerdo y pasta de chile. Un clásico de Sichuan que se hace rápido."
+},
+"tomato-egg-stir-fry":{
+"name":"Salteado de tomate y huevo",
+"method":[
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Bate los huevos con una pizca de la sal.",
+"Calienta 1 cda. de aceite en un wok a fuego medio-alto, vierte los huevos y remueve con suavidad hasta que cuajen en trozos grandes y tiernos. Pásalos a un plato.",
+"Añade el resto del aceite y el tomate y saltea unos 3 minutos hasta que se ablande y suelte su jugo.",
+"Añade el azúcar, el resto de la sal y 3 cdas. de agua y cuece 2 minutos.",
+"Devuelve los huevos y mezcla todo con cuidado 30 segundos. Riega con aceite de sésamo, esparce la cebolleta y sirve sobre arroz."
+],
+"notes":{
+"1":"en gajos",
+"4":"en láminas"
+},
+"blurb":"Huevo revuelto suave y tomate jugoso en una salsa ligera dulce y salada. Comida casera de todos los días en China."
+},
+"char-siu-pork":{
+"name":"Cerdo char siu con arroz y verduras",
+"method":[
+"Mezcla la salsa hoisin, la salsa de soja, 2 cdas. de la miel, las cinco especias, el ajo, el vino y el azúcar. Cubre el cerdo y déjalo marinar en la nevera al menos una hora.",
+"Precalienta el horno a 200 °C. Forra una bandeja de horno con papel de aluminio y pon una rejilla encima. Coloca el cerdo en la rejilla y guarda la marinada sobrante.",
+"Asa 25 minutos, da la vuelta al cerdo, píntalo con la marinada sobrante y asa 20 minutos más.",
+"Píntalo con el resto de la miel y asa 5 a 10 minutos más hasta que esté glaseado, tostado por los bordes y bien hecho. Déjalo reposar 5 minutos y córtalo.",
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Saltea el bok choy en el aceite a fuego fuerte 2 o 3 minutos con un chorrito de agua y una pizca de sal. Sirve el cerdo sobre arroz con las verduras."
+],
+"notes":{
+"0":"o paleta de cerdo, en tiras de 4 cm de grosor",
+"5":"machacado",
+"9":"partido por la mitad"
+},
+"blurb":"Cerdo asado dulce y glaseado con hoisin y miel. Marina al menos una hora, o toda la noche."
+},
+"steamed-egg-custard":{
+"name":"Flan de huevo chino al vapor",
+"method":[
+"Bate los huevos con suavidad para no meter aire y luego incorpora el caldo templado y la sal.",
+"Pásalo por un colador a un plato hondo resistente al calor y quita las burbujas. Tapa con un plato o papel de aluminio.",
+"Cuece al vapor sobre agua hirviendo suavemente 10 a 12 minutos hasta que justo cuaje y siga temblando en el centro. Un cuchillo clavado en el centro debe salir limpio.",
+"Riega con la salsa de soja y el aceite de sésamo y esparce la cebolleta."
+],
+"notes":{
+"1":"templado",
+"5":"en rodajas finas"
+},
+"blurb":"Un flan de huevo salado y sedoso cocido al vapor en un cuenco. Sirve con arroz y un salteado."
+},
+"pork-cabbage-dumplings":{
+"name":"Empanadillas de cerdo y col",
+"method":[
+"Mezcla la harina con 150 ml de agua fría y amasa 5 minutos hasta que quede lisa. Tápala y déjala reposar 30 minutos.",
+"Mezcla la col con la sal, déjala 10 minutos y escúrrela para quitar toda el agua posible.",
+"Mezcla el cerdo, la col, la cebolleta, el jengibre, 1 cda. de la salsa de soja, el aceite de sésamo, el vino y 2 cdas. de agua, removiendo en una sola dirección hasta que quede pegajoso.",
+"Forma un cilindro largo con la masa, córtalo en 40 trozos y estira cada uno en un círculo fino de unos 8 cm.",
+"Pon una cucharadita colmada de relleno en el centro de cada uno, dóblalo por la mitad y pellizca bien los bordes para cerrarlo.",
+"Hiérvelas por tandas en una olla grande de agua. Cuando floten, añade una taza de agua fría y vuelve a llevar a ebullición; hazlo dos veces, unos 6 o 7 minutos en total, hasta que el relleno esté bien hecho.",
+"Sirve con el vinagre mezclado con el resto de la salsa de soja para mojar. Congela las que sobren crudas en una bandeja y luego guárdalas en bolsas."
+],
+"notes":{
+"2":"picado fino",
+"4":"picado fino",
+"5":"rallado",
+"9":"para mojar"
+},
+"blurb":"Jiaozi caseros con una masa sencilla de harina y agua. Salen unos 40, y los que sobren se congelan bien."
+},
+"sweet-sour-chicken":{
+"name":"Pollo agridulce",
+"method":[
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Prepara la salsa: vinagre, azúcar, concentrado de tomate, salsa de soja, 1 cda. de la maicena y 150 ml de agua.",
+"Bate el huevo. Pasa el pollo por el huevo y luego rebózalo en el resto de la maicena.",
+"Fríe el pollo en el aceite a fuego medio-alto por tandas 5 o 6 minutos hasta que esté dorado y bien hecho. Escúrrelo sobre papel de cocina.",
+"Retira el aceite dejando solo 1 cda. Saltea la cebolla y el pimiento 3 minutos y luego el ajo 30 segundos.",
+"Vierte la salsa y cuece 1 o 2 minutos hasta que espese y brille. Mezcla el pollo y sirve con el arroz."
+],
+"notes":{
+"0":"en trozos de 2,5 cm",
+"4":"en trozos",
+"5":"en trozos",
+"6":"picado"
+},
+"blurb":"Trozos de pollo crujientes con pimiento y cebolla en una salsa casera ácida."
+},
+"dan-dan-noodles":{
+"name":"Fideos dan dan",
+"method":[
+"Reparte la salsa de soja, el vinagre, el aceite de sésamo, el azúcar, el chile en polvo y el ajo en cuatro cuencos.",
+"Fríe el cerdo en el aceite a fuego medio-alto con la pasta de chile y habas y el vino unos 6 minutos hasta que esté dorado y crujiente por los bordes.",
+"Cuece los fideos según el paquete, añadiendo el bok choy el último minuto. Añade 2 cdas. del agua de cocción caliente a cada cuenco de salsa y escurre los fideos.",
+"Reparte los fideos y las verduras en los cuencos, cubre con el cerdo, los cacahuetes y la cebolleta, y mezcla bien antes de comer."
+],
+"notes":{
+"0":"fideos de huevo o de trigo",
+"10":"machacado",
+"11":"machacado",
+"12":"en láminas"
+},
+"blurb":"Fideos con cerdo especiado crujiente, verduras y una salsa picante, ácida y con sabor a frutos secos. Mezcla todo antes de comer."
+},
+"fish-fragrant-eggplant":{
+"name":"Berenjena «con aroma de pescado»",
+"method":[
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Mezcla la berenjena con la sal, déjala 10 minutos y sécala con papel.",
+"Fríe la berenjena en 2 cdas. del aceite a fuego medio-alto 8 a 10 minutos hasta que esté tierna y dorada. Sácala.",
+"Añade el resto del aceite y fríe el cerdo hasta que se dore. Añade la pasta de chile y habas, el ajo, el jengibre y la parte blanca de la cebolleta y fríe un minuto.",
+"Mezcla la salsa de soja, el vinagre, el azúcar, la maicena y 100 ml de agua, viértelo y lleva a un hervor suave.",
+"Devuelve la berenjena y cuece 2 minutos hasta que la salsa la cubra. Esparce la parte verde de la cebolleta y sirve sobre arroz."
+],
+"notes":{
+"0":"en bastones de 6 cm",
+"5":"picado",
+"6":"picado",
+"7":"en rodajas, con la parte blanca y la verde por separado"
+},
+"blurb":"Berenjena sedosa en una salsa de ajo dulce, ácida y picante. No lleva pescado: el nombre viene de una salsa de Sichuan que antes se usaba con pescado."
+},
+"hot-sour-soup":{
+"name":"Sopa agripicante",
+"method":[
+"Lleva el caldo a ebullición con el jengibre y los champiñones y cuece 5 minutos.",
+"Añade el tofu, la salsa de soja, el vinagre y la pimienta y cuece 2 minutos.",
+"Mezcla la maicena con 4 cdas. de agua, incorpórala y cuece un minuto hasta que espese un poco.",
+"Baja el fuego y vierte los huevos batidos en un hilo fino mientras remueves despacio, para que cuajen en hebras.",
+"Prueba y añade más vinagre o pimienta si quieres. Termina con el aceite de sésamo y la cebolleta."
+],
+"notes":{
+"1":"en láminas",
+"2":"en láminas",
+"3":"en tiras finas",
+"6":"pimienta blanca si la tienes",
+"8":"batidos",
+"10":"en láminas"
+},
+"blurb":"Una sopa reconfortante con tofu, champiñones y hebras de huevo, ácida por el vinagre y picante por la pimienta."
+},
+"teriyaki-chicken-don":{
+"name":"Bol de arroz con pollo teriyaki",
+"method":[
+"Lava el arroz hasta que el agua salga casi transparente. Ponlo en una olla con 1,2 veces su volumen de agua, lleva a ebullición, tapa y cuece a fuego mínimo 12 minutos; luego déjalo tapado fuera del fuego 10 minutos.",
+"Mezcla la salsa de soja, el mirin y el azúcar.",
+"Fríe el pollo en el aceite a fuego medio 6 minutos, dale la vuelta y cocina 5 minutos más hasta que esté bien hecho.",
+"Retira la grasa, añade la salsa y deja que burbujee 2 o 3 minutos, girando el pollo, hasta que esté brillante y glaseado.",
+"Cuece el brócoli hervido o al vapor 3 minutos.",
+"Corta el pollo y sírvelo sobre el arroz con el brócoli. Riega con la salsa y cubre con cebolleta y semillas de sésamo."
+],
+"notes":{
+"6":"en ramilletes",
+"7":"en láminas"
+},
+"blurb":"Muslos de pollo a la sartén en una salsa teriyaki casera y brillante, sobre arroz con brócoli."
+},
+"chicken-katsu-curry":{
+"name":"Curry katsu de pollo",
+"method":[
+"Lava el arroz hasta que el agua salga casi transparente. Ponlo en una olla con 1,2 veces su volumen de agua, lleva a ebullición, tapa y cuece a fuego mínimo 12 minutos; luego déjalo tapado fuera del fuego 10 minutos.",
+"Curry: ablanda la cebolla en 1 cda. del aceite 5 minutos. Añade la zanahoria, la patata y 700 ml de agua y cuece 15 minutos hasta que estén tiernas.",
+"Apaga el fuego, añade el roux de curry en trozos y remueve hasta que se derrita; luego cuece 5 minutos, removiendo, hasta que espese.",
+"Sazona el pollo, pásalo por la harina, luego por el huevo batido y presiónalo en el panko.",
+"Fríelo en el resto del aceite a fuego medio 4 o 5 minutos por lado hasta que esté dorado y bien hecho. Escúrrelo y córtalo.",
+"Sirve el pollo sobre el arroz con la salsa de curry al lado."
+],
+"notes":{
+"0":"2 pechugas, abiertas por la mitad",
+"5":"una caja de 92 g",
+"6":"en dados",
+"7":"en trozos",
+"8":"en trozos"
+},
+"blurb":"Pollo crujiente rebozado en panko con una salsa de curry japonés suave y espesa, y arroz."
+},
+"teriyaki-tofu-bowl":{
+"name":"Bol de arroz con tofu teriyaki",
+"method":[
+"Lava el arroz hasta que el agua salga casi transparente. Ponlo en una olla con 1,2 veces su volumen de agua, lleva a ebullición, tapa y cuece a fuego mínimo 12 minutos; luego déjalo tapado fuera del fuego 10 minutos.",
+"Prensa el tofu entre papel de cocina 10 minutos, córtalo en dados y rebózalo en la maicena.",
+"Fríe el tofu en el aceite a fuego medio-alto, girándolo, unos 8 minutos hasta que esté crujiente por todos lados.",
+"Mezcla la salsa de soja, el mirin, el azúcar, el jengibre y 2 cdas. de agua, viértelo sobre el tofu y saltea 1 o 2 minutos hasta que esté glaseado.",
+"Cuece el brócoli y la zanahoria al vapor o hervidos 3 minutos.",
+"Sirve el tofu y las verduras sobre el arroz con la cebolleta y las semillas de sésamo."
+],
+"notes":{
+"0":"firme",
+"6":"rallado",
+"8":"en ramilletes",
+"9":"en bastoncitos finos",
+"10":"en láminas"
+},
+"blurb":"Tofu crujiente en salsa teriyaki glaseada con arroz y verduras."
+},
+"oyakodon":{
+"name":"Oyakodon (bol de arroz con pollo y huevo)",
+"method":[
+"Lava el arroz hasta que el agua salga casi transparente. Ponlo en una olla con 1,2 veces su volumen de agua, lleva a ebullición, tapa y cuece a fuego mínimo 12 minutos; luego déjalo tapado fuera del fuego 10 minutos.",
+"Lleva a un hervor suave el caldo, la salsa de soja, el mirin y el azúcar en una sartén ancha. Añade la cebolla y cuece 3 minutos.",
+"Añade el pollo y cuece 6 a 8 minutos hasta que esté bien hecho.",
+"Bate los huevos ligeramente para que queden veteados. Vierte dos tercios sobre el pollo, tapa y cocina a fuego bajo 1 minuto; luego añade el resto, tapa y cocina 30 segundos más para que el huevo justo cuaje pero siga tierno.",
+"Sirve el pollo, el huevo y un poco del caldo sobre cuencos de arroz y cubre con cebolleta. En Japón se usa caldo dashi; en casa el caldo de pollo funciona bien."
+],
+"notes":{
+"0":"en trozos de un bocado",
+"1":"en láminas finas",
+"8":"en láminas"
+},
+"blurb":"Pollo y cebolla cocidos en un caldo dulce de soja, cuajados con huevo tierno y servidos sobre arroz."
+},
+"chicken-karaage":{
+"name":"Pollo karaage (pollo frito japonés)",
+"method":[
+"Mezcla el pollo con la salsa de soja, el mirin, el jengibre y el ajo y déjalo 20 minutos.",
+"Lava el arroz hasta que el agua salga casi transparente. Ponlo en una olla con 1,2 veces su volumen de agua, lleva a ebullición, tapa y cuece a fuego mínimo 12 minutos; luego déjalo tapado fuera del fuego 10 minutos.",
+"Reboza el pollo en la maicena y sacude el exceso.",
+"Calienta 2 o 3 cm de aceite en una olla de fondo grueso a unos 170 °C. Fríe el pollo por tandas 4 o 5 minutos hasta que esté bien dorado y hecho. Escúrrelo sobre una rejilla. Nunca dejes el aceite caliente sin vigilar.",
+"Para que quede más crujiente, vuelve a freír cada tanda 1 minuto cuando todo el pollo esté hecho.",
+"Sirve con gajos de limón, la col en tiras y arroz."
+],
+"notes":{
+"0":"en trozos grandes de un bocado",
+"3":"rallado",
+"4":"rallado",
+"6":"para freír",
+"7":"en gajos",
+"8":"en tiras muy finas"
+},
+"blurb":"Pollo jugoso marinado en soja, jengibre y ajo, frito hasta quedar crujiente. Sirve con limón, col y arroz."
+},
+"okonomiyaki":{
+"name":"Okonomiyaki (tortitas de col)",
+"method":[
+"Bate la harina, el caldo, los huevos y la sal hasta tener una masa espesa. Incorpora la col y la mayor parte de la cebolleta.",
+"Calienta un poco de aceite en una sartén a fuego medio. Echa una cuarta parte de la masa y dale forma redonda de unos 2 cm de grosor.",
+"Pon unas lonchas de beicon encima. Cocina unos 5 minutos hasta que esté dorada por debajo, dale la vuelta y cocina 5 minutos más hasta que esté bien hecha. Repite con el resto.",
+"Mezcla el concentrado de tomate, la salsa de soja, la miel y 1 cda. de agua y pinta las tortitas con ello.",
+"Cubre con el resto de la cebolleta, y mayonesa japonesa si te gusta."
+],
+"notes":{
+"4":"en tiras muy finas",
+"5":"en láminas",
+"6":"en lonchas finas"
+},
+"blurb":"Tortitas saladas de col cubiertas con beicon y una salsa dulce y salada."
+},
+"yaki-udon":{
+"name":"Yaki udon (udon salteados)",
+"method":[
+"Suelta los udon en agua caliente un minuto, o cuece los udon secos según el paquete, y escúrrelos.",
+"Fríe el beicon en el aceite a fuego medio-alto hasta que se dore. Añade la cebolla, la zanahoria y los champiñones y saltea 3 minutos, y luego la col 2 minutos.",
+"Añade los fideos, la salsa de soja y el mirin y saltea a fuego fuerte 2 o 3 minutos hasta que estén calientes y bien cubiertos.",
+"Termina con el aceite de sésamo y la cebolleta."
+],
+"notes":{
+"1":"picado",
+"2":"en láminas",
+"3":"en bastoncitos finos",
+"4":"en láminas",
+"5":"en tiras finas",
+"10":"en láminas"
+},
+"blurb":"Fideos udon gruesos salteados con beicon, col y champiñones en una salsa de soja y mirin."
+},
+"gyudon":{
+"name":"Gyudon (bol de arroz con ternera y cebolla)",
+"method":[
+"Lava el arroz hasta que el agua salga casi transparente. Ponlo en una olla con 1,2 veces su volumen de agua, lleva a ebullición, tapa y cuece a fuego mínimo 12 minutos; luego déjalo tapado fuera del fuego 10 minutos.",
+"Cuece a fuego suave el caldo, la salsa de soja, el mirin, el azúcar y el jengibre en una olla. Añade la cebolla y cuece 5 minutos hasta que esté tierna.",
+"Añade la ternera, separando las lonchas, y cuece 2 o 3 minutos hasta que justo esté hecha. Retira la espuma.",
+"Si quieres, cuece los huevos 6 minutos y medio, enfríalos en agua fría y pélalos.",
+"Sirve la ternera, la cebolla y un poco del caldo sobre el arroz y cubre con cebolleta y medio huevo."
+],
+"notes":{
+"0":"en láminas finas",
+"1":"en láminas",
+"6":"rallado",
+"8":"en láminas",
+"9":"opcional, pasado por agua"
+},
+"blurb":"Ternera en lonchas finas y cebolla tierna cocidas en un caldo dulce de soja, sobre arroz."
+},
+"tamagoyaki":{
+"name":"Tamagoyaki (tortilla enrollada)",
+"method":[
+"Bate los huevos con el azúcar, la salsa de soja, el mirin, la sal y 2 cdas. de agua sin que hagan espuma.",
+"Calienta una sartén pequeña (lo ideal es cuadrada) a fuego medio-bajo y pásale papel de cocina con aceite.",
+"Vierte una capa fina de huevo e inclina la sartén para cubrirla. Cuando esté casi cuajada pero aún húmeda por arriba, enróllala desde el lado más lejano hacia ti.",
+"Empuja el rollo al lado más lejano, vuelve a engrasar la sartén y vierte otra capa fina, levantando el rollo para que el huevo corra por debajo. Vuelve a enrollar.",
+"Repite hasta terminar el huevo. Deja reposar la tortilla 2 minutos envuelta en papel de cocina para que tome forma y córtala."
+],
+"notes":{},
+"blurb":"Una tortilla ligeramente dulce enrollada en capas, cortada y servida caliente o fría."
+},
+"nikujaga":{
+"name":"Nikujaga (guiso de ternera y patata)",
+"method":[
+"Lava el arroz hasta que el agua salga casi transparente. Ponlo en una olla con 1,2 veces su volumen de agua, lleva a ebullición, tapa y cuece a fuego mínimo 12 minutos; luego déjalo tapado fuera del fuego 10 minutos.",
+"Fríe la cebolla en el aceite 2 minutos, añade la ternera y cocínala hasta que se dore.",
+"Añade la patata y la zanahoria, el caldo, el azúcar y el mirin. Lleva a ebullición y espuma.",
+"Cubre con una tapa algo más pequeña que la olla (o un círculo de papel de horno) y cuece 10 minutos.",
+"Añade la salsa de soja y cuece 10 minutos más hasta que las patatas estén tiernas y el caldo se haya reducido a la mitad más o menos.",
+"Añade los guisantes los últimos 2 minutos. Sirve en cuencos con el arroz."
+],
+"notes":{
+"0":"en láminas finas",
+"1":"en trozos grandes",
+"2":"en gajos",
+"3":"en trozos"
+},
+"blurb":"Ternera, patata y zanahoria al estilo casero japonés, cocidas en un caldo dulce de soja."
+},
+"pad-thai":{
+"name":"Pad thai con gambas",
+"method":[
+"Remoja los fideos en agua templada 20 a 30 minutos hasta que se doblen pero sigan firmes, y escúrrelos.",
+"Mezcla la salsa de pescado, el azúcar, el zumo de 1 lima, el vinagre y el chile en polvo.",
+"Calienta 2 cdas. del aceite en un wok a fuego fuerte. Fríe el tofu 3 minutos hasta que se dore, añade el ajo y las gambas y saltea 2 minutos hasta que las gambas se pongan rosadas.",
+"Aparta todo a un lado, añade el resto del aceite, casca los huevos y revuélvelos.",
+"Añade los fideos y la salsa y saltea 2 o 3 minutos hasta que los fideos estén tiernos y la salsa se absorba. Añade un chorrito de agua si se ve seco.",
+"Incorpora los brotes de soja y la cebolleta 30 segundos. Sirve con los cacahuetes y gajos de lima."
+],
+"notes":{
+"0":"planos, de unos 5 mm de ancho",
+"3":"firme, en dados pequeños",
+"5":"en trozos de 3 cm",
+"6":"machacado",
+"7":"picado",
+"9":"azúcar moreno o de palma",
+"11":"o 2 cdas. de pasta de tamarindo si la tienes"
+},
+"blurb":"Fideos de arroz salteados con gambas, huevo y tofu, terminados con cacahuetes, brotes de soja y lima."
+},
+"green-chicken-curry":{
+"name":"Curry verde tailandés de pollo",
+"method":[
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Fríe la pasta de curry en el aceite 1 minuto. Añade 200 ml de la leche de coco (la parte espesa de arriba de la lata) y cuece 2 minutos.",
+"Añade el pollo y remueve 3 minutos; luego vierte el resto de la leche de coco y cuece 10 minutos.",
+"Añade el calabacín y el pimiento y cuece 5 minutos hasta que estén justo tiernos.",
+"Sazona con la salsa de pescado, el azúcar y el zumo de lima. Incorpora las hojas de albahaca y sirve sobre el arroz."
+],
+"notes":{
+"0":"usa 2 para un curry más suave",
+"2":"en láminas",
+"3":"en láminas",
+"4":"en láminas",
+"8":"albahaca tailandesa si la encuentras",
+"10":"jazmín"
+},
+"blurb":"Pollo y verduras cocidos en leche de coco con pasta de curry verde, albahaca y lima."
+},
+"red-curry-pumpkin-tofu":{
+"name":"Curry rojo con calabaza y tofu",
+"method":[
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Fríe la pasta de curry en el aceite 1 minuto, añade 200 ml de la leche de coco y cuece 2 minutos.",
+"Añade la calabaza y el resto de la leche de coco y cuece 12 a 15 minutos hasta que la calabaza esté tierna.",
+"Añade el tofu y cuece 3 minutos; luego incorpora las espinacas hasta que se ablanden.",
+"Sazona con la salsa de soja, el azúcar y el zumo de lima, añade la albahaca y sirve con el arroz."
+],
+"notes":{
+"2":"pelada, en trozos de 3 cm",
+"3":"firme, en dados",
+"10":"jazmín"
+},
+"blurb":"Un curry de coco intenso con calabaza dulce, tofu y espinacas. La mayoría de las pastas de curry llevan pasta de gambas, así que los vegetarianos deben revisar la etiqueta."
+},
+"tom-yum-soup":{
+"name":"Sopa tom yum con gambas",
+"method":[
+"Golpea la hierba limón con un rodillo y córtala en trozos de 5 cm.",
+"Cuece el caldo a fuego suave con la hierba limón, el jengibre y el chile 5 minutos.",
+"Añade los champiñones y el tomate y cuece 3 minutos.",
+"Añade las gambas y cuece 2 o 3 minutos hasta que estén rosadas y bien hechas.",
+"Retira del fuego y sazona con la salsa de pescado, el azúcar y el zumo de lima: debe saber ácida, salada y picante. Añade el cilantro. Los trozos de hierba limón y jengibre no se comen."
+],
+"notes":{
+"2":"en rodajas (galanga si la encuentras)",
+"3":"en láminas",
+"4":"partido por la mitad",
+"5":"en gajos"
+},
+"blurb":"Sopa de gambas ácida y picante, aromática con hierba limón, chile y lima."
+},
+"tom-kha-gai":{
+"name":"Tom kha gai (sopa de pollo con coco)",
+"method":[
+"Golpea la hierba limón y córtala en trozos de 5 cm. Cuécela en el caldo con el jengibre 5 minutos.",
+"Añade la leche de coco y el pollo y cuece a fuego suave, sin que hierva fuerte, 6 a 8 minutos hasta que el pollo esté hecho.",
+"Añade los champiñones y el chile y cuece 3 minutos.",
+"Retira del fuego y sazona con la salsa de pescado, el zumo de lima y el azúcar. Añade el cilantro. Deja los trozos de hierba limón y jengibre en el cuenco."
+],
+"notes":{
+"0":"en láminas finas",
+"4":"en rodajas (galanga si la encuentras)",
+"5":"en láminas",
+"6":"partido por la mitad"
+},
+"blurb":"Una sopa de coco suave y cremosa con pollo, champiñones, hierba limón y lima."
+},
+"pad-kra-pao":{
+"name":"Pollo con albahaca tailandesa (pad kra pao)",
+"method":[
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Machaca o pica muy fino el ajo y el chile juntos.",
+"Calienta 2 cdas. del aceite hasta que esté muy caliente y fríe los huevos de uno en uno hasta que los bordes estén crujientes. Mantenlos calientes.",
+"Calienta el resto del aceite en un wok a fuego fuerte. Saltea el ajo y el chile 30 segundos y luego el pollo 4 o 5 minutos, deshaciéndolo, hasta que esté hecho.",
+"Añade la salsa de ostras, la salsa de soja, la salsa de pescado, el azúcar y 2 cdas. de agua y saltea un minuto.",
+"Incorpora la albahaca hasta que se ablande. Sirve sobre arroz con un huevo frito encima."
+],
+"notes":{
+"0":"picado fino",
+"8":"lo tradicional es la albahaca sagrada tailandesa",
+"10":"jazmín"
+},
+"blurb":"Pollo picado y picante salteado con ajo, chile y albahaca, coronado con un huevo frito crujiente."
+},
+"thai-beef-salad":{
+"name":"Ensalada tailandesa de ternera",
+"method":[
+"Aliño: mezcla el zumo de lima, la salsa de pescado, el azúcar, el chile y el ajo.",
+"Sella la ternera en el aceite en una sartén muy caliente, por tandas, 1 o 2 minutos hasta que esté dorada por fuera y aún rosada por dentro. Déjala reposar 3 minutos y mézclala con 2 cdas. del aliño.",
+"Junta la lechuga, el pepino, el tomate, la cebolla, la cebolleta y el cilantro.",
+"Añade la ternera y el resto del aliño, mezcla y cubre con los cacahuetes."
+],
+"notes":{
+"2":"troceada a mano",
+"3":"en láminas",
+"4":"en gajos",
+"5":"roja, en rodajas finas",
+"6":"en láminas",
+"11":"picado fino",
+"12":"machacado",
+"13":"machacado"
+},
+"blurb":"Ternera sellada mezclada con verduras crujientes, hierbas y un aliño intenso de lima y chile."
+},
+"pork-larb":{
+"name":"Larb de cerdo en hojas de lechuga",
+"method":[
+"Tuesta en seco 2 cdas. del arroz crudo en una sartén, removiendo, unos 5 minutos hasta que esté bien dorado. Muélelo fino.",
+"Cuece el resto del arroz: lávalo y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Fríe el cerdo en el aceite a fuego medio-alto, deshaciéndolo, unos 6 minutos hasta que esté hecho. Añade 2 cdas. de agua y retira del fuego.",
+"Incorpora la salsa de pescado, el zumo de lima, el azúcar y el chile, y luego la cebolla, la cebolleta, las hierbas y la mayor parte del arroz tostado.",
+"Reparte en las hojas de lechuga, espolvorea el resto del arroz tostado y sirve con el arroz."
+],
+"notes":{
+"0":"2 cdas. para tostar, el resto para servir",
+"6":"picado fino",
+"7":"roja, en rodajas finas",
+"8":"en láminas",
+"10":"lo tradicional es la menta si la tienes",
+"11":"con las hojas separadas"
+},
+"blurb":"Cerdo picado con lima, chile y hierbas, lleno de sabor, para comer en hojas de lechuga crujientes."
+},
+"chicken-satay":{
+"name":"Satay de pollo con salsa de cacahuete",
+"method":[
+"Mezcla el pollo con 100 ml de la leche de coco, el curry en polvo, 1 cda. del azúcar y 1 cda. de la salsa de pescado. Marina al menos 30 minutos. Al mismo tiempo, pon en remojo las brochetas de madera.",
+"Lava el arroz y cuécelo tapado a fuego suave en el doble de su volumen de agua con una pizca de sal, unos 12 minutos hasta que esté tierno. Mantenlo tapado.",
+"Salsa de cacahuete: tritura o pica muy fino los cacahuetes. Cuece el resto de la leche de coco con la pasta de curry 2 minutos y añade los cacahuetes, el resto del azúcar, la salsa de soja y el resto de la salsa de pescado. Cuece, removiendo, 5 minutos hasta que espese. Añade el zumo de lima y aligera con agua si hace falta.",
+"Ensarta el pollo en las brochetas, píntalo con el aceite y hazlo a la parrilla, a la barbacoa o a la plancha 8 a 10 minutos, girándolo, hasta que esté bien hecho y tostado en algunas partes.",
+"Sirve con la salsa de cacahuete, el pepino y el arroz."
+],
+"notes":{
+"0":"en tiras",
+"6":"tostados",
+"10":"en láminas",
+"11":"jazmín"
+},
+"blurb":"Brochetas de pollo a la parrilla marinadas en coco con una salsa de cacahuete casera. Marina al menos 30 minutos."
+},
+"pad-see-ew":{
+"name":"Pad see ew (fideos de arroz salteados con pollo)",
+"method":[
+"Remoja los fideos en agua templada hasta que se doblen y escúrrelos (los fideos de arroz anchos frescos solo hay que separarlos).",
+"Mezcla la salsa de soja, la salsa de ostras, el azúcar y 2 cdas. de agua.",
+"Calienta el aceite en un wok a fuego fuerte. Fríe el ajo 15 segundos y luego el pollo 4 minutos hasta que esté hecho.",
+"Añade los tallos del brócoli y después los ramilletes, con un chorrito de agua, y saltea 2 minutos.",
+"Aparta todo a un lado y revuelve los huevos en el hueco.",
+"Añade los fideos y la salsa y saltea, dejando reposar los fideos 30 segundos cada vez para que se tuesten un poco, unos 3 minutos. Termina con la pimienta."
+],
+"notes":{
+"0":"anchos",
+"1":"en láminas finas",
+"2":"tallos en rodajas, ramilletes pequeños",
+"4":"picado",
+"5":"y un chorrito de salsa de soja oscura si la tienes"
+},
+"blurb":"Fideos de arroz anchos salteados hasta tostarse un poco, con pollo, brócoli, huevo y soja."
+}
+}
+}

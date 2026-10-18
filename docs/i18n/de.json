@@ -1,0 +1,1170 @@
+{
+"ui":{
+"A to Z":"A bis Z",
+"About {price} per serving, counting whole packs, not counting {items}.":"Etwa {price} pro Portion, ganze Packungen gerechnet, ohne {items}.",
+"About {price} per serving, counting whole packs.":"Etwa {price} pro Portion, ganze Packungen gerechnet.",
+"Add":"Hinzufügen",
+"Add recipes to build your shopping list.":"Füge Rezepte hinzu, um deine Einkaufsliste zu erstellen.",
+"Add to my list":"Zu meiner Liste",
+"Added. Remove":"Hinzugefügt. Entfernen",
+"All":"Alle",
+"All ({n})":"Alle ({n})",
+"All aisles":"Alle Abteilungen",
+"BEST VALUE":"BESTER PREIS",
+"Bakery":"Bäckerei",
+"Biggest saving":"Größte Ersparnis",
+"Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, with prices per 100g.":"Erstelle eine Einkaufsliste und finde den günstigsten Weg, sie bei Woolworths, New World, PAK'nSAVE und den asiatischen Läden New Gum Sarn, TXG Mall, NJK und FromK zu kaufen, mit Preisen pro 100 g.",
+"Cheapest across {n} store":"Am günstigsten in {n} Laden",
+"Cheapest across {n} stores":"Am günstigsten über {n} Läden",
+"Compare individual products":"Einzelne Produkte vergleichen",
+"Cost of each extra stop":"Kosten für jeden weiteren Stopp",
+"Could also use it in: {recipes}.":"Passt auch zu: {recipes}.",
+"Could not load prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"Die Preise konnten nicht geladen werden. Wenn du diese Datei direkt geöffnet hast, stelle den Ordner docs über einen Webserver bereit (python3 -m http.server in docs/) oder nutze GitHub Pages.",
+"Could not load recipes or prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"Die Rezepte oder Preise konnten nicht geladen werden. Wenn du diese Datei direkt geöffnet hast, stelle den Ordner docs über einen Webserver bereit (python3 -m http.server in docs/) oder nutze GitHub Pages.",
+"Dairy & Eggs":"Milchprodukte & Eier",
+"Dearest full-list store is {price}.":"Der teuerste Laden für die ganze Liste kostet {price}.",
+"Dearest store with everything is {price}.":"Der teuerste Laden, der alles hat, kostet {price}.",
+"Deli & Chilled":"Feinkost & Kühlware",
+"Drinks":"Getränke",
+"Fewer servings of {recipe}":"Weniger Portionen {recipe}",
+"Fewer {item}":"Weniger {item}",
+"Filter by type":"Nach Art filtern",
+"Frozen":"Tiefkühl",
+"Fruit & Veg":"Obst & Gemüse",
+"Health & Beauty":"Gesundheit & Schönheit",
+"Household":"Haushalt",
+"In list ({n})":"Auf der Liste ({n})",
+"Ingredients (serves {n})":"Zutaten (für {n})",
+"Ingredients and method":"Zutaten und Zubereitung",
+"Language":"Sprache",
+"Loading prices...":"Preise werden geladen...",
+"Loading...":"Wird geladen...",
+"Lowest price per 100g / 100ml":"Niedrigster Preis pro 100 g / 100 ml",
+"Matched by name and size. Check it is the same product.":"Nach Name und Größe zugeordnet. Prüfe, ob es dasselbe Produkt ist.",
+"Meat & Seafood":"Fleisch & Meeresfrüchte",
+"Method":"Zubereitung",
+"More servings of {recipe}":"Mehr Portionen {recipe}",
+"More {item}":"Mehr {item}",
+"Need {amt}. Buy {what}":"Benötigt {amt}. Kaufe {what}",
+"No combination of these stores has everything on your list. Remove an item that shows \"Not found\" at a store to compare.":"Keine Kombination dieser Läden hat alles auf deiner Liste. Entferne einen Artikel, der in einem Laden „Nicht gefunden“ zeigt, um zu vergleichen.",
+"No comparable products yet.":"Noch keine vergleichbaren Produkte.",
+"No products match. Try a shorter search or another aisle.":"Keine passenden Produkte. Versuche eine kürzere Suche oder eine andere Abteilung.",
+"No recipes match. Try a shorter search.":"Keine passenden Rezepte. Versuche eine kürzere Suche.",
+"No single store sells everything. {store} has {have} of {total} items; not there: {items}.":"Kein einzelner Laden verkauft alles. {store} hat {have} von {total} Artikeln; fehlt dort: {items}.",
+"No store has the products for this list yet.":"Noch kein Laden hat die Produkte für diese Liste.",
+"No supermarket product found yet for: {items}. Add these by hand.":"Noch kein Supermarktprodukt gefunden für: {items}. Füge sie von Hand hinzu.",
+"Not found at {stores}":"Nicht gefunden bei {stores}",
+"Not refreshed last run: {stores}.":"Beim letzten Abruf nicht aktualisiert: {stores}.",
+"One store: {store}":"Ein Laden: {store}",
+"Only products found at two or more stores are listed, because those are the ones that can be compared. \"Usual\" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only. TXG Mall, NJK and FromK prices are from their online shops; check delivery or pickup with each shop.":"Nur Produkte, die es in zwei oder mehr Läden gibt, werden angezeigt, weil sich nur diese vergleichen lassen. „Normal“ ist der reguläre Preis des Ladens neben einem Angebot, und ein Angebot zählt als echte Ersparnis, wenn es mindestens 10 % darunter liegt. Die Preise stammen von je einer Filiale pro Kette, dein Laden vor Ort kann also abweichen. New Gum Sarn ist ein einzelner Laden in Point England, Auckland, und seine Tiefkühl- und Kühlwaren gibt es nur per Click & Collect. Die Preise von TXG Mall, NJK und FromK stammen aus deren Onlineshops; kläre Lieferung oder Abholung mit dem jeweiligen Laden.",
+"Only store that has everything.":"Einziger Laden, der alles hat.",
+"Only {pct}% under usual {price}":"Nur {pct} % unter dem Normalpreis von {price}",
+"Pantry":"Vorratsschrank",
+"Perishable: use or freeze soon.":"Verderblich: bald verbrauchen oder einfrieren.",
+"Pick the meals you want to cook. You get one shopping list, with the cheapest packs for what you need, and the cheapest store or stores to buy it from.":"Wähle die Gerichte, die du kochen möchtest. Du bekommst eine einzige Einkaufsliste mit den günstigsten Packungen für das, was du brauchst, und dem günstigsten Laden oder den günstigsten Läden zum Einkaufen.",
+"Prices updated {when}.":"Preise aktualisiert am {when}.",
+"Products":"Produkte",
+"Quantities are for the servings shown and scale when you change them. For each ingredient the site adds up what every chosen recipe needs, then finds the cheapest combination of pack sizes that covers it, and says what is left over. Products are picked by matching names, so check the pack you are buying. Items sold each (an onion, a lemon) use an average weight. Recipes do not include nutrition or allergen information. Prices come from one store per chain, so your local store may differ.":"Die Mengen gelten für die angezeigten Portionen und passen sich an, wenn du sie änderst. Für jede Zutat addiert die Seite, was jedes gewählte Rezept braucht, sucht die günstigste Kombination von Packungsgrößen, die dafür reicht, und zeigt, was übrig bleibt. Produkte werden anhand ihres Namens ausgewählt, prüfe also die Packung, die du kaufst. Stückware (eine Zwiebel, eine Zitrone) wird mit einem Durchschnittsgewicht gerechnet. Die Rezepte enthalten keine Nährwert- oder Allergenangaben. Die Preise stammen von je einer Filiale pro Kette, dein Laden vor Ort kann also abweichen.",
+"Real saving: {pct}% under usual {price}":"Echte Ersparnis: {pct} % unter dem Normalpreis von {price}",
+"Recipes":"Rezepte",
+"Sample prices for testing. Run the scraper to load real prices.":"Beispielpreise zum Testen. Starte den Scraper, um echte Preise zu laden.",
+"Search butter, mince, toilet paper":"Butter, Hackfleisch, Toilettenpapier suchen",
+"Search for products and press Add to compare totals.":"Suche nach Produkten und tippe auf Hinzufügen, um die Summen zu vergleichen.",
+"Search products":"Produkte suchen",
+"Search recipes":"Rezepte suchen",
+"Search recipes or ingredients":"Rezepte oder Zutaten suchen",
+"Shelf Check Recipes":"Shelf Check Rezepte",
+"Shop by aisle":"Nach Abteilung einkaufen",
+"Shop by recipe":"Nach Rezept einkaufen",
+"Show more ({n} left)":"Mehr anzeigen (noch {n})",
+"Snacks & Confectionery":"Snacks & Süßwaren",
+"Sort":"Sortieren",
+"Specials only":"Nur Angebote",
+"Tick what you already have":"Hake ab, was du schon hast",
+"Total servings: {n}.":"Portionen insgesamt: {n}.",
+"Try ticking items you already have.":"Hake Artikel ab, die du schon hast.",
+"Two stores: {stores}":"Zwei Läden: {stores}",
+"Use club prices":"Clubpreise verwenden",
+"Use club prices (Everyday Rewards, Clubcard)":"Clubpreise verwenden (Everyday Rewards, Clubcard)",
+"Woolworths prices are from {date}.":"Die Woolworths-Preise sind vom {date}.",
+"Your list":"Deine Liste",
+"Your recipes":"Deine Rezepte",
+"Your recipes and shopping list":"Deine Rezepte und Einkaufsliste",
+"about {amt} loose, {pack} ({price})":"etwa {amt} lose, {pack} ({price})",
+"can":"Dose",
+"clove":"Zehe",
+"cup":"Tasse",
+"each":"Stück",
+"g":"g",
+"ml":"ml",
+"pinch":"Prise",
+"servings":"Portionen",
+"slice":"Scheibe",
+"stalk":"Stange",
+"tbsp":"EL",
+"tsp":"TL",
+"{amt} left over.":"{amt} übrig.",
+"{min} min · serves {n}":"{min} Min. · für {n}",
+"{n} each":"{n} Stück",
+"{n} extra stop at {price} each: {total} all in.":"{n} weiterer Stopp zu je {price}: insgesamt {total}.",
+"{n} extra stops at {price} each: {total} all in.":"{n} weitere Stopps zu je {price}: insgesamt {total}.",
+"{n} product at 2 or more stores":"{n} Produkt in 2 oder mehr Läden",
+"{n} product on special":"{n} Produkt im Angebot",
+"{n} products at 2 or more stores":"{n} Produkte in 2 oder mehr Läden",
+"{n} products on special":"{n} Produkte im Angebot",
+"{n} recipe":"{n} Rezept",
+"{n} recipes":"{n} Rezepte",
+"{n} × {pack} ({price} each)":"{n} × {pack} (je {price})",
+"{price} each":"je {price}",
+"{store} does not sell: {items}. Buy it at another store (the other plans include it) or tick it below if you already have it.":"{store} verkauft nicht: {items}. Kaufe es in einem anderen Laden (die anderen Pläne enthalten es) oder hake es unten ab, wenn du es schon hast.",
+"{store} does not sell: {items}. Buy these at another store (the other plans include them) or tick them below if you already have them.":"{store} verkauft nicht: {items}. Kaufe diese in einem anderen Laden (die anderen Pläne enthalten sie) oder hake sie unten ab, wenn du sie schon hast."
+},
+"tags":{
+"beef":"Rind",
+"breakfast":"Frühstück",
+"budget":"günstig",
+"chicken":"Hähnchen",
+"chinese":"chinesisch",
+"comfort":"Wohlfühlessen",
+"curry":"Curry",
+"dinner":"Abendessen",
+"eggs":"Eier",
+"fish":"Fisch",
+"japanese":"japanisch",
+"lunch":"Mittagessen",
+"noodles":"Nudeln",
+"one-pan":"eine Pfanne",
+"pasta":"Pasta",
+"pork":"Schwein",
+"quick":"schnell",
+"rice":"Reis",
+"salad":"Salat",
+"sausages":"Würstchen",
+"seafood":"Meeresfrüchte",
+"soup":"Suppe",
+"thai":"thailändisch",
+"vegetarian":"vegetarisch"
+},
+"ingredients":{
+"chicken-breast":"Hähnchenbrust",
+"chicken-thigh":"Hähnchenschenkel",
+"beef-mince":"Rinderhack",
+"beef-strips":"Rindfleischstreifen zum Braten",
+"sausages":"Würstchen",
+"bacon":"Speck",
+"ham":"Kochschinken",
+"salmon-fillet":"Lachsfilets",
+"tuna-can":"Thunfisch aus der Dose",
+"eggs":"Eier",
+"milk":"Milch",
+"butter":"Butter",
+"cream":"Sahne",
+"cheese":"Cheddar",
+"mozzarella":"Mozzarella",
+"parmesan":"Parmesan",
+"yoghurt":"Naturjoghurt",
+"onion":"Zwiebeln",
+"garlic":"Knoblauch",
+"potato":"Kartoffeln",
+"pumpkin":"Kürbis",
+"carrot":"Karotten",
+"broccoli":"Brokkoli",
+"mushroom":"Champignons",
+"spinach":"Babyspinat",
+"capsicum":"Paprika",
+"tomato-fresh":"Frische Tomaten",
+"zucchini":"Zucchini",
+"frozen-peas":"Tiefkühlerbsen",
+"frozen-mixed-veg":"Tiefkühl-Gemüsemischung",
+"lettuce":"Salat",
+"avocado":"Avocado",
+"lemon":"Zitronen",
+"banana":"Bananen",
+"ginger":"Frischer Ingwer",
+"coriander":"Frischer Koriander",
+"basil":"Frisches Basilikum",
+"olive-oil":"Olivenöl",
+"vegetable-oil":"Pflanzenöl",
+"soy-sauce":"Sojasoße",
+"salt":"Salz",
+"pepper":"Schwarzer Pfeffer",
+"flour":"Weizenmehl",
+"sugar":"Zucker",
+"baking-powder":"Backpulver",
+"cornflour":"Speisestärke",
+"rice":"Reis",
+"spaghetti":"Spaghetti",
+"penne":"Penne oder Makkaroni",
+"noodles":"Eier- oder Hokkien-Nudeln",
+"tomato-can":"Gehackte Tomaten aus der Dose",
+"tomato-paste":"Tomatenmark",
+"chicken-stock":"Hühnerbrühe (flüssig)",
+"coconut-milk":"Kokosmilch",
+"curry-powder":"Currypulver",
+"garam-masala":"Garam Masala",
+"ground-cumin":"Kreuzkümmel, gemahlen",
+"paprika":"Paprikapulver",
+"chilli-powder":"Chilipulver",
+"mixed-herbs":"Kräutermischung",
+"honey":"Honig",
+"oats":"Haferflocken",
+"bread":"Toastbrot",
+"tortilla":"Tortilla-Wraps",
+"flatbread":"Fladenbrot oder Pita",
+"burger-buns":"Burgerbrötchen",
+"kidney-beans":"Kidneybohnen aus der Dose",
+"chickpeas":"Kichererbsen aus der Dose",
+"spring-onion":"Frühlingszwiebeln",
+"sesame-oil":"Sesamöl",
+"oyster-sauce":"Austernsoße",
+"fish-sauce":"Fischsoße",
+"rice-vinegar":"Reisessig",
+"mirin":"Mirin",
+"shaoxing-wine":"Shaoxing- oder chinesischer Kochwein",
+"hoisin-sauce":"Hoisinsoße",
+"chilli-bean-paste":"Chili-Bohnen-Paste (Doubanjiang)",
+"five-spice":"Chinesisches Fünf-Gewürze-Pulver",
+"tofu":"Tofu",
+"pork-mince":"Schweinehack",
+"pork-belly":"Schweinebauch",
+"prawns":"Rohe Garnelen",
+"bok-choy":"Pak Choi",
+"cabbage":"Kohl (Chinakohl oder Weißkohl)",
+"cucumber":"Gurke",
+"eggplant":"Aubergine",
+"bean-sprouts":"Sojasprossen",
+"red-chilli":"Frische rote Chilis",
+"lime":"Limetten",
+"lemongrass":"Zitronengras",
+"red-curry-paste":"Thailändische rote Currypaste",
+"green-curry-paste":"Thailändische grüne Currypaste",
+"japanese-curry-roux":"Japanische Currywürfel (z. B. Golden Curry)",
+"rice-noodles":"Getrocknete Reisnudeln",
+"udon":"Udon-Nudeln",
+"sushi-rice":"Japanischer Rund- oder Mittelkornreis",
+"panko":"Panko-Paniermehl",
+"peanuts":"Geröstete Erdnüsse",
+"sesame-seeds":"Sesamsamen"
+},
+"recipes":{
+"butter-chicken":{
+"name":"Butter Chicken mit Reis",
+"method":[
+"Den Reis waschen und in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich kochen. Zugedeckt halten.",
+"Die Butter in einer großen, tiefen Pfanne bei mittlerer Hitze schmelzen. Die Zwiebel 5 Minuten weich dünsten, dann Knoblauch und Ingwer 1 Minute mitbraten.",
+"Currypulver und Garam Masala einrühren und 30 Sekunden braten, bis es duftet.",
+"Das Hähnchen dazugeben und in den Gewürzen wenden, bis es außen nicht mehr rosa ist, etwa 4 Minuten.",
+"Tomaten und 100 ml Wasser angießen, salzen und unter gelegentlichem Rühren 20 Minuten sanft köcheln lassen, bis das Hähnchen durchgegart ist.",
+"Die Sahne einrühren und 5 Minuten weiterköcheln lassen, bis die Soße glänzt. Abschmecken und bei Bedarf salzen. Über dem Reis servieren."
+],
+"notes":{
+"0":"in Stücke geschnitten",
+"2":"fein gewürfelt",
+"3":"zerdrückt",
+"4":"gerieben"
+},
+"blurb":"Ein mildes, cremiges Curry, das sich mit Gewürzen aus dem Vorrat leicht kochen lässt."
+},
+"spaghetti-bolognese":{
+"name":"Spaghetti Bolognese",
+"method":[
+"Das Öl in einer großen Pfanne bei mittlerer bis hoher Hitze erhitzen. Zwiebel und Karotte 5 Minuten weich braten, dann den Knoblauch 1 Minute mitbraten.",
+"Das Hackfleisch dazugeben, mit einem Löffel zerteilen und rundum anbraten, etwa 8 Minuten.",
+"Tomatenmark einrühren, dann Tomaten, Kräuter, Salz und Pfeffer. Bei niedriger Hitze 30 Minuten köcheln lassen und ab und zu umrühren, bis die Soße dick ist.",
+"Die Spaghetti in einem großen Topf mit kochendem Salzwasser nach Packungsangabe garen. Eine Tasse Nudelwasser aufheben, dann abgießen.",
+"Die Nudeln mit der Soße mischen und bei Bedarf mit etwas Nudelwasser lockern. Mit Parmesan servieren."
+],
+"notes":{
+"1":"gewürfelt",
+"2":"gerieben",
+"3":"zerdrückt",
+"9":"gerieben"
+},
+"blurb":"Der Klassiker für den Feierabend. Lässt sich gut einfrieren."
+},
+"chicken-fried-rice":{
+"name":"Gebratener Reis mit Hähnchen",
+"method":[
+"Den Reis kochen, auf einem Blech ausbreiten und mindestens 20 Minuten abkühlen lassen. Kalter Reis lässt sich viel besser braten als heißer.",
+"Die Hälfte des Öls in einer großen Pfanne oder einem Wok stark erhitzen. Das Hähnchen 5 bis 6 Minuten goldbraun und durchgaren, dann auf einen Teller geben.",
+"Das restliche Öl, Knoblauch und Ingwer dazugeben und 30 Sekunden rühren. Das Tiefkühlgemüse hinzufügen und 3 Minuten braten.",
+"Alles an den Rand schieben, die Eier hineinschlagen und verrühren, bis sie gerade gestockt sind.",
+"Reis und Hähnchen dazugeben, die Sojasoße darübergießen und bei starker Hitze 3 Minuten schwenken, bis alles heiß und leicht knusprig ist."
+],
+"notes":{
+"2":"gewürfelt",
+"6":"zerdrückt",
+"7":"gerieben"
+},
+"blurb":"Verwertet übrigen Reis und eine Tüte Tiefkühlgemüse."
+},
+"beef-tacos":{
+"name":"Weiche Rindfleisch-Tacos",
+"method":[
+"Das Öl in einer Pfanne bei mittlerer bis hoher Hitze erhitzen und die Zwiebel 4 Minuten braten. Den Knoblauch 30 Sekunden mitbraten.",
+"Das Hackfleisch dazugeben und anbraten, dabei zerteilen, etwa 8 Minuten.",
+"Chili, Kreuzkümmel, Paprika und Tomatenmark mit 100 ml Wasser einrühren. 8 Minuten köcheln lassen, bis die Soße am Fleisch haftet.",
+"Die Tortillas in einer trockenen Pfanne je Seite 20 Sekunden erwärmen oder in Alufolie im Ofen.",
+"Die Avocado mit einer Prise Salz zerdrücken. Jede Tortilla mit Hackfleisch, Avocado, Tomate, Salat und Käse füllen."
+],
+"notes":{
+"2":"gewürfelt",
+"3":"gewürfelt",
+"4":"in feine Streifen geschnitten",
+"5":"gerieben",
+"10":"zerdrückt"
+},
+"blurb":"Günstig, schnell und von Kindern leicht selbst zu belegen."
+},
+"creamy-chicken-mushroom-pasta":{
+"name":"Cremige Pasta mit Hähnchen und Pilzen",
+"method":[
+"Die Nudeln in Salzwasser nach Packungsangabe kochen. Abgießen und etwas Kochwasser aufheben.",
+"Das Öl in einer großen Pfanne bei mittlerer bis hoher Hitze erhitzen. Das Hähnchen 5 bis 6 Minuten goldbraun und durchgaren, dann beiseitestellen.",
+"In derselben Pfanne Zwiebel und Champignons 6 Minuten braten, bis die Pilze goldbraun sind. Den Knoblauch 1 Minute mitbraten.",
+"Brühe und Sahne angießen und 4 Minuten köcheln lassen, bis es leicht eindickt.",
+"Das Hähnchen zurück in die Pfanne geben, Nudeln und Spinat dazugeben und schwenken, bis der Spinat zusammenfällt. Parmesan unterrühren und bei Bedarf mit Nudelwasser lockern."
+],
+"notes":{
+"0":"in Scheiben geschnitten",
+"1":"in Scheiben geschnitten",
+"4":"zerdrückt",
+"5":"gewürfelt",
+"7":"gerieben"
+}
+},
+"sausage-tray-bake":{
+"name":"Würstchen und Gemüse vom Blech",
+"method":[
+"Den Ofen auf 220 °C (200 °C Umluft) vorheizen. Kartoffel und Karotte mit Öl, Kräutern und Salz auf ein großes Blech geben und gut mischen.",
+"15 Minuten rösten. Zwiebel, Paprika und Würstchen aufs Blech geben und alles wenden.",
+"Weitere 25 bis 30 Minuten rösten, einmal wenden, bis die Würstchen gebräunt und durchgegart und die Kartoffeln an den Rändern knusprig sind."
+],
+"notes":{
+"1":"in Stücke geschnitten",
+"2":"in Scheiben geschnitten",
+"3":"in groben Stücken",
+"4":"in Spalten"
+},
+"blurb":"Ein Blech, kaum Abwasch."
+},
+"salmon-rice-broccoli":{
+"name":"Honig-Soja-Lachs mit Reis und Brokkoli",
+"method":[
+"Den Reis kochen. Sojasoße, Honig, Knoblauch, Ingwer und den Saft einer halben Zitrone in einer kleinen Schüssel mischen.",
+"Das Öl in einer beschichteten Pfanne bei mittlerer bis hoher Hitze erhitzen. Den Lachs auf der Hautseite 4 Minuten braten, wenden und weitere 2 Minuten garen.",
+"Die Soße über den Lachs gießen und 1 Minute blubbern lassen, dabei den Fisch damit übergießen.",
+"Den Brokkoli 3 bis 4 Minuten dämpfen oder kochen, bis er leuchtend grün und gerade weich ist.",
+"Den Lachs auf dem Reis mit Brokkoli und Zitronenspalten servieren."
+],
+"notes":{
+"2":"in Röschen geteilt",
+"5":"zerdrückt",
+"8":"gerieben"
+}
+},
+"veg-stir-fry-noodles":{
+"name":"Gebratene Nudeln mit Gemüse",
+"method":[
+"Die Nudeln nach Packungsangabe zubereiten, abgießen und kalt abspülen.",
+"Sojasoße und Honig mit 3 Esslöffeln Wasser mischen.",
+"Das Öl im Wok stark erhitzen. Karotte und Brokkoli 3 Minuten pfannenrühren, dann Paprika und Pilze 2 Minuten mitbraten.",
+"Knoblauch und Ingwer 30 Sekunden mitbraten, dann Nudeln und Soße dazugeben. 2 bis 3 Minuten schwenken, bis alles heiß ist und glänzt."
+],
+"notes":{
+"1":"in kleinen Röschen",
+"2":"in Scheiben geschnitten",
+"3":"in dünnen Scheiben",
+"4":"in Scheiben geschnitten",
+"5":"zerdrückt",
+"6":"gerieben"
+}
+},
+"chicken-caesar-salad":{
+"name":"Caesar Salad mit Hähnchen",
+"method":[
+"Den Ofen auf 200 °C vorheizen. Die Brotwürfel mit 1 Esslöffel Öl und einer Prise Salz mischen und 10 Minuten goldbraun backen.",
+"Das Hähnchen salzen und pfeffern. In einer Pfanne mit etwas Öl je Seite 5 bis 6 Minuten durchgaren. 5 Minuten ruhen lassen, dann aufschneiden.",
+"Die Eier 7 Minuten kochen, in kaltem Wasser abkühlen, schälen und halbieren. Den Speck knusprig braten.",
+"Für das Dressing das restliche Öl, den Zitronensaft, Knoblauch und die Hälfte des Parmesans verquirlen.",
+"Den Salat mit dem Dressing mischen, dann Hähnchen, Speck, Eier, Croûtons und den restlichen Parmesan darauf verteilen."
+],
+"notes":{
+"1":"gezupft",
+"2":"gehackt",
+"4":"gehobelt",
+"5":"gewürfelt für Croûtons",
+"8":"zerdrückt"
+}
+},
+"beef-broccoli-stir-fry":{
+"name":"Rindfleisch mit Brokkoli aus dem Wok",
+"method":[
+"Den Reis kochen. Das Rindfleisch mit Speisestärke und einem Esslöffel Sojasoße mischen. Die restliche Sojasoße mit Honig und 100 ml Wasser verrühren.",
+"Die Hälfte des Öls im Wok sehr heiß werden lassen. Das Rindfleisch in zwei Portionen 1 bis 2 Minuten scharf anbraten und beiseitestellen.",
+"Das restliche Öl dazugeben und den Brokkoli mit einem Schuss Wasser 3 Minuten garen. Knoblauch und Ingwer 30 Sekunden mitbraten.",
+"Das Rindfleisch zurückgeben, die Soße angießen und 1 bis 2 Minuten garen, bis sie eindickt. Über Reis servieren."
+],
+"notes":{
+"2":"Röschen",
+"5":"zerdrückt",
+"6":"gerieben"
+}
+},
+"cottage-pie":{
+"name":"Hackfleisch-Kartoffelpüree-Auflauf (Cottage Pie)",
+"method":[
+"Die Kartoffeln in Salzwasser 15 bis 20 Minuten weich kochen. Abgießen, mit Butter und Milch zerstampfen und würzen.",
+"Inzwischen Zwiebel und Karotte in einer großen ofenfesten Pfanne 6 Minuten braten. Das Hackfleisch dazugeben und 8 Minuten anbraten.",
+"Mehl und Tomatenmark einrühren, dann die Brühe. 15 Minuten köcheln lassen, bis es dick ist, die Erbsen in den letzten 3 Minuten dazugeben. Würzen.",
+"Den Ofen auf 200 °C vorheizen. Das Püree auf dem Hackfleisch verteilen, mit einer Gabel auflockern und mit Käse bestreuen.",
+"20 bis 25 Minuten backen, bis es goldbraun ist und blubbert."
+],
+"notes":{
+"1":"geschält und gewürfelt",
+"4":"gewürfelt",
+"5":"gewürfelt",
+"10":"gerieben"
+}
+},
+"ham-cheese-omelette":{
+"name":"Omelett mit Schinken und Käse",
+"method":[
+"Die Eier mit Milch, Salz und Pfeffer verquirlen.",
+"Ein Viertel der Butter in einer beschichteten Pfanne bei mittlerer Hitze schmelzen. Ein Viertel der Eiermasse hineingießen und schwenken.",
+"Wenn der Boden gestockt, die Oberfläche aber noch leicht feucht ist, ein Viertel von Schinken, Käse und Spinat darauf verteilen.",
+"Das Omelett zur Hälfte zusammenklappen, auf einen Teller gleiten lassen und die anderen genauso zubereiten."
+],
+"notes":{
+"1":"gewürfelt",
+"2":"gerieben"
+}
+},
+"pumpkin-soup":{
+"name":"Suppe aus geröstetem Kürbis",
+"method":[
+"Den Ofen auf 200 °C vorheizen. Den Kürbis mit etwas Öl und Salz 30 Minuten weich und goldbraun rösten.",
+"Die Butter in einem großen Topf schmelzen und die Zwiebel 5 Minuten dünsten. Knoblauch und Currypulver 1 Minute mitbraten.",
+"Den gerösteten Kürbis und die Brühe dazugeben, aufkochen und 10 Minuten köcheln lassen.",
+"Glatt pürieren, die Sahne einrühren und abschmecken. Mit geröstetem Brot servieren."
+],
+"notes":{
+"0":"geschält und gewürfelt",
+"1":"gehackt",
+"6":"zum Servieren"
+},
+"blurb":"Für eine vegetarische Version Gemüsebrühe statt Hühnerbrühe verwenden."
+},
+"chicken-noodle-soup":{
+"name":"Hühnersuppe mit Nudeln",
+"method":[
+"Brühe, Hähnchen, Zwiebel, Karotte, Knoblauch, Ingwer und Salz in einen großen Topf geben. Sanft aufkochen und 15 bis 20 Minuten garen, bis das Hähnchen durchgegart ist.",
+"Das Hähnchen herausnehmen, mit zwei Gabeln zerzupfen und zurück in den Topf geben.",
+"Die Nudeln dazugeben und nach Packungsangabe garen. Abschmecken, nachsalzen und servieren."
+],
+"notes":{
+"2":"in Scheiben geschnitten",
+"3":"gewürfelt",
+"4":"zerdrückt",
+"6":"gerieben"
+}
+},
+"mac-and-cheese":{
+"name":"Überbackene Makkaroni mit Käse",
+"method":[
+"Die Nudeln 2 Minuten kürzer als auf der Packung angegeben kochen und abgießen.",
+"Die Butter in einem Topf schmelzen, das Mehl einrühren und 1 Minute anschwitzen. Nach und nach die Milch einrühren und 5 Minuten köcheln lassen, bis es eindickt.",
+"Vom Herd nehmen und drei Viertel des Käses, Salz und Pfeffer einrühren. Nudeln und Erbsen unterheben.",
+"In eine Auflaufform geben, mit dem restlichen Käse bestreuen und bei 200 °C 15 bis 20 Minuten goldbraun backen."
+],
+"notes":{
+"0":"Makkaroni oder Ähnliches",
+"1":"gerieben"
+}
+},
+"flatbread-pizzas":{
+"name":"Fladenbrot-Pizza Margherita",
+"method":[
+"Den Ofen auf 220 °C vorheizen. Die Fladenbrote auf Bleche legen und leicht mit Öl bestreichen.",
+"Das Tomatenmark mit 2 Esslöffeln Wasser verrühren und auf den Fladenbroten verstreichen.",
+"Mit Mozzarella, Tomatenscheiben und nach Wunsch Schinken belegen.",
+"8 bis 10 Minuten backen, bis der Käse blubbert und die Ränder knusprig sind. Mit Basilikum bestreuen."
+],
+"notes":{
+"3":"in Scheiben geschnitten",
+"6":"nach Wunsch"
+}
+},
+"chilli-con-carne":{
+"name":"Chili con Carne",
+"method":[
+"Das Öl in einem großen Topf erhitzen und Zwiebel und Paprika 6 Minuten braten. Knoblauch und Gewürze 1 Minute mitbraten.",
+"Das Hackfleisch dazugeben und 8 Minuten anbraten, dabei zerteilen.",
+"Tomatenmark, Tomaten, abgetropfte Bohnen, Salz und 150 ml Wasser einrühren. Mit leicht geöffnetem Deckel 35 bis 40 Minuten köcheln lassen, bis es dick ist.",
+"Den Reis kochen und das Chili darauf servieren."
+],
+"notes":{
+"3":"gewürfelt",
+"4":"gewürfelt",
+"5":"zerdrückt"
+},
+"blurb":"Am nächsten Tag noch besser. Lässt sich gut einfrieren."
+},
+"honey-soy-chicken-thighs":{
+"name":"Honig-Soja-Hähnchenschenkel",
+"method":[
+"Honig, Sojasoße, Knoblauch und Ingwer verquirlen. Über das Hähnchen gießen und 15 Minuten marinieren, oder über Nacht im Kühlschrank.",
+"Den Ofen auf 200 °C vorheizen. Das Hähnchen auf ein ausgelegtes Blech legen, die Marinade darübergießen und 30 bis 35 Minuten rösten, einmal begießen, bis es klebrig glasiert und durchgegart ist.",
+"Den Reis kochen und den Brokkoli dämpfen. Das Hähnchen mit dem Bratensaft beträufelt servieren."
+],
+"notes":{
+"3":"zerdrückt",
+"4":"gerieben"
+}
+},
+"zucchini-fritters":{
+"name":"Zucchini-Käse-Puffer",
+"method":[
+"Die geriebene Zucchini mit der Hälfte des Salzes mischen und 10 Minuten stehen lassen. In einem sauberen Küchentuch so viel Flüssigkeit wie möglich auspressen.",
+"Die Zucchini mit Eiern, Mehl, Backpulver, Käse und dem restlichen Salz mischen.",
+"Das Öl in einer Pfanne bei mittlerer Hitze erhitzen. Gehäufte Löffel Teig hineingeben und leicht flach drücken. Je Seite 3 Minuten goldbraun braten.",
+"Mit dem Joghurt und einem Spritzer Zitrone servieren."
+],
+"notes":{
+"0":"gerieben",
+"3":"gerieben",
+"5":"zum Servieren"
+}
+},
+"tuna-pasta-bake":{
+"name":"Cremiger Nudelauflauf mit Thunfisch",
+"method":[
+"Den Ofen auf 200 °C vorheizen. Die Nudeln 2 Minuten kürzer als auf der Packung angegeben kochen und abgießen.",
+"Die Zwiebel im Öl 5 Minuten braten, den Knoblauch 1 Minute mitbraten, dann Tomaten und Sahne dazugeben. 5 Minuten köcheln lassen.",
+"Thunfisch, Erbsen und Nudeln unterrühren und in eine Auflaufform geben.",
+"Mit Käse bestreuen und 15 bis 20 Minuten goldbraun backen."
+],
+"notes":{
+"1":"2 Dosen, abgetropft",
+"3":"gerieben",
+"4":"gewürfelt",
+"7":"zerdrückt"
+}
+},
+"sausages-and-mash":{
+"name":"Würstchen mit Kartoffelpüree und Zwiebelsoße",
+"method":[
+"Die Kartoffeln in Salzwasser 15 bis 20 Minuten kochen. Abgießen und mit Butter und Milch zerstampfen.",
+"Die Würstchen in einer Pfanne mit dem Öl unter Wenden etwa 12 Minuten braten, bis sie durchgegart sind. Herausnehmen und warm halten.",
+"In derselben Pfanne die Zwiebeln 10 Minuten weich und goldbraun braten. Das Mehl einrühren, dann nach und nach die Brühe dazugeben und 5 Minuten köcheln lassen, bis die Soße dick ist.",
+"Die Erbsen kochen und alles zusammen servieren."
+],
+"notes":{
+"5":"in Scheiben geschnitten"
+}
+},
+"beef-burgers":{
+"name":"Hausgemachte Rindfleisch-Burger",
+"method":[
+"Das Hackfleisch mit geriebener Zwiebel, Ei, Salz und Pfeffer mischen. 4 Patties formen, etwas breiter als die Brötchen, und 10 Minuten kühlen.",
+"Das Öl in einer Pfanne bei mittlerer bis hoher Hitze erhitzen. Die Patties je Seite 4 bis 5 Minuten durchbraten und in der letzten Minute den Käse darauflegen.",
+"Die Brötchen rösten und mit Salat, Tomate, Zwiebel und den Patties füllen."
+],
+"notes":{
+"3":"in Scheiben geschnitten",
+"4":"in Scheiben oder gerieben",
+"5":"halb gerieben, halb in Scheiben"
+}
+},
+"scrambled-eggs-avocado-toast":{
+"name":"Rührei und Avocado auf Toast",
+"method":[
+"Die Eier mit Milch, Salz und Pfeffer verquirlen. Das Brot toasten.",
+"Die Butter in einer beschichteten Pfanne bei schwacher Hitze schmelzen, die Eier dazugeben und mit einem Spatel 3 bis 4 Minuten langsam rühren, bis sie weich gestockt sind.",
+"Die Avocado mit einer Prise Salz zerdrücken und auf den Toast streichen. Die Eier darauf geben."
+],
+"notes":{}
+},
+"banana-pancakes":{
+"name":"Bananen-Pfannkuchen",
+"method":[
+"Mehl, Backpulver und Zucker in einer Schüssel mischen. Eier, Milch und 30 g der geschmolzenen Butter verquirlen und unter die trockenen Zutaten rühren, bis alles gerade vermischt ist. Ein paar Klümpchen sind in Ordnung.",
+"Eine beschichtete Pfanne bei mittlerer Hitze mit etwas von der restlichen Butter erhitzen. Pro Pfannkuchen 1/4 Tasse Teig hineingeben.",
+"2 Minuten backen, bis Blasen erscheinen, wenden und weitere 1 bis 2 Minuten backen. Mit dem Rest wiederholen.",
+"Mit Banane und etwas Honig servieren."
+],
+"notes":{
+"5":"geschmolzen",
+"6":"in Scheiben geschnitten"
+}
+},
+"chicken-wraps":{
+"name":"Würzige Hähnchen-Wraps",
+"method":[
+"Das Hähnchen mit Paprika, Öl, Salz und dem Saft einer halben Zitrone mischen. In einer heißen Pfanne 6 bis 8 Minuten goldbraun und durchgaren.",
+"Für die Soße Knoblauch und einen Spritzer Zitrone unter den Joghurt rühren.",
+"Die Tortillas erwärmen, mit der Joghurtsoße bestreichen und mit Hähnchen, Salat, Tomate und Käse füllen. Aufrollen und servieren."
+],
+"notes":{
+"0":"in Scheiben geschnitten",
+"2":"in feine Streifen geschnitten",
+"3":"in Scheiben geschnitten",
+"4":"gerieben",
+"9":"zerdrückt"
+}
+},
+"banana-honey-porridge":{
+"name":"Haferbrei mit Banane und Honig",
+"method":[
+"Haferflocken, Milch und Salz in einen Topf geben und bei mittlerer Hitze sanft aufkochen.",
+"5 bis 7 Minuten unter häufigem Rühren garen, bis der Brei dick und cremig ist.",
+"In Schalen füllen und mit Banane und Honig belegen."
+],
+"notes":{
+"2":"in Scheiben geschnitten"
+}
+},
+"chickpea-spinach-curry":{
+"name":"Kokos-Curry mit Kichererbsen und Spinat",
+"method":[
+"Den Reis kochen. Das Öl in einer großen Pfanne erhitzen und die Zwiebel 5 Minuten braten. Knoblauch, Ingwer und Currypulver 1 Minute mitbraten.",
+"Tomaten, Kokosmilch, Kichererbsen und Salz dazugeben. 15 Minuten köcheln lassen, bis es eindickt.",
+"Den Spinat einrühren und 2 Minuten garen, bis er zusammenfällt. Abschmecken, nachsalzen und mit dem Reis servieren."
+],
+"notes":{
+"0":"2 Dosen, abgetropft",
+"3":"gewürfelt",
+"4":"zerdrückt",
+"5":"gerieben"
+},
+"blurb":"So wie beschrieben vegan."
+},
+"kung-pao-chicken":{
+"name":"Kung-Pao-Hähnchen",
+"method":[
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Das Hähnchen mit 1 EL Sojasoße, dem Shaoxing-Wein und der Hälfte der Speisestärke mischen.",
+"Die Soße anrühren: die restliche Sojasoße, Essig, Zucker, die restliche Speisestärke und 3 EL Wasser.",
+"Das Öl im Wok stark erhitzen und das Hähnchen 5 bis 6 Minuten pfannenrühren, bis es gebräunt und durchgegart ist. Herausnehmen.",
+"Chili, Knoblauch, Ingwer und das Weiße der Frühlingszwiebeln dazugeben und 30 Sekunden pfannenrühren.",
+"Das Hähnchen zurückgeben, die Soße angießen und etwa eine Minute schwenken, bis sie dick ist und glänzt. Erdnüsse und das Grün der Frühlingszwiebeln unterrühren und mit dem Reis servieren."
+],
+"notes":{
+"0":"in 2-cm-Stücke geschnitten",
+"6":"in Ringen (oder eine Handvoll getrocknete Chilis)",
+"7":"in Scheiben geschnitten",
+"8":"fein gehackt",
+"9":"in 3 cm lange Stücke geschnitten"
+},
+"blurb":"Hähnchen aus dem Wok nach Sichuan-Art mit Erdnüssen, Chili und einer glänzenden süßsauren Soße."
+},
+"mapo-tofu":{
+"name":"Mapo Tofu",
+"method":[
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Die Tofuwürfel 2 Minuten in leicht gesalzenem Wasser köcheln, damit sie fester werden, dann abtropfen lassen.",
+"Das Öl im Wok bei mittlerer bis hoher Hitze erhitzen und das Schweinefleisch etwa 4 Minuten anbraten, dabei zerteilen, bis es gebräunt ist.",
+"Chili-Bohnen-Paste, Knoblauch, Ingwer und Chilipulver dazugeben und eine Minute braten, bis das Öl rot wird.",
+"Brühe, Sojasoße und Zucker angießen und aufkochen. Den Tofu hineingleiten lassen und 4 Minuten köcheln, dabei nur vorsichtig schieben statt rühren.",
+"Die Speisestärke mit 2 EL Wasser verrühren, vorsichtig einrühren und köcheln lassen, bis die Soße eindickt. Mit Frühlingszwiebeln bestreuen und über Reis servieren. Gemahlener Sichuan-Pfeffer darüber ist traditionell, falls vorhanden."
+],
+"notes":{
+"0":"weich oder fest, in 2-cm-Würfel geschnitten",
+"3":"gehackt",
+"4":"gehackt",
+"10":"in Scheiben geschnitten"
+},
+"blurb":"Weicher Tofu in einer scharfen, würzigen Soße aus Schweinefleisch und Chili-Bohnen-Paste. Ein Sichuan-Klassiker, der schnell fertig ist."
+},
+"tomato-egg-stir-fry":{
+"name":"Tomate und Ei aus dem Wok",
+"method":[
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Die Eier mit einer Prise Salz verquirlen.",
+"1 EL Öl im Wok bei mittlerer bis hoher Hitze erhitzen, die Eier hineingießen und vorsichtig rühren, bis sie in großen, weichen Stücken gerade gestockt sind. Auf einen Teller geben.",
+"Das restliche Öl und die Tomaten dazugeben und etwa 3 Minuten pfannenrühren, bis sie weich werden und Saft abgeben.",
+"Zucker, das restliche Salz und 3 EL Wasser dazugeben und 2 Minuten köcheln lassen.",
+"Die Eier zurückgeben und alles 30 Sekunden vorsichtig vermengen. Mit Sesamöl beträufeln, Frühlingszwiebeln darüberstreuen und über Reis servieren."
+],
+"notes":{
+"1":"in Spalten geschnitten",
+"4":"in Scheiben geschnitten"
+},
+"blurb":"Weiches Rührei und saftige Tomate in einer leichten süß-herzhaften Soße. Alltägliche Hausmannskost in China."
+},
+"char-siu-pork":{
+"name":"Char-Siu-Schwein mit Reis und Grüngemüse",
+"method":[
+"Hoisinsoße, Sojasoße, 2 EL Honig, Fünf-Gewürze-Pulver, Knoblauch, Wein und Zucker mischen. Das Schweinefleisch damit einreiben und mindestens eine Stunde im Kühlschrank marinieren.",
+"Den Ofen auf 200 °C vorheizen. Ein Backblech mit Alufolie auslegen und ein Gitter daraufstellen. Das Fleisch aufs Gitter legen und die übrige Marinade aufheben.",
+"25 Minuten braten, das Fleisch wenden, mit der übrigen Marinade bestreichen und weitere 20 Minuten braten.",
+"Mit dem restlichen Honig bestreichen und weitere 5 bis 10 Minuten braten, bis es klebrig, an den Rändern leicht verkohlt und durchgegart ist. 5 Minuten ruhen lassen, dann aufschneiden.",
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Den Pak Choi im Öl bei starker Hitze mit einem Schuss Wasser und einer Prise Salz 2 bis 3 Minuten pfannenrühren. Das Fleisch mit dem Gemüse über Reis servieren."
+],
+"notes":{
+"0":"oder Schweineschulter, in 4 cm dicke Streifen geschnitten",
+"5":"zerdrückt",
+"9":"halbiert"
+},
+"blurb":"Klebrig-süßer Schweinebraten mit Hoisin-Honig-Glasur. Mindestens eine Stunde oder über Nacht marinieren."
+},
+"steamed-egg-custard":{
+"name":"Chinesischer gedämpfter Eierstich",
+"method":[
+"Die Eier sanft verquirlen, damit keine Luft hineinkommt, dann die warme Brühe und das Salz einrühren.",
+"Durch ein Sieb in eine flache, hitzefeste Schale gießen und Bläschen abschöpfen. Mit einem Teller oder Alufolie abdecken.",
+"Über leicht siedendem Wasser 10 bis 12 Minuten dämpfen, bis es gerade gestockt ist und in der Mitte noch wackelt. Ein in die Mitte gestochenes Messer sollte sauber herauskommen.",
+"Mit Sojasoße und Sesamöl beträufeln und mit Frühlingszwiebeln bestreuen."
+],
+"notes":{
+"1":"warm",
+"5":"in feine Ringe geschnitten"
+},
+"blurb":"Seidiger, herzhafter Eierstich, in einer Schale gedämpft. Mit Reis und einem Wokgericht servieren."
+},
+"pork-cabbage-dumplings":{
+"name":"Teigtaschen mit Schweinefleisch und Kohl",
+"method":[
+"Das Mehl mit 150 ml kaltem Wasser mischen und 5 Minuten glatt kneten. Abdecken und 30 Minuten ruhen lassen.",
+"Den Kohl mit dem Salz mischen, 10 Minuten stehen lassen und dann so viel Wasser wie möglich ausdrücken.",
+"Schweinefleisch, Kohl, Frühlingszwiebel, Ingwer, 1 EL Sojasoße, Sesamöl, Wein und 2 EL Wasser in eine Richtung rühren, bis die Masse klebrig ist.",
+"Den Teig zu einer langen Rolle formen, in 40 Stücke schneiden und jedes zu einem dünnen Kreis von etwa 8 cm ausrollen.",
+"Einen gehäuften Teelöffel Füllung in die Mitte geben, zur Hälfte falten und die Ränder fest zusammendrücken.",
+"Portionsweise in einem großen Topf mit Wasser kochen. Wenn sie oben schwimmen, eine Tasse kaltes Wasser zugeben und wieder aufkochen; das zweimal wiederholen, insgesamt etwa 6 bis 7 Minuten, bis die Füllung durchgegart ist.",
+"Mit Essig, gemischt mit der restlichen Sojasoße, zum Dippen servieren. Übrige Teigtaschen roh auf einem Blech einfrieren und dann in Beutel füllen."
+],
+"notes":{
+"2":"fein gehackt",
+"4":"fein gehackt",
+"5":"gerieben",
+"9":"zum Dippen"
+},
+"blurb":"Selbst gemachte Jiaozi aus einem einfachen Teig aus Mehl und Wasser. Ergibt etwa 40 Stück, übrige lassen sich gut einfrieren."
+},
+"sweet-sour-chicken":{
+"name":"Süßsaures Hähnchen",
+"method":[
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Die Soße anrühren: Essig, Zucker, Tomatenmark, Sojasoße, 1 EL Speisestärke und 150 ml Wasser.",
+"Das Ei verquirlen. Das Hähnchen durch das Ei ziehen und dann in der restlichen Speisestärke wenden.",
+"Das Hähnchen portionsweise im Öl bei mittlerer bis hoher Hitze 5 bis 6 Minuten goldbraun und durchbraten. Auf Küchenpapier abtropfen lassen.",
+"Das Öl bis auf 1 EL abgießen. Zwiebel und Paprika 3 Minuten pfannenrühren, dann den Knoblauch 30 Sekunden.",
+"Die Soße angießen und 1 bis 2 Minuten köcheln lassen, bis sie dick ist und glänzt. Das Hähnchen untermischen und mit dem Reis servieren."
+],
+"notes":{
+"0":"in 2,5-cm-Stücke geschnitten",
+"4":"in Stücke geschnitten",
+"5":"in Stücke geschnitten",
+"6":"gehackt"
+},
+"blurb":"Knusprige Hähnchenstücke mit Paprika und Zwiebel in einer fruchtig-sauren hausgemachten Soße."
+},
+"dan-dan-noodles":{
+"name":"Dan-Dan-Nudeln",
+"method":[
+"Sojasoße, Essig, Sesamöl, Zucker, Chilipulver und Knoblauch auf vier Schalen verteilen.",
+"Das Schweinefleisch im Öl bei mittlerer bis hoher Hitze mit Chili-Bohnen-Paste und Wein etwa 6 Minuten braten, bis es gebräunt und an den Rändern knusprig ist.",
+"Die Nudeln nach Packungsangabe kochen und den Pak Choi in der letzten Minute dazugeben. In jede Schale mit Soße 2 EL heißes Kochwasser rühren, dann die Nudeln abgießen.",
+"Nudeln und Gemüse auf die Schalen verteilen, mit Schweinefleisch, Erdnüssen und Frühlingszwiebeln belegen und vor dem Essen gut mischen."
+],
+"notes":{
+"0":"Eier- oder Weizennudeln",
+"10":"zerdrückt",
+"11":"zerdrückt",
+"12":"in Scheiben geschnitten"
+},
+"blurb":"Nudeln mit knusprigem gewürztem Schweinefleisch, Grüngemüse und einer nussigen, säuerlichen Chilisoße. Vor dem Essen alles gut mischen."
+},
+"fish-fragrant-eggplant":{
+"name":"Aubergine nach „Fischduft“-Art",
+"method":[
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Die Aubergine mit dem Salz mischen, 10 Minuten stehen lassen und trocken tupfen.",
+"Die Aubergine in 2 EL Öl bei mittlerer bis hoher Hitze 8 bis 10 Minuten weich und goldbraun braten. Herausnehmen.",
+"Das restliche Öl dazugeben und das Schweinefleisch anbraten. Chili-Bohnen-Paste, Knoblauch, Ingwer und das Weiße der Frühlingszwiebeln dazugeben und eine Minute braten.",
+"Sojasoße, Essig, Zucker, Speisestärke und 100 ml Wasser verrühren, angießen und aufkochen.",
+"Die Aubergine zurückgeben und 2 Minuten köcheln lassen, bis die Soße sie überzieht. Mit dem Grün der Frühlingszwiebeln bestreuen und über Reis servieren."
+],
+"notes":{
+"0":"in 6 cm lange Stifte geschnitten",
+"5":"gehackt",
+"6":"gehackt",
+"7":"in Ringen, Weißes und Grünes getrennt"
+},
+"blurb":"Seidige Aubergine in einer süßen, sauren und scharfen Knoblauchsoße. Fisch ist nicht drin: Der Name stammt von einer Sichuan-Soße, die früher zu Fisch verwendet wurde."
+},
+"hot-sour-soup":{
+"name":"Sauer-scharfe Suppe",
+"method":[
+"Die Brühe mit Ingwer und Pilzen aufkochen und 5 Minuten köcheln lassen.",
+"Tofu, Sojasoße, Essig und Pfeffer dazugeben und 2 Minuten köcheln lassen.",
+"Die Speisestärke mit 4 EL Wasser verrühren, einrühren und eine Minute köcheln lassen, bis die Suppe leicht eindickt.",
+"Die Hitze herunterschalten und die verquirlten Eier in dünnem Strahl unter langsamem Rühren hineingießen, sodass sie als Fäden stocken.",
+"Abschmecken und nach Belieben mehr Essig oder Pfeffer zugeben. Mit Sesamöl und Frühlingszwiebeln vollenden."
+],
+"notes":{
+"1":"in Scheiben geschnitten",
+"2":"in Scheiben geschnitten",
+"3":"in dünne Streifen geschnitten",
+"6":"weißer Pfeffer, falls vorhanden",
+"8":"verquirlt",
+"10":"in Scheiben geschnitten"
+},
+"blurb":"Eine wärmende Suppe mit Tofu, Pilzen und Eierflocken, säuerlich durch Essig und scharf durch Pfeffer."
+},
+"teriyaki-chicken-don":{
+"name":"Teriyaki-Hähnchen-Reisschale",
+"method":[
+"Den Reis waschen, bis das Wasser fast klar ist. Mit der 1,2-fachen Menge Wasser in einen Topf geben, aufkochen, abdecken und bei niedrigster Hitze 12 Minuten garen, dann abgedeckt neben dem Herd 10 Minuten ruhen lassen.",
+"Sojasoße, Mirin und Zucker mischen.",
+"Das Hähnchen im Öl bei mittlerer Hitze 6 Minuten braten, wenden und weitere 5 Minuten durchgaren.",
+"Das Fett abgießen, die Soße dazugeben und 2 bis 3 Minuten blubbern lassen, dabei das Hähnchen wenden, bis es glänzt und klebrig ist.",
+"Den Brokkoli 3 Minuten kochen oder dämpfen.",
+"Das Hähnchen aufschneiden und mit dem Brokkoli auf dem Reis servieren. Mit Soße beträufeln und mit Frühlingszwiebeln und Sesam bestreuen."
+],
+"notes":{
+"6":"in Röschen geteilt",
+"7":"in Scheiben geschnitten"
+},
+"blurb":"Gebratene Hähnchenschenkel in glänzender, selbst gemachter Teriyakisoße auf Reis mit Brokkoli."
+},
+"chicken-katsu-curry":{
+"name":"Hähnchen-Katsu-Curry",
+"method":[
+"Den Reis waschen, bis das Wasser fast klar ist. Mit der 1,2-fachen Menge Wasser in einen Topf geben, aufkochen, abdecken und bei niedrigster Hitze 12 Minuten garen, dann abgedeckt neben dem Herd 10 Minuten ruhen lassen.",
+"Curry: Die Zwiebel in 1 EL Öl 5 Minuten weich dünsten. Karotte, Kartoffel und 700 ml Wasser dazugeben und 15 Minuten weich köcheln lassen.",
+"Den Herd ausschalten, die Currywürfel hineinbröckeln und rühren, bis sie geschmolzen sind, dann unter Rühren 5 Minuten köcheln lassen, bis es dick ist.",
+"Das Hähnchen würzen, in Mehl wenden, durch die verquirlten Eier ziehen und in das Panko drücken.",
+"Im restlichen Öl bei mittlerer Hitze je Seite 4 bis 5 Minuten goldbraun und durchbraten. Abtropfen lassen und aufschneiden.",
+"Das Hähnchen auf dem Reis servieren, die Currysoße daneben."
+],
+"notes":{
+"0":"2 Brustfilets, waagerecht halbiert",
+"5":"eine 92-g-Packung",
+"6":"gewürfelt",
+"7":"in Stücke geschnitten",
+"8":"in Stücke geschnitten"
+},
+"blurb":"Knuspriges Hähnchen in Panko-Panade mit milder, dicker japanischer Currysoße und Reis."
+},
+"teriyaki-tofu-bowl":{
+"name":"Teriyaki-Tofu-Reisschale",
+"method":[
+"Den Reis waschen, bis das Wasser fast klar ist. Mit der 1,2-fachen Menge Wasser in einen Topf geben, aufkochen, abdecken und bei niedrigster Hitze 12 Minuten garen, dann abgedeckt neben dem Herd 10 Minuten ruhen lassen.",
+"Den Tofu 10 Minuten zwischen Küchenpapier pressen, in Würfel schneiden und in der Speisestärke wenden.",
+"Den Tofu im Öl bei mittlerer bis hoher Hitze unter Wenden etwa 8 Minuten rundum knusprig braten.",
+"Sojasoße, Mirin, Zucker, Ingwer und 2 EL Wasser mischen, über den Tofu gießen und 1 bis 2 Minuten schwenken, bis er klebrig glasiert ist.",
+"Brokkoli und Karotte 3 Minuten dämpfen oder kochen.",
+"Tofu und Gemüse auf dem Reis mit Frühlingszwiebeln und Sesam servieren."
+],
+"notes":{
+"0":"fest",
+"6":"gerieben",
+"8":"in Röschen geteilt",
+"9":"in dünne Stifte geschnitten",
+"10":"in Scheiben geschnitten"
+},
+"blurb":"Knuspriger Tofu in klebriger Teriyakisoße mit Reis und Gemüse."
+},
+"oyakodon":{
+"name":"Oyakodon (Reisschale mit Hähnchen und Ei)",
+"method":[
+"Den Reis waschen, bis das Wasser fast klar ist. Mit der 1,2-fachen Menge Wasser in einen Topf geben, aufkochen, abdecken und bei niedrigster Hitze 12 Minuten garen, dann abgedeckt neben dem Herd 10 Minuten ruhen lassen.",
+"Brühe, Sojasoße, Mirin und Zucker in einer breiten Pfanne aufkochen. Die Zwiebel dazugeben und 3 Minuten köcheln lassen.",
+"Das Hähnchen dazugeben und 6 bis 8 Minuten köcheln lassen, bis es durchgegart ist.",
+"Die Eier nur leicht verquirlen, damit sie marmoriert bleiben. Zwei Drittel über das Hähnchen gießen, abdecken und bei schwacher Hitze 1 Minute garen, dann den Rest dazugeben, abdecken und weitere 30 Sekunden garen, sodass das Ei gerade gestockt, aber noch weich ist.",
+"Hähnchen, Ei und etwas Brühe über Schalen mit Reis geben und mit Frühlingszwiebeln bestreuen. In Japan wird Dashi verwendet; Hühnerbrühe funktioniert zu Hause gut."
+],
+"notes":{
+"0":"in mundgerechte Stücke geschnitten",
+"1":"in dünnen Scheiben",
+"8":"in Scheiben geschnitten"
+},
+"blurb":"Hähnchen und Zwiebel in süßer Sojabrühe geschmort, mit weichem Ei gestockt und über Reis gegeben."
+},
+"chicken-karaage":{
+"name":"Hähnchen-Karaage (japanisches frittiertes Hähnchen)",
+"method":[
+"Das Hähnchen mit Sojasoße, Mirin, Ingwer und Knoblauch mischen und 20 Minuten ziehen lassen.",
+"Den Reis waschen, bis das Wasser fast klar ist. Mit der 1,2-fachen Menge Wasser in einen Topf geben, aufkochen, abdecken und bei niedrigster Hitze 12 Minuten garen, dann abgedeckt neben dem Herd 10 Minuten ruhen lassen.",
+"Das Hähnchen in der Speisestärke wenden und überschüssige abschütteln.",
+"2 bis 3 cm Öl in einem schweren Topf auf etwa 170 °C erhitzen. Das Hähnchen portionsweise 4 bis 5 Minuten tief goldbraun und durchfrittieren. Auf einem Gitter abtropfen lassen. Heißes Öl nie unbeaufsichtigt lassen.",
+"Für extra Knusprigkeit jede Portion noch einmal 1 Minute frittieren, wenn das ganze Hähnchen fertig ist.",
+"Mit Zitronenspalten, dem fein geschnittenen Kohl und Reis servieren."
+],
+"notes":{
+"0":"in große mundgerechte Stücke geschnitten",
+"3":"gerieben",
+"4":"gerieben",
+"6":"zum Frittieren",
+"7":"in Spalten geschnitten",
+"8":"fein gehobelt"
+},
+"blurb":"Saftiges Hähnchen, mariniert in Soja, Ingwer und Knoblauch und knusprig frittiert. Mit Zitrone, Kohl und Reis servieren."
+},
+"okonomiyaki":{
+"name":"Okonomiyaki (Kohlpfannkuchen)",
+"method":[
+"Mehl, Brühe, Eier und Salz zu einem dicken Teig verquirlen. Den Kohl und den Großteil der Frühlingszwiebeln unterheben.",
+"Etwas Öl in einer Pfanne bei mittlerer Hitze erhitzen. Ein Viertel des Teigs hineingeben und zu einem etwa 2 cm dicken Fladen formen.",
+"Einige Scheiben Speck darauflegen. Etwa 5 Minuten braten, bis die Unterseite goldbraun ist, wenden und weitere 5 Minuten durchbraten. Mit dem Rest wiederholen.",
+"Tomatenmark, Sojasoße, Honig und 1 EL Wasser mischen und die Pfannkuchen damit bestreichen.",
+"Mit den restlichen Frühlingszwiebeln und nach Belieben japanischer Mayonnaise belegen."
+],
+"notes":{
+"4":"fein gehobelt",
+"5":"in Scheiben geschnitten",
+"6":"in dünnen Scheiben"
+},
+"blurb":"Herzhafte Kohlpfannkuchen mit Speck und einer süß-herzhaften Soße."
+},
+"yaki-udon":{
+"name":"Yaki Udon (gebratene Udon-Nudeln)",
+"method":[
+"Die Udon eine Minute in heißem Wasser lockern oder getrocknete Udon nach Packungsangabe kochen, dann abgießen.",
+"Den Speck im Öl bei mittlerer bis hoher Hitze goldbraun braten. Zwiebel, Karotte und Pilze dazugeben und 3 Minuten pfannenrühren, dann den Kohl 2 Minuten.",
+"Nudeln, Sojasoße und Mirin dazugeben und bei starker Hitze 2 bis 3 Minuten schwenken, bis alles heiß und überzogen ist.",
+"Mit Sesamöl und Frühlingszwiebeln vollenden."
+],
+"notes":{
+"1":"gehackt",
+"2":"in Scheiben geschnitten",
+"3":"in dünne Stifte geschnitten",
+"4":"in Scheiben geschnitten",
+"5":"in feine Streifen geschnitten",
+"10":"in Scheiben geschnitten"
+},
+"blurb":"Dicke Udon-Nudeln, gebraten mit Speck, Kohl und Pilzen in einer Soße aus Soja und Mirin."
+},
+"gyudon":{
+"name":"Gyudon (Reisschale mit Rindfleisch und Zwiebeln)",
+"method":[
+"Den Reis waschen, bis das Wasser fast klar ist. Mit der 1,2-fachen Menge Wasser in einen Topf geben, aufkochen, abdecken und bei niedrigster Hitze 12 Minuten garen, dann abgedeckt neben dem Herd 10 Minuten ruhen lassen.",
+"Brühe, Sojasoße, Mirin, Zucker und Ingwer in einem Topf köcheln lassen. Die Zwiebel dazugeben und 5 Minuten weich köcheln.",
+"Das Rindfleisch dazugeben, die Scheiben voneinander lösen und 2 bis 3 Minuten köcheln, bis es gerade gar ist. Schaum abschöpfen.",
+"Nach Belieben die Eier 6 ½ Minuten kochen, in kaltem Wasser abkühlen und schälen.",
+"Rindfleisch, Zwiebel und etwas Brühe über den Reis geben und mit Frühlingszwiebeln und einem halbierten Ei belegen."
+],
+"notes":{
+"0":"in dünnen Scheiben",
+"1":"in Scheiben geschnitten",
+"6":"gerieben",
+"8":"in Scheiben geschnitten",
+"9":"nach Wunsch, weich gekocht"
+},
+"blurb":"Dünnes Rindfleisch und weiche Zwiebeln in süßer Sojabrühe geschmort, auf Reis."
+},
+"tamagoyaki":{
+"name":"Tamagoyaki (gerolltes Omelett)",
+"method":[
+"Die Eier mit Zucker, Sojasoße, Mirin, Salz und 2 EL Wasser verquirlen, ohne dass sie schaumig werden.",
+"Eine kleine Pfanne (ideal ist eine eckige) bei mittlerer bis schwacher Hitze erhitzen und mit geöltem Küchenpapier auswischen.",
+"Eine dünne Schicht Ei hineingießen und die Pfanne schwenken, damit sie bedeckt ist. Wenn es fast gestockt, oben aber noch feucht ist, von der hinteren Seite zu dir hin aufrollen.",
+"Die Rolle nach hinten schieben, die Pfanne erneut einölen und eine weitere dünne Schicht hineingießen, dabei die Rolle anheben, damit Ei darunterläuft. Wieder aufrollen.",
+"Wiederholen, bis das ganze Ei verbraucht ist. Das Omelett 2 Minuten in Küchenpapier gewickelt ruhen lassen, damit es seine Form behält, dann aufschneiden."
+],
+"notes":{},
+"blurb":"Ein leicht süßes Omelett, in Schichten gerollt, aufgeschnitten und warm oder kalt serviert."
+},
+"nikujaga":{
+"name":"Nikujaga (Rindfleisch-Kartoffel-Eintopf)",
+"method":[
+"Den Reis waschen, bis das Wasser fast klar ist. Mit der 1,2-fachen Menge Wasser in einen Topf geben, aufkochen, abdecken und bei niedrigster Hitze 12 Minuten garen, dann abgedeckt neben dem Herd 10 Minuten ruhen lassen.",
+"Die Zwiebel im Öl 2 Minuten braten, dann das Rindfleisch dazugeben und anbraten.",
+"Kartoffel und Karotte, Brühe, Zucker und Mirin dazugeben. Aufkochen und abschäumen.",
+"Mit einem Deckel abdecken, der etwas kleiner ist als der Topf (oder einem Kreis aus Backpapier), und 10 Minuten köcheln lassen.",
+"Die Sojasoße dazugeben und weitere 10 Minuten köcheln lassen, bis die Kartoffeln weich sind und die Brühe etwa um die Hälfte reduziert ist.",
+"Die Erbsen in den letzten 2 Minuten dazugeben. In Schalen mit dem Reis servieren."
+],
+"notes":{
+"0":"in dünnen Scheiben",
+"1":"in große Stücke geschnitten",
+"2":"in Spalten geschnitten",
+"3":"in Stücke geschnitten"
+},
+"blurb":"Rindfleisch, Kartoffeln und Karotten nach japanischer Hausmannsart, in süßer Sojabrühe geschmort."
+},
+"pad-thai":{
+"name":"Pad Thai mit Garnelen",
+"method":[
+"Die Nudeln 20 bis 30 Minuten in warmem Wasser einweichen, bis sie biegsam, aber noch fest sind, dann abgießen.",
+"Fischsoße, Zucker, den Saft einer Limette, Essig und Chilipulver mischen.",
+"2 EL Öl im Wok stark erhitzen. Den Tofu 3 Minuten goldbraun braten, dann Knoblauch und Garnelen dazugeben und 2 Minuten pfannenrühren, bis die Garnelen rosa werden.",
+"Alles an die Seite schieben, das restliche Öl dazugeben, die Eier hineinschlagen und verrühren.",
+"Nudeln und Soße dazugeben und 2 bis 3 Minuten schwenken, bis die Nudeln weich sind und die Soße aufgenommen ist. Einen Schuss Wasser zugeben, wenn es trocken aussieht.",
+"Sojasprossen und Frühlingszwiebeln 30 Sekunden untermischen. Mit Erdnüssen und Limettenspalten servieren."
+],
+"notes":{
+"0":"flach, etwa 5 mm breit",
+"3":"fest, in kleinen Würfeln",
+"5":"in 3 cm lange Stücke geschnitten",
+"6":"zerdrückt",
+"7":"gehackt",
+"9":"brauner Zucker oder Palmzucker",
+"11":"oder 2 EL Tamarindenpaste, falls vorhanden"
+},
+"blurb":"Gebratene Reisnudeln mit Garnelen, Ei und Tofu, vollendet mit Erdnüssen, Sojasprossen und Limette."
+},
+"green-chicken-curry":{
+"name":"Thailändisches grünes Hähnchencurry",
+"method":[
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Die Currypaste 1 Minute im Öl anbraten. 200 ml Kokosmilch (den dicken Teil oben in der Dose) dazugeben und 2 Minuten köcheln lassen.",
+"Das Hähnchen dazugeben und 3 Minuten rühren, dann die restliche Kokosmilch angießen und 10 Minuten köcheln lassen.",
+"Zucchini und Paprika dazugeben und 5 Minuten köcheln lassen, bis sie gerade weich sind.",
+"Mit Fischsoße, Zucker und Limettensaft abschmecken. Die Basilikumblätter unterrühren und über dem Reis servieren."
+],
+"notes":{
+"0":"2 nehmen für ein milderes Curry",
+"2":"in Scheiben geschnitten",
+"3":"in Scheiben geschnitten",
+"4":"in Scheiben geschnitten",
+"8":"Thai-Basilikum, wenn erhältlich",
+"10":"Jasmin"
+},
+"blurb":"Hähnchen und Gemüse in Kokosmilch mit grüner Currypaste, Basilikum und Limette geköchelt."
+},
+"red-curry-pumpkin-tofu":{
+"name":"Rotes Curry mit Kürbis und Tofu",
+"method":[
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Die Currypaste 1 Minute im Öl anbraten, dann 200 ml Kokosmilch dazugeben und 2 Minuten köcheln lassen.",
+"Den Kürbis und die restliche Kokosmilch dazugeben und 12 bis 15 Minuten köcheln lassen, bis der Kürbis weich ist.",
+"Den Tofu dazugeben und 3 Minuten köcheln lassen, dann den Spinat unterrühren, bis er zusammenfällt.",
+"Mit Sojasoße, Zucker und Limettensaft abschmecken, das Basilikum dazugeben und mit dem Reis servieren."
+],
+"notes":{
+"2":"geschält, in 3-cm-Stücken",
+"3":"fest, gewürfelt",
+"10":"Jasmin"
+},
+"blurb":"Ein reichhaltiges Kokoscurry mit süßem Kürbis, Tofu und Spinat. Die meisten Currypasten enthalten Garnelenpaste, Vegetarier sollten also das Etikett prüfen."
+},
+"tom-yum-soup":{
+"name":"Tom-Yum-Suppe mit Garnelen",
+"method":[
+"Das Zitronengras mit einem Nudelholz anklopfen und in 5 cm lange Stücke schneiden.",
+"Die Brühe mit Zitronengras, Ingwer und Chili 5 Minuten köcheln lassen.",
+"Pilze und Tomate dazugeben und 3 Minuten köcheln lassen.",
+"Die Garnelen dazugeben und 2 bis 3 Minuten köcheln lassen, bis sie rosa und durchgegart sind.",
+"Vom Herd nehmen und mit Fischsoße, Zucker und Limettensaft abschmecken: Sie soll sauer, salzig und scharf schmecken. Den Koriander dazugeben. Zitronengras- und Ingwerstücke werden nicht mitgegessen."
+],
+"notes":{
+"2":"in Scheiben (Galgant, wenn erhältlich)",
+"3":"in Scheiben geschnitten",
+"4":"halbiert",
+"5":"in Spalten geschnitten"
+},
+"blurb":"Sauer-scharfe Garnelensuppe mit dem Duft von Zitronengras, Chili und Limette."
+},
+"tom-kha-gai":{
+"name":"Tom Kha Gai (Kokos-Hühnersuppe)",
+"method":[
+"Das Zitronengras anklopfen und in 5 cm lange Stücke schneiden. Mit dem Ingwer 5 Minuten in der Brühe köcheln lassen.",
+"Kokosmilch und Hähnchen dazugeben und sanft, ohne starkes Kochen, 6 bis 8 Minuten köcheln lassen, bis das Hähnchen gar ist.",
+"Pilze und Chili dazugeben und 3 Minuten köcheln lassen.",
+"Vom Herd nehmen und mit Fischsoße, Limettensaft und Zucker abschmecken. Den Koriander dazugeben. Zitronengras- und Ingwerstücke in der Schale liegen lassen."
+],
+"notes":{
+"0":"in dünnen Scheiben",
+"4":"in Scheiben (Galgant, wenn erhältlich)",
+"5":"in Scheiben geschnitten",
+"6":"halbiert"
+},
+"blurb":"Eine sanfte, cremige Kokossuppe mit Hähnchen, Pilzen, Zitronengras und Limette."
+},
+"pad-kra-pao":{
+"name":"Thailändisches Basilikum-Hähnchen (Pad Kra Pao)",
+"method":[
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Knoblauch und Chili zusammen zerstoßen oder fein hacken.",
+"2 EL Öl sehr heiß werden lassen und die Eier einzeln braten, bis die Ränder knusprig sind. Warm halten.",
+"Das restliche Öl im Wok stark erhitzen. Knoblauch und Chili 30 Sekunden pfannenrühren, dann das Hähnchen 4 bis 5 Minuten, dabei zerteilen, bis es gar ist.",
+"Austernsoße, Sojasoße, Fischsoße, Zucker und 2 EL Wasser dazugeben und eine Minute schwenken.",
+"Das Basilikum unterrühren, bis es zusammenfällt. Über Reis mit einem Spiegelei obendrauf servieren."
+],
+"notes":{
+"0":"fein gehackt",
+"8":"traditionell ist thailändisches Heiliges Basilikum",
+"10":"Jasmin"
+},
+"blurb":"Scharfes gehacktes Hähnchen, gebraten mit Knoblauch, Chili und Basilikum, mit einem knusprigen Spiegelei obendrauf."
+},
+"thai-beef-salad":{
+"name":"Thailändischer Rindfleischsalat",
+"method":[
+"Dressing: Limettensaft, Fischsoße, Zucker, Chili und Knoblauch mischen.",
+"Das Rindfleisch im Öl in einer sehr heißen Pfanne portionsweise 1 bis 2 Minuten scharf anbraten, bis es außen gebräunt und innen noch rosa ist. 3 Minuten ruhen lassen und mit 2 EL Dressing mischen.",
+"Salat, Gurke, Tomate, Zwiebel, Frühlingszwiebeln und Koriander mischen.",
+"Das Rindfleisch und das restliche Dressing dazugeben, mischen und mit den Erdnüssen bestreuen."
+],
+"notes":{
+"2":"gezupft",
+"3":"in Scheiben geschnitten",
+"4":"in Spalten geschnitten",
+"5":"rot, in dünnen Scheiben",
+"6":"in Scheiben geschnitten",
+"11":"fein gehackt",
+"12":"zerdrückt",
+"13":"zerdrückt"
+},
+"blurb":"Scharf angebratenes Rindfleisch mit knackigem Gemüse, Kräutern und einem frischen Limetten-Chili-Dressing."
+},
+"pork-larb":{
+"name":"Schweine-Larb in Salatblättern",
+"method":[
+"2 EL des ungekochten Reises in einer Pfanne ohne Fett unter Rühren etwa 5 Minuten tief goldbraun rösten. Fein zerstoßen.",
+"Den restlichen Reis kochen: den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Das Schweinefleisch im Öl bei mittlerer bis hoher Hitze etwa 6 Minuten braten, dabei zerteilen, bis es gar ist. 2 EL Wasser dazugeben und vom Herd nehmen.",
+"Fischsoße, Limettensaft, Zucker und Chili einrühren, dann Zwiebel, Frühlingszwiebeln, Kräuter und den Großteil des gerösteten Reises.",
+"In Salatblätter füllen, mit dem restlichen gerösteten Reis bestreuen und mit dem Reis servieren."
+],
+"notes":{
+"0":"2 EL zum Rösten, der Rest zum Servieren",
+"6":"fein gehackt",
+"7":"rot, in dünnen Scheiben",
+"8":"in Scheiben geschnitten",
+"10":"traditionell ist Minze, falls vorhanden",
+"11":"Blätter abgelöst"
+},
+"blurb":"Würziges Schweinehack mit Limette, Chili und Kräutern, gegessen in knackigen Salatblättern."
+},
+"chicken-satay":{
+"name":"Hähnchen-Satay mit Erdnusssoße",
+"method":[
+"Das Hähnchen mit 100 ml Kokosmilch, dem Currypulver, 1 EL Zucker und 1 EL Fischsoße mischen. Mindestens 30 Minuten marinieren. Gleichzeitig Holzspieße in Wasser einweichen.",
+"Den Reis waschen und zugedeckt in der doppelten Menge Wasser mit einer Prise Salz etwa 12 Minuten weich köcheln. Zugedeckt halten.",
+"Erdnusssoße: Die Erdnüsse im Mixer zerkleinern oder sehr fein hacken. Die restliche Kokosmilch mit der Currypaste 2 Minuten köcheln lassen, dann Erdnüsse, restlichen Zucker, Sojasoße und restliche Fischsoße dazugeben. Unter Rühren 5 Minuten köcheln lassen, bis sie dick ist. Limettensaft dazugeben und bei Bedarf mit Wasser verdünnen.",
+"Das Hähnchen auf die Spieße stecken, mit Öl bestreichen und unter Wenden 8 bis 10 Minuten grillen oder in der Pfanne braten, bis es durchgegart und stellenweise gebräunt ist.",
+"Mit Erdnusssoße, Gurke und Reis servieren."
+],
+"notes":{
+"0":"in Streifen geschnitten",
+"6":"geröstet",
+"10":"in Scheiben geschnitten",
+"11":"Jasmin"
+},
+"blurb":"Gegrillte, in Kokos marinierte Hähnchenspieße mit hausgemachter Erdnusssoße. Mindestens 30 Minuten marinieren."
+},
+"pad-see-ew":{
+"name":"Pad See Ew (gebratene Reisnudeln mit Hähnchen)",
+"method":[
+"Die Nudeln in warmem Wasser einweichen, bis sie biegsam sind, dann abgießen (frische breite Reisnudeln müssen nur voneinander gelöst werden).",
+"Sojasoße, Austernsoße, Zucker und 2 EL Wasser mischen.",
+"Das Öl im Wok stark erhitzen. Den Knoblauch 15 Sekunden braten, dann das Hähnchen 4 Minuten, bis es gar ist.",
+"Die Brokkolistiele und dann die Röschen mit einem Schuss Wasser dazugeben und 2 Minuten pfannenrühren.",
+"Alles zur Seite schieben und die Eier in der freien Stelle verrühren.",
+"Nudeln und Soße dazugeben und schwenken, dabei die Nudeln jeweils 30 Sekunden liegen lassen, damit sie etwas anrösten, etwa 3 Minuten lang. Mit dem Pfeffer vollenden."
+],
+"notes":{
+"0":"breit",
+"1":"in dünnen Scheiben",
+"2":"Stiele in Scheiben, Röschen klein",
+"4":"gehackt",
+"5":"und ein Schuss dunkle Sojasoße, falls vorhanden"
+},
+"blurb":"Breite Reisnudeln, mit Hähnchen, Brokkoli, Ei und Soja gebraten, bis sie leicht angeröstet sind."
+}
+}
+}

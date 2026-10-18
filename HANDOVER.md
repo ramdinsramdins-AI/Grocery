@@ -150,6 +150,14 @@ Built 2026-10-18 with the user's OK: collecting on the home PC. Unlike Woolworth
 
 New Gum Sarn missed one run (2026-10-18 05:18 UTC): `503 Service Unavailable` on `products.json` page 12 of 13, pages 1 to 11 were fine. That is their server being briefly down, not a block. `_request` now waits and retries 502/503/504 like a dropped connection (test in `test_scraper.py`); 403/429 still stop the store at once.
 
+## Languages and English product names (2026-10-18)
+
+- User request: translate non-English product names (NJK uses Chinese) into English, then add a language button with flags for Mandarin, Japanese, Thai, Hindi, Māori, Filipino, Korean, French, German, Russian and Spanish.
+- Product names: `scraper.py` `translate_rows()` runs in `write_outputs` on every save (all stores, kept rows too). `english_name()` uses `translations.json` `names` (437 Chinese-only NJK/FromK names translated by Claude), moves a leading "【Best Before ...】" to the end, and for mixed names keeps the English after the last Chinese/Japanese/Korean character when it has at least 2 English words. The live data was retranslated in place (619 names; dates and store times unchanged; 0 names left with CJK characters; groups 8,991 -> 9,009 because English names match more). A new Chinese-only name stays Chinese until a line is added to `translations.json`.
+- Site text: `docs/i18n.js` (menu, inline SVG flags because Windows shows flag emoji as letters; the Māori flag is a simplified Tino Rangatiratanga) plus `docs/i18n/<code>.json` per language. Pages mark static text with `data-i18n`, `data-i18n-ph`, `data-i18n-aria` and wrap dynamic text in `T("English {n}", {n: ...})` (`TH` for HTML). Dates use `I18N.locale()`, which falls back to `en-NZ` when the browser has no formats for the language (Chrome has none for Māori). Thai dates show the Buddhist year (2569), which is normal in Thailand.
+- `test_i18n.js` collects every phrase from the pages and checks each language file. It fails when page text changes or recipes are added until the language files catch up; the pages themselves show English for anything missing.
+- The 11 translations were written by Claude and are not checked by native speakers. Te Reo Māori has the most guesswork (cooking words such as spinach = kōkihi); ask the user whether a fluent speaker can review it.
+
 ## Known issues and next steps (priority order)
 
 1. **Verify the live run.** After each change to the scraper, read the Actions log: the `newgumsarn` lines, every `0 usable products` category and the matched-group count. `gh run view --log` works on the user's PC (signed in with `gh auth login` on 2026-10-18). NJK now logs `using njk.json from the home PC`; `no usable njk.json` or `days old` means the home task has not sent one (check its log).

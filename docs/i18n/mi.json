@@ -1,0 +1,1170 @@
+{
+"ui":{
+"A to Z":"A ki te Z",
+"About {price} per serving, counting whole packs, not counting {items}.":"Tata ki te {price} mō ia wāhanga kai, ka tatauria ngā mōkī katoa, kāore i te tatauria ko {items}.",
+"About {price} per serving, counting whole packs.":"Tata ki te {price} mō ia wāhanga kai, ka tatauria ngā mōkī katoa.",
+"Add":"Tāpiri",
+"Add recipes to build your shopping list.":"Tāpirihia he tohutao hei hanga i tō rārangi hokohoko.",
+"Add to my list":"Tāpiri ki taku rārangi",
+"Added. Remove":"Kua tāpirihia. Tango",
+"All":"Katoa",
+"All ({n})":"Katoa ({n})",
+"All aisles":"Ngā ara katoa",
+"BEST VALUE":"UTU PAI RAWA",
+"Bakery":"Tunu Parāoa",
+"Biggest saving":"Penapena nui rawa",
+"Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, with prices per 100g.":"Hangaia he rārangi hokohoko kai, ka kite i te huarahi iti rawa te utu ki te hoko i ngā toa o Woolworths, New World, PAK'nSAVE me ngā toa kai Āhia o New Gum Sarn, TXG Mall, NJK me FromK, me ngā utu mō ia 100g.",
+"Cheapest across {n} store":"Iti rawa te utu i te toa {n}",
+"Cheapest across {n} stores":"Iti rawa te utu puta noa i ngā toa {n}",
+"Compare individual products":"Whakatairite i ia hua",
+"Cost of each extra stop":"Te utu o ia toa tāpiri",
+"Could also use it in: {recipes}.":"Ka taea hoki te whakamahi ki: {recipes}.",
+"Could not load prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"Kāore i taea te uta i ngā utu. Mēnā i whakatuwheratia tōtikatia e koe tēnei kōnae, tukuna te kōpaki docs mā tētahi tūmau tukutuku (python3 -m http.server i docs/), whakamahia rānei a GitHub Pages.",
+"Could not load recipes or prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"Kāore i taea te uta i ngā tohutao, i ngā utu rānei. Mēnā i whakatuwheratia tōtikatia e koe tēnei kōnae, tukuna te kōpaki docs mā tētahi tūmau tukutuku (python3 -m http.server i docs/), whakamahia rānei a GitHub Pages.",
+"Dairy & Eggs":"Kai Miraka me ngā Hēki",
+"Dearest full-list store is {price}.":"Ko te toa utu nui rawa mō te rārangi katoa: {price}.",
+"Dearest store with everything is {price}.":"Ko te toa utu nui rawa e katoa ana ngā mea: {price}.",
+"Deli & Chilled":"Kai Rite me te Kai Mātao",
+"Drinks":"Ngā Inu",
+"Fewer servings of {recipe}":"Kia iti iho ngā wāhanga kai o {recipe}",
+"Fewer {item}":"Kia iti iho te {item}",
+"Filter by type":"Tātari mā te momo",
+"Frozen":"Kai Whakatio",
+"Fruit & Veg":"Hua Rākau me ngā Huawhenua",
+"Health & Beauty":"Hauora me te Ātaahua",
+"Household":"Taputapu Whare",
+"In list ({n})":"Kei te rārangi ({n})",
+"Ingredients (serves {n})":"Ngā kai whakauru (mō te {n})",
+"Ingredients and method":"Ngā kai whakauru me te tikanga",
+"Language":"Reo",
+"Loading prices...":"E uta ana i ngā utu...",
+"Loading...":"E uta ana...",
+"Lowest price per 100g / 100ml":"Te utu iti rawa mō ia 100g / 100ml",
+"Matched by name and size. Check it is the same product.":"I hāngaitia mā te ingoa me te rahi. Tirohia mēnā ko te hua kotahi tonu.",
+"Meat & Seafood":"Mīti me te Kaimoana",
+"Method":"Tikanga",
+"More servings of {recipe}":"Kia nui ake ngā wāhanga kai o {recipe}",
+"More {item}":"Kia nui ake te {item}",
+"Need {amt}. Buy {what}":"Me whai {amt}. Hokona {what}",
+"No combination of these stores has everything on your list. Remove an item that shows \"Not found\" at a store to compare.":"Kāore he huinga o ēnei toa e katoa ana ngā mea o tō rārangi. Tangohia tētahi mea e kī ana \"Kāore i kitea\" i tētahi toa kia taea ai te whakatairite.",
+"No comparable products yet.":"Kāore anō he hua hei whakatairite.",
+"No products match. Try a shorter search or another aisle.":"Kāore he hua e hāngai ana. Whakamātauria he rapunga poto ake, he ara kē rānei.",
+"No recipes match. Try a shorter search.":"Kāore he tohutao e hāngai ana. Whakamātauria he rapunga poto ake.",
+"No single store sells everything. {store} has {have} of {total} items; not there: {items}.":"Kāore he toa kotahi e hoko ana i ngā mea katoa. Kei a {store} ngā mea {have} o te {total}; kāore i reira: {items}.",
+"No store has the products for this list yet.":"Kāore anō he toa e whai ana i ngā hua mō tēnei rārangi.",
+"No supermarket product found yet for: {items}. Add these by hand.":"Kāore anō kia kitea he hua toa nui mō: {items}. Tāpirihia ā-ringa.",
+"Not found at {stores}":"Kāore i kitea i {stores}",
+"Not refreshed last run: {stores}.":"Kāore i whakahoutia i te wā whakamutunga: {stores}.",
+"One store: {store}":"Kotahi te toa: {store}",
+"Only products found at two or more stores are listed, because those are the ones that can be compared. \"Usual\" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only. TXG Mall, NJK and FromK prices are from their online shops; check delivery or pickup with each shop.":"Ko ngā hua anake e kitea ana i ngā toa e rua neke atu e whakaaturia ana, nā te mea koirā anake ka taea te whakatairite. Ko te \"Utu auau\" te utu noa o te toa e whakaaturia ana i te taha o te utu heke, ā, ka kīia he penapena tūturu te utu heke mēnā he 10% te iti iho, neke atu rānei. Nō te toa kotahi o ia rōpū toa ngā utu, nō reira tērā pea he rerekē tō toa ā-rohe. He toa kotahi a New Gum Sarn i Point England, Tāmaki Makaurau, ā, ko āna kai whakatio me āna kai mātao he tono ā-ipurangi, ka tiki ai i te toa anake. Nō ngā toa ā-ipurangi o TXG Mall, NJK me FromK ā rātou utu; uia te tuku, te tiki rānei ki ia toa.",
+"Only store that has everything.":"Ko te toa anake e katoa ana ngā mea.",
+"Only {pct}% under usual {price}":"He {pct}% anake te iti iho i te utu auau o {price}",
+"Pantry":"Pātaka",
+"Perishable: use or freeze soon.":"Ka hohoro te pirau: whakamahia, whakatiotia rānei ā tōna wā poto.",
+"Pick the meals you want to cook. You get one shopping list, with the cheapest packs for what you need, and the cheapest store or stores to buy it from.":"Kōwhiria ngā kai e hiahia ana koe ki te tunu. Ka whiwhi koe i te rārangi hokohoko kotahi, me ngā mōkī iti rawa te utu mō āu e hiahia ana, me te toa, ngā toa rānei, iti rawa te utu hei hokonga.",
+"Prices updated {when}.":"I whakahoutia ngā utu {when}.",
+"Products":"Ngā hua",
+"Quantities are for the servings shown and scale when you change them. For each ingredient the site adds up what every chosen recipe needs, then finds the cheapest combination of pack sizes that covers it, and says what is left over. Products are picked by matching names, so check the pack you are buying. Items sold each (an onion, a lemon) use an average weight. Recipes do not include nutrition or allergen information. Prices come from one store per chain, so your local store may differ.":"Ko ngā rahinga mō ngā wāhanga kai e whakaaturia ana, ā, ka huri ina huri koe i aua wāhanga. Mō ia kai whakauru, ka tāpiri te pae i ngā mea e hiahiatia ana e ia tohutao kua kōwhiria, kātahi ka kimi i te huinga mōkī iti rawa te utu e rawaka ana, ka kī i te toenga. Ka kōwhiria ngā hua mā te ōrite o ngā ingoa, nō reira tirohia te mōkī e hokona ana e koe. Ko ngā mea e hokona takitahitia ana (he aniana, he rēmana) ka whakamahi i te taumaha toharite. Kāore ngā tohutao e whai mōhiohio taioranga, mōhiohio mate pāwera rānei. Nō te toa kotahi o ia rōpū toa ngā utu, nō reira tērā pea he rerekē tō toa ā-rohe.",
+"Real saving: {pct}% under usual {price}":"Penapena tūturu: {pct}% te iti iho i te utu auau o {price}",
+"Recipes":"Ngā Tohutao",
+"Sample prices for testing. Run the scraper to load real prices.":"He utu tauira mō te whakamātau. Whakahaerehia te kaitango raraunga kia uta ai ngā utu tūturu.",
+"Search butter, mince, toilet paper":"Rapua te pata, te mīti mōmona, te pepa wharepaku",
+"Search for products and press Add to compare totals.":"Rapua he hua, ka pēhi i te Tāpiri kia whakatairite ai ngā tapeke.",
+"Search products":"Rapu hua",
+"Search recipes":"Rapu tohutao",
+"Search recipes or ingredients":"Rapu tohutao, kai whakauru rānei",
+"Shelf Check Recipes":"Ngā Tohutao a Shelf Check",
+"Shop by aisle":"Hoko mā te ara",
+"Shop by recipe":"Hoko mā te tohutao",
+"Show more ({n} left)":"Whakaatu atu ({n} e toe ana)",
+"Snacks & Confectionery":"Paramanawa me ngā Rare",
+"Sort":"Raupapa",
+"Specials only":"Ngā utu heke anake",
+"Tick what you already have":"Tohua ngā mea kei a koe kē",
+"Total servings: {n}.":"Tapeke wāhanga kai: {n}.",
+"Try ticking items you already have.":"Whakamātauria te tohu i ngā mea kei a koe kē.",
+"Two stores: {stores}":"E rua ngā toa: {stores}",
+"Use club prices":"Whakamahia ngā utu karapu",
+"Use club prices (Everyday Rewards, Clubcard)":"Whakamahia ngā utu karapu (Everyday Rewards, Clubcard)",
+"Woolworths prices are from {date}.":"Nō te {date} ngā utu o Woolworths.",
+"Your list":"Tō rārangi",
+"Your recipes":"Ō tohutao",
+"Your recipes and shopping list":"Ō tohutao me tō rārangi hokohoko",
+"about {amt} loose, {pack} ({price})":"tata ki te {amt} wewete, {pack} ({price})",
+"can":"tini",
+"clove":"pihi",
+"cup":"kapu",
+"each":"takitahi",
+"g":"g",
+"ml":"ml",
+"pinch":"kinitanga",
+"servings":"wāhanga kai",
+"slice":"poro",
+"stalk":"kakau",
+"tbsp":"pūnu nui",
+"tsp":"pūnu iti",
+"{amt} left over.":"Ka toe te {amt}.",
+"{min} min · serves {n}":"{min} meneti · mō te {n}",
+"{n} each":"{n} takitahi",
+"{n} extra stop at {price} each: {total} all in.":"{n} toa tāpiri, {price} ia toa: {total} te katoa.",
+"{n} extra stops at {price} each: {total} all in.":"{n} toa tāpiri, {price} ia toa: {total} te katoa.",
+"{n} product at 2 or more stores":"{n} hua kei ngā toa e 2 neke atu",
+"{n} product on special":"{n} hua kei te utu heke",
+"{n} products at 2 or more stores":"{n} hua kei ngā toa e 2 neke atu",
+"{n} products on special":"{n} hua kei te utu heke",
+"{n} recipe":"{n} tohutao",
+"{n} recipes":"{n} tohutao",
+"{n} × {pack} ({price} each)":"{n} × {pack} ({price} ia mea)",
+"{price} each":"{price} ia mea",
+"{store} does not sell: {items}. Buy it at another store (the other plans include it) or tick it below if you already have it.":"Kāore a {store} e hoko ana i: {items}. Hokona i tētahi atu toa (kei ngā mahere kē) tohua rānei i raro mēnā kei a koe kē.",
+"{store} does not sell: {items}. Buy these at another store (the other plans include them) or tick them below if you already have them.":"Kāore a {store} e hoko ana i: {items}. Hokona ēnei i tētahi atu toa (kei ngā mahere kē) tohua rānei i raro mēnā kei a koe kē."
+},
+"tags":{
+"beef":"mīti kau",
+"breakfast":"parakuihi",
+"budget":"utu iti",
+"chicken":"heihei",
+"chinese":"Hainamana",
+"comfort":"kai whakamarie",
+"curry":"kari",
+"dinner":"hapa",
+"eggs":"hēki",
+"fish":"ika",
+"japanese":"Hapanihi",
+"lunch":"tina",
+"noodles":"nūtara",
+"one-pan":"kotahi te parai",
+"pasta":"pasta",
+"pork":"poaka",
+"quick":"tere",
+"rice":"raihi",
+"salad":"huamata",
+"sausages":"tōtiti",
+"seafood":"kaimoana",
+"soup":"hupa",
+"thai":"Tai",
+"vegetarian":"huawhenua anake"
+},
+"ingredients":{
+"chicken-breast":"Uma heihei",
+"chicken-thigh":"Kūwhā heihei",
+"beef-mince":"Mīti kau mōmona (mince)",
+"beef-strips":"Mīti kau kua tapahia hei parai",
+"sausages":"Tōtiti",
+"bacon":"Pēkana",
+"ham":"Hāmu",
+"salmon-fillet":"Ngā wāhanga hāmana",
+"tuna-can":"Ika tūna i te tini",
+"eggs":"Hēki",
+"milk":"Miraka",
+"butter":"Pata",
+"cream":"Kirīmi",
+"cheese":"Tīhi pakari (tasty)",
+"mozzarella":"Tīhi mozzarella",
+"parmesan":"Tīhi parmesan",
+"yoghurt":"Miraka pē māori",
+"onion":"Aniana",
+"garlic":"Kāriki",
+"potato":"Rīwai",
+"pumpkin":"Paukena",
+"carrot":"Kāroti",
+"broccoli":"Parakoli",
+"mushroom":"Harore",
+"spinach":"Pēpi kōkihi (baby spinach)",
+"capsicum":"Kapekama",
+"tomato-fresh":"Tōmato hou",
+"zucchini":"Kūkini",
+"frozen-peas":"Pī whakatio",
+"frozen-mixed-veg":"Huawhenua whakaranu whakatio",
+"lettuce":"Rētihi",
+"avocado":"Awakāro",
+"lemon":"Rēmana",
+"banana":"Panana",
+"ginger":"Tīnita hou",
+"coriander":"Kōriana hou",
+"basil":"Pāhiri hou",
+"olive-oil":"Hinu ōriwa",
+"vegetable-oil":"Hinu huawhenua",
+"soy-sauce":"Wairanu hoi",
+"salt":"Tote",
+"pepper":"Pepa pango",
+"flour":"Paraoa mata",
+"sugar":"Huka",
+"baking-powder":"Pauka tunu",
+"cornflour":"Paraoa kānga",
+"rice":"Raihi",
+"spaghetti":"Pasta spaghetti",
+"penne":"Pasta penne, macaroni rānei",
+"noodles":"Nūtara hēki, hokkien rānei",
+"tomato-can":"Tōmato tapatapahi i te tini",
+"tomato-paste":"Tōmato kōnatu",
+"chicken-stock":"Wairanu heihei (wai)",
+"coconut-milk":"Miraka kokonati",
+"curry-powder":"Pauka kari",
+"garam-masala":"Garam masala",
+"ground-cumin":"Kūmine kuoro",
+"paprika":"Paprika",
+"chilli-powder":"Pauka tiare",
+"mixed-herbs":"Otaota whakaranu",
+"honey":"Mīere",
+"oats":"Ōti",
+"bread":"Parāoa poro",
+"tortilla":"Tōtia (tortilla)",
+"flatbread":"Parāoa papatahi, pita rānei",
+"burger-buns":"Parāoa pākī mō te pākī hāmipēka",
+"kidney-beans":"Pīni whatukuhu i te tini",
+"chickpeas":"Pīni chickpea i te tini",
+"spring-onion":"Aniana kākāriki",
+"sesame-oil":"Hinu hāme",
+"oyster-sauce":"Wairanu tio",
+"fish-sauce":"Wairanu ika",
+"rice-vinegar":"Winika raihi",
+"mirin":"Mirin",
+"shaoxing-wine":"Wāina Shaoxing, wāina tunu Hainamana rānei",
+"hoisin-sauce":"Wairanu hoisin",
+"chilli-bean-paste":"Kōnatu pīni tiare (doubanjiang)",
+"five-spice":"Kinaki rima Hainamana",
+"tofu":"Tōhū",
+"pork-mince":"Poaka mōmona (mince)",
+"pork-belly":"Puku poaka",
+"prawns":"Kōura mata (prawns)",
+"bok-choy":"Bok choy",
+"cabbage":"Kāpeti (wombok, kākāriki rānei)",
+"cucumber":"Kūkama",
+"eggplant":"Ēkapani",
+"bean-sprouts":"Pīni whakatipu",
+"red-chilli":"Tiare whero hou",
+"lime":"Raima",
+"lemongrass":"Tarutaru rēmana",
+"red-curry-paste":"Kōnatu kari whero Tai",
+"green-curry-paste":"Kōnatu kari kākāriki Tai",
+"japanese-curry-roux":"Poraka kari Hapanihi (hei tauira, Golden Curry)",
+"rice-noodles":"Nūtara raihi maroke",
+"udon":"Nūtara udon",
+"sushi-rice":"Raihi Hapanihi poto, waenga rānei te kākano",
+"panko":"Kongakonga parāoa panko",
+"peanuts":"Pīnati tunu",
+"sesame-seeds":"Kākano hāme"
+},
+"recipes":{
+"butter-chicken":{
+"name":"Heihei pata me te raihi",
+"method":[
+"Horoia te raihi, kātahi ka tunua ki te wai e rua te nui ake i te raihi, me te kinitanga tote, kia ngohengohe, tata ki te 12 meneti. Waiho kia hipokina.",
+"Whakarewahia te pata ki tētahi parai nui, hōhonu ki te wera waenga. Tunua te aniana mō te 5 meneti kia ngohengohe, kātahi ka tāpiri i te kāriki me te tīnita mō te 1 meneti.",
+"Kōrorihia te pauka kari me te garam masala, tunua mō te 30 hēkona kia kakara.",
+"Tāpirihia te heihei, hurihia ki roto i ngā kinaki kia kore ai e māwhero i waho, tata ki te 4 meneti.",
+"Ringihia te tōmato me te 100 ml wai, kīnakihia ki te tote, ā, kōhuatia mārie mō te 20 meneti, me te kōrori i ētahi wā, kia maoa katoa te heihei.",
+"Kōrorihia te kirīmi, ā, kōhuatia mārie mō ētahi atu meneti 5 kia kanapa. Kia rongo i te reka, ka tāpiri tote mēnā e tika ana. Tukuna ki runga i te raihi."
+],
+"notes":{
+"0":"tapahia kia poro",
+"2":"tapahia kia iti rawa",
+"3":"kurua",
+"4":"waruhia"
+},
+"blurb":"He kari ngāwari, he kirīmi, he māmā te hanga ki ngā kinaki o te pātaka."
+},
+"spaghetti-bolognese":{
+"name":"Spaghetti bolognese",
+"method":[
+"Whakawerahia te hinu ki tētahi parai nui ki te wera waenga ki te nui. Tunua te aniana me te kāroti mō te 5 meneti kia ngohengohe, kātahi ka tāpiri i te kāriki mō te 1 meneti.",
+"Tāpirihia te mīti mōmona, wāwāhia ki te pūnu, ā, tunua kia parauri katoa, tata ki te 8 meneti.",
+"Kōrorihia te tōmato kōnatu, kātahi ko te tōmato, ngā otaota, te tote me te pepa. Kōhuatia mārie ki te wera iti mō te 30 meneti, me te kōrori i ētahi wā, kia mātotoru.",
+"Tunua te spaghetti ki tētahi kōhua nui o te wai kōhua tote, ki te wā i te mōkī. Penapenatia he kapu o te wai pasta, kātahi ka tātari.",
+"Whakaranua te pasta ki te wairanu, me te tāpiri i te wai pasta iti mēnā e tika ana. Tukuna me te parmesan."
+],
+"notes":{
+"1":"tapahia kia mataono",
+"2":"waruhia",
+"3":"kurua",
+"9":"waruhia"
+},
+"blurb":"Te kai tawhito mō ngā pō o te wiki. He pai ki te whakatio."
+},
+"chicken-fried-rice":{
+"name":"Raihi parai heihei",
+"method":[
+"Tunua te raihi, horahia ki tētahi paepae, waiho kia mātao mō te 20 meneti neke atu. He pai ake te parai i te raihi mātao i te raihi wera.",
+"Whakawerahia te haurua o te hinu ki tētahi parai nui, wok rānei, ki te wera nui. Tunua te heihei mō te 5 ki te 6 meneti kia kōura, kia maoa katoa, kātahi ka neke ki tētahi pereti.",
+"Tāpirihia te toenga o te hinu, te kāriki me te tīnita, kōrorihia mō te 30 hēkona. Ringihia ngā huawhenua whakatio, tunua mō te 3 meneti.",
+"Panaia ngā mea katoa ki te taha, wāwāhia ngā hēki ki roto, kōrorihia kia māro noa iho.",
+"Tāpirihia te raihi me te heihei, ringihia te wairanu hoi ki runga, ā, whakaranua ki te wera nui mō te 3 meneti kia wera, kia pakapaka iti."
+],
+"notes":{
+"2":"tapahia kia mataono",
+"6":"kurua",
+"7":"waruhia"
+},
+"blurb":"Ka pau te raihi toenga me tētahi pēke huawhenua whakatio."
+},
+"beef-tacos":{
+"name":"Tako mīti kau ngohengohe",
+"method":[
+"Whakawerahia te hinu ki tētahi parai ki te wera waenga ki te nui, tunua te aniana mō te 4 meneti. Tāpirihia te kāriki mō te 30 hēkona.",
+"Tāpirihia te mīti mōmona, tunua kia parauri, me te wāwāhi i a ia e maoa ana, tata ki te 8 meneti.",
+"Kōrorihia te tiare, te kūmine, te paprika me te tōmato kōnatu me te 100 ml wai. Kōhuatia mārie mō te 8 meneti kia piri te wairanu ki te mīti.",
+"Whakamahanatia ngā tōtia ki tētahi parai maroke mō te 20 hēkona ia taha, kua takaia rānei ki te pepa konumohe i te umu.",
+"Kurua te awakāro me te kinitanga tote. Whakakīa ia tōtia ki te mīti, te awakāro, te tōmato, te rētihi me te tīhi."
+],
+"notes":{
+"2":"tapahia kia mataono",
+"3":"tapahia kia mataono",
+"4":"tapahia kia rārangi",
+"5":"waruhia",
+"10":"kurua"
+},
+"blurb":"He utu iti, he tere, he māmā mā ngā tamariki e hanga."
+},
+"creamy-chicken-mushroom-pasta":{
+"name":"Pasta kirīmi me te heihei me te harore",
+"method":[
+"Kōhuatia te pasta ki te wai tote ki te wā i te mōkī. Tātarihia, me te pupuri i te wai iti.",
+"Whakawerahia te hinu ki tētahi parai nui ki te wera waenga ki te nui. Tunua te heihei mō te 5 ki te 6 meneti kia kōura, kia maoa katoa, kātahi ka waiho ki te taha.",
+"Ki taua parai anō, tunua te aniana me ngā harore mō te 6 meneti kia kōura ngā harore. Tāpirihia te kāriki mō te 1 meneti.",
+"Ringihia te wairanu me te kirīmi, kōhuatia mārie mō te 4 meneti kia mātotoru iti.",
+"Whakahokia te heihei ki te parai, tāpirihia te pasta me te kōkihi, ā, whakaranua kia memenge te kōkihi. Kōrorihia te parmesan, ā, tāpirihia he wai pasta mēnā e tika ana."
+],
+"notes":{
+"0":"tapahia kia poro",
+"1":"tapahia kia poro",
+"4":"kurua",
+"5":"tapahia kia mataono",
+"7":"waruhia"
+}
+},
+"sausage-tray-bake":{
+"name":"Tōtiti me ngā huawhenua i te paepae kotahi",
+"method":[
+"Whakawerahia te umu ki te 220 C (200 C mēnā he umu kōhengihengi). Whakatakotoria te rīwai me te kāroti ki tētahi paepae nui me te hinu, ngā otaota me te tote, ā, whakaranua kia pai.",
+"Tunua mō te 15 meneti. Tāpirihia te aniana, te kapekama me ngā tōtiti ki te paepae, ā, hurihia ngā mea katoa.",
+"Tunua anō mō te 25 ki te 30 meneti, me te huri kotahi, kia parauri, kia maoa katoa ngā tōtiti, kia pakapaka ngā tapa o ngā rīwai."
+],
+"notes":{
+"1":"tapahia kia poro",
+"2":"tapahia kia poro",
+"3":"tapahia kia poro nui",
+"4":"tapahia kia tapatoru"
+},
+"blurb":"Kotahi te paepae, he iti te horoi."
+},
+"salmon-rice-broccoli":{
+"name":"Hāmana mīere me te hoi, me te raihi me te parakoli",
+"method":[
+"Tunua te raihi. Whakaranua te wairanu hoi, te mīere, te kāriki, te tīnita me te wai o te haurua o te rēmana ki tētahi peihana iti.",
+"Whakawerahia te hinu ki tētahi parai kore-piri ki te wera waenga ki te nui. Tunua te hāmana, ko te kiri ki raro, mō te 4 meneti, hurihia, tunua mō ētahi atu meneti 2.",
+"Ringihia te wairanu ki runga i te hāmana, waiho kia koropupū mō te 1 meneti, me te kōmeke i te wairanu ki runga i te ika.",
+"Korohūtia, kōhuatia rānei te parakoli mō te 3 ki te 4 meneti kia kākāriki kanapa, kia ngohengohe noa iho.",
+"Tukuna te hāmana ki runga i te raihi me te parakoli me ngā poro rēmana."
+],
+"notes":{
+"2":"tapahia kia puāwai",
+"5":"kurua",
+"8":"waruhia"
+}
+},
+"veg-stir-fry-noodles":{
+"name":"Nūtara parai huawhenua",
+"method":[
+"Whakaritea ngā nūtara pērā i te kī o te mōkī, tātarihia, horoia ki te wai mātao.",
+"Whakaranua te wairanu hoi me te mīere ki te 3 pūnu nui wai.",
+"Whakawerahia te hinu ki tētahi wok ki te wera nui. Paraihia te kāroti me te parakoli mō te 3 meneti, kātahi ka tāpiri i te kapekama me ngā harore mō te 2 meneti.",
+"Tāpirihia te kāriki me te tīnita mō te 30 hēkona, kātahi ko ngā nūtara me te wairanu. Whakaranua mō te 2 ki te 3 meneti kia wera, kia kanapa ngā mea katoa."
+],
+"notes":{
+"1":"puāwai iti",
+"2":"tapahia kia poro",
+"3":"tapahia kia angiangi",
+"4":"tapahia kia poro",
+"5":"kurua",
+"6":"waruhia"
+}
+},
+"chicken-caesar-salad":{
+"name":"Huamata Caesar heihei",
+"method":[
+"Whakawerahia te umu ki te 200 C. Whakaranua ngā mataono parāoa ki te 1 pūnu nui hinu me te kinitanga tote, tunua mō te 10 meneti kia kōura.",
+"Kīnakihia te heihei ki te tote me te pepa. Tunua ki tētahi parai me te hinu iti mō te 5 ki te 6 meneti ia taha kia maoa katoa. Waiho mō te 5 meneti, kātahi ka poro.",
+"Kōhuatia ngā hēki mō te 7 meneti, whakamātaotia ki te wai mātao, tīhorea, ā, wehea kia rua. Paraihia te pēkana kia pakapaka.",
+"Mō te wairanu huamata, kōrorihia te toenga o te hinu, te wai rēmana, te kāriki me te haurua o te parmesan.",
+"Whakaranua te rētihi ki te wairanu, kātahi ka whakatakoto i te heihei, te pēkana, ngā hēki, ngā crouton me te toenga o te parmesan ki runga."
+],
+"notes":{
+"1":"haehaea",
+"2":"tapatapahia",
+"4":"waruhia kia angiangi",
+"5":"tapahia kia mataono mō ngā crouton",
+"8":"kurua"
+}
+},
+"beef-broccoli-stir-fry":{
+"name":"Mīti kau me te parakoli parai",
+"method":[
+"Tunua te raihi. Whakaranua te mīti kau ki te paraoa kānga me te pūnu nui o te wairanu hoi. Whakaranua te toenga o te wairanu hoi ki te mīere me te 100 ml wai.",
+"Whakawerahia te haurua o te hinu ki tētahi wok kia tino wera. Paraihia te mīti kau kia rua ngā wāhanga mō te 1 ki te 2 meneti kia parauri, ā, waiho ki te taha.",
+"Tāpirihia te toenga o te hinu, tunua te parakoli mō te 3 meneti me te wai iti. Tāpirihia te kāriki me te tīnita mō te 30 hēkona.",
+"Whakahokia te mīti kau, ringihia te wairanu, tunua mō te 1 ki te 2 meneti kia mātotoru. Tukuna ki runga i te raihi."
+],
+"notes":{
+"2":"puāwai",
+"5":"kurua",
+"6":"waruhia"
+}
+},
+"cottage-pie":{
+"name":"Pai kāinga (cottage pie)",
+"method":[
+"Kōhuatia ngā rīwai ki te wai tote mō te 15 ki te 20 meneti kia ngohengohe. Tātarihia, kurua me te pata me te miraka, ā, kīnakihia.",
+"I tēnei wā, tunua te aniana me te kāroti ki tētahi parai nui e pai ana mō te umu mō te 6 meneti. Tāpirihia te mīti mōmona, whakaparauritia mō te 8 meneti.",
+"Kōrorihia te paraoa me te tōmato kōnatu, kātahi ko te wairanu. Kōhuatia mārie mō te 15 meneti kia mātotoru, me te tāpiri i ngā pī mō ngā meneti whakamutunga e 3. Kīnakihia.",
+"Whakawerahia te umu ki te 200 C. Kōmekehia te rīwai kua kurua ki runga i te mīti, whakataratarahia ki te paoka, ā, ruiruia te tīhi.",
+"Tunua mō te 20 ki te 25 meneti kia kōura, kia koropupū."
+],
+"notes":{
+"1":"tīhorea, tapahia",
+"4":"tapahia kia mataono",
+"5":"tapahia kia mataono",
+"10":"waruhia"
+}
+},
+"ham-cheese-omelette":{
+"name":"Hēki parai hāmu me te tīhi",
+"method":[
+"Kōrorihia ngā hēki me te miraka, te tote me te pepa.",
+"Whakarewahia te hauwhā o te pata ki tētahi parai kore-piri ki te wera waenga. Ringihia te hauwhā o te ranunga hēki, ā, kōrorihia te parai.",
+"Ina māro te raro engari he mākū iti tonu te runga, ruiruia te hauwhā o te hāmu, te tīhi me te kōkihi.",
+"Whakakopaina te hēki parai kia haurua, whakaneke ki tētahi pereti, ā, mahia anō mō ērā atu."
+],
+"notes":{
+"1":"tapahia kia mataono",
+"2":"waruhia"
+}
+},
+"pumpkin-soup":{
+"name":"Hupa paukena tunu",
+"method":[
+"Whakawerahia te umu ki te 200 C. Tunua te paukena me te hinu iti me te tote mō te 30 meneti kia ngohengohe, kia kōura.",
+"Whakarewahia te pata ki tētahi kōhua nui, tunua te aniana mō te 5 meneti. Tāpirihia te kāriki me te pauka kari mō te 1 meneti.",
+"Tāpirihia te paukena tunu me te wairanu, kia koropupū, kātahi ka kōhua mārie mō te 10 meneti.",
+"Whakamaenehia kia māeneene, kōrorihia te kirīmi, ā, kīnakihia ki tō hiahia. Tukuna me te parāoa tōhi."
+],
+"notes":{
+"0":"tīhorea, tapahia kia mataono",
+"1":"tapatapahia",
+"6":"hei tuku"
+},
+"blurb":"Whakakapia te wairanu ki te wairanu huawhenua kia huawhenua anake ai."
+},
+"chicken-noodle-soup":{
+"name":"Hupa heihei me te nūtara",
+"method":[
+"Whakatakotoria te wairanu, te heihei, te aniana, te kāroti, te kāriki, te tīnita me te tote ki tētahi kōhua nui. Kia koropupū mārie, ā, tunua mō te 15 ki te 20 meneti kia maoa katoa te heihei.",
+"Hīkina te heihei, haehaea ki ngā paoka e rua, ā, whakahokia ki te kōhua.",
+"Tāpirihia ngā nūtara, tunua mō te wā i te mōkī. Kia rongo i te reka, whakatikahia te tote, kātahi ka tuku."
+],
+"notes":{
+"2":"tapahia kia poro",
+"3":"tapahia kia mataono",
+"4":"kurua",
+"6":"waruhia"
+}
+},
+"mac-and-cheese":{
+"name":"Mac and cheese tunu",
+"method":[
+"Tunua te pasta kia 2 meneti te poto iho i te wā i te mōkī, kātahi ka tātari.",
+"Whakarewahia te pata ki tētahi kōhua, kōrorihia te paraoa, tunua mō te 1 meneti. Āta kōrorihia te miraka ki roto, kōhuatia mārie mō te 5 meneti kia mātotoru.",
+"Tangohia i te wera, kōrorihia ngā hautoru e toru o te tīhi, te tote me te pepa. Whakaranua te pasta me ngā pī.",
+"Ringihia ki tētahi rīhi tunu, ruiruia te toenga o te tīhi, ā, tunua ki te 200 C mō te 15 ki te 20 meneti kia kōura."
+],
+"notes":{
+"0":"macaroni, he mea ōrite rānei",
+"1":"waruhia"
+}
+},
+"flatbread-pizzas":{
+"name":"Pītha Margherita ki te parāoa papatahi",
+"method":[
+"Whakawerahia te umu ki te 220 C. Whakatakotoria ngā parāoa papatahi ki ngā paepae, ā, pania māmā ki te hinu.",
+"Whakaranua te tōmato kōnatu ki te 2 pūnu nui wai, ā, horahia ki runga i ngā parāoa papatahi.",
+"Whakatakotoria te mozzarella, ngā poro tōmato me te hāmu mēnā e whakamahia ana.",
+"Tunua mō te 8 ki te 10 meneti kia koropupū te tīhi, kia pakapaka ngā tapa. Ruiruia te pāhiri."
+],
+"notes":{
+"3":"tapahia kia poro",
+"6":"kōwhiringa noa"
+}
+},
+"chilli-con-carne":{
+"name":"Chilli con carne",
+"method":[
+"Whakawerahia te hinu ki tētahi kōhua nui, tunua te aniana me te kapekama mō te 6 meneti. Tāpirihia te kāriki me ngā kinaki mō te 1 meneti.",
+"Tāpirihia te mīti mōmona, whakaparauritia mō te 8 meneti, me te wāwāhi.",
+"Kōrorihia te tōmato kōnatu, te tōmato, ngā pīni kua tātaria, te tote me te 150 ml wai. Kōhuatia mārie, he tuwhera iti te taupoki, mō te 35 ki te 40 meneti kia mātotoru.",
+"Tunua te raihi, ā, tukuna te chilli ki runga."
+],
+"notes":{
+"3":"tapahia kia mataono",
+"4":"tapahia kia mataono",
+"5":"kurua"
+},
+"blurb":"He pai ake i te rā e whai ake ana. He pai ki te whakatio."
+},
+"honey-soy-chicken-thighs":{
+"name":"Kūwhā heihei mīere me te hoi",
+"method":[
+"Kōrorihia te mīere, te wairanu hoi, te kāriki me te tīnita. Ringihia ki runga i te heihei, waiho kia mākūkū mō te 15 meneti, mō te pō katoa rānei i te pouaka makariri.",
+"Whakawerahia te umu ki te 200 C. Whakatakotoria te heihei ki tētahi paepae kua whāriki, ringihia te ranunga ki runga, ā, tunua mō te 30 ki te 35 meneti, me te pani kotahi, kia piripiri, kia maoa katoa.",
+"Tunua te raihi, korohūtia te parakoli. Tukuna te heihei me te wai o te paepae ki runga."
+],
+"notes":{
+"3":"kurua",
+"4":"waruhia"
+}
+},
+"zucchini-fritters":{
+"name":"Parāoa parai kūkini me te tīhi",
+"method":[
+"Whakaranua te kūkini kua waruhia ki te haurua o te tote, waiho mō te 10 meneti. Kōtēhia te wai ki tētahi tauera mā kia maha te puta.",
+"Whakaranua te kūkini ki ngā hēki, te paraoa, te pauka tunu, te tīhi me te toenga o te tote.",
+"Whakawerahia te hinu ki tētahi parai ki te wera waenga. Maka he pūnu kī ki roto, pēhia kia papatahi iti. Tunua mō te 3 meneti ia taha kia kōura.",
+"Tukuna me te miraka pē me te wai rēmana iti."
+],
+"notes":{
+"0":"waruhia",
+"3":"waruhia",
+"5":"hei tuku"
+}
+},
+"tuna-pasta-bake":{
+"name":"Pasta tūna kirīmi tunu",
+"method":[
+"Whakawerahia te umu ki te 200 C. Tunua te pasta kia 2 meneti te poto iho i te wā i te mōkī, ā, tātarihia.",
+"Tunua te aniana ki te hinu mō te 5 meneti, tāpirihia te kāriki mō te 1 meneti, kātahi ko te tōmato me te kirīmi. Kōhuatia mārie mō te 5 meneti.",
+"Kōrorihia te tūna, ngā pī me te pasta, ā, ringihia ki tētahi rīhi tunu.",
+"Ruiruia te tīhi, tunua mō te 15 ki te 20 meneti kia kōura."
+],
+"notes":{
+"1":"2 tini, kua tātaria",
+"3":"waruhia",
+"4":"tapahia kia mataono",
+"7":"kurua"
+}
+},
+"sausages-and-mash":{
+"name":"Tōtiti, rīwai kurua me te wairanu aniana",
+"method":[
+"Kōhuatia ngā rīwai ki te wai tote mō te 15 ki te 20 meneti. Tātarihia, kurua me te pata me te miraka.",
+"Whakaparauritia ngā tōtiti ki tētahi parai me te hinu, me te huri, tata ki te 12 meneti kia maoa katoa. Tangohia, waiho kia mahana.",
+"Ki taua parai anō, tunua ngā aniana mō te 10 meneti kia ngohengohe, kia kōura. Kōrorihia te paraoa, kātahi ka āta tāpiri i te wairanu, ā, kōhuatia mārie mō te 5 meneti kia mātotoru.",
+"Tunua ngā pī, ā, tukuna ngā mea katoa ngātahi."
+],
+"notes":{
+"5":"tapahia kia poro"
+}
+},
+"beef-burgers":{
+"name":"Pākī hāmipēka mīti kau hanga ā-kāinga",
+"method":[
+"Whakaranua te mīti mōmona ki te aniana kua waruhia, te hēki, te tote me te pepa. Hangaia kia 4 ngā pōro papatahi, he whānui iti ake i ngā parāoa, ā, whakamātaotia mō te 10 meneti.",
+"Whakawerahia te hinu ki tētahi parai ki te wera waenga ki te nui. Tunua ngā pōro mō te 4 ki te 5 meneti ia taha kia maoa katoa, me te tāpiri i te tīhi mō te meneti whakamutunga.",
+"Tōhia ngā parāoa, kātahi ka whakakī ki te rētihi, te tōmato, te aniana me ngā pōro mīti."
+],
+"notes":{
+"3":"tapahia kia poro",
+"4":"poro, waruhia rānei",
+"5":"haurua kua waruhia, haurua kua poro"
+}
+},
+"scrambled-eggs-avocado-toast":{
+"name":"Hēki kōrori me te awakāro ki runga tōhi",
+"method":[
+"Kōrorihia ngā hēki me te miraka, te tote me te pepa. Tōhia te parāoa.",
+"Whakarewahia te pata ki tētahi parai kore-piri ki te wera iti, tāpirihia ngā hēki, ā, āta kōrorihia ki te kōkiri mō te 3 ki te 4 meneti kia māro ngāwari.",
+"Kurua te awakāro me te kinitanga tote, horahia ki runga i te tōhi. Whakatakotoria ngā hēki ki runga."
+],
+"notes":{}
+},
+"banana-pancakes":{
+"name":"Panekeke panana",
+"method":[
+"Whakaranua te paraoa, te pauka tunu me te huka ki tētahi peihana. Kōrorihia ngā hēki, te miraka me te 30 g o te pata kua rewa, kātahi ka kōrori ki te ranunga maroke kia ranu noa iho. Kāore he raruraru mēnā he puku iti.",
+"Whakawerahia tētahi parai kore-piri ki te wera waenga me te pata iti o te toenga. Ringihia he 1/4 kapu o te ranunga mō ia panekeke.",
+"Tunua mō te 2 meneti kia puta ngā mirumiru, hurihia, tunua mō ētahi atu meneti 1 ki te 2. Mahia anō mō te toenga.",
+"Tukuna me te panana me te mīere iti ki runga."
+],
+"notes":{
+"5":"kua rewa",
+"6":"tapahia kia poro"
+}
+},
+"chicken-wraps":{
+"name":"Takai heihei kinaki",
+"method":[
+"Whakaranua te heihei ki te paprika, te hinu, te tote me te wai o te haurua o te rēmana. Tunua ki tētahi parai wera mō te 6 ki te 8 meneti kia kōura, kia maoa katoa.",
+"Kōrorihia te kāriki me te wai rēmana iti ki te miraka pē hei wairanu.",
+"Whakamahanatia ngā tōtia, pania ki te wairanu miraka pē, ā, whakakīa ki te heihei, te rētihi, te tōmato me te tīhi. Takaia, ā, tukuna."
+],
+"notes":{
+"0":"tapahia kia poro",
+"2":"tapahia kia rārangi",
+"3":"tapahia kia poro",
+"4":"waruhia",
+"9":"kurua"
+}
+},
+"banana-honey-porridge":{
+"name":"Pāreti panana me te mīere",
+"method":[
+"Whakatakotoria ngā ōti, te miraka me te tote ki tētahi kōhua, kia koropupū mārie ki te wera waenga.",
+"Tunua mō te 5 ki te 7 meneti, me te kōrori auau, kia mātotoru, kia kirīmi.",
+"Kōmekehia ki ngā peihana, ā, whakatakotoria te panana me te mīere ki runga."
+],
+"notes":{
+"2":"tapahia kia poro"
+}
+},
+"chickpea-spinach-curry":{
+"name":"Kari kokonati me te pīni chickpea me te kōkihi",
+"method":[
+"Tunua te raihi. Whakawerahia te hinu ki tētahi parai nui, tunua te aniana mō te 5 meneti. Tāpirihia te kāriki, te tīnita me te pauka kari mō te 1 meneti.",
+"Tāpirihia te tōmato, te miraka kokonati, ngā pīni chickpea me te tote. Kōhuatia mārie mō te 15 meneti kia mātotoru.",
+"Kōrorihia te kōkihi, tunua mō te 2 meneti kia memenge. Kia rongo i te reka, whakatikahia te tote, ā, tukuna me te raihi."
+],
+"notes":{
+"0":"2 tini, kua tātaria",
+"3":"tapahia kia mataono",
+"4":"kurua",
+"5":"waruhia"
+},
+"blurb":"He kai kaimanga tonu pērā i tōna tuhinga."
+},
+"kung-pao-chicken":{
+"name":"Heihei kung pao",
+"method":[
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Whakaranua te heihei ki te 1 pūnu nui o te wairanu hoi, te wāina Shaoxing me te haurua o te paraoa kānga.",
+"Whakaranua te wairanu: te toenga o te wairanu hoi, te winika, te huka, te toenga o te paraoa kānga me te 3 pūnu nui wai.",
+"Whakawerahia te hinu ki tētahi wok ki te wera nui, ā, paraihia te heihei mō te 5 ki te 6 meneti kia parauri, kia maoa katoa. Hīkina.",
+"Tāpirihia te tiare, te kāriki, te tīnita me ngā wāhanga mā o te aniana kākāriki, paraihia mō te 30 hēkona.",
+"Whakahokia te heihei, ringihia te wairanu, ā, whakaranua tata ki te meneti kotahi kia mātotoru, kia kanapa. Kōrorihia ngā pīnati me te aniana kākāriki, ā, tukuna me te raihi."
+],
+"notes":{
+"0":"tapahia kia 2 cm ngā poro",
+"6":"poro angiangi (he kapu ringa tiare maroke rānei)",
+"7":"tapahia kia poro",
+"8":"tapatapahia kia iti",
+"9":"tapahia kia 3 cm te roa"
+},
+"blurb":"Heihei parai ā-Sichuan me te pīnati, te tiare me tētahi wairanu kawa-reka kanapa."
+},
+"mapo-tofu":{
+"name":"Tōhū mapo",
+"method":[
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Kōhuatia mārie ngā mataono tōhū ki te wai tote iti mō te 2 meneti kia pakari ake, kātahi ka tātari.",
+"Whakawerahia te hinu ki tētahi wok ki te wera waenga ki te nui, ā, paraihia te poaka, me te wāwāhi, tata ki te 4 meneti kia parauri.",
+"Tāpirihia te kōnatu pīni tiare, te kāriki, te tīnita me te pauka tiare, paraihia mō te meneti kotahi kia whero te hinu.",
+"Ringihia te wairanu, te wairanu hoi me te huka, kia koropupū mārie. Āta tukuna te tōhū ki roto, kōhuatia mārie mō te 4 meneti, me te āta pana, kaua e kōrori.",
+"Whakaranua te paraoa kānga ki te 2 pūnu nui wai, āta kōrorihia ki roto, ā, kōhuatia mārie kia mātotoru te wairanu. Ruiruia te aniana kākāriki, ā, tukuna ki runga i te raihi. He tikanga tawhito te rui i te pepa Sichuan kuoro ki runga mēnā kei a koe."
+],
+"notes":{
+"0":"ngohengohe, pakari rānei, tapahia kia 2 cm ngā mataono",
+"3":"tapatapahia",
+"4":"tapatapahia",
+"10":"tapahia kia poro"
+},
+"blurb":"Tōhū ngohengohe i roto i tētahi wairanu poaka me te pīni tiare, he wera, he reka. He kai tawhito nō Sichuan, he tere te hanga."
+},
+"tomato-egg-stir-fry":{
+"name":"Tōmato me te hēki parai",
+"method":[
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Kōrorihia ngā hēki me te kinitanga o te tote.",
+"Whakawerahia te 1 pūnu nui hinu ki tētahi wok ki te wera waenga ki te nui, ringihia ngā hēki, ā, āta kōrorihia kia māro noa iho, he poro nui ngohengohe. Neke ki tētahi pereti.",
+"Tāpirihia te toenga o te hinu me ngā tōmato, paraihia tata ki te 3 meneti kia ngohengohe, kia puta te wai.",
+"Tāpirihia te huka, te toenga o te tote me te 3 pūnu nui wai, ā, kōhuatia mārie mō te 2 meneti.",
+"Whakahokia ngā hēki, ā, āta whakaranua ngā mea katoa mō te 30 hēkona. Ringihia te hinu hāme, ruiruia te aniana kākāriki, ā, tukuna ki runga i te raihi."
+],
+"notes":{
+"1":"tapahia kia tapatoru",
+"4":"tapahia kia poro"
+},
+"blurb":"Hēki kōrori ngohengohe me te tōmato wai i roto i tētahi wairanu reka-tote māmā. He kai kāinga o ia rā i Haina."
+},
+"char-siu-pork":{
+"name":"Poaka char siu me te raihi me ngā huawhenua kākāriki",
+"method":[
+"Whakaranua te wairanu hoisin, te wairanu hoi, te 2 pūnu nui o te mīere, te kinaki rima, te kāriki, te wāina me te huka. Pania te poaka, ā, waiho kia mākūkū i te pouaka makariri mō te hāora kotahi neke atu.",
+"Whakawerahia te umu ki te 200°C. Whārikihia tētahi paepae tunu ki te pepa konumohe, ā, whakatakotoria he whata ki runga. Whakatakotoria te poaka ki te whata, ā, penapenatia te toenga o te ranunga.",
+"Tunua mō te 25 meneti, hurihia te poaka, pania ki te toenga o te ranunga, ā, tunua mō ētahi atu meneti 20.",
+"Pania ki te toenga o te mīere, tunua mō ētahi atu meneti 5 ki te 10 kia piripiri, kia tahu iti ngā tapa, kia maoa katoa. Waiho mō te 5 meneti, kātahi ka poro.",
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Paraihia te bok choy ki te hinu ki te wera nui mō te 2 ki te 3 meneti me te wai iti me te kinitanga tote. Tukuna te poaka ki runga i te raihi me ngā huawhenua kākāriki."
+],
+"notes":{
+"0":"he pokohiwi poaka rānei, tapahia kia rārangi, 4 cm te mātotoru",
+"5":"kurua",
+"9":"wehea kia rua"
+},
+"blurb":"Poaka tunu reka, piripiri, kua pania ki te hoisin me te mīere. Waiho kia mākūkū mō te hāora kotahi neke atu, mō te pō katoa rānei."
+},
+"steamed-egg-custard":{
+"name":"Hēki kōhua korohū ā-Hainamana",
+"method":[
+"Āta kōrorihia ngā hēki kia kore ai e uru te hau, kātahi ka kōrori i te wairanu mahana me te tote.",
+"Ringihia mā tētahi tātari ki tētahi rīhi pāpaku e ātete ana ki te wera, ā, tangohia ngā mirumiru. Hipokina ki tētahi pereti, ki te pepa konumohe rānei.",
+"Korohūtia ki runga i te wai e koropupū mārie ana mō te 10 ki te 12 meneti kia māro noa iho, e oioi tonu ana i waenganui. Ka puta mā tētahi naihi ka werohia ki waenganui.",
+"Ringihia te wairanu hoi me te hinu hāme, ā, ruiruia te aniana kākāriki."
+],
+"notes":{
+"1":"mahana",
+"5":"tapahia kia angiangi rawa"
+},
+"blurb":"He hēki ngohengohe, tote, i korohūtia ki tētahi peihana. Tukuna me te raihi me tētahi kai parai."
+},
+"pork-cabbage-dumplings":{
+"name":"Paraoa kōpaki poaka me te kāpeti",
+"method":[
+"Whakaranua te paraoa ki te 150 ml wai mātao, pokepokea mō te 5 meneti kia māeneene. Hipokina, waiho mō te 30 meneti.",
+"Whakaranua te kāpeti ki te tote, waiho mō te 10 meneti, kātahi ka kōtē kia maha te wai e puta.",
+"Whakaranua te poaka, te kāpeti, te aniana kākāriki, te tīnita, te 1 pūnu nui o te wairanu hoi, te hinu hāme, te wāina me te 2 pūnu nui wai, me te kōrori ki te ahunga kotahi kia piripiri.",
+"Hurihia te pokepoke kia roa ano he taura, tapahia kia 40 ngā wāhanga, ā, hurihia ia wāhanga kia porowhita angiangi, tata ki te 8 cm te whānui.",
+"Whakatakotoria he pūnu iti kī o te kai whakakī ki waenganui o ia porowhita, whakakopaina kia haurua, ā, kūtia ngā tapa kia kati pakari.",
+"Kōhuatia kia hia ngā wāhanga ki tētahi kōhua nui o te wai. Ina māanu ake, tāpirihia he kapu wai mātao, kia koropupū anō; mahia ēnei kia rua, tata ki te 6 ki te 7 meneti te katoa, kia maoa katoa te kai whakakī.",
+"Tukuna me te winika kua whakaranua ki te toenga o te wairanu hoi hei toutou. Whakatiotia ngā toenga, kāore anō kia tunua, ki tētahi paepae, kātahi ka pēke."
+],
+"notes":{
+"2":"tapatapahia kia iti",
+"4":"tapatapahia kia iti",
+"5":"waruhia",
+"9":"hei toutou"
+},
+"blurb":"He jiaozi hanga ā-kāinga me tētahi pokepoke paraoa, wai hoki. Tata ki te 40 ka puta, ā, he pai te whakatio i ngā toenga."
+},
+"sweet-sour-chicken":{
+"name":"Heihei reka-kawa",
+"method":[
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Whakaranua te wairanu: te winika, te huka, te tōmato kōnatu, te wairanu hoi, te 1 pūnu nui o te paraoa kānga me te 150 ml wai.",
+"Kōrorihia te hēki. Tōua te heihei ki te hēki, kātahi ka whakaranu ki te toenga o te paraoa kānga.",
+"Paraihia te heihei ki te hinu ki te wera waenga ki te nui, kia hia ngā wāhanga, mō te 5 ki te 6 meneti kia kōura, kia maoa katoa. Tātarihia ki runga pepa.",
+"Ringihia te hinu, waiho kia 1 pūnu nui anake. Paraihia te aniana me te kapekama mō te 3 meneti, kātahi ko te kāriki mō te 30 hēkona.",
+"Ringihia te wairanu, kōhuatia mārie mō te 1 ki te 2 meneti kia mātotoru, kia kanapa. Whakaranua te heihei, ā, tukuna me te raihi."
+],
+"notes":{
+"0":"tapahia kia 2.5 cm ngā poro",
+"4":"tapahia kia poro",
+"5":"tapahia kia poro",
+"6":"tapatapahia"
+},
+"blurb":"Ngā poro heihei pakapaka kua whakaranua ki te kapekama me te aniana i roto i tētahi wairanu kawa hanga ā-kāinga."
+},
+"dan-dan-noodles":{
+"name":"Nūtara dan dan",
+"method":[
+"Wehewehea te wairanu hoi, te winika, te hinu hāme, te huka, te pauka tiare me te kāriki ki ngā peihana e whā.",
+"Paraihia te poaka ki te hinu ki te wera waenga ki te nui me te kōnatu pīni tiare me te wāina, tata ki te 6 meneti kia parauri, kia pakapaka ngā tapa.",
+"Tunua ngā nūtara pērā i te kī o te mōkī, me te tāpiri i te bok choy mō te meneti whakamutunga. Kōrorihia te 2 pūnu nui o te wai tunu wera ki ia peihana wairanu, kātahi ka tātari i ngā nūtara.",
+"Wehewehea ngā nūtara me ngā huawhenua kākāriki ki ngā peihana, whakatakotoria te poaka, ngā pīnati me te aniana kākāriki ki runga, ā, whakaranua kia pai i mua i te kai."
+],
+"notes":{
+"0":"nūtara hēki, nūtara witi rānei",
+"10":"kurua",
+"11":"kurua",
+"12":"tapahia kia poro"
+},
+"blurb":"Nūtara me te poaka kinaki pakapaka, ngā huawhenua kākāriki me tētahi wairanu tiare kawa, he reka pīnati. Whakaranua ngā mea katoa i mua i te kai."
+},
+"fish-fragrant-eggplant":{
+"name":"Ēkapani \"kakara ika\"",
+"method":[
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Whakaranua te ēkapani ki te tote, waiho mō te 10 meneti, kātahi ka whakamaroke.",
+"Paraihia te ēkapani ki te 2 pūnu nui o te hinu ki te wera waenga ki te nui mō te 8 ki te 10 meneti kia ngohengohe, kia kōura. Hīkina.",
+"Tāpirihia te toenga o te hinu, paraihia te poaka kia parauri. Tāpirihia te kōnatu pīni tiare, te kāriki, te tīnita me te wāhanga mā o te aniana kākāriki, paraihia mō te meneti kotahi.",
+"Whakaranua te wairanu hoi, te winika, te huka, te paraoa kānga me te 100 ml wai, ringihia ki roto, ā, kia koropupū mārie.",
+"Whakahokia te ēkapani, kōhuatia mārie mō te 2 meneti kia hipokina e te wairanu. Ruiruia te wāhanga kākāriki o te aniana, ā, tukuna ki runga i te raihi."
+],
+"notes":{
+"0":"tapahia kia rākau, 6 cm te roa",
+"5":"tapatapahia",
+"6":"tapatapahia",
+"7":"poro angiangi, kia wehe te mā me te kākāriki"
+},
+"blurb":"Ēkapani ngohengohe i roto i tētahi wairanu kāriki reka, kawa, wera hoki. Kāore he ika i roto: nō tētahi wairanu Sichuan i whakamahia mō te ika i mua te ingoa."
+},
+"hot-sour-soup":{
+"name":"Hupa wera, kawa hoki",
+"method":[
+"Kia koropupū te wairanu me te tīnita me ngā harore, ā, kōhuatia mārie mō te 5 meneti.",
+"Tāpirihia te tōhū, te wairanu hoi, te winika me te pepa, kōhuatia mārie mō te 2 meneti.",
+"Whakaranua te paraoa kānga ki te 4 pūnu nui wai, kōrorihia ki roto, ā, kōhuatia mārie mō te meneti kotahi kia mātotoru iti.",
+"Whakaitia te wera, ā, ringihia ngā hēki kua kōrorihia hei awa angiangi me te āta kōrori, kia māro ai hei rīpene.",
+"Kia rongo i te reka, tāpirihia he winika, he pepa anō rānei ki tō hiahia. Whakaotihia ki te hinu hāme me te aniana kākāriki."
+],
+"notes":{
+"1":"tapahia kia poro",
+"2":"tapahia kia poro",
+"3":"tapahia kia rārangi angiangi",
+"6":"pepa mā mēnā kei a koe",
+"8":"kua kōrorihia",
+"10":"tapahia kia poro"
+},
+"blurb":"He hupa whakamahana me te tōhū, te harore me ngā rīpene hēki, he kawa i te winika, he wera i te pepa."
+},
+"teriyaki-chicken-don":{
+"name":"Peihana raihi heihei teriyaki",
+"method":[
+"Horoia te raihi kia tata mārama te wai. Whakatakotoria ki tētahi kōhua me te wai 1.2 te nui ake i te raihi, kia koropupū, hipokina, tunua ki te wera iti rawa mō te 12 meneti, kātahi ka waiho, kua hipokina, i waho i te wera mō te 10 meneti.",
+"Whakaranua te wairanu hoi, te mirin me te huka.",
+"Paraihia te heihei ki te hinu ki te wera waenga mō te 6 meneti, hurihia, tunua mō ētahi atu meneti 5 kia maoa katoa.",
+"Ringihia te ngako, tāpirihia te wairanu, waiho kia koropupū mō te 2 ki te 3 meneti, me te huri i te heihei, kia kanapa, kia piripiri.",
+"Kōhuatia, korohūtia rānei te parakoli mō te 3 meneti.",
+"Porohia te heihei, ā, tukuna ki runga i te raihi me te parakoli. Kōmekehia te wairanu ki runga, ā, ruiruia te aniana kākāriki me ngā kākano hāme."
+],
+"notes":{
+"6":"tapahia kia puāwai",
+"7":"tapahia kia poro"
+},
+"blurb":"Kūwhā heihei parai i roto i tētahi wairanu teriyaki kanapa hanga ā-kāinga, ki runga i te raihi me te parakoli."
+},
+"chicken-katsu-curry":{
+"name":"Kari heihei katsu",
+"method":[
+"Horoia te raihi kia tata mārama te wai. Whakatakotoria ki tētahi kōhua me te wai 1.2 te nui ake i te raihi, kia koropupū, hipokina, tunua ki te wera iti rawa mō te 12 meneti, kātahi ka waiho, kua hipokina, i waho i te wera mō te 10 meneti.",
+"Kari: whakangohengohe i te aniana ki te 1 pūnu nui o te hinu mō te 5 meneti. Tāpirihia te kāroti, te rīwai me te 700 ml wai, ā, kōhuatia mārie mō te 15 meneti kia ngohengohe.",
+"Whakawetohia te wera, wāwāhia te poraka kari ki roto, kōrorihia kia rewa, kātahi ka kōhua mārie mō te 5 meneti, me te kōrori, kia mātotoru.",
+"Kīnakihia te heihei, ruiruia ki te paraoa, tōua ki ngā hēki kua kōrorihia, ā, pēhia ki te panko.",
+"Paraihia ki te toenga o te hinu ki te wera waenga mō te 4 ki te 5 meneti ia taha kia kōura, kia maoa katoa. Tātarihia, ā, porohia.",
+"Tukuna te heihei ki runga i te raihi me te wairanu kari i te taha."
+],
+"notes":{
+"0":"2 uma, kua wehea kia rua i waenganui",
+"5":"he pouaka 92 g",
+"6":"tapahia kia mataono",
+"7":"tapahia kia poro",
+"8":"tapahia kia poro"
+},
+"blurb":"Heihei pakapaka kua kopaki ki te panko, me tētahi wairanu kari Hapanihi ngāwari, mātotoru, me te raihi."
+},
+"teriyaki-tofu-bowl":{
+"name":"Peihana raihi tōhū teriyaki",
+"method":[
+"Horoia te raihi kia tata mārama te wai. Whakatakotoria ki tētahi kōhua me te wai 1.2 te nui ake i te raihi, kia koropupū, hipokina, tunua ki te wera iti rawa mō te 12 meneti, kātahi ka waiho, kua hipokina, i waho i te wera mō te 10 meneti.",
+"Pēhia te tōhū ki waenga i ngā pepa mō te 10 meneti, tapahia kia mataono, ā, whakaranua ki te paraoa kānga.",
+"Paraihia te tōhū ki te hinu ki te wera waenga ki te nui, me te huri, tata ki te 8 meneti kia pakapaka katoa.",
+"Whakaranua te wairanu hoi, te mirin, te huka, te tīnita me te 2 pūnu nui wai, ringihia ki runga i te tōhū, ā, whakaranua mō te 1 ki te 2 meneti kia piripiri.",
+"Korohūtia, kōhuatia rānei te parakoli me te kāroti mō te 3 meneti.",
+"Tukuna te tōhū me ngā huawhenua ki runga i te raihi me te aniana kākāriki me ngā kākano hāme."
+],
+"notes":{
+"0":"pakari",
+"6":"waruhia",
+"8":"tapahia kia puāwai",
+"9":"tapahia kia rākau angiangi",
+"10":"tapahia kia poro"
+},
+"blurb":"Tōhū pakapaka i roto i te wairanu teriyaki piripiri me te raihi me ngā huawhenua."
+},
+"oyakodon":{
+"name":"Oyakodon (peihana raihi heihei me te hēki)",
+"method":[
+"Horoia te raihi kia tata mārama te wai. Whakatakotoria ki tētahi kōhua me te wai 1.2 te nui ake i te raihi, kia koropupū, hipokina, tunua ki te wera iti rawa mō te 12 meneti, kātahi ka waiho, kua hipokina, i waho i te wera mō te 10 meneti.",
+"Kia koropupū mārie te wairanu, te wairanu hoi, te mirin me te huka ki tētahi parai whānui. Tāpirihia te aniana, kōhuatia mārie mō te 3 meneti.",
+"Tāpirihia te heihei, kōhuatia mārie mō te 6 ki te 8 meneti kia maoa katoa.",
+"Āta kōrorihia ngā hēki kia noho rerekē ngā tae. Ringihia ngā hautoru e rua ki runga i te heihei, hipokina, tunua ki te wera iti mō te 1 meneti, kātahi ka tāpiri i te toenga, hipokina, tunua mō ētahi atu hēkona 30 kia māro noa iho te hēki, engari kia ngohengohe tonu.",
+"Kōmekehia te heihei, te hēki me te wairanu iti ki runga i ngā peihana raihi, ā, ruiruia te aniana kākāriki. Ka whakamahi ngā kaitunu Hapanihi i te wairanu dashi; he pai hoki te wairanu heihei i te kāinga."
+],
+"notes":{
+"0":"tapahia kia rite ki te ngau kotahi",
+"1":"tapahia kia angiangi",
+"8":"tapahia kia poro"
+},
+"blurb":"Heihei me te aniana i kōhuatia mārie ki tētahi wairanu hoi reka, i whakamārotia ki te hēki ngohengohe, ka kōmekehia ki runga i te raihi."
+},
+"chicken-karaage":{
+"name":"Heihei karaage (heihei parai Hapanihi)",
+"method":[
+"Whakaranua te heihei ki te wairanu hoi, te mirin, te tīnita me te kāriki, ā, waiho mō te 20 meneti.",
+"Horoia te raihi kia tata mārama te wai. Whakatakotoria ki tētahi kōhua me te wai 1.2 te nui ake i te raihi, kia koropupū, hipokina, tunua ki te wera iti rawa mō te 12 meneti, kātahi ka waiho, kua hipokina, i waho i te wera mō te 10 meneti.",
+"Whakaranua te heihei ki te paraoa kānga, ā, rūrūtia te toenga.",
+"Whakawerahia te 2 ki te 3 cm hinu ki tētahi kōhua taumaha kia tata ki te 170°C. Paraihia te heihei kia hia ngā wāhanga mō te 4 ki te 5 meneti kia kōura hōhonu, kia maoa katoa. Tātarihia ki tētahi whata. Kaua rawa e waiho te hinu wera kia kore he kaitiaki.",
+"Kia pakapaka ake, paraihia anō ia wāhanga mō te 1 meneti ina oti te heihei katoa.",
+"Tukuna me ngā poro rēmana, te kāpeti kua tapahia me te raihi."
+],
+"notes":{
+"0":"tapahia kia nui ake i te ngau kotahi",
+"3":"waruhia",
+"4":"waruhia",
+"6":"hei parai",
+"7":"tapahia kia tapatoru",
+"8":"tapahia kia angiangi rawa"
+},
+"blurb":"Heihei wai kua mākūkū ki te hoi, te tīnita me te kāriki, ka paraihia kia pakapaka. Tukuna me te rēmana, te kāpeti me te raihi."
+},
+"okonomiyaki":{
+"name":"Okonomiyaki (panekeke kāpeti)",
+"method":[
+"Kōrorihia te paraoa, te wairanu, ngā hēki me te tote kia mātotoru. Whakaranua te kāpeti me te nuinga o te aniana kākāriki.",
+"Whakawerahia he hinu iti ki tētahi parai ki te wera waenga. Kōmekehia te hauwhā o te ranunga ki roto, ā, hangaia kia porowhita, tata ki te 2 cm te mātotoru.",
+"Whakatakotoria ētahi poro pēkana ki runga. Tunua tata ki te 5 meneti kia kōura te raro, hurihia, tunua mō ētahi atu meneti 5 kia maoa katoa. Mahia anō mō te toenga.",
+"Whakaranua te tōmato kōnatu, te wairanu hoi, te mīere me te 1 pūnu nui wai, ā, pania ki runga i ngā panekeke.",
+"Ruiruia te toenga o te aniana kākāriki, me te māionehi Hapanihi mēnā e pai ana ki a koe."
+],
+"notes":{
+"4":"tapahia kia angiangi rawa",
+"5":"tapahia kia poro",
+"6":"he poro angiangi"
+},
+"blurb":"Panekeke kāpeti tote me te pēkana me tētahi wairanu reka-tote ki runga."
+},
+"yaki-udon":{
+"name":"Yaki udon (nūtara udon parai)",
+"method":[
+"Whakatangatangahia te udon ki te wai wera mō te meneti kotahi, tunua rānei te udon maroke pērā i te kī o te mōkī, kātahi ka tātari.",
+"Paraihia te pēkana ki te hinu ki te wera waenga ki te nui kia kōura. Tāpirihia te aniana, te kāroti me ngā harore, paraihia mō te 3 meneti, kātahi ko te kāpeti mō te 2 meneti.",
+"Tāpirihia ngā nūtara, te wairanu hoi me te mirin, ā, whakaranua ki te wera nui mō te 2 ki te 3 meneti kia wera, kia hipokina.",
+"Whakaotihia ki te hinu hāme me te aniana kākāriki."
+],
+"notes":{
+"1":"tapatapahia",
+"2":"tapahia kia poro",
+"3":"tapahia kia rākau angiangi",
+"4":"tapahia kia poro",
+"5":"tapahia kia rārangi",
+"10":"tapahia kia poro"
+},
+"blurb":"Nūtara udon mātotoru i paraihia me te pēkana, te kāpeti me ngā harore i roto i tētahi wairanu hoi me te mirin."
+},
+"gyudon":{
+"name":"Gyudon (peihana raihi mīti kau me te aniana)",
+"method":[
+"Horoia te raihi kia tata mārama te wai. Whakatakotoria ki tētahi kōhua me te wai 1.2 te nui ake i te raihi, kia koropupū, hipokina, tunua ki te wera iti rawa mō te 12 meneti, kātahi ka waiho, kua hipokina, i waho i te wera mō te 10 meneti.",
+"Kōhuatia mārie te wairanu, te wairanu hoi, te mirin, te huka me te tīnita ki tētahi kōhua. Tāpirihia te aniana, kōhuatia mārie mō te 5 meneti kia ngohengohe.",
+"Tāpirihia te mīti kau, me te wehewehe i ngā poro, kōhuatia mārie mō te 2 ki te 3 meneti kia maoa noa iho. Tangohia te pāhukahuka.",
+"Mēnā e pai ana ki a koe, kōhuatia ngā hēki mō te 6 meneti me te haurua, whakamātaotia ki te wai mātao, ā, tīhorea.",
+"Kōmekehia te mīti kau, te aniana me te wairanu iti ki runga i te raihi, ā, ruiruia te aniana kākāriki me tētahi hēki kua wehea kia rua."
+],
+"notes":{
+"0":"tapahia kia angiangi",
+"1":"tapahia kia poro",
+"6":"waruhia",
+"8":"tapahia kia poro",
+"9":"kōwhiringa noa, he hēki kōhua ngohengohe"
+},
+"blurb":"Mīti kau angiangi me te aniana ngohengohe i kōhuatia mārie ki tētahi wairanu hoi reka, ki runga i te raihi."
+},
+"tamagoyaki":{
+"name":"Tamagoyaki (hēki parai kōkiri)",
+"method":[
+"Kōrorihia ngā hēki me te huka, te wairanu hoi, te mirin, te tote me te 2 pūnu nui wai, kaua e puta he pāhukahuka.",
+"Whakawerahia tētahi parai iti (he tapawhā te pai rawa) ki te wera waenga ki te iti, ā, mukua ki tētahi pepa kua pania ki te hinu.",
+"Ringihia tētahi paparanga angiangi o te hēki, tītahatia kia hipokina te parai. Ina tata māro engari he mākū tonu te runga, kōkiritia mai i te taha tawhiti ki a koe.",
+"Panaia te kōkiri ki te taha tawhiti, mukua anō te parai ki te hinu, ā, ringihia tētahi atu paparanga angiangi, me te hiki i te kōkiri kia rere te hēki ki raro. Kōkiritia anō.",
+"Mahia anō kia pau te hēki. Waiho te hēki parai mō te 2 meneti kua takaia ki te pepa kia pakari tōna āhua, kātahi ka poro."
+],
+"notes":{},
+"blurb":"He hēki parai reka iti, ka kōkiritia kia hia ngā paparanga, ka porohia, ka tukuna mahana, mātao rānei."
+},
+"nikujaga":{
+"name":"Nikujaga (kōhua mīti kau me te rīwai)",
+"method":[
+"Horoia te raihi kia tata mārama te wai. Whakatakotoria ki tētahi kōhua me te wai 1.2 te nui ake i te raihi, kia koropupū, hipokina, tunua ki te wera iti rawa mō te 12 meneti, kātahi ka waiho, kua hipokina, i waho i te wera mō te 10 meneti.",
+"Paraihia te aniana ki te hinu mō te 2 meneti, kātahi ka tāpiri i te mīti kau, tunua kia parauri.",
+"Tāpirihia te rīwai me te kāroti, te wairanu, te huka me te mirin. Kia koropupū, ā, tangohia te pāhukahuka.",
+"Hipokina ki tētahi taupoki iti iho i te kōhua (he porowhita pepa tunu rānei), ā, kōhuatia mārie mō te 10 meneti.",
+"Tāpirihia te wairanu hoi, kōhuatia mārie mō ētahi atu meneti 10 kia ngohengohe ngā rīwai, kia heke te wairanu tata ki te haurua.",
+"Tāpirihia ngā pī mō ngā meneti whakamutunga e 2. Tukuna ki ngā peihana me te raihi."
+],
+"notes":{
+"0":"tapahia kia angiangi",
+"1":"tapahia kia poro nui",
+"2":"tapahia kia tapatoru",
+"3":"tapahia kia poro"
+},
+"blurb":"Mīti kau, rīwai me te kāroti ā-kāinga Hapanihi, i kōhuatia mārie ki tētahi wairanu hoi reka."
+},
+"pad-thai":{
+"name":"Pad thai me ngā kōura",
+"method":[
+"Waiho ngā nūtara kia mākū i te wai mahana mō te 20 ki te 30 meneti kia piko engari kia pakari tonu, kātahi ka tātari.",
+"Whakaranua te wairanu ika, te huka, te wai o te raima 1, te winika me te pauka tiare.",
+"Whakawerahia te 2 pūnu nui o te hinu ki tētahi wok ki te wera nui. Paraihia te tōhū mō te 3 meneti kia kōura, kātahi ka tāpiri i te kāriki me ngā kōura, paraihia mō te 2 meneti kia māwhero ngā kōura.",
+"Panaia ngā mea katoa ki tētahi taha, tāpirihia te toenga o te hinu, wāwāhia ngā hēki ki roto, ā, kōrorihia.",
+"Tāpirihia ngā nūtara me te wairanu, whakaranua mō te 2 ki te 3 meneti kia ngohengohe ngā nūtara, kia ngongo te wairanu. Tāpirihia he wai iti mēnā he maroke te āhua.",
+"Whakaranua ngā pīni whakatipu me te aniana kākāriki mō te 30 hēkona. Tukuna me ngā pīnati me ngā poro raima."
+],
+"notes":{
+"0":"papatahi, tata ki te 5 mm te whānui",
+"3":"pakari, he mataono iti",
+"5":"tapahia kia 3 cm te roa",
+"6":"kurua",
+"7":"tapatapahia",
+"9":"huka parauri, huka nīkau rānei",
+"11":"he 2 pūnu nui kōnatu tamarind rānei mēnā kei a koe"
+},
+"blurb":"Nūtara raihi i paraihia me ngā kōura, te hēki me te tōhū, ka whakaotia ki te pīnati, ki ngā pīni whakatipu me te raima."
+},
+"green-chicken-curry":{
+"name":"Kari heihei kākāriki Tai",
+"method":[
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Paraihia te kōnatu kari ki te hinu mō te 1 meneti. Tāpirihia te 200 ml o te miraka kokonati (te wāhanga mātotoru o runga o te tini), ā, kōhuatia mārie mō te 2 meneti.",
+"Tāpirihia te heihei, kōrorihia mō te 3 meneti, kātahi ka ringi i te toenga o te miraka kokonati, ā, kōhuatia mārie mō te 10 meneti.",
+"Tāpirihia te kūkini me te kapekama, kōhuatia mārie mō te 5 meneti kia ngohengohe noa iho.",
+"Kīnakihia ki te wairanu ika, te huka me te wai raima. Kōrorihia ngā rau pāhiri, ā, tukuna ki runga i te raihi."
+],
+"notes":{
+"0":"whakamahia kia 2 mō tētahi kari ngāwari ake",
+"2":"tapahia kia poro",
+"3":"tapahia kia poro",
+"4":"tapahia kia poro",
+"8":"pāhiri Tai mēnā ka kitea e koe",
+"10":"jasmine"
+},
+"blurb":"Heihei me ngā huawhenua i kōhuatia mārie ki te miraka kokonati me te kōnatu kari kākāriki, te pāhiri me te raima."
+},
+"red-curry-pumpkin-tofu":{
+"name":"Kari whero me te paukena me te tōhū",
+"method":[
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Paraihia te kōnatu kari ki te hinu mō te 1 meneti, kātahi ka tāpiri i te 200 ml o te miraka kokonati, ā, kōhuatia mārie mō te 2 meneti.",
+"Tāpirihia te paukena me te toenga o te miraka kokonati, kōhuatia mārie mō te 12 ki te 15 meneti kia ngohengohe te paukena.",
+"Tāpirihia te tōhū, kōhuatia mārie mō te 3 meneti, kātahi ka kōrori i te kōkihi kia memenge.",
+"Kīnakihia ki te wairanu hoi, te huka me te wai raima, tāpirihia te pāhiri, ā, tukuna me te raihi."
+],
+"notes":{
+"2":"tīhorea, he poro 3 cm",
+"3":"pakari, kua tapahia kia mataono",
+"10":"jasmine"
+},
+"blurb":"He kari kokonati momona me te paukena reka, te tōhū me te kōkihi. Kei te nuinga o ngā kōnatu kari te kōnatu kōura, nō reira tirohia te tapanga mō te hunga kai huawhenua anake."
+},
+"tom-yum-soup":{
+"name":"Hupa tom yum me ngā kōura",
+"method":[
+"Patua te tarutaru rēmana ki tētahi rākau pokepoke, ā, tapahia kia 5 cm te roa.",
+"Kōhuatia mārie te wairanu me te tarutaru rēmana, te tīnita me te tiare mō te 5 meneti.",
+"Tāpirihia ngā harore me te tōmato, kōhuatia mārie mō te 3 meneti.",
+"Tāpirihia ngā kōura, kōhuatia mārie mō te 2 ki te 3 meneti kia māwhero, kia maoa katoa.",
+"Tangohia i te wera, ā, kīnakihia ki te wairanu ika, te huka me te wai raima: me kawa, me tote, me wera te reka. Tāpirihia te kōriana. Kāore e kainga ngā poro tarutaru rēmana me te tīnita."
+],
+"notes":{
+"2":"poro angiangi (galangal mēnā ka kitea e koe)",
+"3":"tapahia kia poro",
+"4":"wehea kia rua",
+"5":"tapahia kia tapatoru"
+},
+"blurb":"Hupa kōura wera, kawa hoki, he kakara i te tarutaru rēmana, te tiare me te raima."
+},
+"tom-kha-gai":{
+"name":"Tom kha gai (hupa heihei kokonati)",
+"method":[
+"Patua te tarutaru rēmana, ā, tapahia kia 5 cm te roa. Kōhuatia mārie ki te wairanu me te tīnita mō te 5 meneti.",
+"Tāpirihia te miraka kokonati me te heihei, ā, āta kōhuatia, kaua e kaha te koropupū, mō te 6 ki te 8 meneti kia maoa te heihei.",
+"Tāpirihia ngā harore me te tiare, kōhuatia mārie mō te 3 meneti.",
+"Tangohia i te wera, ā, kīnakihia ki te wairanu ika, te wai raima me te huka. Tāpirihia te kōriana. Waiho ngā poro tarutaru rēmana me te tīnita ki te peihana."
+],
+"notes":{
+"0":"tapahia kia angiangi",
+"4":"poro angiangi (galangal mēnā ka kitea e koe)",
+"5":"tapahia kia poro",
+"6":"wehea kia rua"
+},
+"blurb":"He hupa kokonati ngāwari, kirīmi hoki, me te heihei, te harore, te tarutaru rēmana me te raima."
+},
+"pad-kra-pao":{
+"name":"Heihei pāhiri Tai (pad kra pao)",
+"method":[
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Tukia, tapatapahia rānei kia iti te kāriki me te tiare ngātahi.",
+"Whakawerahia te 2 pūnu nui o te hinu kia tino wera, ā, paraihia ngā hēki takitahi kia pakapaka ngā tapa. Waiho kia mahana.",
+"Whakawerahia te toenga o te hinu ki tētahi wok ki te wera nui. Paraihia te kāriki me te tiare mō te 30 hēkona, kātahi ko te heihei mō te 4 ki te 5 meneti, me te wāwāhi, kia maoa.",
+"Tāpirihia te wairanu tio, te wairanu hoi, te wairanu ika, te huka me te 2 pūnu nui wai, ā, whakaranua mō te meneti kotahi.",
+"Kōrorihia te pāhiri kia memenge. Tukuna ki runga i te raihi me tētahi hēki parai ki runga."
+],
+"notes":{
+"0":"tapatapahia kia iti",
+"8":"ko te pāhiri tapu Tai te mea tawhito",
+"10":"jasmine"
+},
+"blurb":"Heihei tapatapahi wera i paraihia me te kāriki, te tiare me te pāhiri, me tētahi hēki parai pakapaka ki runga."
+},
+"thai-beef-salad":{
+"name":"Huamata mīti kau Tai",
+"method":[
+"Wairanu: whakaranua te wai raima, te wairanu ika, te huka, te tiare me te kāriki.",
+"Tahuna te mīti kau ki te hinu ki tētahi parai tino wera, kia hia ngā wāhanga, mō te 1 ki te 2 meneti kia parauri i waho, kia māwhero tonu i roto. Waiho mō te 3 meneti, ā, whakaranua ki te 2 pūnu nui o te wairanu.",
+"Whakakotahitia te rētihi, te kūkama, te tōmato, te aniana, te aniana kākāriki me te kōriana.",
+"Tāpirihia te mīti kau me te toenga o te wairanu, whakaranua, ā, ruiruia ngā pīnati ki runga."
+],
+"notes":{
+"2":"haehaea",
+"3":"tapahia kia poro",
+"4":"tapahia kia tapatoru",
+"5":"whero, tapahia kia angiangi",
+"6":"tapahia kia poro",
+"11":"tapatapahia kia iti",
+"12":"kurua",
+"13":"kurua"
+},
+"blurb":"Mīti kau tahu i waho kua whakaranua ki ngā huawhenua pakapaka, ngā otaota me tētahi wairanu raima, tiare hoki."
+},
+"pork-larb":{
+"name":"Larb poaka i ngā kapu rētihi",
+"method":[
+"Tunua maroketia te 2 pūnu nui o te raihi mata ki tētahi parai, me te kōrori, tata ki te 5 meneti kia kōura hōhonu. Kurua kia iti rawa.",
+"Tunua te toenga o te raihi: horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Paraihia te poaka ki te hinu ki te wera waenga ki te nui, me te wāwāhi, tata ki te 6 meneti kia maoa. Tāpirihia te 2 pūnu nui wai, ā, tangohia i te wera.",
+"Kōrorihia te wairanu ika, te wai raima, te huka me te tiare, kātahi ko te aniana, te aniana kākāriki, ngā otaota me te nuinga o te raihi tunu.",
+"Kōmekehia ki ngā rau rētihi, ruiruia te toenga o te raihi tunu, ā, tukuna me te raihi."
+],
+"notes":{
+"0":"2 pūnu nui hei tunu, ko te toenga hei tuku",
+"6":"tapatapahia kia iti",
+"7":"whero, tapahia kia angiangi",
+"8":"tapahia kia poro",
+"10":"ko te mīni te mea tawhito mēnā kei a koe",
+"11":"kua wehewehea ngā rau"
+},
+"blurb":"Poaka mōmona hīrawerawe me te raima, te tiare me ngā otaota, ka kainga i roto i ngā rau rētihi pakapaka."
+},
+"chicken-satay":{
+"name":"Satay heihei me te wairanu pīnati",
+"method":[
+"Whakaranua te heihei ki te 100 ml o te miraka kokonati, te pauka kari, te 1 pūnu nui o te huka me te 1 pūnu nui o te wairanu ika. Waiho kia mākūkū mō te 30 meneti neke atu. I taua wā anō, waiho ngā tītoki rākau kia mākū i te wai.",
+"Horoia te raihi, kātahi ka kōhua mārie ki te wai e rua te nui ake i te raihi me te kinitanga tote, kua hipokina, tata ki te 12 meneti kia ngohengohe. Waiho kia hipokina.",
+"Wairanu pīnati: whakamaenehia, tapatapahia rānei ngā pīnati kia tino iti. Kōhuatia mārie te toenga o te miraka kokonati me te kōnatu kari mō te 2 meneti, kātahi ka tāpiri i ngā pīnati, te toenga o te huka, te wairanu hoi me te toenga o te wairanu ika. Kōhuatia mārie, me te kōrori, mō te 5 meneti kia mātotoru. Tāpirihia te wai raima, ā, tāpirihia he wai mēnā e tika ana.",
+"Werohia te heihei ki ngā tītoki, pania ki te hinu, ā, tunua ki te tunutunu, ki te rorerore rānei, ki te parai rānei mō te 8 ki te 10 meneti, me te huri, kia maoa katoa, kia tahu iti i ētahi wāhi.",
+"Tukuna me te wairanu pīnati, te kūkama me te raihi."
+],
+"notes":{
+"0":"tapahia kia rārangi",
+"6":"kua tunua",
+"10":"tapahia kia poro",
+"11":"jasmine"
+},
+"blurb":"Ngā tītoki heihei tunu kua mākūkū ki te kokonati, me tētahi wairanu pīnati hanga ā-kāinga. Waiho kia mākūkū mō te 30 meneti neke atu."
+},
+"pad-see-ew":{
+"name":"Pad see ew (nūtara raihi parai me te heihei)",
+"method":[
+"Waiho ngā nūtara kia mākū i te wai mahana kia piko, kātahi ka tātari (ko ngā nūtara raihi whānui hou me wehewehe noa iho).",
+"Whakaranua te wairanu hoi, te wairanu tio, te huka me te 2 pūnu nui wai.",
+"Whakawerahia te hinu ki tētahi wok ki te wera nui. Paraihia te kāriki mō te 15 hēkona, kātahi ko te heihei mō te 4 meneti kia maoa.",
+"Tāpirihia ngā kakau parakoli, kātahi ko ngā puāwai, me te wai iti, ā, paraihia mō te 2 meneti.",
+"Panaia ngā mea katoa ki te taha, ā, kōrorihia ngā hēki i te wāhi wātea.",
+"Tāpirihia ngā nūtara me te wairanu, ā, whakaranua, me te waiho i ngā nūtara mō te 30 hēkona i ia wā kia tahu iti, tata ki te 3 meneti. Whakaotihia ki te pepa."
+],
+"notes":{
+"0":"whānui",
+"1":"tapahia kia angiangi",
+"2":"kua porohia ngā kakau, he iti ngā puāwai",
+"4":"tapatapahia",
+"5":"me te wairanu hoi pōuri iti hoki mēnā kei a koe"
+},
+"blurb":"Nūtara raihi whānui i paraihia kia tahu iti me te heihei, te parakoli, te hēki me te hoi."
+}
+}
+}

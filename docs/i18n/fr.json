@@ -1,0 +1,1170 @@
+{
+"ui":{
+"A to Z":"De A à Z",
+"About {price} per serving, counting whole packs, not counting {items}.":"Environ {price} par portion, en comptant des paquets entiers, sans compter {items}.",
+"About {price} per serving, counting whole packs.":"Environ {price} par portion, en comptant des paquets entiers.",
+"Add":"Ajouter",
+"Add recipes to build your shopping list.":"Ajoutez des recettes pour créer votre liste de courses.",
+"Add to my list":"Ajouter à ma liste",
+"Added. Remove":"Ajoutée. Retirer",
+"All":"Tout",
+"All ({n})":"Toutes ({n})",
+"All aisles":"Tous les rayons",
+"BEST VALUE":"MEILLEUR PRIX",
+"Bakery":"Boulangerie",
+"Biggest saving":"Plus grosse économie",
+"Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, with prices per 100g.":"Faites votre liste de courses et trouvez la façon la moins chère de l'acheter chez Woolworths, New World, PAK'nSAVE et les épiceries asiatiques New Gum Sarn, TXG Mall, NJK et FromK, avec les prix aux 100 g.",
+"Cheapest across {n} store":"Le moins cher dans {n} magasin",
+"Cheapest across {n} stores":"Le moins cher sur {n} magasins",
+"Compare individual products":"Comparer les produits un par un",
+"Cost of each extra stop":"Coût de chaque arrêt en plus",
+"Could also use it in: {recipes}.":"Peut aussi servir dans : {recipes}.",
+"Could not load prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"Impossible de charger les prix. Si vous avez ouvert ce fichier directement, servez le dossier docs avec un serveur web (python3 -m http.server dans docs/) ou utilisez GitHub Pages.",
+"Could not load recipes or prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.":"Impossible de charger les recettes ou les prix. Si vous avez ouvert ce fichier directement, servez le dossier docs avec un serveur web (python3 -m http.server dans docs/) ou utilisez GitHub Pages.",
+"Dairy & Eggs":"Produits laitiers et œufs",
+"Dearest full-list store is {price}.":"Le magasin le plus cher pour toute la liste coûte {price}.",
+"Dearest store with everything is {price}.":"Le magasin le plus cher qui a tout coûte {price}.",
+"Deli & Chilled":"Traiteur et frais",
+"Drinks":"Boissons",
+"Fewer servings of {recipe}":"Moins de portions de {recipe}",
+"Fewer {item}":"Moins de {item}",
+"Filter by type":"Filtrer par type",
+"Frozen":"Surgelés",
+"Fruit & Veg":"Fruits et légumes",
+"Health & Beauty":"Santé et beauté",
+"Household":"Maison",
+"In list ({n})":"Dans la liste ({n})",
+"Ingredients (serves {n})":"Ingrédients (pour {n})",
+"Ingredients and method":"Ingrédients et préparation",
+"Language":"Langue",
+"Loading prices...":"Chargement des prix...",
+"Loading...":"Chargement...",
+"Lowest price per 100g / 100ml":"Prix le plus bas aux 100 g / 100 ml",
+"Matched by name and size. Check it is the same product.":"Associé par nom et taille. Vérifiez qu'il s'agit bien du même produit.",
+"Meat & Seafood":"Viande et fruits de mer",
+"Method":"Préparation",
+"More servings of {recipe}":"Plus de portions de {recipe}",
+"More {item}":"Plus de {item}",
+"Need {amt}. Buy {what}":"Il faut {amt}. Acheter {what}",
+"No combination of these stores has everything on your list. Remove an item that shows \"Not found\" at a store to compare.":"Aucune combinaison de ces magasins n'a tout ce qui figure sur votre liste. Retirez un article marqué « Introuvable » dans un magasin pour comparer.",
+"No comparable products yet.":"Aucun produit comparable pour l'instant.",
+"No products match. Try a shorter search or another aisle.":"Aucun produit ne correspond. Essayez une recherche plus courte ou un autre rayon.",
+"No recipes match. Try a shorter search.":"Aucune recette ne correspond. Essayez une recherche plus courte.",
+"No single store sells everything. {store} has {have} of {total} items; not there: {items}.":"Aucun magasin ne vend tout. {store} a {have} articles sur {total} ; absents : {items}.",
+"No store has the products for this list yet.":"Aucun magasin n'a encore les produits de cette liste.",
+"No supermarket product found yet for: {items}. Add these by hand.":"Aucun produit de supermarché trouvé pour l'instant pour : {items}. Ajoutez-les à la main.",
+"Not found at {stores}":"Introuvable chez {stores}",
+"Not refreshed last run: {stores}.":"Pas mis à jour lors du dernier relevé : {stores}.",
+"One store: {store}":"Un seul magasin : {store}",
+"Only products found at two or more stores are listed, because those are the ones that can be compared. \"Usual\" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only. TXG Mall, NJK and FromK prices are from their online shops; check delivery or pickup with each shop.":"Seuls les produits trouvés dans au moins deux magasins sont affichés, car ce sont ceux que l'on peut comparer. « Habituel » est le prix normal du magasin, affiché à côté d'une promotion, et une promotion compte comme une vraie économie quand elle est au moins 10 % moins chère. Les prix viennent d'un seul magasin par enseigne, votre magasin local peut donc être différent. New Gum Sarn est une seule boutique à Point England, Auckland, et ses produits surgelés et frais sont uniquement en retrait sur commande (click and collect). Les prix de TXG Mall, NJK et FromK viennent de leurs boutiques en ligne ; vérifiez la livraison ou le retrait auprès de chaque boutique.",
+"Only store that has everything.":"Seul magasin qui a tout.",
+"Only {pct}% under usual {price}":"Seulement {pct} % sous le prix habituel de {price}",
+"Pantry":"Épicerie",
+"Perishable: use or freeze soon.":"Périssable : à utiliser ou congeler rapidement.",
+"Pick the meals you want to cook. You get one shopping list, with the cheapest packs for what you need, and the cheapest store or stores to buy it from.":"Choisissez les plats que vous voulez cuisiner. Vous obtenez une seule liste de courses, avec les paquets les moins chers pour ce qu'il vous faut, et le ou les magasins les moins chers où l'acheter.",
+"Prices updated {when}.":"Prix mis à jour le {when}.",
+"Products":"Produits",
+"Quantities are for the servings shown and scale when you change them. For each ingredient the site adds up what every chosen recipe needs, then finds the cheapest combination of pack sizes that covers it, and says what is left over. Products are picked by matching names, so check the pack you are buying. Items sold each (an onion, a lemon) use an average weight. Recipes do not include nutrition or allergen information. Prices come from one store per chain, so your local store may differ.":"Les quantités correspondent aux portions affichées et s'adaptent quand vous les changez. Pour chaque ingrédient, le site additionne ce dont chaque recette choisie a besoin, puis trouve la combinaison de paquets la moins chère qui suffit, et indique ce qu'il reste. Les produits sont choisis d'après leur nom, vérifiez donc le paquet que vous achetez. Les articles vendus à la pièce (un oignon, un citron) utilisent un poids moyen. Les recettes n'indiquent ni valeurs nutritionnelles ni allergènes. Les prix viennent d'un seul magasin par enseigne, votre magasin local peut donc être différent.",
+"Real saving: {pct}% under usual {price}":"Vraie économie : {pct} % sous le prix habituel de {price}",
+"Recipes":"Recettes",
+"Sample prices for testing. Run the scraper to load real prices.":"Prix d'exemple pour les tests. Lancez le scraper pour charger les vrais prix.",
+"Search butter, mince, toilet paper":"Rechercher beurre, viande hachée, papier toilette",
+"Search for products and press Add to compare totals.":"Recherchez des produits et appuyez sur Ajouter pour comparer les totaux.",
+"Search products":"Rechercher des produits",
+"Search recipes":"Rechercher des recettes",
+"Search recipes or ingredients":"Rechercher des recettes ou des ingrédients",
+"Shelf Check Recipes":"Recettes Shelf Check",
+"Shop by aisle":"Acheter par rayon",
+"Shop by recipe":"Acheter par recette",
+"Show more ({n} left)":"Afficher plus ({n} restants)",
+"Snacks & Confectionery":"Snacks et confiserie",
+"Sort":"Trier",
+"Specials only":"Promotions seulement",
+"Tick what you already have":"Cochez ce que vous avez déjà",
+"Total servings: {n}.":"Nombre total de portions : {n}.",
+"Try ticking items you already have.":"Essayez de cocher les articles que vous avez déjà.",
+"Two stores: {stores}":"Deux magasins : {stores}",
+"Use club prices":"Utiliser les prix fidélité",
+"Use club prices (Everyday Rewards, Clubcard)":"Utiliser les prix fidélité (Everyday Rewards, Clubcard)",
+"Woolworths prices are from {date}.":"Les prix Woolworths datent du {date}.",
+"Your list":"Votre liste",
+"Your recipes":"Vos recettes",
+"Your recipes and shopping list":"Vos recettes et votre liste de courses",
+"about {amt} loose, {pack} ({price})":"environ {amt} en vrac, {pack} ({price})",
+"can":"boîte",
+"clove":"gousse",
+"cup":"tasse",
+"each":"pièce",
+"g":"g",
+"ml":"ml",
+"pinch":"pincée",
+"servings":"portions",
+"slice":"tranche",
+"stalk":"tige",
+"tbsp":"c. à s.",
+"tsp":"c. à c.",
+"{amt} left over.":"{amt} en trop.",
+"{min} min · serves {n}":"{min} min · pour {n}",
+"{n} each":"{n} pièce(s)",
+"{n} extra stop at {price} each: {total} all in.":"{n} arrêt en plus à {price} : {total} en tout.",
+"{n} extra stops at {price} each: {total} all in.":"{n} arrêts en plus à {price} chacun : {total} en tout.",
+"{n} product at 2 or more stores":"{n} produit dans 2 magasins ou plus",
+"{n} product on special":"{n} produit en promotion",
+"{n} products at 2 or more stores":"{n} produits dans 2 magasins ou plus",
+"{n} products on special":"{n} produits en promotion",
+"{n} recipe":"{n} recette",
+"{n} recipes":"{n} recettes",
+"{n} × {pack} ({price} each)":"{n} × {pack} ({price} pièce)",
+"{price} each":"{price} pièce",
+"{store} does not sell: {items}. Buy it at another store (the other plans include it) or tick it below if you already have it.":"{store} ne vend pas : {items}. Achetez-le dans un autre magasin (les autres options l'incluent) ou cochez-le ci-dessous si vous l'avez déjà.",
+"{store} does not sell: {items}. Buy these at another store (the other plans include them) or tick them below if you already have them.":"{store} ne vend pas : {items}. Achetez-les dans un autre magasin (les autres options les incluent) ou cochez-les ci-dessous si vous les avez déjà."
+},
+"tags":{
+"beef":"bœuf",
+"breakfast":"petit-déjeuner",
+"budget":"économique",
+"chicken":"poulet",
+"chinese":"chinois",
+"comfort":"réconfortant",
+"curry":"curry",
+"dinner":"dîner",
+"eggs":"œufs",
+"fish":"poisson",
+"japanese":"japonais",
+"lunch":"déjeuner",
+"noodles":"nouilles",
+"one-pan":"une seule poêle",
+"pasta":"pâtes",
+"pork":"porc",
+"quick":"rapide",
+"rice":"riz",
+"salad":"salade",
+"sausages":"saucisses",
+"seafood":"fruits de mer",
+"soup":"soupe",
+"thai":"thaï",
+"vegetarian":"végétarien"
+},
+"ingredients":{
+"chicken-breast":"Blanc de poulet",
+"chicken-thigh":"Haut de cuisse de poulet",
+"beef-mince":"Bœuf haché",
+"beef-strips":"Lanières de bœuf à sauter",
+"sausages":"Saucisses",
+"bacon":"Bacon",
+"ham":"Jambon",
+"salmon-fillet":"Filets de saumon",
+"tuna-can":"Thon en boîte",
+"eggs":"Œufs",
+"milk":"Lait",
+"butter":"Beurre",
+"cream":"Crème",
+"cheese":"Cheddar",
+"mozzarella":"Mozzarella",
+"parmesan":"Parmesan",
+"yoghurt":"Yaourt nature",
+"onion":"Oignons",
+"garlic":"Ail",
+"potato":"Pommes de terre",
+"pumpkin":"Potiron",
+"carrot":"Carottes",
+"broccoli":"Brocoli",
+"mushroom":"Champignons",
+"spinach":"Pousses d'épinards",
+"capsicum":"Poivron",
+"tomato-fresh":"Tomates fraîches",
+"zucchini":"Courgette",
+"frozen-peas":"Petits pois surgelés",
+"frozen-mixed-veg":"Légumes mélangés surgelés",
+"lettuce":"Laitue",
+"avocado":"Avocat",
+"lemon":"Citrons",
+"banana":"Bananes",
+"ginger":"Gingembre frais",
+"coriander":"Coriandre fraîche",
+"basil":"Basilic frais",
+"olive-oil":"Huile d'olive",
+"vegetable-oil":"Huile végétale",
+"soy-sauce":"Sauce soja",
+"salt":"Sel",
+"pepper":"Poivre noir",
+"flour":"Farine",
+"sugar":"Sucre",
+"baking-powder":"Levure chimique",
+"cornflour":"Fécule de maïs",
+"rice":"Riz",
+"spaghetti":"Spaghetti",
+"penne":"Penne ou macaronis",
+"noodles":"Nouilles aux œufs ou hokkien",
+"tomato-can":"Tomates concassées en boîte",
+"tomato-paste":"Concentré de tomate",
+"chicken-stock":"Bouillon de poulet (liquide)",
+"coconut-milk":"Lait de coco",
+"curry-powder":"Curry en poudre",
+"garam-masala":"Garam masala",
+"ground-cumin":"Cumin moulu",
+"paprika":"Paprika",
+"chilli-powder":"Piment en poudre",
+"mixed-herbs":"Herbes mélangées",
+"honey":"Miel",
+"oats":"Flocons d'avoine",
+"bread":"Pain de mie tranché",
+"tortilla":"Tortillas",
+"flatbread":"Pain plat ou pita",
+"burger-buns":"Pains à burger",
+"kidney-beans":"Haricots rouges en boîte",
+"chickpeas":"Pois chiches en boîte",
+"spring-onion":"Oignons nouveaux",
+"sesame-oil":"Huile de sésame",
+"oyster-sauce":"Sauce d'huître",
+"fish-sauce":"Sauce de poisson",
+"rice-vinegar":"Vinaigre de riz",
+"mirin":"Mirin",
+"shaoxing-wine":"Vin de Shaoxing ou vin de cuisine chinois",
+"hoisin-sauce":"Sauce hoisin",
+"chilli-bean-paste":"Pâte de piment et fèves (doubanjiang)",
+"five-spice":"Cinq-épices chinois",
+"tofu":"Tofu",
+"pork-mince":"Porc haché",
+"pork-belly":"Poitrine de porc",
+"prawns":"Crevettes crues",
+"bok-choy":"Bok choy",
+"cabbage":"Chou (chinois ou vert)",
+"cucumber":"Concombre",
+"eggplant":"Aubergine",
+"bean-sprouts":"Germes de soja",
+"red-chilli":"Piments rouges frais",
+"lime":"Citrons verts",
+"lemongrass":"Citronnelle",
+"red-curry-paste":"Pâte de curry rouge thaï",
+"green-curry-paste":"Pâte de curry vert thaï",
+"japanese-curry-roux":"Roux de curry japonais (ex. Golden Curry)",
+"rice-noodles":"Nouilles de riz sèches",
+"udon":"Nouilles udon",
+"sushi-rice":"Riz japonais à grain court ou moyen",
+"panko":"Chapelure panko",
+"peanuts":"Cacahuètes grillées",
+"sesame-seeds":"Graines de sésame"
+},
+"recipes":{
+"butter-chicken":{
+"name":"Poulet au beurre et riz",
+"method":[
+"Rincez le riz, puis faites-le cuire dans deux fois son volume d'eau avec une pincée de sel jusqu'à ce qu'il soit tendre, environ 12 minutes. Gardez à couvert.",
+"Faites fondre le beurre dans une grande sauteuse à feu moyen. Faites cuire l'oignon 5 minutes jusqu'à ce qu'il soit tendre, puis ajoutez l'ail et le gingembre pendant 1 minute.",
+"Incorporez le curry et le garam masala et faites cuire 30 secondes jusqu'à ce qu'ils embaument.",
+"Ajoutez le poulet et enrobez-le d'épices jusqu'à ce qu'il ne soit plus rose à l'extérieur, environ 4 minutes.",
+"Versez les tomates et 100 ml d'eau, salez et laissez mijoter doucement 20 minutes en remuant de temps en temps, jusqu'à ce que le poulet soit bien cuit.",
+"Incorporez la crème et laissez mijoter encore 5 minutes jusqu'à ce que ce soit brillant. Goûtez et salez si besoin. Servez sur le riz."
+],
+"notes":{
+"0":"coupé en morceaux",
+"2":"finement haché",
+"3":"écrasé",
+"4":"râpé"
+},
+"blurb":"Un curry doux et crémeux, facile à faire avec des épices du placard."
+},
+"spaghetti-bolognese":{
+"name":"Spaghetti bolognaise",
+"method":[
+"Faites chauffer l'huile dans une grande poêle à feu moyen-vif. Faites cuire l'oignon et la carotte 5 minutes jusqu'à ce qu'ils ramollissent, puis ajoutez l'ail pendant 1 minute.",
+"Ajoutez la viande hachée en l'émiettant à la cuillère et faites-la dorer de tous côtés, environ 8 minutes.",
+"Incorporez le concentré de tomate, puis les tomates, les herbes, le sel et le poivre. Laissez mijoter à feu doux 30 minutes en remuant de temps en temps, jusqu'à ce que ce soit épais.",
+"Faites cuire les spaghetti dans une grande casserole d'eau bouillante salée selon le temps indiqué sur le paquet. Gardez une tasse d'eau de cuisson, puis égouttez.",
+"Mélangez les pâtes à la sauce en la détendant avec un peu d'eau de cuisson si besoin. Servez avec le parmesan."
+],
+"notes":{
+"1":"en dés",
+"2":"râpé",
+"3":"écrasé",
+"9":"râpé"
+},
+"blurb":"Le classique des soirs de semaine. Se congèle bien."
+},
+"chicken-fried-rice":{
+"name":"Riz frit au poulet",
+"method":[
+"Faites cuire le riz, étalez-le sur un plateau et laissez-le refroidir au moins 20 minutes. Le riz froid se fait frire bien mieux que le riz chaud.",
+"Faites chauffer la moitié de l'huile dans une grande poêle ou un wok à feu vif. Faites cuire le poulet 5 à 6 minutes jusqu'à ce qu'il soit doré et bien cuit, puis mettez-le dans une assiette.",
+"Ajoutez le reste de l'huile, l'ail et le gingembre et remuez 30 secondes. Versez les légumes surgelés et faites cuire 3 minutes.",
+"Poussez tout sur le côté, cassez les œufs et brouillez-les jusqu'à ce qu'ils soient juste pris.",
+"Ajoutez le riz et le poulet, versez la sauce soja et faites sauter à feu vif 3 minutes jusqu'à ce que ce soit chaud et légèrement croustillant."
+],
+"notes":{
+"2":"en dés",
+"6":"écrasé",
+"7":"râpé"
+},
+"blurb":"Utilise le riz restant et un sachet de légumes surgelés."
+},
+"beef-tacos":{
+"name":"Tacos moelleux au bœuf",
+"method":[
+"Faites chauffer l'huile dans une poêle à feu moyen-vif et faites cuire l'oignon 4 minutes. Ajoutez l'ail pendant 30 secondes.",
+"Ajoutez la viande hachée et faites-la dorer en l'émiettant pendant la cuisson, environ 8 minutes.",
+"Incorporez le piment, le cumin, le paprika et le concentré de tomate avec 100 ml d'eau. Laissez mijoter 8 minutes jusqu'à ce que la sauce enrobe la viande.",
+"Réchauffez les tortillas dans une poêle sèche 20 secondes de chaque côté, ou enveloppées de papier d'aluminium au four.",
+"Écrasez l'avocat avec une pincée de sel. Garnissez chaque tortilla de viande, d'avocat, de tomate, de laitue et de fromage."
+],
+"notes":{
+"2":"en dés",
+"3":"en dés",
+"4":"émincé",
+"5":"râpé",
+"10":"écrasé"
+},
+"blurb":"Économique, rapide et facile à garnir par les enfants eux-mêmes."
+},
+"creamy-chicken-mushroom-pasta":{
+"name":"Pâtes crémeuses au poulet et aux champignons",
+"method":[
+"Faites cuire les pâtes dans de l'eau salée selon le temps indiqué sur le paquet. Égouttez en gardant un peu d'eau.",
+"Faites chauffer l'huile dans une grande poêle à feu moyen-vif. Faites cuire le poulet 5 à 6 minutes jusqu'à ce qu'il soit doré et bien cuit, puis réservez.",
+"Dans la même poêle, faites cuire l'oignon et les champignons 6 minutes jusqu'à ce que les champignons soient dorés. Ajoutez l'ail pendant 1 minute.",
+"Versez le bouillon et la crème et laissez mijoter 4 minutes jusqu'à ce que ce soit légèrement épaissi.",
+"Remettez le poulet dans la poêle, ajoutez les pâtes et les épinards et mélangez jusqu'à ce que les épinards tombent. Incorporez le parmesan et détendez avec de l'eau de cuisson si besoin."
+],
+"notes":{
+"0":"en tranches",
+"1":"en tranches",
+"4":"écrasé",
+"5":"en dés",
+"7":"râpé"
+}
+},
+"sausage-tray-bake":{
+"name":"Saucisses et légumes au four sur une plaque",
+"method":[
+"Préchauffez le four à 220 C (200 C chaleur tournante). Mettez la pomme de terre et la carotte sur une grande plaque avec l'huile, les herbes et le sel et mélangez bien.",
+"Rôtissez 15 minutes. Ajoutez l'oignon, le poivron et les saucisses sur la plaque et retournez le tout.",
+"Rôtissez encore 25 à 30 minutes en retournant une fois, jusqu'à ce que les saucisses soient dorées et bien cuites et que les pommes de terre soient croustillantes sur les bords."
+],
+"notes":{
+"1":"coupé en morceaux",
+"2":"en tranches",
+"3":"en gros morceaux",
+"4":"en quartiers"
+},
+"blurb":"Une seule plaque, peu de vaisselle."
+},
+"salmon-rice-broccoli":{
+"name":"Saumon miel-soja avec riz et brocoli",
+"method":[
+"Faites cuire le riz. Mélangez la sauce soja, le miel, l'ail, le gingembre et le jus d'un demi-citron dans un petit bol.",
+"Faites chauffer l'huile dans une poêle antiadhésive à feu moyen-vif. Faites cuire le saumon côté peau 4 minutes, retournez-le et faites cuire encore 2 minutes.",
+"Versez la sauce sur le saumon et laissez bouillonner 1 minute en arrosant le poisson.",
+"Faites cuire le brocoli à la vapeur ou à l'eau 3 à 4 minutes jusqu'à ce qu'il soit bien vert et juste tendre.",
+"Servez le saumon sur le riz avec le brocoli et des quartiers de citron."
+],
+"notes":{
+"2":"en fleurettes",
+"5":"écrasé",
+"8":"râpé"
+}
+},
+"veg-stir-fry-noodles":{
+"name":"Nouilles sautées aux légumes",
+"method":[
+"Préparez les nouilles comme indiqué sur le paquet, égouttez et rincez à l'eau froide.",
+"Mélangez la sauce soja et le miel avec 3 cuillères à soupe d'eau.",
+"Faites chauffer l'huile dans un wok à feu vif. Faites sauter la carotte et le brocoli 3 minutes, puis ajoutez le poivron et les champignons pendant 2 minutes.",
+"Ajoutez l'ail et le gingembre pendant 30 secondes, puis les nouilles et la sauce. Faites sauter 2 à 3 minutes jusqu'à ce que tout soit chaud et brillant."
+],
+"notes":{
+"1":"en petites fleurettes",
+"2":"en tranches",
+"3":"en fines tranches",
+"4":"en tranches",
+"5":"écrasé",
+"6":"râpé"
+}
+},
+"chicken-caesar-salad":{
+"name":"Salade César au poulet",
+"method":[
+"Préchauffez le four à 200 C. Mélangez les cubes de pain avec 1 cuillère à soupe d'huile et une pincée de sel et faites-les cuire 10 minutes jusqu'à ce qu'ils soient dorés.",
+"Salez et poivrez le poulet. Faites-le cuire dans une poêle avec un peu d'huile 5 à 6 minutes de chaque côté jusqu'à ce qu'il soit bien cuit. Laissez reposer 5 minutes, puis tranchez.",
+"Faites cuire les œufs 7 minutes, refroidissez-les à l'eau froide, écalez-les et coupez-les en deux. Faites frire le bacon jusqu'à ce qu'il soit croustillant.",
+"Pour la sauce, fouettez le reste de l'huile, le jus du citron, l'ail et la moitié du parmesan.",
+"Mélangez la laitue avec la sauce, puis garnissez de poulet, de bacon, d'œufs, de croûtons et du reste du parmesan."
+],
+"notes":{
+"1":"déchirée",
+"2":"haché",
+"4":"en copeaux",
+"5":"en cubes pour les croûtons",
+"8":"écrasé"
+}
+},
+"beef-broccoli-stir-fry":{
+"name":"Bœuf sauté au brocoli",
+"method":[
+"Faites cuire le riz. Mélangez le bœuf avec la fécule de maïs et une cuillère à soupe de sauce soja. Mélangez le reste de la sauce soja avec le miel et 100 ml d'eau.",
+"Faites chauffer la moitié de l'huile dans un wok jusqu'à ce qu'elle soit très chaude. Faites sauter le bœuf en deux fois, 1 à 2 minutes jusqu'à ce qu'il soit doré, et réservez.",
+"Ajoutez le reste de l'huile et faites cuire le brocoli 3 minutes avec un filet d'eau. Ajoutez l'ail et le gingembre pendant 30 secondes.",
+"Remettez le bœuf, versez la sauce et faites cuire 1 à 2 minutes jusqu'à ce qu'elle épaississe. Servez sur du riz."
+],
+"notes":{
+"2":"en fleurettes",
+"5":"écrasé",
+"6":"râpé"
+}
+},
+"cottage-pie":{
+"name":"Hachis parmentier",
+"method":[
+"Faites cuire les pommes de terre dans de l'eau salée 15 à 20 minutes jusqu'à ce qu'elles soient tendres. Égouttez, écrasez-les avec le beurre et le lait et assaisonnez.",
+"Pendant ce temps, faites cuire l'oignon et la carotte 6 minutes dans une grande poêle allant au four. Ajoutez la viande hachée et faites-la dorer 8 minutes.",
+"Incorporez la farine et le concentré de tomate, puis le bouillon. Laissez mijoter 15 minutes jusqu'à ce que ce soit épais, en ajoutant les petits pois pour les 3 dernières minutes. Assaisonnez.",
+"Préchauffez le four à 200 C. Étalez la purée sur la viande, striez-la à la fourchette et parsemez de fromage.",
+"Enfournez 20 à 25 minutes jusqu'à ce que ce soit doré et bouillonnant."
+],
+"notes":{
+"1":"épluchées et coupées",
+"4":"en dés",
+"5":"en dés",
+"10":"râpé"
+}
+},
+"ham-cheese-omelette":{
+"name":"Omelette jambon-fromage",
+"method":[
+"Fouettez les œufs avec le lait, le sel et le poivre.",
+"Faites fondre un quart du beurre dans une poêle antiadhésive à feu moyen. Versez un quart des œufs battus et faites tourner la poêle.",
+"Quand le dessous est pris mais que le dessus est encore un peu baveux, répartissez un quart du jambon, du fromage et des épinards.",
+"Pliez l'omelette en deux, faites-la glisser dans une assiette et recommencez pour les autres."
+],
+"notes":{
+"1":"en dés",
+"2":"râpé"
+}
+},
+"pumpkin-soup":{
+"name":"Soupe de potiron rôti",
+"method":[
+"Préchauffez le four à 200 C. Rôtissez le potiron avec un peu d'huile et de sel 30 minutes jusqu'à ce qu'il soit tendre et doré.",
+"Faites fondre le beurre dans une grande casserole et faites cuire l'oignon 5 minutes. Ajoutez l'ail et le curry pendant 1 minute.",
+"Ajoutez le potiron rôti et le bouillon, portez à ébullition, puis laissez mijoter 10 minutes.",
+"Mixez jusqu'à obtenir une texture lisse, incorporez la crème et assaisonnez à votre goût. Servez avec du pain grillé."
+],
+"notes":{
+"0":"épluché et en cubes",
+"1":"haché",
+"6":"pour servir"
+},
+"blurb":"Remplacez le bouillon par un bouillon de légumes pour une version végétarienne."
+},
+"chicken-noodle-soup":{
+"name":"Soupe de poulet aux nouilles",
+"method":[
+"Mettez le bouillon, le poulet, l'oignon, la carotte, l'ail, le gingembre et le sel dans une grande casserole. Portez à frémissement et faites cuire 15 à 20 minutes jusqu'à ce que le poulet soit bien cuit.",
+"Sortez le poulet, effilochez-le avec deux fourchettes et remettez-le dans la casserole.",
+"Ajoutez les nouilles et faites cuire le temps indiqué sur le paquet. Goûtez, rectifiez le sel et servez."
+],
+"notes":{
+"2":"en tranches",
+"3":"en dés",
+"4":"écrasé",
+"6":"râpé"
+}
+},
+"mac-and-cheese":{
+"name":"Gratin de macaronis au fromage",
+"method":[
+"Faites cuire les pâtes 2 minutes de moins que le temps indiqué sur le paquet, puis égouttez.",
+"Faites fondre le beurre dans une casserole, incorporez la farine et faites cuire 1 minute. Ajoutez le lait petit à petit en fouettant et laissez mijoter 5 minutes jusqu'à épaississement.",
+"Retirez du feu et incorporez les trois quarts du fromage, le sel et le poivre. Ajoutez les pâtes et les petits pois.",
+"Versez dans un plat à gratin, parsemez du reste du fromage et enfournez à 200 C pendant 15 à 20 minutes jusqu'à ce que ce soit doré."
+],
+"notes":{
+"0":"macaronis ou similaires",
+"1":"râpé"
+}
+},
+"flatbread-pizzas":{
+"name":"Pizzas margherita sur pain plat",
+"method":[
+"Préchauffez le four à 220 C. Posez les pains plats sur des plaques et badigeonnez-les légèrement d'huile.",
+"Mélangez le concentré de tomate avec 2 cuillères à soupe d'eau et étalez-le sur les pains plats.",
+"Garnissez de mozzarella, de tranches de tomate et de jambon si vous en mettez.",
+"Enfournez 8 à 10 minutes jusqu'à ce que le fromage bouillonne et que les bords soient croustillants. Parsemez de basilic."
+],
+"notes":{
+"3":"en tranches",
+"6":"facultatif"
+}
+},
+"chilli-con-carne":{
+"name":"Chili con carne",
+"method":[
+"Faites chauffer l'huile dans une grande casserole et faites cuire l'oignon et le poivron 6 minutes. Ajoutez l'ail et les épices pendant 1 minute.",
+"Ajoutez la viande hachée et faites-la dorer 8 minutes en l'émiettant.",
+"Incorporez le concentré de tomate, les tomates, les haricots égouttés, le sel et 150 ml d'eau. Laissez mijoter à couvert entrouvert 35 à 40 minutes jusqu'à ce que ce soit épais.",
+"Faites cuire le riz et servez le chili dessus."
+],
+"notes":{
+"3":"en dés",
+"4":"en dés",
+"5":"écrasé"
+},
+"blurb":"Encore meilleur le lendemain. Se congèle bien."
+},
+"honey-soy-chicken-thighs":{
+"name":"Hauts de cuisse de poulet miel-soja",
+"method":[
+"Fouettez le miel, la sauce soja, l'ail et le gingembre. Versez sur le poulet et laissez mariner 15 minutes, ou une nuit au réfrigérateur.",
+"Préchauffez le four à 200 C. Disposez le poulet sur une plaque garnie, versez la marinade et rôtissez 30 à 35 minutes en arrosant une fois, jusqu'à ce qu'il soit laqué et bien cuit.",
+"Faites cuire le riz et le brocoli à la vapeur. Servez le poulet arrosé du jus de cuisson."
+],
+"notes":{
+"3":"écrasé",
+"4":"râpé"
+}
+},
+"zucchini-fritters":{
+"name":"Galettes de courgette au fromage",
+"method":[
+"Mélangez la courgette râpée avec la moitié du sel et laissez reposer 10 minutes. Pressez-la dans un torchon propre pour enlever le plus de liquide possible.",
+"Mélangez la courgette avec les œufs, la farine, la levure chimique, le fromage et le reste du sel.",
+"Faites chauffer l'huile dans une poêle à feu moyen. Déposez de grosses cuillerées et aplatissez-les un peu. Faites cuire 3 minutes de chaque côté jusqu'à ce qu'elles soient dorées.",
+"Servez avec le yaourt et un filet de citron."
+],
+"notes":{
+"0":"râpé",
+"3":"râpé",
+"5":"pour servir"
+}
+},
+"tuna-pasta-bake":{
+"name":"Gratin de pâtes crémeux au thon",
+"method":[
+"Préchauffez le four à 200 C. Faites cuire les pâtes 2 minutes de moins que le temps indiqué sur le paquet et égouttez.",
+"Faites cuire l'oignon dans l'huile 5 minutes, ajoutez l'ail pendant 1 minute, puis les tomates et la crème. Laissez mijoter 5 minutes.",
+"Incorporez le thon, les petits pois et les pâtes et versez dans un plat à gratin.",
+"Parsemez de fromage et enfournez 15 à 20 minutes jusqu'à ce que ce soit doré."
+],
+"notes":{
+"1":"2 boîtes, égouttées",
+"3":"râpé",
+"4":"en dés",
+"7":"écrasé"
+}
+},
+"sausages-and-mash":{
+"name":"Saucisses, purée et sauce aux oignons",
+"method":[
+"Faites cuire les pommes de terre dans de l'eau salée 15 à 20 minutes. Égouttez et écrasez-les avec le beurre et le lait.",
+"Faites dorer les saucisses dans une poêle avec l'huile, en les retournant, environ 12 minutes jusqu'à ce qu'elles soient bien cuites. Retirez-les et gardez-les au chaud.",
+"Dans la même poêle, faites cuire les oignons 10 minutes jusqu'à ce qu'ils soient tendres et dorés. Incorporez la farine, puis ajoutez le bouillon petit à petit et laissez mijoter 5 minutes jusqu'à ce que ce soit épais.",
+"Faites cuire les petits pois et servez le tout ensemble."
+],
+"notes":{
+"5":"en tranches"
+}
+},
+"beef-burgers":{
+"name":"Burgers de bœuf maison",
+"method":[
+"Mélangez la viande hachée avec l'oignon râpé, l'œuf, le sel et le poivre. Façonnez 4 steaks un peu plus larges que les pains et mettez-les au frais 10 minutes.",
+"Faites chauffer l'huile dans une poêle à feu moyen-vif. Faites cuire les steaks 4 à 5 minutes de chaque côté jusqu'à ce qu'ils soient bien cuits, en ajoutant le fromage la dernière minute.",
+"Faites griller les pains, puis garnissez-les de laitue, de tomate, d'oignon et des steaks."
+],
+"notes":{
+"3":"en tranches",
+"4":"en tranches ou râpé",
+"5":"moitié râpé, moitié en tranches"
+}
+},
+"scrambled-eggs-avocado-toast":{
+"name":"Œufs brouillés et avocat sur toast",
+"method":[
+"Fouettez les œufs avec le lait, le sel et le poivre. Faites griller le pain.",
+"Faites fondre le beurre dans une poêle antiadhésive à feu doux, ajoutez les œufs et remuez lentement à la spatule 3 à 4 minutes jusqu'à ce qu'ils soient tout juste pris.",
+"Écrasez l'avocat avec une pincée de sel et tartinez-le sur le pain grillé. Ajoutez les œufs par-dessus."
+],
+"notes":{}
+},
+"banana-pancakes":{
+"name":"Pancakes à la banane",
+"method":[
+"Mélangez la farine, la levure chimique et le sucre dans un bol. Fouettez les œufs, le lait et 30 g de beurre fondu, puis incorporez au mélange sec jusqu'à ce que ce soit juste mélangé. Quelques grumeaux, ce n'est pas grave.",
+"Faites chauffer une poêle antiadhésive à feu moyen avec un peu du reste du beurre. Versez 1/4 de tasse de pâte par pancake.",
+"Faites cuire 2 minutes jusqu'à ce que des bulles apparaissent, retournez et faites cuire encore 1 à 2 minutes. Recommencez avec le reste.",
+"Servez avec la banane et un filet de miel."
+],
+"notes":{
+"5":"fondu",
+"6":"en tranches"
+}
+},
+"chicken-wraps":{
+"name":"Wraps de poulet épicé",
+"method":[
+"Mélangez le poulet avec le paprika, l'huile, le sel et le jus d'un demi-citron. Faites-le cuire dans une poêle chaude 6 à 8 minutes jusqu'à ce qu'il soit doré et bien cuit.",
+"Pour la sauce, mélangez l'ail et un filet de citron au yaourt.",
+"Réchauffez les tortillas, tartinez-les de sauce au yaourt et garnissez de poulet, de laitue, de tomate et de fromage. Roulez et servez."
+],
+"notes":{
+"0":"en tranches",
+"2":"émincé",
+"3":"en tranches",
+"4":"râpé",
+"9":"écrasé"
+}
+},
+"banana-honey-porridge":{
+"name":"Porridge à la banane et au miel",
+"method":[
+"Mettez les flocons d'avoine, le lait et le sel dans une casserole et portez à frémissement à feu moyen.",
+"Faites cuire 5 à 7 minutes en remuant souvent, jusqu'à ce que ce soit épais et crémeux.",
+"Versez dans des bols et garnissez de banane et de miel."
+],
+"notes":{
+"2":"en tranches"
+}
+},
+"chickpea-spinach-curry":{
+"name":"Curry de pois chiches et épinards au lait de coco",
+"method":[
+"Faites cuire le riz. Faites chauffer l'huile dans une grande poêle et faites cuire l'oignon 5 minutes. Ajoutez l'ail, le gingembre et le curry pendant 1 minute.",
+"Ajoutez les tomates, le lait de coco, les pois chiches et le sel. Laissez mijoter 15 minutes jusqu'à épaississement.",
+"Incorporez les épinards et faites cuire 2 minutes jusqu'à ce qu'ils tombent. Goûtez, rectifiez le sel et servez avec le riz."
+],
+"notes":{
+"0":"2 boîtes, égouttées",
+"3":"en dés",
+"4":"écrasé",
+"5":"râpé"
+},
+"blurb":"Végétalien tel quel."
+},
+"kung-pao-chicken":{
+"name":"Poulet kung pao",
+"method":[
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Mélangez le poulet avec 1 c. à s. de sauce soja, le vin de Shaoxing et la moitié de la fécule de maïs.",
+"Préparez la sauce : le reste de la sauce soja, le vinaigre, le sucre, le reste de la fécule et 3 c. à s. d'eau.",
+"Faites chauffer l'huile dans un wok à feu vif et faites sauter le poulet 5 à 6 minutes jusqu'à ce qu'il soit doré et bien cuit. Retirez-le.",
+"Ajoutez le piment, l'ail, le gingembre et le blanc des oignons nouveaux et faites sauter 30 secondes.",
+"Remettez le poulet, versez la sauce et faites sauter environ une minute jusqu'à ce qu'elle soit épaisse et brillante. Incorporez les cacahuètes et le vert des oignons nouveaux et servez avec le riz."
+],
+"notes":{
+"0":"coupé en morceaux de 2 cm",
+"6":"émincés (ou une poignée de piments séchés)",
+"7":"en tranches",
+"8":"finement haché",
+"9":"coupés en tronçons de 3 cm"
+},
+"blurb":"Poulet sauté à la sichuanaise, avec cacahuètes, piment et une sauce aigre-douce brillante."
+},
+"mapo-tofu":{
+"name":"Tofu mapo",
+"method":[
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Faites frémir les cubes de tofu 2 minutes dans de l'eau légèrement salée pour les raffermir, puis égouttez.",
+"Faites chauffer l'huile dans un wok à feu moyen-vif et faites revenir le porc en l'émiettant, environ 4 minutes jusqu'à ce qu'il soit doré.",
+"Ajoutez la pâte de piment et fèves, l'ail, le gingembre et le piment en poudre et faites revenir une minute jusqu'à ce que l'huile devienne rouge.",
+"Versez le bouillon, la sauce soja et le sucre et portez à frémissement. Ajoutez délicatement le tofu et laissez mijoter 4 minutes en le poussant doucement plutôt qu'en remuant.",
+"Mélangez la fécule de maïs avec 2 c. à s. d'eau, incorporez-la doucement et laissez mijoter jusqu'à ce que la sauce épaississe. Parsemez d'oignon nouveau et servez sur du riz. Du poivre du Sichuan moulu par-dessus est traditionnel si vous en avez."
+],
+"notes":{
+"0":"tendre ou ferme, en cubes de 2 cm",
+"3":"haché",
+"4":"haché",
+"10":"en tranches"
+},
+"blurb":"Tofu fondant dans une sauce épicée et savoureuse au porc et à la pâte de piment. Un classique du Sichuan, vite prêt."
+},
+"tomato-egg-stir-fry":{
+"name":"Tomates sautées aux œufs",
+"method":[
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Battez les œufs avec une pincée de sel.",
+"Faites chauffer 1 c. à s. d'huile dans un wok à feu moyen-vif, versez les œufs et remuez doucement jusqu'à ce qu'ils soient juste pris en gros morceaux moelleux. Mettez-les dans une assiette.",
+"Ajoutez le reste de l'huile et les tomates et faites sauter environ 3 minutes jusqu'à ce qu'elles ramollissent et rendent leur jus.",
+"Ajoutez le sucre, le reste du sel et 3 c. à s. d'eau et laissez mijoter 2 minutes.",
+"Remettez les œufs et mélangez délicatement 30 secondes. Arrosez d'huile de sésame, parsemez d'oignon nouveau et servez sur du riz."
+],
+"notes":{
+"1":"en quartiers",
+"4":"en tranches"
+},
+"blurb":"Œufs brouillés moelleux et tomates juteuses dans une légère sauce sucrée-salée. La cuisine familiale de tous les jours en Chine."
+},
+"char-siu-pork":{
+"name":"Porc char siu avec riz et légumes verts",
+"method":[
+"Mélangez la sauce hoisin, la sauce soja, 2 c. à s. de miel, le cinq-épices, l'ail, le vin et le sucre. Enrobez-en le porc et laissez mariner au réfrigérateur au moins une heure.",
+"Préchauffez le four à 200 °C. Garnissez une plaque de papier d'aluminium et posez une grille dessus. Placez le porc sur la grille et gardez le reste de la marinade.",
+"Rôtissez 25 minutes, retournez le porc, badigeonnez-le avec le reste de la marinade et rôtissez encore 20 minutes.",
+"Badigeonnez avec le reste du miel et rôtissez encore 5 à 10 minutes jusqu'à ce qu'il soit laqué, caramélisé sur les bords et bien cuit. Laissez reposer 5 minutes, puis tranchez.",
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Faites sauter le bok choy dans l'huile à feu vif 2 à 3 minutes avec un filet d'eau et une pincée de sel. Servez le porc sur du riz avec les légumes verts."
+],
+"notes":{
+"0":"ou échine de porc, en lanières de 4 cm d'épaisseur",
+"5":"écrasé",
+"9":"coupé en deux"
+},
+"blurb":"Porc rôti sucré et laqué au hoisin et au miel. Faites mariner au moins une heure, ou toute une nuit."
+},
+"steamed-egg-custard":{
+"name":"Flan d'œufs chinois à la vapeur",
+"method":[
+"Battez doucement les œufs pour ne pas y incorporer d'air, puis ajoutez en fouettant le bouillon tiède et le sel.",
+"Versez à travers une passoire dans un plat creux allant à la vapeur et retirez les bulles. Couvrez d'une assiette ou de papier d'aluminium.",
+"Faites cuire à la vapeur au-dessus d'une eau frémissante 10 à 12 minutes jusqu'à ce que ce soit juste pris et encore tremblotant au centre. Une lame enfoncée au centre doit ressortir propre.",
+"Arrosez de sauce soja et d'huile de sésame et parsemez d'oignon nouveau."
+],
+"notes":{
+"1":"tiède",
+"5":"finement émincé"
+},
+"blurb":"Un flan d'œufs soyeux et salé cuit à la vapeur dans un bol. Servez avec du riz et un sauté."
+},
+"pork-cabbage-dumplings":{
+"name":"Raviolis au porc et au chou",
+"method":[
+"Mélangez la farine avec 150 ml d'eau froide et pétrissez 5 minutes jusqu'à ce que la pâte soit lisse. Couvrez et laissez reposer 30 minutes.",
+"Mélangez le chou avec le sel, laissez reposer 10 minutes, puis pressez-le pour enlever le plus d'eau possible.",
+"Mélangez le porc, le chou, l'oignon nouveau, le gingembre, 1 c. à s. de sauce soja, l'huile de sésame, le vin et 2 c. à s. d'eau en remuant dans un seul sens jusqu'à ce que ce soit collant.",
+"Roulez la pâte en un long boudin, coupez-la en 40 morceaux et étalez chacun en un disque fin d'environ 8 cm.",
+"Mettez une bonne cuillère à café de farce au centre de chaque disque, pliez en deux et pincez fermement les bords pour bien fermer.",
+"Faites-les bouillir par fournées dans une grande casserole d'eau. Quand ils remontent, ajoutez une tasse d'eau froide et ramenez à ébullition ; faites-le deux fois, environ 6 à 7 minutes en tout, jusqu'à ce que la farce soit bien cuite.",
+"Servez avec le vinaigre mélangé au reste de la sauce soja pour tremper. Congelez les raviolis restants crus sur une plaque, puis mettez-les en sachet."
+],
+"notes":{
+"2":"finement haché",
+"4":"finement haché",
+"5":"râpé",
+"9":"pour tremper"
+},
+"blurb":"Des jiaozi maison avec une simple pâte farine-eau. Environ 40 pièces, et le reste se congèle bien."
+},
+"sweet-sour-chicken":{
+"name":"Poulet aigre-doux",
+"method":[
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Préparez la sauce : vinaigre, sucre, concentré de tomate, sauce soja, 1 c. à s. de fécule de maïs et 150 ml d'eau.",
+"Battez l'œuf. Trempez le poulet dans l'œuf, puis roulez-le dans le reste de la fécule.",
+"Faites frire le poulet dans l'huile à feu moyen-vif par fournées, 5 à 6 minutes jusqu'à ce qu'il soit doré et bien cuit. Égouttez sur du papier absorbant.",
+"Ne gardez que 1 c. à s. d'huile. Faites sauter l'oignon et le poivron 3 minutes, puis l'ail 30 secondes.",
+"Versez la sauce et laissez mijoter 1 à 2 minutes jusqu'à ce qu'elle soit épaisse et brillante. Ajoutez le poulet, mélangez et servez avec le riz."
+],
+"notes":{
+"0":"coupé en morceaux de 2,5 cm",
+"4":"coupé en morceaux",
+"5":"coupé en morceaux",
+"6":"haché"
+},
+"blurb":"Morceaux de poulet croustillants mélangés au poivron et à l'oignon dans une sauce maison acidulée."
+},
+"dan-dan-noodles":{
+"name":"Nouilles dan dan",
+"method":[
+"Répartissez la sauce soja, le vinaigre, l'huile de sésame, le sucre, le piment en poudre et l'ail dans quatre bols.",
+"Faites revenir le porc dans l'huile à feu moyen-vif avec la pâte de piment et fèves et le vin, environ 6 minutes jusqu'à ce qu'il soit doré et croustillant sur les bords.",
+"Faites cuire les nouilles comme indiqué sur le paquet, en ajoutant le bok choy la dernière minute. Versez 2 c. à s. d'eau de cuisson chaude dans chaque bol de sauce, puis égouttez les nouilles.",
+"Répartissez les nouilles et les légumes verts dans les bols, garnissez de porc, de cacahuètes et d'oignon nouveau, et mélangez bien avant de manger."
+],
+"notes":{
+"0":"nouilles aux œufs ou de blé",
+"10":"écrasé",
+"11":"écrasé",
+"12":"en tranches"
+},
+"blurb":"Nouilles avec porc épicé croustillant, légumes verts et une sauce pimentée, acidulée et parfumée. Mélangez bien avant de manger."
+},
+"fish-fragrant-eggplant":{
+"name":"Aubergines « parfum de poisson »",
+"method":[
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Mélangez l'aubergine avec le sel, laissez reposer 10 minutes, puis séchez-la.",
+"Faites revenir l'aubergine dans 2 c. à s. d'huile à feu moyen-vif 8 à 10 minutes jusqu'à ce qu'elle soit tendre et dorée. Retirez-la.",
+"Ajoutez le reste de l'huile et faites dorer le porc. Ajoutez la pâte de piment et fèves, l'ail, le gingembre et le blanc d'oignon nouveau et faites revenir une minute.",
+"Mélangez la sauce soja, le vinaigre, le sucre, la fécule de maïs et 100 ml d'eau, versez et portez à frémissement.",
+"Remettez l'aubergine et laissez mijoter 2 minutes jusqu'à ce que la sauce l'enrobe. Parsemez du vert d'oignon nouveau et servez sur du riz."
+],
+"notes":{
+"0":"coupée en bâtonnets de 6 cm",
+"5":"haché",
+"6":"haché",
+"7":"émincé, blanc et vert séparés"
+},
+"blurb":"Aubergines fondantes dans une sauce à l'ail sucrée, acide et épicée. Il n'y a pas de poisson : le nom vient d'une sauce du Sichuan autrefois utilisée pour le poisson."
+},
+"hot-sour-soup":{
+"name":"Soupe aigre-piquante",
+"method":[
+"Portez le bouillon à ébullition avec le gingembre et les champignons et laissez mijoter 5 minutes.",
+"Ajoutez le tofu, la sauce soja, le vinaigre et le poivre et laissez mijoter 2 minutes.",
+"Mélangez la fécule de maïs avec 4 c. à s. d'eau, incorporez-la et laissez mijoter une minute jusqu'à ce que ce soit légèrement épaissi.",
+"Baissez le feu et versez les œufs battus en filet fin tout en remuant lentement, pour qu'ils prennent en rubans.",
+"Goûtez et ajoutez du vinaigre ou du poivre si vous le souhaitez. Terminez avec l'huile de sésame et l'oignon nouveau."
+],
+"notes":{
+"1":"en tranches",
+"2":"en tranches",
+"3":"coupé en fines lanières",
+"6":"poivre blanc si vous en avez",
+"8":"battus",
+"10":"en tranches"
+},
+"blurb":"Une soupe réconfortante au tofu, aux champignons et aux rubans d'œuf, relevée de vinaigre et de poivre."
+},
+"teriyaki-chicken-don":{
+"name":"Bol de riz au poulet teriyaki",
+"method":[
+"Rincez le riz jusqu'à ce que l'eau soit presque claire. Mettez-le dans une casserole avec 1,2 fois son volume d'eau, portez à ébullition, couvrez et faites cuire à feu très doux 12 minutes, puis laissez reposer à couvert hors du feu 10 minutes.",
+"Mélangez la sauce soja, le mirin et le sucre.",
+"Faites cuire le poulet dans l'huile à feu moyen 6 minutes, retournez-le et faites cuire encore 5 minutes jusqu'à ce qu'il soit bien cuit.",
+"Retirez la graisse, ajoutez la sauce et laissez bouillonner 2 à 3 minutes en retournant le poulet, jusqu'à ce qu'il soit brillant et laqué.",
+"Faites cuire le brocoli à l'eau ou à la vapeur 3 minutes.",
+"Tranchez le poulet et servez-le sur le riz avec le brocoli. Nappez de sauce et parsemez d'oignon nouveau et de graines de sésame."
+],
+"notes":{
+"6":"en fleurettes",
+"7":"en tranches"
+},
+"blurb":"Hauts de cuisse de poulet poêlés dans une sauce teriyaki maison brillante, sur du riz avec du brocoli."
+},
+"chicken-katsu-curry":{
+"name":"Curry katsu au poulet",
+"method":[
+"Rincez le riz jusqu'à ce que l'eau soit presque claire. Mettez-le dans une casserole avec 1,2 fois son volume d'eau, portez à ébullition, couvrez et faites cuire à feu très doux 12 minutes, puis laissez reposer à couvert hors du feu 10 minutes.",
+"Curry : faites ramollir l'oignon dans 1 c. à s. d'huile 5 minutes. Ajoutez la carotte, la pomme de terre et 700 ml d'eau et laissez mijoter 15 minutes jusqu'à ce que ce soit tendre.",
+"Éteignez le feu, ajoutez le roux de curry en morceaux et remuez jusqu'à ce qu'il fonde, puis laissez mijoter 5 minutes en remuant jusqu'à ce que ce soit épais.",
+"Assaisonnez le poulet, farinez-le, trempez-le dans les œufs battus et pressez-le dans le panko.",
+"Faites-le frire dans le reste de l'huile à feu moyen 4 à 5 minutes de chaque côté jusqu'à ce qu'il soit doré et bien cuit. Égouttez et tranchez.",
+"Servez le poulet sur le riz avec la sauce curry à côté."
+],
+"notes":{
+"0":"2 blancs, coupés en deux dans l'épaisseur",
+"5":"une boîte de 92 g",
+"6":"en dés",
+"7":"coupé en morceaux",
+"8":"coupé en morceaux"
+},
+"blurb":"Poulet pané croustillant au panko avec une sauce curry japonaise douce et épaisse, et du riz."
+},
+"teriyaki-tofu-bowl":{
+"name":"Bol de riz au tofu teriyaki",
+"method":[
+"Rincez le riz jusqu'à ce que l'eau soit presque claire. Mettez-le dans une casserole avec 1,2 fois son volume d'eau, portez à ébullition, couvrez et faites cuire à feu très doux 12 minutes, puis laissez reposer à couvert hors du feu 10 minutes.",
+"Pressez le tofu entre du papier absorbant 10 minutes, coupez-le en cubes et roulez-le dans la fécule de maïs.",
+"Faites frire le tofu dans l'huile à feu moyen-vif en le retournant, environ 8 minutes jusqu'à ce qu'il soit croustillant de tous côtés.",
+"Mélangez la sauce soja, le mirin, le sucre, le gingembre et 2 c. à s. d'eau, versez sur le tofu et faites sauter 1 à 2 minutes jusqu'à ce qu'il soit laqué.",
+"Faites cuire le brocoli et la carotte à la vapeur ou à l'eau 3 minutes.",
+"Servez le tofu et les légumes sur le riz avec l'oignon nouveau et les graines de sésame."
+],
+"notes":{
+"0":"ferme",
+"6":"râpé",
+"8":"en fleurettes",
+"9":"coupée en fins bâtonnets",
+"10":"en tranches"
+},
+"blurb":"Tofu croustillant dans une sauce teriyaki laquée avec du riz et des légumes."
+},
+"oyakodon":{
+"name":"Oyakodon (bol de riz au poulet et à l'œuf)",
+"method":[
+"Rincez le riz jusqu'à ce que l'eau soit presque claire. Mettez-le dans une casserole avec 1,2 fois son volume d'eau, portez à ébullition, couvrez et faites cuire à feu très doux 12 minutes, puis laissez reposer à couvert hors du feu 10 minutes.",
+"Portez à frémissement le bouillon, la sauce soja, le mirin et le sucre dans une large poêle. Ajoutez l'oignon et laissez mijoter 3 minutes.",
+"Ajoutez le poulet et laissez mijoter 6 à 8 minutes jusqu'à ce qu'il soit bien cuit.",
+"Battez légèrement les œufs pour qu'ils restent marbrés. Versez-en les deux tiers sur le poulet, couvrez et faites cuire à feu doux 1 minute, puis ajoutez le reste, couvrez et faites cuire encore 30 secondes pour que l'œuf soit juste pris mais encore moelleux.",
+"Versez le poulet, l'œuf et un peu de bouillon sur des bols de riz et parsemez d'oignon nouveau. Au Japon on utilise du bouillon dashi ; le bouillon de poulet convient très bien à la maison."
+],
+"notes":{
+"0":"coupé en bouchées",
+"1":"en fines tranches",
+"8":"en tranches"
+},
+"blurb":"Poulet et oignon mijotés dans un bouillon soja sucré, liés d'un œuf moelleux et servis sur du riz."
+},
+"chicken-karaage":{
+"name":"Poulet karaage (poulet frit japonais)",
+"method":[
+"Mélangez le poulet avec la sauce soja, le mirin, le gingembre et l'ail et laissez reposer 20 minutes.",
+"Rincez le riz jusqu'à ce que l'eau soit presque claire. Mettez-le dans une casserole avec 1,2 fois son volume d'eau, portez à ébullition, couvrez et faites cuire à feu très doux 12 minutes, puis laissez reposer à couvert hors du feu 10 minutes.",
+"Roulez le poulet dans la fécule de maïs et secouez l'excédent.",
+"Faites chauffer 2 à 3 cm d'huile dans une casserole à fond épais à environ 170 °C. Faites frire le poulet par fournées 4 à 5 minutes jusqu'à ce qu'il soit bien doré et cuit. Égouttez sur une grille. Ne laissez jamais d'huile chaude sans surveillance.",
+"Pour plus de croustillant, refaites frire chaque fournée 1 minute une fois tout le poulet cuit.",
+"Servez avec des quartiers de citron, le chou émincé et du riz."
+],
+"notes":{
+"0":"coupé en grosses bouchées",
+"3":"râpé",
+"4":"râpé",
+"6":"pour la friture",
+"7":"en quartiers",
+"8":"finement émincé"
+},
+"blurb":"Poulet juteux mariné au soja, au gingembre et à l'ail, frit jusqu'à ce qu'il soit croustillant. Servez avec du citron, du chou et du riz."
+},
+"okonomiyaki":{
+"name":"Okonomiyaki (galettes au chou)",
+"method":[
+"Fouettez la farine, le bouillon, les œufs et le sel pour obtenir une pâte épaisse. Incorporez le chou et la majeure partie de l'oignon nouveau.",
+"Faites chauffer un peu d'huile dans une poêle à feu moyen. Versez un quart de la pâte et formez une galette d'environ 2 cm d'épaisseur.",
+"Posez quelques tranches de bacon dessus. Faites cuire environ 5 minutes jusqu'à ce que le dessous soit doré, retournez et faites cuire encore 5 minutes jusqu'à ce que ce soit bien cuit. Recommencez avec le reste.",
+"Mélangez le concentré de tomate, la sauce soja, le miel et 1 c. à s. d'eau et badigeonnez-en les galettes.",
+"Parsemez du reste de l'oignon nouveau, et de mayonnaise japonaise si vous aimez."
+],
+"notes":{
+"4":"finement émincé",
+"5":"en tranches",
+"6":"en fines tranches"
+},
+"blurb":"Galettes salées au chou garnies de bacon et d'une sauce sucrée-salée."
+},
+"yaki-udon":{
+"name":"Yaki udon (udon sautées)",
+"method":[
+"Détendez les udon 1 minute dans de l'eau chaude, ou faites cuire les udon sèches comme indiqué sur le paquet, puis égouttez.",
+"Faites dorer le bacon dans l'huile à feu moyen-vif. Ajoutez l'oignon, la carotte et les champignons et faites sauter 3 minutes, puis le chou 2 minutes.",
+"Ajoutez les nouilles, la sauce soja et le mirin et faites sauter à feu vif 2 à 3 minutes jusqu'à ce que ce soit chaud et bien enrobé.",
+"Terminez avec l'huile de sésame et l'oignon nouveau."
+],
+"notes":{
+"1":"haché",
+"2":"en tranches",
+"3":"coupée en fins bâtonnets",
+"4":"en tranches",
+"5":"émincé",
+"10":"en tranches"
+},
+"blurb":"Épaisses nouilles udon sautées avec bacon, chou et champignons dans une sauce soja et mirin."
+},
+"gyudon":{
+"name":"Gyudon (bol de riz au bœuf et à l'oignon)",
+"method":[
+"Rincez le riz jusqu'à ce que l'eau soit presque claire. Mettez-le dans une casserole avec 1,2 fois son volume d'eau, portez à ébullition, couvrez et faites cuire à feu très doux 12 minutes, puis laissez reposer à couvert hors du feu 10 minutes.",
+"Faites frémir le bouillon, la sauce soja, le mirin, le sucre et le gingembre dans une casserole. Ajoutez l'oignon et laissez mijoter 5 minutes jusqu'à ce qu'il soit tendre.",
+"Ajoutez le bœuf en séparant les tranches et laissez mijoter 2 à 3 minutes jusqu'à ce qu'il soit juste cuit. Retirez l'écume.",
+"Si vous le souhaitez, faites cuire les œufs 6 minutes et demie, refroidissez-les à l'eau froide et écalez-les.",
+"Versez le bœuf, l'oignon et un peu de bouillon sur le riz et garnissez d'oignon nouveau et d'un demi-œuf."
+],
+"notes":{
+"0":"en fines tranches",
+"1":"en tranches",
+"6":"râpé",
+"8":"en tranches",
+"9":"facultatif, mollet"
+},
+"blurb":"Fines tranches de bœuf et oignon fondant mijotés dans un bouillon soja sucré, sur du riz."
+},
+"tamagoyaki":{
+"name":"Tamagoyaki (omelette roulée)",
+"method":[
+"Battez les œufs avec le sucre, la sauce soja, le mirin, le sel et 2 c. à s. d'eau sans les faire mousser.",
+"Faites chauffer une petite poêle (l'idéal est une poêle carrée) à feu moyen-doux et essuyez-la avec du papier absorbant huilé.",
+"Versez une fine couche d'œuf et inclinez la poêle pour la couvrir. Quand c'est presque pris mais encore humide dessus, roulez depuis le côté opposé vers vous.",
+"Poussez le rouleau vers le fond, huilez à nouveau la poêle et versez une autre couche fine en soulevant le rouleau pour que l'œuf coule dessous. Roulez à nouveau.",
+"Recommencez jusqu'à épuisement des œufs. Laissez reposer l'omelette 2 minutes enveloppée dans du papier absorbant pour la mettre en forme, puis tranchez."
+],
+"notes":{},
+"blurb":"Une omelette légèrement sucrée roulée en couches, tranchée et servie chaude ou froide."
+},
+"nikujaga":{
+"name":"Nikujaga (ragoût de bœuf et pommes de terre)",
+"method":[
+"Rincez le riz jusqu'à ce que l'eau soit presque claire. Mettez-le dans une casserole avec 1,2 fois son volume d'eau, portez à ébullition, couvrez et faites cuire à feu très doux 12 minutes, puis laissez reposer à couvert hors du feu 10 minutes.",
+"Faites revenir l'oignon dans l'huile 2 minutes, puis ajoutez le bœuf et faites-le dorer.",
+"Ajoutez la pomme de terre et la carotte, le bouillon, le sucre et le mirin. Portez à ébullition et écumez.",
+"Couvrez avec un couvercle un peu plus petit que la casserole (ou un disque de papier cuisson) et laissez mijoter 10 minutes.",
+"Ajoutez la sauce soja et laissez mijoter encore 10 minutes jusqu'à ce que les pommes de terre soient tendres et que le bouillon ait réduit de moitié environ.",
+"Ajoutez les petits pois pour les 2 dernières minutes. Servez dans des bols avec le riz."
+],
+"notes":{
+"0":"en fines tranches",
+"1":"coupées en gros morceaux",
+"2":"en quartiers",
+"3":"coupé en morceaux"
+},
+"blurb":"Bœuf, pommes de terre et carottes à la japonaise, mijotés dans un bouillon soja sucré."
+},
+"pad-thai":{
+"name":"Pad thaï aux crevettes",
+"method":[
+"Faites tremper les nouilles dans de l'eau tiède 20 à 30 minutes jusqu'à ce qu'elles soient souples mais encore fermes, puis égouttez.",
+"Mélangez la sauce de poisson, le sucre, le jus d'un citron vert, le vinaigre et le piment en poudre.",
+"Faites chauffer 2 c. à s. d'huile dans un wok à feu vif. Faites frire le tofu 3 minutes jusqu'à ce qu'il soit doré, puis ajoutez l'ail et les crevettes et faites sauter 2 minutes jusqu'à ce que les crevettes deviennent roses.",
+"Poussez tout sur le côté, ajoutez le reste de l'huile, cassez les œufs et brouillez-les.",
+"Ajoutez les nouilles et la sauce et faites sauter 2 à 3 minutes jusqu'à ce que les nouilles soient tendres et la sauce absorbée. Ajoutez un peu d'eau si c'est trop sec.",
+"Ajoutez les germes de soja et l'oignon nouveau et faites sauter 30 secondes. Servez avec les cacahuètes et des quartiers de citron vert."
+],
+"notes":{
+"0":"plates, d'environ 5 mm de large",
+"3":"ferme, en petits cubes",
+"5":"coupés en tronçons de 3 cm",
+"6":"écrasé",
+"7":"haché",
+"9":"sucre brun ou de palme",
+"11":"ou 2 c. à s. de pâte de tamarin si vous en avez"
+},
+"blurb":"Nouilles de riz sautées aux crevettes, à l'œuf et au tofu, finies avec cacahuètes, germes de soja et citron vert."
+},
+"green-chicken-curry":{
+"name":"Curry vert thaï au poulet",
+"method":[
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Faites revenir la pâte de curry dans l'huile 1 minute. Ajoutez 200 ml de lait de coco (la partie épaisse du haut de la boîte) et laissez mijoter 2 minutes.",
+"Ajoutez le poulet et remuez 3 minutes, puis versez le reste du lait de coco et laissez mijoter 10 minutes.",
+"Ajoutez la courgette et le poivron et laissez mijoter 5 minutes jusqu'à ce qu'ils soient juste tendres.",
+"Assaisonnez avec la sauce de poisson, le sucre et le jus de citron vert. Incorporez les feuilles de basilic et servez sur le riz."
+],
+"notes":{
+"0":"mettez-en 2 pour un curry plus doux",
+"2":"en tranches",
+"3":"en tranches",
+"4":"en tranches",
+"8":"basilic thaï si vous en trouvez",
+"10":"jasmin"
+},
+"blurb":"Poulet et légumes mijotés dans du lait de coco avec de la pâte de curry vert, du basilic et du citron vert."
+},
+"red-curry-pumpkin-tofu":{
+"name":"Curry rouge au potiron et au tofu",
+"method":[
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Faites revenir la pâte de curry dans l'huile 1 minute, puis ajoutez 200 ml de lait de coco et laissez mijoter 2 minutes.",
+"Ajoutez le potiron et le reste du lait de coco et laissez mijoter 12 à 15 minutes jusqu'à ce que le potiron soit tendre.",
+"Ajoutez le tofu et laissez mijoter 3 minutes, puis incorporez les épinards jusqu'à ce qu'ils tombent.",
+"Assaisonnez avec la sauce soja, le sucre et le jus de citron vert, ajoutez le basilic et servez avec le riz."
+],
+"notes":{
+"2":"épluché, en morceaux de 3 cm",
+"3":"ferme, en cubes",
+"10":"jasmin"
+},
+"blurb":"Un curry au lait de coco riche avec potiron doux, tofu et épinards. La plupart des pâtes de curry contiennent de la pâte de crevettes : vérifiez l'étiquette pour les végétariens."
+},
+"tom-yum-soup":{
+"name":"Soupe tom yum aux crevettes",
+"method":[
+"Écrasez la citronnelle avec un rouleau à pâtisserie et coupez-la en tronçons de 5 cm.",
+"Faites mijoter le bouillon avec la citronnelle, le gingembre et le piment 5 minutes.",
+"Ajoutez les champignons et la tomate et laissez mijoter 3 minutes.",
+"Ajoutez les crevettes et laissez mijoter 2 à 3 minutes jusqu'à ce qu'elles soient roses et bien cuites.",
+"Retirez du feu et assaisonnez avec la sauce de poisson, le sucre et le jus de citron vert : la soupe doit être acide, salée et piquante. Ajoutez la coriandre. Les morceaux de citronnelle et de gingembre ne se mangent pas."
+],
+"notes":{
+"2":"émincé (du galanga si vous en trouvez)",
+"3":"en tranches",
+"4":"coupé en deux",
+"5":"en quartiers"
+},
+"blurb":"Soupe de crevettes aigre et piquante, parfumée à la citronnelle, au piment et au citron vert."
+},
+"tom-kha-gai":{
+"name":"Tom kha gai (soupe de poulet au lait de coco)",
+"method":[
+"Écrasez la citronnelle et coupez-la en tronçons de 5 cm. Faites-la mijoter dans le bouillon avec le gingembre 5 minutes.",
+"Ajoutez le lait de coco et le poulet et laissez mijoter doucement, sans faire bouillir fort, 6 à 8 minutes jusqu'à ce que le poulet soit cuit.",
+"Ajoutez les champignons et le piment et laissez mijoter 3 minutes.",
+"Retirez du feu et assaisonnez avec la sauce de poisson, le jus de citron vert et le sucre. Ajoutez la coriandre. Laissez les morceaux de citronnelle et de gingembre dans le bol."
+],
+"notes":{
+"0":"en fines tranches",
+"4":"émincé (du galanga si vous en trouvez)",
+"5":"en tranches",
+"6":"coupé en deux"
+},
+"blurb":"Une soupe douce et crémeuse au lait de coco avec poulet, champignons, citronnelle et citron vert."
+},
+"pad-kra-pao":{
+"name":"Poulet au basilic thaï (pad kra pao)",
+"method":[
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Pilez ou hachez finement l'ail et le piment ensemble.",
+"Faites chauffer 2 c. à s. d'huile jusqu'à ce qu'elle soit très chaude et faites frire les œufs un par un jusqu'à ce que les bords soient croustillants. Gardez-les au chaud.",
+"Faites chauffer le reste de l'huile dans un wok à feu vif. Faites sauter l'ail et le piment 30 secondes, puis le poulet 4 à 5 minutes en l'émiettant, jusqu'à ce qu'il soit cuit.",
+"Ajoutez la sauce d'huître, la sauce soja, la sauce de poisson, le sucre et 2 c. à s. d'eau et faites sauter une minute.",
+"Incorporez le basilic jusqu'à ce qu'il tombe. Servez sur du riz avec un œuf frit dessus."
+],
+"notes":{
+"0":"finement haché",
+"8":"le basilic sacré thaï est traditionnel",
+"10":"jasmin"
+},
+"blurb":"Poulet haché épicé sauté avec ail, piment et basilic, surmonté d'un œuf frit croustillant."
+},
+"thai-beef-salad":{
+"name":"Salade thaïe au bœuf",
+"method":[
+"Sauce : mélangez le jus de citron vert, la sauce de poisson, le sucre, le piment et l'ail.",
+"Saisissez le bœuf dans l'huile dans une poêle très chaude, par fournées, 1 à 2 minutes jusqu'à ce qu'il soit doré à l'extérieur et encore rosé à l'intérieur. Laissez reposer 3 minutes et mélangez avec 2 c. à s. de sauce.",
+"Réunissez la laitue, le concombre, la tomate, l'oignon, l'oignon nouveau et la coriandre.",
+"Ajoutez le bœuf et le reste de la sauce, mélangez et parsemez de cacahuètes."
+],
+"notes":{
+"2":"déchirée",
+"3":"en tranches",
+"4":"en quartiers",
+"5":"rouge, en fines tranches",
+"6":"en tranches",
+"11":"finement haché",
+"12":"écrasé",
+"13":"écrasé"
+},
+"blurb":"Bœuf saisi mélangé à des légumes croquants, des herbes et une sauce vive au citron vert et au piment."
+},
+"pork-larb":{
+"name":"Larb de porc en feuilles de laitue",
+"method":[
+"Faites griller à sec 2 c. à s. de riz cru dans une poêle en remuant, environ 5 minutes jusqu'à ce qu'il soit bien doré. Écrasez-le finement.",
+"Faites cuire le reste du riz : rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Faites revenir le porc dans l'huile à feu moyen-vif en l'émiettant, environ 6 minutes jusqu'à ce qu'il soit cuit. Ajoutez 2 c. à s. d'eau et retirez du feu.",
+"Incorporez la sauce de poisson, le jus de citron vert, le sucre et le piment, puis l'oignon, l'oignon nouveau, les herbes et la majeure partie du riz grillé.",
+"Garnissez les feuilles de laitue, parsemez du reste du riz grillé et servez avec le riz."
+],
+"notes":{
+"0":"2 c. à s. à griller, le reste pour servir",
+"6":"finement haché",
+"7":"rouge, en fines tranches",
+"8":"en tranches",
+"10":"la menthe est traditionnelle si vous en avez",
+"11":"feuilles séparées"
+},
+"blurb":"Porc haché acidulé au citron vert, au piment et aux herbes, à manger dans des feuilles de laitue croquantes."
+},
+"chicken-satay":{
+"name":"Saté de poulet sauce cacahuète",
+"method":[
+"Mélangez le poulet avec 100 ml de lait de coco, le curry en poudre, 1 c. à s. de sucre et 1 c. à s. de sauce de poisson. Laissez mariner au moins 30 minutes. Faites tremper des brochettes en bois dans l'eau en même temps.",
+"Rincez le riz, puis faites-le mijoter à couvert dans deux fois son volume d'eau avec une pincée de sel, environ 12 minutes jusqu'à ce qu'il soit tendre. Gardez à couvert.",
+"Sauce cacahuète : mixez ou hachez très finement les cacahuètes. Faites mijoter le reste du lait de coco avec la pâte de curry 2 minutes, puis ajoutez les cacahuètes, le reste du sucre, la sauce soja et le reste de la sauce de poisson. Laissez mijoter en remuant 5 minutes jusqu'à ce que ce soit épais. Ajoutez le jus de citron vert et détendez avec de l'eau si besoin.",
+"Enfilez le poulet sur les brochettes, badigeonnez d'huile et faites griller, au barbecue ou à la poêle, 8 à 10 minutes en retournant, jusqu'à ce qu'il soit bien cuit et grillé par endroits.",
+"Servez avec la sauce cacahuète, le concombre et le riz."
+],
+"notes":{
+"0":"coupé en lanières",
+"6":"grillées",
+"10":"en tranches",
+"11":"jasmin"
+},
+"blurb":"Brochettes de poulet grillées marinées au lait de coco, avec une sauce cacahuète maison. Faites mariner au moins 30 minutes."
+},
+"pad-see-ew":{
+"name":"Pad see ew (nouilles de riz sautées au poulet)",
+"method":[
+"Faites tremper les nouilles dans de l'eau tiède jusqu'à ce qu'elles soient souples, puis égouttez (les larges nouilles de riz fraîches doivent juste être séparées).",
+"Mélangez la sauce soja, la sauce d'huître, le sucre et 2 c. à s. d'eau.",
+"Faites chauffer l'huile dans un wok à feu vif. Faites revenir l'ail 15 secondes, puis le poulet 4 minutes jusqu'à ce qu'il soit cuit.",
+"Ajoutez les tiges de brocoli, puis les fleurettes, avec un filet d'eau et faites sauter 2 minutes.",
+"Poussez tout sur le côté et brouillez les œufs dans l'espace libre.",
+"Ajoutez les nouilles et la sauce et faites sauter en laissant reposer les nouilles 30 secondes à chaque fois pour qu'elles grillent un peu, environ 3 minutes. Terminez avec le poivre."
+],
+"notes":{
+"0":"larges",
+"1":"en fines tranches",
+"2":"tiges émincées, petites fleurettes",
+"4":"haché",
+"5":"et un trait de sauce soja foncée si vous en avez"
+},
+"blurb":"Larges nouilles de riz sautées jusqu'à être légèrement grillées, avec poulet, brocoli, œuf et soja."
+}
+}
+}

@@ -27,8 +27,9 @@ assert.strictEqual(cover(100, []), null);
 // store plans: there is always a one-store plan; when no store sells everything it names what is missing and is never "best value"
 const planSrc = src.match(/function planData[\s\S]*?\n}\n\nfunction allTags/)[0].replace(/\n\nfunction allTags$/, "");
 // (fn also carries the page's own needs(), so the stand-in is assigned over it)
-const plansFor = (ING) => new Function("STORES", "KEYS", "ING", "state", "fakeNeeds", "isHave", "money", fn + planSrc + "; needs = fakeNeeds; return planData;")(
-  { a: "Shop A", b: "Shop B", c: "Shop C" }, ["a", "b", "c"], ING, { member: false, stop: 4 },
+const english = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => (v && v[k] != null ? v[k] : m));   // T() with no translation loaded
+const plansFor = (ING) => new Function("STORES", "KEYS", "ING", "state", "T", "ingName", "fakeNeeds", "isHave", "money", fn + planSrc + "; needs = fakeNeeds; return planData;")(
+  { a: "Shop A", b: "Shop B", c: "Shop C" }, ["a", "b", "c"], ING, { member: false, stop: 4 }, english, (id) => ING[id].name,
   () => Object.fromEntries(Object.keys(ING).map((id) => [id, { amt: 100, uses: [] }])), () => false, (n) => "$" + n.toFixed(2))().plans;
 let ps = plansFor({ x: { name: "X", stores: { a: [pk(100, 5)], b: [pk(100, 4)] } }, y: { name: "Y", stores: { c: [pk(100, 3)] } },
                     z: { name: "Z", stores: { a: [pk(100, 2)], c: [pk(100, 2.5)] } } });

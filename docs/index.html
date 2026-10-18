@@ -105,38 +105,43 @@ aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;ma
 <header>
   <div>
     <h1>Shelf Check NZ</h1>
-    <p class="sub">Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, with prices per 100g.</p>
-    <a href="recipes.html" style="display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--ink)">Shop by recipe</a>
+    <p class="sub" data-i18n>Build a grocery list and see the cheapest way to buy it across Woolworths, New World, PAK'nSAVE and the Asian grocers New Gum Sarn, TXG Mall, NJK and FromK, with prices per 100g.</p>
+    <a href="recipes.html" style="display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--ink)" data-i18n>Shop by recipe</a>
   </div>
-  <div class="status" id="status" role="status">Loading prices...</div>
+  <div class="hside">
+    <div id="lang"></div>
+    <div class="status" id="status" role="status" data-i18n>Loading prices...</div>
+  </div>
 </header>
-<nav class="aisles" id="aisles" aria-label="Shop by aisle"></nav>
+<nav class="aisles" id="aisles" aria-label="Shop by aisle" data-i18n-aria></nav>
 
 <main>
-  <section aria-label="Products">
+  <section aria-label="Products" data-i18n-aria>
     <div class="controls">
-      <input type="search" id="q" placeholder="Search butter, mince, toilet paper" aria-label="Search products">
-      <label class="toggle"><input type="checkbox" id="member"> Use club prices (Everyday Rewards, Clubcard)</label>
-      <label class="toggle"><input type="checkbox" id="specials"> Specials only</label>
-      <label class="sortlab" for="sort">Sort <select id="sort"><option value="name">A to Z</option><option value="unit">Lowest price per 100g / 100ml</option><option value="saving">Biggest saving</option></select></label>
+      <input type="search" id="q" placeholder="Search butter, mince, toilet paper" aria-label="Search products" data-i18n-ph data-i18n-aria>
+      <label class="toggle"><input type="checkbox" id="member"> <span data-i18n>Use club prices (Everyday Rewards, Clubcard)</span></label>
+      <label class="toggle"><input type="checkbox" id="specials"> <span data-i18n>Specials only</span></label>
+      <label class="sortlab" for="sort"><span data-i18n>Sort</span> <select id="sort"><option value="name" data-i18n>A to Z</option><option value="unit" data-i18n>Lowest price per 100g / 100ml</option><option value="saving" data-i18n>Biggest saving</option></select></label>
     </div>
     <p class="count" id="count"></p>
     <div id="list"></div>
   </section>
 
-  <aside aria-label="Your list">
-    <h2>Your list</h2>
+  <aside aria-label="Your list" data-i18n-aria>
+    <h2 data-i18n>Your list</h2>
     <ul class="items" id="items"></ul>
-    <div class="stop"><label for="stopCost">Cost of each extra stop</label> $<input type="number" id="stopCost" min="0" step="0.5" value="4"></div>
+    <div class="stop"><label for="stopCost" data-i18n>Cost of each extra stop</label> $<input type="number" id="stopCost" min="0" step="0.5" value="4"></div>
     <div class="plans" id="plans"></div>
     <div class="bk" id="bk"></div>
   </aside>
 </main>
 
-<p class="foot">Only products found at two or more stores are listed, because those are the ones that can be compared. "Usual" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only. TXG Mall, NJK and FromK prices are from their online shops; check delivery or pickup with each shop.</p>
+<p class="foot" data-i18n>Only products found at two or more stores are listed, because those are the ones that can be compared. "Usual" is the store's own regular price shown next to a special, and a special counts as a real saving when it is at least 10% under it. Prices come from one store per chain, so your local store may differ. New Gum Sarn is a single shop in Point England, Auckland, and its frozen and chilled items are click and collect only. TXG Mall, NJK and FromK prices are from their online shops; check delivery or pickup with each shop.</p>
 </div>
 
+<script src="i18n.js"></script>
 <script>
+var T = I18N.t;   // T(english, vars) gives the chosen language
 var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE", newgumsarn:"New Gum Sarn", txgmall:"TXG Mall", njk:"NJK", fromk:"FromK"};
 var KEYS = Object.keys(STORES);
 var PAGE = 40;
@@ -206,12 +211,12 @@ function aisleOf(cat,name){
 }
 function renderAisles(){
   var counts={}; ITEMS.forEach(function(i){counts[i.aisle]=(counts[i.aisle]||0)+1;});
-  var html='<button class="aisle" type="button" data-aisle="" aria-pressed="'+(state.aisle===""?"true":"false")+'"><span class="no">All</span>All aisles <span class="n">'+ITEMS.length+'</span></button>';
+  var html='<button class="aisle" type="button" data-aisle="" aria-pressed="'+(state.aisle===""?"true":"false")+'"><span class="no">'+esc(T("All"))+'</span>'+esc(T("All aisles"))+' <span class="n">'+ITEMS.length+'</span></button>';
   var num=0;
   AISLES.forEach(function(a){
     if(!counts[a[0]])return;
     num++;
-    html+='<button class="aisle" type="button" data-aisle="'+esc(a[0])+'" aria-pressed="'+(state.aisle===a[0]?"true":"false")+'"><span class="no">'+num+'</span>'+esc(a[0])+' <span class="n">'+counts[a[0]]+'</span></button>';
+    html+='<button class="aisle" type="button" data-aisle="'+esc(a[0])+'" aria-pressed="'+(state.aisle===a[0]?"true":"false")+'"><span class="no">'+num+'</span>'+esc(T(a[0]))+' <span class="n">'+counts[a[0]]+'</span></button>';
   });
   document.getElementById("aisles").innerHTML=html;
 }
@@ -223,13 +228,13 @@ function priceFor(item,k){
 function unitLabel(item,k,p){
   var e=item.prices[k]; if(!e||e[3]==null)return "";
   var up=e[3]*p/e[0];
-  return e[4]==="ea" ? money(up)+" each" : money(up)+"/"+e[4];
+  return e[4]==="ea" ? T("{price} each",{price:money(up)}) : money(up)+"/"+e[4];
 }
 function dealText(item,k){
   var e=item.prices[k], p=priceFor(item,k); if(!e||e[1]<=p)return null;
   var pct=Math.round((1-p/e[1])*100);
-  if(pct>=10)return {cls:"real",t:"Real saving: "+pct+"% under usual "+money(e[1])};
-  return {cls:"weak",t:"Only "+pct+"% under usual "+money(e[1])};
+  if(pct>=10)return {cls:"real",t:T("Real saving: {pct}% under usual {price}",{pct:pct,price:money(e[1])})};
+  return {cls:"weak",t:T("Only {pct}% under usual {price}",{pct:pct,price:money(e[1])})};
 }
 
 // biggest saving (0 to 1) across stores: shelf price against the store's own usual price
@@ -258,9 +263,10 @@ function filtered(){
 
 function renderList(){
   var rows=filtered(), shown=rows.slice(0,state.shown);
-  document.getElementById("count").textContent = rows.length ? (rows.length+" product"+(rows.length===1?"":"s")+(state.specials?" on special":" at 2 or more stores")) : "";
+  var one=rows.length===1;
+  document.getElementById("count").textContent = rows.length ? T(state.specials?(one?"{n} product on special":"{n} products on special"):(one?"{n} product at 2 or more stores":"{n} products at 2 or more stores"),{n:rows.length}) : "";
   if(!rows.length){
-    document.getElementById("list").innerHTML='<p class="empty">'+(ITEMS.length?'No products match. Try a shorter search or another aisle.':'No comparable products yet.')+'</p>';
+    document.getElementById("list").innerHTML='<p class="empty">'+esc(ITEMS.length?T("No products match. Try a shorter search or another aisle."):T("No comparable products yet."))+'</p>';
     return;
   }
   var html=shown.map(function(i){
@@ -271,11 +277,11 @@ function renderList(){
     var cells=KEYS.filter(function(k){return priceFor(i,k)!=null;}).map(function(k){
       var p=priceFor(i,k), d=dealText(i,k);
       return '<div class="cell'+(p===min?' best':'')+'"><div class="st">'+esc(STORES[k])+'</div><div class="pr">'+money(p)+'</div><div class="un">'+esc(unitLabel(i,k,p))+'</div>'+(d?'<div class="dl '+d.cls+'">'+esc(d.t)+'</div>':'')+'</div>';
-    }).join("")+(missing.length?'<div class="nf">Not found at '+esc(missing.join(", "))+'</div>':'');
+    }).join("")+(missing.length?'<div class="nf">'+esc(T("Not found at {stores}",{stores:missing.join(", ")}))+'</div>':'');
     var inList=state.list[i.id];
-    return '<article class="row"><div><h3>'+esc(i.name)+'</h3><div class="meta">'+esc(i.size)+'</div>'+(i.fuzzy?'<div class="fz">Matched by name and size. Check it is the same product.</div>':'')+'</div><button class="btn'+(inList?' in':'')+'" data-add="'+enc(i.id)+'">'+(inList?'In list ('+inList+')':'Add')+'</button><div class="prices">'+cells+'</div></article>';
+    return '<article class="row"><div><h3>'+esc(i.name)+'</h3><div class="meta">'+esc(i.size)+'</div>'+(i.fuzzy?'<div class="fz">'+esc(T("Matched by name and size. Check it is the same product."))+'</div>':'')+'</div><button class="btn'+(inList?' in':'')+'" data-add="'+enc(i.id)+'">'+esc(inList?T("In list ({n})",{n:inList}):T("Add"))+'</button><div class="prices">'+cells+'</div></article>';
   }).join("");
-  if(rows.length>shown.length) html+='<button class="btn more" data-more="1">Show more ('+(rows.length-shown.length)+' left)</button>';
+  if(rows.length>shown.length) html+='<button class="btn more" data-more="1">'+esc(T("Show more ({n} left)",{n:rows.length-shown.length}))+'</button>';
   document.getElementById("list").innerHTML=html;
 }
 
@@ -297,17 +303,17 @@ function plans(){
   if(singles.length){
     singles.sort(function(a,b){return a.a.total-b.a.total;});
     var s=singles[0];
-    out.push({id:"one",name:"One store: "+STORES[s.k],a:s.a,note:singles.length>1?"Dearest full-list store is "+money(singles[singles.length-1].a.total)+".":"Only store that has everything."});
+    out.push({id:"one",name:T("One store: {store}",{store:STORES[s.k]}),a:s.a,note:singles.length>1?T("Dearest full-list store is {price}.",{price:money(singles[singles.length-1].a.total)}):T("Only store that has everything.")});
   }
   var pairBest=null;
   for(var x=0;x<KEYS.length;x++)for(var y=x+1;y<KEYS.length;y++){
     var a=assign([KEYS[x],KEYS[y]]); if(a&&a.stores===2&&(!pairBest||a.total<pairBest.total))pairBest=a;
   }
-  if(pairBest)out.push({id:"two",name:"Two stores: "+Object.keys(pairBest.by).map(function(k){return STORES[k];}).join(" + "),a:pairBest,note:""});
-  var all=assign(KEYS); if(all&&all.stores>=3)out.push({id:"all",name:"Cheapest across "+all.stores+" stores",a:all,note:""});
+  if(pairBest)out.push({id:"two",name:T("Two stores: {stores}",{stores:Object.keys(pairBest.by).map(function(k){return STORES[k];}).join(" + ")}),a:pairBest,note:""});
+  var all=assign(KEYS); if(all&&all.stores>=3)out.push({id:"all",name:T("Cheapest across {n} stores",{n:all.stores}),a:all,note:""});
   out.forEach(function(p){
     p.net=p.a.total+(p.a.stores-1)*state.stop;
-    p.note=(p.note?p.note+" ":"")+(p.a.stores>1?(p.a.stores-1)+" extra stop"+(p.a.stores>2?"s":"")+" at "+money(state.stop)+" each: "+money(p.net)+" all in.":"");
+    p.note=(p.note?p.note+" ":"")+(p.a.stores>1?T(p.a.stores>2?"{n} extra stops at {price} each: {total} all in.":"{n} extra stop at {price} each: {total} all in.",{n:p.a.stores-1,price:money(state.stop),total:money(p.net)}):"");
   });
   var rec=out.slice().sort(function(a,b){return a.net-b.net;})[0]; if(rec)rec.rec=true;
   return out;
@@ -317,19 +323,19 @@ function renderBasket(){
   var ids=Object.keys(state.list);
   var el=document.getElementById("items");
   if(!ids.length){
-    el.innerHTML='<li style="display:block;border:0"><p class="empty">Search for products and press Add to compare totals.</p></li>';
+    el.innerHTML='<li style="display:block;border:0"><p class="empty">'+esc(T("Search for products and press Add to compare totals."))+'</p></li>';
     document.getElementById("plans").innerHTML="";document.getElementById("bk").innerHTML="";return;
   }
-  el.innerHTML=ids.map(function(id){var i=BYKEY[id];return '<li><span>'+esc(i.name)+'</span><span class="qty"><button data-dec="'+enc(id)+'" aria-label="Fewer '+esc(i.name)+'">-</button>'+state.list[id]+'<button data-inc="'+enc(id)+'" aria-label="More '+esc(i.name)+'">+</button></span></li>';}).join("");
+  el.innerHTML=ids.map(function(id){var i=BYKEY[id];return '<li><span>'+esc(i.name)+'</span><span class="qty"><button data-dec="'+enc(id)+'" aria-label="'+esc(T("Fewer {item}",{item:i.name}))+'">-</button>'+state.list[id]+'<button data-inc="'+enc(id)+'" aria-label="'+esc(T("More {item}",{item:i.name}))+'">+</button></span></li>';}).join("");
   var ps=plans();
   if(!ps.length){
-    document.getElementById("plans").innerHTML='<p class="empty">No combination of these stores has everything on your list. Remove an item that shows "Not found" at a store to compare.</p>';
+    document.getElementById("plans").innerHTML='<p class="empty">'+esc(T('No combination of these stores has everything on your list. Remove an item that shows "Not found" at a store to compare.'))+'</p>';
     document.getElementById("bk").innerHTML="";return;
   }
   var rec=ps.filter(function(p){return p.rec;})[0];
   if(!state.sel||!ps.some(function(p){return p.id===state.sel;}))state.sel=rec.id;
   document.getElementById("plans").innerHTML=ps.map(function(p){
-    return '<button class="plan" data-plan="'+p.id+'" aria-pressed="'+(p.id===state.sel)+'"><span class="pn">'+esc(p.name)+(p.rec?'<span class="rec">BEST VALUE</span>':'')+'</span><span class="tot">'+money(p.a.total)+'</span><span class="nt">'+esc(p.note)+'</span></button>';
+    return '<button class="plan" data-plan="'+p.id+'" aria-pressed="'+(p.id===state.sel)+'"><span class="pn">'+esc(p.name)+(p.rec?'<span class="rec">'+esc(T("BEST VALUE"))+'</span>':'')+'</span><span class="tot">'+money(p.a.total)+'</span><span class="nt">'+esc(p.note)+'</span></button>';
   }).join("");
   var cur=ps.filter(function(p){return p.id===state.sel;})[0];
   document.getElementById("bk").innerHTML=Object.keys(cur.a.by).map(function(k){
@@ -343,16 +349,16 @@ function renderAll(){renderList();renderBasket();}
 function showStatus(cmp){
   var el=document.getElementById("status");
   if(cmp.generated_at==="sample"){
-    el.className="status sample"; el.textContent="Sample prices for testing. Run the scraper to load real prices."; return;
+    el.className="status sample"; el.textContent=T("Sample prices for testing. Run the scraper to load real prices."); return;
   }
   var when=new Date(cmp.generated_at), txt="";
-  try{txt=new Intl.DateTimeFormat("en-NZ",{dateStyle:"medium",timeStyle:"short",timeZone:"Pacific/Auckland"}).format(when);}catch(e){txt=cmp.generated_at;}
+  try{txt=new Intl.DateTimeFormat(I18N.locale(),{dateStyle:"medium",timeStyle:"short",timeZone:"Pacific/Auckland"}).format(when);}catch(e){txt=cmp.generated_at;}
   var missed=cmp.stores_scraped_this_run?KEYS.filter(function(k){return cmp.stores_scraped_this_run.indexOf(k)<0;}):[];
   el.className="status";
   var wt=cmp.store_times&&cmp.store_times.woolworths, wtxt="";
-  if(wt){try{wtxt=" Woolworths prices are from "+new Intl.DateTimeFormat("en-NZ",{dateStyle:"medium",timeZone:"Pacific/Auckland"}).format(new Date(wt))+".";}catch(e){}}
+  if(wt){try{wtxt=" "+T("Woolworths prices are from {date}.",{date:new Intl.DateTimeFormat(I18N.locale(),{dateStyle:"medium",timeZone:"Pacific/Auckland"}).format(new Date(wt))});}catch(e){}}
   var missedTxt=missed.filter(function(k){return !(k==="woolworths"&&wt);});
-  el.textContent="Prices updated "+txt+(missedTxt.length?". Not refreshed last run: "+missedTxt.map(function(k){return STORES[k];}).join(", ")+".":".")+wtxt;
+  el.textContent=T("Prices updated {when}.",{when:txt})+(missedTxt.length?" "+T("Not refreshed last run: {stores}.",{stores:missedTxt.map(function(k){return STORES[k];}).join(", ")}):"")+wtxt;
 }
 function showError(msg){
   var el=document.getElementById("status"); el.className="status err"; el.textContent=msg;
@@ -378,13 +384,17 @@ document.addEventListener("click",function(e){
   save(); renderAll();
 });
 
+var CMP=null;
+I18N.onChange(function(){if(CMP){showStatus(CMP);renderAisles();renderAll();}});
+I18N.start();
 fetch("data/compare.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("compare");return r.json();}).then(function(cmp){
+  CMP=cmp;
   buildItems(cmp.groups||{});
   showStatus(cmp);
   renderAisles();
   renderAll();
 }).catch(function(){
-  showError("Could not load prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.");
+  showError(T("Could not load prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages."));
 });
 </script>
 </body>

@@ -86,3 +86,11 @@ To look at it locally: `cd docs && python3 -m http.server 8000`, then open http:
 - The scraper turns those rules into `docs/data/ingredient_products.json` (the pack sizes and prices on sale at each store). The sample file shipped in the repo is replaced on the first real run.
 - The page adds up what the chosen recipes need per ingredient, then finds the cheapest combination of that store's packs that covers it (for example 700 g of chicken with 500 g and 1 kg packs costs 1 x 1 kg, 300 g left over). Items sold loose by weight are priced exactly. It lists leftovers and other recipes that could use them.
 - To review what was picked: `python scraper.py --ingredient-report`. Tests: `python test_ingredients.py` (rules) and `node test_recipes.js` (pack calculator).
+
+## Languages
+
+- Both pages have a language button with flags: English, Mandarin, Japanese, Thai, Hindi, Te Reo Māori, Filipino, Korean, French, German, Russian and Spanish. It changes the site's own text, recipe names, methods, notes, ingredient names and tags. The choice is remembered in the browser (localStorage `shelfcheck-lang`).
+- `docs/i18n.js` draws the menu and flags and looks text up; `docs/i18n/<code>.json` holds one language (`ui`, `tags`, `ingredients`, `recipes`). The English text in the pages is the key, and anything missing shows in English.
+- Product names stay as the stores write them, except that names in Chinese, Japanese or Korean (NJK, FromK) are put into English by the scraper on every save: `translations.json` (repo root) lists the names that are only in Chinese, and for mixed names the English part is kept. Add a line to `translations.json` when a new Chinese-only name appears.
+- `node test_i18n.js` checks every language file against the pages (missing or unused phrases, placeholders such as `{price}`, tags, ingredients, recipe steps). `node test_i18n.js --keys` prints every phrase a new language file needs. After changing page text or adding recipes, the test lists what each language is missing.
+- The translations were written by Claude (AI) and have not been checked by native speakers. Te Reo Māori in particular should be reviewed by a fluent speaker.

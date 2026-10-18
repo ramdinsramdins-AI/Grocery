@@ -104,35 +104,40 @@ aside h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(
 <div class="wrap">
 <header>
   <div>
-    <h1>Shelf Check Recipes</h1>
-    <p class="sub">Pick the meals you want to cook. You get one shopping list, with the cheapest packs for what you need, and the cheapest store or stores to buy it from.</p>
-    <a class="navlink" href="index.html">Compare individual products</a>
+    <h1 data-i18n>Shelf Check Recipes</h1>
+    <p class="sub" data-i18n>Pick the meals you want to cook. You get one shopping list, with the cheapest packs for what you need, and the cheapest store or stores to buy it from.</p>
+    <a class="navlink" href="index.html" data-i18n>Compare individual products</a>
   </div>
-  <div class="status" id="status" role="status">Loading...</div>
+  <div class="hside">
+    <div id="lang"></div>
+    <div class="status" id="status" role="status" data-i18n>Loading...</div>
+  </div>
 </header>
 
 <main>
-  <section aria-label="Recipes">
+  <section aria-label="Recipes" data-i18n-aria>
     <div class="controls">
-      <input type="search" id="q" placeholder="Search recipes or ingredients" aria-label="Search recipes">
-      <label class="toggle"><input type="checkbox" id="member"> Use club prices</label>
+      <input type="search" id="q" placeholder="Search recipes or ingredients" aria-label="Search recipes" data-i18n-ph data-i18n-aria>
+      <label class="toggle"><input type="checkbox" id="member"> <span data-i18n>Use club prices</span></label>
     </div>
-    <div class="chips" id="chips" aria-label="Filter by type"></div>
+    <div class="chips" id="chips" aria-label="Filter by type" data-i18n-aria></div>
     <p class="count" id="count"></p>
     <div class="grid" id="grid"></div>
   </section>
 
-  <aside aria-label="Your recipes and shopping list">
-    <h2>Your recipes</h2>
+  <aside aria-label="Your recipes and shopping list" data-i18n-aria>
+    <h2 data-i18n>Your recipes</h2>
     <ul class="items" id="sel"></ul>
     <div id="after"></div>
   </aside>
 </main>
 
-<p class="foot">Quantities are for the servings shown and scale when you change them. For each ingredient the site adds up what every chosen recipe needs, then finds the cheapest combination of pack sizes that covers it, and says what is left over. Products are picked by matching names, so check the pack you are buying. Items sold each (an onion, a lemon) use an average weight. Recipes do not include nutrition or allergen information. Prices come from one store per chain, so your local store may differ.</p>
+<p class="foot" data-i18n>Quantities are for the servings shown and scale when you change them. For each ingredient the site adds up what every chosen recipe needs, then finds the cheapest combination of pack sizes that covers it, and says what is left over. Products are picked by matching names, so check the pack you are buying. Items sold each (an onion, a lemon) use an average weight. Recipes do not include nutrition or allergen information. Prices come from one store per chain, so your local store may differ.</p>
 </div>
 
+<script src="i18n.js"></script>
 <script>
+var T = I18N.t, TH = I18N.html;   // T(english, vars) gives the chosen language; TH does the same for HTML
 var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE", newgumsarn:"New Gum Sarn", txgmall:"TXG Mall", njk:"NJK", fromk:"FromK"};
 var KEYS = Object.keys(STORES);
 var GLOBAL_UNITS = {tsp:5, tbsp:15, cup:250, pinch:0.4};
@@ -151,11 +156,13 @@ function enc(k){return encodeURIComponent(k);}
 function sortText(s){return String(s||"").replace(/^[\s"'‘’“”(\[{#*.\-–]+/,"");}   // leading quotes and brackets do not count
 function nameGroup(s){var t=sortText(s);return /^[A-Za-zÀ-ɏ]/.test(t)?0:/^[0-9]/.test(t)?1:2;}
 function byName(a,b){return nameGroup(a)-nameGroup(b)||sortText(a).localeCompare(sortText(b),"en",{numeric:true,sensitivity:"base"});}
+function ingName(id){return I18N.ingredient(id,ING[id].name);}
+function rText(r){return I18N.recipe(r);}
 function hue(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))%360;return h;}
 function fmtAmt(base,a){
-  if(base==="ea"){var r=Math.round(a*10)/10;return (r%1===0?r:r.toFixed(1))+" each";}
+  if(base==="ea"){var r=Math.round(a*10)/10;return T("{n} each",{n:r%1===0?r:r.toFixed(1)});}
   if(a>=1000)return (Math.round(a/10)/100)+(base==="g"?" kg":" L");
-  return Math.round(a)+(base==="g"?" g":" ml");
+  return Math.round(a)+" "+T(base==="g"?"g":"ml");
 }
 function toBase(ing,qty,unit){
   if(unit===ing.base)return qty;
@@ -245,20 +252,20 @@ function planData(){
     var singles=KEYS.map(function(k){return {k:k,a:assign([k],true)};}).filter(function(s){return s.a.stores;})
       .sort(function(a,b){return a.a.missing.length-b.a.missing.length||a.a.total-b.a.total;});
     var complete=singles.filter(function(s){return !s.a.missing.length;}), one=singles[0];
-    if(one&&!one.a.missing.length)out.push({id:"one",name:"One store: "+STORES[one.k],a:one.a,
-      note:complete.length>1?"Dearest store with everything is "+money(complete[complete.length-1].a.total)+".":"Only store that has everything."});
-    else if(one)out.push({id:"one",name:"One store: "+STORES[one.k],a:one.a,partial:true,
-      note:"No single store sells everything. "+STORES[one.k]+" has "+(lines.length-one.a.missing.length)+" of "+lines.length+
-        " items; not there: "+one.a.missing.map(function(id){return ING[id].name;}).join(", ")+"."});
+    if(one&&!one.a.missing.length)out.push({id:"one",name:T("One store: {store}",{store:STORES[one.k]}),a:one.a,
+      note:complete.length>1?T("Dearest store with everything is {price}.",{price:money(complete[complete.length-1].a.total)}):T("Only store that has everything.")});
+    else if(one)out.push({id:"one",name:T("One store: {store}",{store:STORES[one.k]}),a:one.a,partial:true,
+      note:T("No single store sells everything. {store} has {have} of {total} items; not there: {items}.",{store:STORES[one.k],
+        have:lines.length-one.a.missing.length,total:lines.length,items:one.a.missing.map(ingName).join(", ")})});
     var pairBest=null;
     for(var x=0;x<KEYS.length;x++)for(var y=x+1;y<KEYS.length;y++){var a=assign([KEYS[x],KEYS[y]]); if(a&&a.stores===2&&(!pairBest||a.total<pairBest.total))pairBest=a;}
-    if(pairBest)out.push({id:"two",name:"Two stores: "+Object.keys(pairBest.by).map(function(k){return STORES[k];}).join(" + "),a:pairBest,note:""});
+    if(pairBest)out.push({id:"two",name:T("Two stores: {stores}",{stores:Object.keys(pairBest.by).map(function(k){return STORES[k];}).join(" + ")}),a:pairBest,note:""});
     var all=assign(KEYS);
-    if(all&&(all.stores>=3||!out.length))out.push({id:"all",name:"Cheapest across "+all.stores+" store"+(all.stores===1?"":"s"),a:all,note:""});
+    if(all&&(all.stores>=3||!out.length))out.push({id:"all",name:T(all.stores===1?"Cheapest across {n} store":"Cheapest across {n} stores",{n:all.stores}),a:all,note:""});
   }
   out.forEach(function(p){
     p.net=p.a.total+(p.a.stores-1)*state.stop;
-    p.note=(p.note?p.note+" ":"")+(p.a.stores>1?(p.a.stores-1)+" extra stop"+(p.a.stores>2?"s":"")+" at "+money(state.stop)+" each: "+money(p.net)+" all in.":"");
+    p.note=(p.note?p.note+" ":"")+(p.a.stores>1?T(p.a.stores>2?"{n} extra stops at {price} each: {total} all in.":"{n} extra stop at {price} each: {total} all in.",{n:p.a.stores-1,price:money(state.stop),total:money(p.net)}):"");
   });
   // best value only among plans that buy everything
   var rec=out.filter(function(p){return !p.partial;}).sort(function(a,b){return a.net-b.net;})[0]; if(rec)rec.rec=true;
@@ -270,96 +277,97 @@ function allTags(){
   return Object.keys(c).sort(function(a,b){return c[b]-c[a]||a.localeCompare(b);}).slice(0,14).map(function(t){return [t,c[t]];});
 }
 function renderChips(){
-  var html='<button class="chip" type="button" data-tag="" aria-pressed="'+(state.tag===""?"true":"false")+'">All ('+RECIPES.length+')</button>';
-  allTags().forEach(function(t){html+='<button class="chip" type="button" data-tag="'+esc(t[0])+'" aria-pressed="'+(state.tag===t[0]?"true":"false")+'">'+esc(t[0])+' ('+t[1]+')</button>';});
+  var html='<button class="chip" type="button" data-tag="" aria-pressed="'+(state.tag===""?"true":"false")+'">'+esc(T("All ({n})",{n:RECIPES.length}))+'</button>';
+  allTags().forEach(function(t){html+='<button class="chip" type="button" data-tag="'+esc(t[0])+'" aria-pressed="'+(state.tag===t[0]?"true":"false")+'">'+esc(I18N.tag(t[0]))+' ('+t[1]+')</button>';});
   document.getElementById("chips").innerHTML=html;
 }
 function filtered(){
   var words=state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
   return RECIPES.filter(function(r){
     if(state.tag&&r.tags.indexOf(state.tag)<0)return false;
-    var hay=(r.name+" "+r.tags.join(" ")+" "+r.ingredients.map(function(i){return (ING[i.item]||{}).name||"";}).join(" ")).toLowerCase();
+    var hay=(r.name+" "+rText(r).name+" "+r.tags.join(" ")+" "+r.tags.map(I18N.tag).join(" ")+" "+r.ingredients.map(function(i){return ING[i.item]?ING[i.item].name+" "+ingName(i.item):"";}).join(" ")).toLowerCase();
     return words.every(function(w){return hay.indexOf(w)>-1;});
   });
 }
 function photoHtml(r){
   var h=hue(r.id),ini=r.name.split(/\s+/).filter(function(w){return w.length>2;}).slice(0,2).map(function(w){return w[0].toUpperCase();}).join("")||r.name[0];
   var bg='background:linear-gradient(135deg,hsl('+h+' 55% 82%),hsl('+((h+40)%360)+' 50% 70%))';
-  var img=r.photo?'<img src="'+esc(r.photo)+'" alt="'+esc(r.name)+'" loading="lazy" onerror="this.remove()">':'';
+  var img=r.photo?'<img src="'+esc(r.photo)+'" alt="'+esc(rText(r).name)+'" loading="lazy" onerror="this.remove()">':'';
   return '<div class="ph" style="'+bg+'" aria-hidden="'+(r.photo?"false":"true")+'">'+(r.photo?img:esc(ini))+'</div>';
 }
 function recipeDetail(r){
-  var f=(state.sel[r.id]||r.serves)/r.serves;
-  var ings=r.ingredients.map(function(x){
-    var ing=ING[x.item]; var q=Math.round(x.qty*f*100)/100;
-    return '<li>'+esc(q+" "+(x.unit==="ea"?"":x.unit+" ")+(ing?ing.name:x.item).toLowerCase())+(x.note?', '+esc(x.note):'')+'</li>';
+  var f=(state.sel[r.id]||r.serves)/r.serves, tx=rText(r), en=I18N.code()==="en";
+  var ings=r.ingredients.map(function(x,n){
+    var ing=ING[x.item]; var q=Math.round(x.qty*f*100)/100, name=ing?ingName(x.item):x.item, note=tx.notes[n]||x.note;
+    return '<li>'+esc(q+" "+(x.unit==="ea"?"":T(x.unit)+" ")+(en?name.toLowerCase():name))+(note?', '+esc(note):'')+'</li>';
   }).join("");
-  var steps=r.method.map(function(m){return '<li>'+esc(m)+'</li>';}).join("");
-  return '<details class="rd"><summary>Ingredients and method</summary><h4>Ingredients (serves '+Math.round((state.sel[r.id]||r.serves))+')</h4><ul>'+ings+'</ul><h4>Method</h4><ol>'+steps+'</ol></details>';
+  var steps=tx.method.map(function(m){return '<li>'+esc(m)+'</li>';}).join("");
+  return '<details class="rd"><summary>'+esc(T("Ingredients and method"))+'</summary><h4>'+esc(T("Ingredients (serves {n})",{n:Math.round(state.sel[r.id]||r.serves)}))+'</h4><ul>'+ings+'</ul><h4>'+esc(T("Method"))+'</h4><ol>'+steps+'</ol></details>';
 }
 function renderGrid(){
   var rows=filtered();
-  document.getElementById("count").textContent=rows.length+" recipe"+(rows.length===1?"":"s");
-  if(!rows.length){document.getElementById("grid").innerHTML='<p class="empty">No recipes match. Try a shorter search.</p>';return;}
+  document.getElementById("count").textContent=T(rows.length===1?"{n} recipe":"{n} recipes",{n:rows.length});
+  if(!rows.length){document.getElementById("grid").innerHTML='<p class="empty">'+esc(T("No recipes match. Try a shorter search."))+'</p>';return;}
   document.getElementById("grid").innerHTML=rows.map(function(r){
-    var on=!!state.sel[r.id];
-    return '<article class="card'+(on?' on':'')+'">'+photoHtml(r)+'<div class="cb"><h3>'+esc(r.name)+'</h3><div class="meta">'+r.minutes+' min &middot; serves '+r.serves+'</div>'
-      +(r.blurb?'<p class="blurb">'+esc(r.blurb)+'</p>':'')
-      +'<div class="tags">'+r.tags.map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("")+'</div>'
-      +'<button class="btn'+(on?' in':'')+'" data-toggle="'+enc(r.id)+'">'+(on?'Added. Remove':'Add to my list')+'</button></div>'+recipeDetail(r)+'</article>';
+    var on=!!state.sel[r.id], tx=rText(r);
+    return '<article class="card'+(on?' on':'')+'">'+photoHtml(r)+'<div class="cb"><h3>'+esc(tx.name)+'</h3><div class="meta">'+esc(T("{min} min · serves {n}",{min:r.minutes,n:r.serves}))+'</div>'
+      +(tx.blurb?'<p class="blurb">'+esc(tx.blurb)+'</p>':'')
+      +'<div class="tags">'+r.tags.map(function(t){return '<span class="tag">'+esc(I18N.tag(t))+'</span>';}).join("")+'</div>'
+      +'<button class="btn'+(on?' in':'')+'" data-toggle="'+enc(r.id)+'">'+esc(on?T("Added. Remove"):T("Add to my list"))+'</button></div>'+recipeDetail(r)+'</article>';
   }).join("");
 }
 
 function leftoverHint(id,left){
   var ing=ING[id],bits=[];
-  if(ing.perishable)bits.push("Perishable: use or freeze soon.");
-  var other=RECIPES.filter(function(r){return !state.sel[r.id]&&r.ingredients.some(function(i){return i.item===id;});}).slice(0,2).map(function(r){return r.name;});
-  if(other.length)bits.push("Could also use it in: "+other.join(", ")+".");
+  if(ing.perishable)bits.push(T("Perishable: use or freeze soon."));
+  var other=RECIPES.filter(function(r){return !state.sel[r.id]&&r.ingredients.some(function(i){return i.item===id;});}).slice(0,2).map(function(r){return rText(r).name;});
+  if(other.length)bits.push(T("Could also use it in: {recipes}.",{recipes:other.join(", ")}));
   return bits.join(" ");
 }
 function lineHtml(r){
   var ing=ING[r.line.id],c=r.c;
   var buy=c.picks.map(function(p){
-    return p.loose?'about '+esc(fmtAmt(ing.base,p.count*100))+' loose, '+esc(p.pack.n)+' ('+money(packPrice(p.pack)*(ing.base==="g"?10:10))+(ing.base==="g"?'/kg':'/L')+')'
-                  :p.count+' &times; '+esc(p.pack.n)+' ('+money(packPrice(p.pack))+' each)';
+    return p.loose?TH("about {amt} loose, {pack} ({price})",{amt:esc(fmtAmt(ing.base,p.count*100)),pack:esc(p.pack.n),price:money(packPrice(p.pack)*10)+(ing.base==="g"?"/kg":"/L")})
+                  :TH("{n} × {pack} ({price} each)",{n:p.count,pack:esc(p.pack.n),price:money(packPrice(p.pack))});
   }).join(" + ");
-  var left=c.left>0.5?'<div class="sm lo">'+esc(fmtAmt(ing.base,c.left))+' left over. '+esc(leftoverHint(r.line.id,c.left))+'</div>':'';
-  return '<div class="ln"><div class="top"><span>'+esc(ing.name)+'</span><span>'+money(c.cost)+'</span></div><div class="sm">Need '+esc(fmtAmt(ing.base,r.line.need))+'. Buy '+buy+'</div>'+left+'</div>';
+  var left=c.left>0.5?'<div class="sm lo">'+esc(T("{amt} left over.",{amt:fmtAmt(ing.base,c.left)})+" "+leftoverHint(r.line.id,c.left))+'</div>':'';
+  return '<div class="ln"><div class="top"><span>'+esc(ingName(r.line.id))+'</span><span>'+money(c.cost)+'</span></div><div class="sm">'+TH("Need {amt}. Buy {what}",{amt:esc(fmtAmt(ing.base,r.line.need)),what:buy})+'</div>'+left+'</div>';
 }
 function renderAside(){
   var ids=Object.keys(state.sel).filter(function(id){return BYID[id];});
   document.getElementById("sel").innerHTML=ids.length?ids.map(function(id){
     var r=BYID[id];
-    return '<li><span>'+esc(r.name)+'</span><span class="qty"><button data-dec="'+enc(id)+'" aria-label="Fewer servings of '+esc(r.name)+'">-</button><span title="servings">'+state.sel[id]+'</span><button data-inc="'+enc(id)+'" aria-label="More servings of '+esc(r.name)+'">+</button></span></li>';
-  }).join(""):'<li style="display:block;border:0"><p class="empty">Add recipes to build your shopping list.</p></li>';
+    var nm=rText(r).name;
+    return '<li><span>'+esc(nm)+'</span><span class="qty"><button data-dec="'+enc(id)+'" aria-label="'+esc(T("Fewer servings of {recipe}",{recipe:nm}))+'">-</button><span title="'+esc(T("servings"))+'">'+state.sel[id]+'</span><button data-inc="'+enc(id)+'" aria-label="'+esc(T("More servings of {recipe}",{recipe:nm}))+'">+</button></span></li>';
+  }).join(""):'<li style="display:block;border:0"><p class="empty">'+esc(T("Add recipes to build your shopping list."))+'</p></li>';
   var after=document.getElementById("after");
   if(!ids.length){after.innerHTML="";return;}
   var d=planData(),html="";
   var servings=ids.reduce(function(s,id){return s+state.sel[id];},0);
-  html+='<div class="stop"><label for="stopCost">Cost of each extra stop</label> $<input type="number" id="stopCost" min="0" step="0.5" value="'+state.stop+'"></div>';
+  html+='<div class="stop"><label for="stopCost">'+esc(T("Cost of each extra stop"))+'</label> $<input type="number" id="stopCost" min="0" step="0.5" value="'+state.stop+'"></div>';
   if(!d.plans.length){
-    html+='<p class="warn">No store has the products for this list yet. '+(d.lines.length?'Try ticking items you already have.':'')+'</p>';
+    html+='<p class="warn">'+esc(T("No store has the products for this list yet.")+(d.lines.length?" "+T("Try ticking items you already have."):""))+'</p>';
   }else{
     var rec=d.plans.filter(function(p){return p.rec;})[0];
     if(!state.plan||!d.plans.some(function(p){return p.id===state.plan;}))state.plan=rec.id;
     html+='<div class="plans">'+d.plans.map(function(p){
-      return '<button class="plan" data-plan="'+p.id+'" aria-pressed="'+(p.id===state.plan)+'"><span class="pn">'+esc(p.name)+(p.rec?'<span class="rec">BEST VALUE</span>':'')+'</span><span class="tot">'+money(p.a.total)+'</span><span class="nt">'+esc(p.note)+'</span></button>';
+      return '<button class="plan" data-plan="'+p.id+'" aria-pressed="'+(p.id===state.plan)+'"><span class="pn">'+esc(p.name)+(p.rec?'<span class="rec">'+esc(T("BEST VALUE"))+'</span>':'')+'</span><span class="tot">'+money(p.a.total)+'</span><span class="nt">'+esc(p.note)+'</span></button>';
     }).join("")+'</div>';
     var cur=d.plans.filter(function(p){return p.id===state.plan;})[0];
-    var lacking=cur.a.missing.map(function(id){return esc(ING[id].name);}).join(", ");
-    html+='<p class="count">About '+money(cur.a.total/servings)+' per serving, counting whole packs'+(cur.partial?', not counting '+lacking:'')+'. Total servings: '+servings+'.</p>';
+    var lacking=cur.a.missing.map(function(id){return esc(ingName(id));}).join(", ");
+    html+='<p class="count">'+TH(cur.partial?"About {price} per serving, counting whole packs, not counting {items}.":"About {price} per serving, counting whole packs.",{price:money(cur.a.total/servings),items:lacking})+' '+esc(T("Total servings: {n}.",{n:servings}))+'</p>';
     html+='<div class="bk">'+Object.keys(cur.a.by).map(function(k){
       var sub=0;cur.a.by[k].forEach(function(r){sub+=r.c.cost;});
       return '<h4><span>'+esc(STORES[k])+'</span><span>'+money(sub)+'</span></h4>'+cur.a.by[k].map(lineHtml).join("");
     }).join("")+'</div>';
     var one1=cur.a.missing.length===1;
-    if(cur.partial)html+='<p class="warn">'+esc(STORES[Object.keys(cur.a.by)[0]])+' does not sell: '+lacking+'. Buy '+(one1?'it':'these')+
-      ' at another store (the other plans include '+(one1?'it':'them')+') or tick '+(one1?'it':'them')+' below if you already have '+(one1?'it':'them')+'.</p>';
+    if(cur.partial)html+='<p class="warn">'+TH(one1?"{store} does not sell: {items}. Buy it at another store (the other plans include it) or tick it below if you already have it.":
+      "{store} does not sell: {items}. Buy these at another store (the other plans include them) or tick them below if you already have them.",{store:esc(STORES[Object.keys(cur.a.by)[0]]),items:lacking})+'</p>';
   }
-  if(d.missing.length)html+='<p class="warn">No supermarket product found yet for: '+d.missing.map(function(id){return esc(ING[id].name);}).join(", ")+'. Add these by hand.</p>';
-  var all=Object.keys(d.need).sort(function(a,b){return byName(ING[a].name,ING[b].name);});
-  html+='<div><h3>Tick what you already have</h3><div class="pantry">'+all.map(function(id){
-    return '<label><input type="checkbox" data-have="'+enc(id)+'"'+(isHave(id)?' checked':'')+'> '+esc(ING[id].name)+'</label>';
+  if(d.missing.length)html+='<p class="warn">'+TH("No supermarket product found yet for: {items}. Add these by hand.",{items:d.missing.map(function(id){return esc(ingName(id));}).join(", ")})+'</p>';
+  var all=Object.keys(d.need).sort(function(a,b){return byName(ingName(a),ingName(b));});
+  html+='<div><h3>'+esc(T("Tick what you already have"))+'</h3><div class="pantry">'+all.map(function(id){
+    return '<label><input type="checkbox" data-have="'+enc(id)+'"'+(isHave(id)?' checked':'')+'> '+esc(ingName(id))+'</label>';
   }).join("")+'</div></div>';
   after.innerHTML=html;
 }
@@ -367,11 +375,11 @@ function renderAll(){renderGrid();renderAside();}
 
 function showStatus(p){
   var el=document.getElementById("status");
-  if(p.generated_at==="sample"){el.className="status sample";el.textContent="Sample prices for testing. Run the scraper to load real prices.";return;}
-  var txt;try{txt=new Intl.DateTimeFormat("en-NZ",{dateStyle:"medium",timeStyle:"short",timeZone:"Pacific/Auckland"}).format(new Date(p.generated_at));}catch(e){txt=p.generated_at;}
+  if(p.generated_at==="sample"){el.className="status sample";el.textContent=T("Sample prices for testing. Run the scraper to load real prices.");return;}
+  var txt;try{txt=new Intl.DateTimeFormat(I18N.locale(),{dateStyle:"medium",timeStyle:"short",timeZone:"Pacific/Auckland"}).format(new Date(p.generated_at));}catch(e){txt=p.generated_at;}
   var wt=p.store_times&&p.store_times.woolworths,wtxt="";
-  if(wt){try{wtxt=" Woolworths prices are from "+new Intl.DateTimeFormat("en-NZ",{dateStyle:"medium",timeZone:"Pacific/Auckland"}).format(new Date(wt))+".";}catch(e){}}
-  el.className="status";el.textContent="Prices updated "+txt+"."+wtxt;
+  if(wt){try{wtxt=" "+T("Woolworths prices are from {date}.",{date:new Intl.DateTimeFormat(I18N.locale(),{dateStyle:"medium",timeZone:"Pacific/Auckland"}).format(new Date(wt))});}catch(e){}}
+  el.className="status";el.textContent=T("Prices updated {when}.",{when:txt})+wtxt;
 }
 
 document.getElementById("q").addEventListener("input",function(e){state.q=e.target.value;renderGrid();});
@@ -396,6 +404,9 @@ document.addEventListener("click",function(e){
   save();renderAll();
 });
 
+var PRICES=null;
+I18N.onChange(function(){if(PRICES){showStatus(PRICES);renderChips();renderAll();}});
+I18N.start();
 Promise.all([
   fetch("data/recipes.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("recipes");return r.json();}),
   fetch("data/ingredient_products.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("prices");return r.json();})
@@ -404,10 +415,10 @@ Promise.all([
   RECIPES.forEach(function(r){BYID[r.id]=r;});
   ING=a[1].ingredients;
   Object.keys(state.sel).forEach(function(id){if(!BYID[id])delete state.sel[id];});
-  showStatus(a[1]);renderChips();renderAll();
+  PRICES=a[1];showStatus(a[1]);renderChips();renderAll();
 }).catch(function(){
   var el=document.getElementById("status");el.className="status err";
-  el.textContent="Could not load recipes or prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.";
+  el.textContent=T("Could not load recipes or prices. If you opened this file directly, serve the docs folder with a web server (python3 -m http.server in docs/) or use GitHub Pages.");
 });
 </script>
 </body>

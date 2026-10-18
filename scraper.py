@@ -606,7 +606,7 @@ def scrape_magento(store, cfg, gcfg, session, probe=False):
 
 def load_json(path, default):
     try:
-        return json.loads(path.read_text())
+        return json.loads(path.read_text(encoding="utf-8"))   # Windows would otherwise read it as cp1252
     except (FileNotFoundError, json.JSONDecodeError):
         return default
 
@@ -1086,6 +1086,48 @@ def ingredient_report():
             print(f"  {store}: " + "; ".join(f"{c['n']} = ${c['p']:.2f}" + (" per 100" if c["l"] else f" for {c['q']:g}") for c in packs))
 
 
+# ---------------------------------------------------------------- product names in English
+# NJK lists some products only in Chinese, and others as "Chinese name English name". translations.json holds English
+# names for the first kind (keyed by the name exactly as scraped); the second kind keeps its English part.
+TRANSLATIONS = ROOT / "translations.json"
+_CJK = re.compile(r"[぀-ヿ㐀-鿿가-힯豈-﫿　-〿＀-￯]")
+_BEST_BEFORE = re.compile(r"^\s*【\s*(best before[^】]*)】\s*", re.I)
+
+
+def english_name(name, table):
+    """English version of a name written wholly or partly in Chinese, Japanese or Korean; anything else unchanged."""
+    if not name or not _CJK.search(name):
+        return name
+    if name in table:
+        return table[name]
+    text, note = name, ""
+    m = _BEST_BEFORE.match(text)
+    if m:                                    # "【Best Before 23.10.2026】Meiji ..." -> "Meiji ... (best before 23.10.2026)"
+        text, note = text[m.end():], f" ({m.group(1).strip().lower()})"
+        if not _CJK.search(text):
+            return text.strip() + note
+    tail = text[max(c.end() for c in _CJK.finditer(text)):].strip(" -–/|()（）")
+    if re.search(r"[A-Za-z]{3,}.*\d", tail):  # "白米醋500ml Donggu White Rice Vinegar 500ml": drop the Chinese part's size
+        tail = re.sub(r"^\d+(?:\.\d+)?\s*(?:kg|g|ml|l|p|pcs)\b\s*", "", tail, flags=re.I)
+    return tail + note if len(re.findall(r"[A-Za-z]{3,}", tail)) >= 2 else name
+
+
+def translate_rows(rows):
+    """Put product names (and sizes taken from them) into English in place. Returns how many changed."""
+    table = (load_json(TRANSLATIONS, {}) or {}).get("names", {})
+    changed = 0
+    for r in rows:
+        en = english_name(r.get("name"), table)
+        if en == r.get("name"):
+            continue
+        size = r.get("size")
+        r["size"] = en if size == r["name"] else english_name(size, table)
+        r["name"] = en
+        r["match_key"] = match_key(r.get("brand"), en, r["size"])
+        changed += 1
+    return changed
+
+
 def write_outputs(records, now, store_times=None):
     DATA.mkdir(parents=True, exist_ok=True)
     prev = load_json(DATA / "latest.json", {"products": []})
@@ -1108,6 +1150,9 @@ def write_outputs(records, now, store_times=None):
     scraped_stores = {r["store"] for r in records}
     kept = [p for p in prev.get("products", []) if p["store"] not in scraped_stores]
     all_rows = kept + records
+    translated = translate_rows(all_rows)
+    if translated:
+        print(f"  product names put into English: {translated}", file=sys.stderr)
     (DATA / "latest.json").write_text(json.dumps({
         "generated_at": now,
         "stores_scraped_this_run": sorted(scraped_stores),
