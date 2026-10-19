@@ -99,6 +99,8 @@ To look at it locally: `cd docs && python3 -m http.server 8000`, then open http:
 
 Shoppers can make an account with an email and a password. Their shopping list and chosen recipes then save to the account as well as to the device, so they show up on any phone or computer where they sign in. Without an account everything works as before and saves on that device only. The box also has "Forgot your password?", "Change my password", "Sign out" and "Delete my account".
 
+Under "Your list" (and "Your recipes") a line says whether the list is saved to the account or only on this device, next to a **My saved lists** button: give the current list a name ("Weekly shop") to keep it, then open or delete saved lists later. Opening one replaces the current list. Each page keeps its own saved lists (up to 30), on the device and, when signed in, in the account.
+
 Google Firebase checks the passwords and stores the lists (free Spark plan: no card needed, and it cannot charge you). A password check written into the page itself would protect nothing, because anyone can read the site's files. `firestore.rules` makes sure each person can read and change only their own list.
 
 The account button only appears once Firebase is set up. To set it up (about 10 minutes, the Firebase screens may word things slightly differently):

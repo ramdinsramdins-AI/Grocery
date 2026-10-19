@@ -1,17 +1,19 @@
 rules_version = '2';
 // Shelf Check NZ accounts (docs/account.js). Each signed-in person can read and change only their own document,
-// users/<their id>, which holds their shopping list ("live") and chosen recipes ("recipes") as text.
-// Everything else is closed. To use: Firebase console > Firestore Database > Rules, replace all the text there
-// with this file, then press Publish.
+// users/<their id>, which holds their shopping list ("live"), chosen recipes ("recipes") and the named saved lists of
+// each page ("liveSaved", "recipesSaved"), all as text. Everything else is closed.
+// To use: Firebase console > Firestore Database > Rules, replace all the text there with this file, then press Publish.
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{uid} {
       allow read, delete: if request.auth != null && request.auth.uid == uid;
       allow create, update: if request.auth != null && request.auth.uid == uid
-        && request.resource.data.keys().hasOnly(["live", "recipes", "updated"])
+        && request.resource.data.keys().hasOnly(["live", "recipes", "liveSaved", "recipesSaved", "updated"])
         && request.resource.data.updated is timestamp
         && (!("live" in request.resource.data) || (request.resource.data.live is string && request.resource.data.live.size() <= 100000))
-        && (!("recipes" in request.resource.data) || (request.resource.data.recipes is string && request.resource.data.recipes.size() <= 100000));
+        && (!("recipes" in request.resource.data) || (request.resource.data.recipes is string && request.resource.data.recipes.size() <= 100000))
+        && (!("liveSaved" in request.resource.data) || (request.resource.data.liveSaved is string && request.resource.data.liveSaved.size() <= 300000))
+        && (!("recipesSaved" in request.resource.data) || (request.resource.data.recipesSaved is string && request.resource.data.recipesSaved.size() <= 300000));
     }
   }
 }

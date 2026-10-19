@@ -46,4 +46,15 @@ const recipes = pageSync("recipes.html", "recipes");
 same(recipes.merge({sel: {pad: 2, soup: 4}, have: {salt: true, rice: true}, stop: 4}, {sel: {soup: 6, curry: 4}, have: {salt: false}, stop: 3}),
      {sel: {pad: 2, soup: 6, curry: 4}, have: {salt: false, rice: true}, stop: 3});
 
+// saved lists: the newer copy of each wins (by id), so one deleted on another device stays deleted; newest first
+const mergeSaved = win.Account.mergeSaved, now = Date.now();
+const weekly = {id: "a", name: "Weekly", at: now - 5000, data: {list: {x: 1}}}, bbq = {id: "b", name: "BBQ", at: now - 3000, data: {list: {y: 2}}};
+same(mergeSaved([weekly], [bbq]), [bbq, weekly]);
+same(mergeSaved([weekly, bbq], [{id: "a", at: now - 1000, gone: 1}]), [{id: "a", at: now - 1000, gone: 1}, bbq]);   // deleted on the phone
+same(mergeSaved([Object.assign({}, weekly, {at: now, data: {list: {x: 3}}})], [weekly]), [Object.assign({}, weekly, {at: now, data: {list: {x: 3}}})]);
+same(mergeSaved([{id: "c", at: now - 100 * 864e5, gone: 1}], []), []);                                                 // old deletions are forgotten
+// merging gives the same text on both devices, whichever side is which
+same(mergeSaved([weekly], [bbq]), mergeSaved([bbq], [weekly]));
+assert.ok(decide(J([weekly]), J([bbq]), null, mergeSaved).upload === J([bbq, weekly]));
+
 console.log("account sync: all checks passed");

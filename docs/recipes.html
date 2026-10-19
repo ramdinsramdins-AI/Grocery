@@ -127,6 +127,7 @@ aside h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(
 
   <aside aria-label="Your recipes and shopping list" data-i18n-aria>
     <h2 data-i18n>Your recipes</h2>
+    <div class="lists" id="lists"></div>
     <ul class="items" id="sel"></ul>
     <div id="after"></div>
   </aside>
@@ -164,6 +165,8 @@ if(window.Account)Account.sync("recipes",{
     return {sel:sel,have:Object.assign({},a.have,b.have),stop:typeof b.stop==="number"?b.stop:a.stop};
   }
 });
+// named saved lists ("My saved lists", account.js)
+if(window.Account)Account.lists("recipes",{count:function(d){return Object.keys(d.sel||{}).length;},summary:function(n){return T(n===1?"{n} recipe":"{n} recipes",{n:n});}});
 
 function money(n){return "$"+n.toFixed(2);}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
