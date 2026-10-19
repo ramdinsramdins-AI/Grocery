@@ -20,6 +20,7 @@ $Git = "C:\Program Files\Git\cmd\git.exe"
 $Python = Join-Path $env:LOCALAPPDATA "Programs\Python\Python312\python.exe"
 $Email = "341151720+ramdinsramdins-AI@users.noreply.github.com"   # GitHub's private address for the repo owner
 $Label = "NJK"             # the stores marked collect_at_home in config.json, as shown in messages
+$Tries = 3; $RetryWait = 60   # GitHub steps: tries in all, and seconds to wait between them
 $env:GCM_INTERACTIVE = "never"; $env:GIT_TERMINAL_PROMPT = "0"   # never wait for a sign-in window nobody sees
 
 New-Item -ItemType Directory -Force $Base | Out-Null
@@ -44,9 +45,28 @@ function Show-Message($Title, $Text) {
 }
 
 function Invoke-Git {
-    $out = & $Git -C $Repo @args 2>&1 | ForEach-Object { "$_" }
-    if ($LASTEXITCODE -ne 0) { throw "git $($args[0]) failed: $($out -join ' ')" }
+    $out = @(& $Git -C $Repo @args 2>&1 | ForEach-Object { "$_" })
+    if ($LASTEXITCODE -ne 0) {
+        # the exit code tells failures apart even when git prints nothing (as on 2026-10-20 just after the PC woke)
+        $said = (@($out | Where-Object { "$_".Trim() }) -join " ").Trim()
+        if (-not $said) { $said = "git printed nothing" }
+        throw "git $($args[0]) failed with exit code $LASTEXITCODE`: $said"
+    }
     $out
+}
+
+# Runs a GitHub step and, when it fails, logs the error, waits a minute and tries again ($Tries in all). Right after
+# the PC wakes the network is often not back yet; a retry also starts again from GitHub's latest version, in case the
+# scheduled scrape pushed new prices in the meantime.
+function Invoke-WithRetry($What, [scriptblock]$Step) {
+    for ($try = 1; ; $try++) {
+        try { & $Step; return }
+        catch {
+            if ($try -ge $Tries) { throw "$What failed $Tries times; last error: $($_.Exception.Message)" }
+            Write-Log "$What failed (try $try of $Tries): $($_.Exception.Message); trying again in $RetryWait seconds"
+            Start-Sleep -Seconds $RetryWait
+        }
+    }
 }
 
 # start from GitHub's latest version, put the new files in, commit, and push
@@ -77,8 +97,10 @@ try {
         & $Git clone -q --depth 1 $RepoUrl $Repo 2>&1 | Out-Null
         if ($LASTEXITCODE -ne 0) { throw "could not copy the repo from GitHub" }
     }
-    Invoke-Git fetch -q --depth 1 origin main | Out-Null
-    Invoke-Git reset -q --hard origin/main | Out-Null   # the newest scraper.py and config.json, and GitHub's <store>.json
+    Invoke-WithRetry "getting the latest version from GitHub" {
+        Invoke-Git fetch -q --depth 1 origin main | Out-Null
+        Invoke-Git reset -q --hard origin/main | Out-Null   # the newest scraper.py and config.json, and GitHub's <store>.json
+    }
 
     New-Item -ItemType Directory -Force $Out | Out-Null
     Remove-Item (Join-Path $Out "*.json") -ErrorAction SilentlyContinue
@@ -97,13 +119,7 @@ try {
     if ($files.Count -gt 0) {
         $names = ($files | ForEach-Object Name) -join ", "
         $message = "Update $Label prices (collected $((Get-Date).ToString('d MMM yyyy h:mm tt')) on the home PC)"
-        try {
-            Send-Files $files $message
-        } catch {
-            # the scheduled scrape may have pushed new prices in the meantime: start again from the latest and retry once
-            Write-Log "first try failed ($_); trying again"
-            Send-Files $files $message
-        }
+        Invoke-WithRetry "sending $names" { Send-Files $files $message }
         if ($DryRun) { Write-Log "(dry run) $names ready; GitHub sign-in works, nothing sent" } else { Write-Log "sent $names" }
     } elseif ($code -eq 0) {
         Write-Log "nothing new to send"

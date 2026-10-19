@@ -148,6 +148,8 @@ Built 2026-10-18 with the user's OK: collecting on the home PC. Unlike Woolworth
 - The User-Agent from home says "no contact set" unless `SCRAPER_CONTACT` is set for the user on that PC.
 - Switched on 2026-10-18 9:31 pm NZ. First collection took 3 minutes: 4,384 in-stock products (3,930 with a unit price), pushed as `njk.json` (1.8 MB) in d93a5bf by "Shelf Check uploader". Not yet seen in a scheduled run: the 17:00 UTC run on 2026-10-18 should log `njk: using njk.json from the home PC` and list njk in `stores_scraped_this_run`.
 
+Checked 2026-10-20: no new `njk.json` reached GitHub after the first one (the scheduled runs kept using it, as designed). On 19 Oct the PC was off or asleep at 11 am and 5 pm. The missed run started at 1:33 am on 20 Oct, was suspended while the PC slept, and was stopped by the 30-minute limit. Then two collections at 9:48 and 9:50 got NJK's prices but failed to send: `git fetch` failed and printed nothing, twice in a row, just after the PC woke. A manual `Start-ScheduledTask` at 9:53 collected and sent fine (0c333dc). Since then the GitHub steps (getting the latest version, sending) make 3 tries a minute apart (`Invoke-WithRetry`), and a failure logs git's message and exit code ("git printed nothing" when it was silent). If a silent failure shows up again, the exit code tells why; for example, -1073741502 means Windows could not start git.
+
 New Gum Sarn missed one run (2026-10-18 05:18 UTC): `503 Service Unavailable` on `products.json` page 12 of 13, pages 1 to 11 were fine. That is their server being briefly down, not a block. `_request` now waits and retries 502/503/504 like a dropped connection (test in `test_scraper.py`); 403/429 still stop the store at once.
 
 ## Languages and English product names (2026-10-18)
