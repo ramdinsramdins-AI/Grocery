@@ -373,11 +373,37 @@ def _category_filter(path):
     return " AND ".join(f'category{i}NI:"{n}"' for i, n in enumerate(names))
 
 
-def _subcategories(payload, level):
-    """Category names one level down, from the search's own facet counts. They include names from a product's other
-    category trees (a chips packet is under Pantry and Snacks), which only adds duplicates, so nothing is missed."""
-    facets = (payload.get("algoliaSearchResult") or {}).get("facets") or {}
-    return list(facets.get(f"category{level}NI") or {})
+def _subcategories(payload, level, listed=()):
+    """[(name, product count)] one level down, from the search's own facet counts. They include names from a product's
+    other category trees (a chips packet is under Pantry, Snacks and "Game Day Hosting"); the names the site's category
+    tree lists under this category come first, so the others are usually fully fetched by the time they come up."""
+    facet = ((payload.get("algoliaSearchResult") or {}).get("facets") or {}).get(f"category{level}NI") or {}
+    listed = set(listed or ())
+    return sorted(facet.items(), key=lambda kv: kv[0] not in listed)   # stable sort keeps the facet order otherwise
+
+
+def _category_children(tree):
+    """{("Pantry",): ["Chips, Nuts & Snacks", ...], ("Pantry", "Chips, Nuts & Snacks"): ["Chips", ...]} from the
+    categories endpoint (a list of {name, children})."""
+    out = {}
+
+    def walk(nodes, path):
+        for n in nodes if isinstance(nodes, list) else []:
+            if isinstance(n, dict) and n.get("name"):
+                out.setdefault(path, []).append(str(n["name"]))
+                walk(n.get("children"), path + (str(n["name"]),))
+    walk(tree.get("categories") if isinstance(tree, dict) else tree, ())
+    return out
+
+
+def _tree_levels(product):
+    """[{level-0 names}, {level-1 names}, {level-2 names}] from a product's categoryTrees."""
+    lv = [set() for _ in range(FOODSTUFFS_LEVELS)]
+    for t in product.get("categoryTrees") or []:
+        for i in range(FOODSTUFFS_LEVELS):
+            if t.get(f"level{i}"):
+                lv[i].add(t[f"level{i}"])
+    return lv
 
 
 def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
@@ -388,11 +414,13 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
         raise RuntimeError(f"no guest token in response; keys: {list(tok)}")
     session.headers.update({"Authorization": f"Bearer {token}"})
     base = f"https://api-prod.{domain}/v1/edge"
+    children = {}
     try:
         r = session.get(f"{base}/store/{cfg['store_id']}/categories", timeout=30)
         if r.ok:
             names = _category_names(r.json())
             print(f"  {store} top-level category names on the site: {names or r.text[:600]}", file=sys.stderr)
+            children = _category_children(r.json())
             if probe:
                 RAW.mkdir(parents=True, exist_ok=True)
                 (RAW / f"{store}-categories.json").write_text(json.dumps(r.json(), indent=2))
@@ -400,10 +428,21 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
         print(f"  {store}: could not list categories ({e!r})", file=sys.stderr)
     results = []
     seen_ids = set()
+    levels = {}   # product id -> the category names it sits under, for every product the search has returned
+    searches = skipped = 0
     aliases = cfg.get("category_aliases", {})
-    todo = list(cfg["categories"])
+    todo = [(c, None) for c in cfg["categories"]]   # (category path, product count the search reported for it)
     while todo:
-        cat = todo.pop(0)
+        cat, expected = todo.pop(0)
+        if expected:
+            # Fewer requests to the shop: a sub-category whose products have all come back already (the same shelf
+            # sits under two aisles, or under a promotion group like "Pams") is not asked for again.
+            names = cat.split(" > ")
+            have = sum(1 for lv in levels.values() if all(n in lv[i] for i, n in enumerate(names)))
+            if have >= expected:
+                skipped += 1
+                print(f"  {store} {cat}: all {expected} products already fetched, skipped", file=sys.stderr)
+                continue
         for page in range(0, gcfg["max_pages_per_category"]):
             body = {
                 "algoliaQuery": {
@@ -421,19 +460,27 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
                 "tobaccoQuery": False,
             }
             payload = polite_post(session, f"{base}/search/paginated/products", gcfg["delay_seconds"], json=body).json()
+            searches += 1
             if probe:
                 return payload
+            for p in payload.get("products") or []:
+                if p.get("productId"):
+                    levels[str(p["productId"])] = _tree_levels(p)
+            recs = foodstuffs_parse(store, payload, cat.split(" > ")[0])
             if page == 0 and (payload.get("totalHits") or 0) >= FOODSTUFFS_CAP:
                 level = cat.count(" > ") + 1
-                subs = _subcategories(payload, level) if level < FOODSTUFFS_LEVELS else []
+                listed = children.get(tuple(cat.split(" > ")))
+                subs = _subcategories(payload, level, listed) if level < FOODSTUFFS_LEVELS else []
                 if subs:   # re-query each sub-category instead; they are processed next, de-duplicated as usual
                     print(f"  {store} {cat}: search stops at {FOODSTUFFS_CAP} results, "
                           f"splitting into {len(subs)} sub-categories", file=sys.stderr)
-                    todo = [f"{cat} > {s}" for s in subs] + todo
+                    todo = [(f"{cat} > {n}", count) for n, count in subs] + todo
+                    fresh = [r for r in recs if r["id"] not in seen_ids]   # this page is kept too
+                    seen_ids.update(r["id"] for r in fresh)
+                    results += fresh
                     break
                 print(f"  {store} {cat}: search stops at {FOODSTUFFS_CAP} results and cannot be split further; "
                       f"some products will be missing", file=sys.stderr)
-            recs = foodstuffs_parse(store, payload, cat.split(" > ")[0])
             if not recs:
                 if page == 0:
                     raw = payload.get("products") or []
@@ -441,7 +488,7 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
                           f"first item keys: {sorted(raw[0])[:14] if raw else 'n/a'}; "
                           f"first singlePrice: {raw[0].get('singlePrice') if raw else None})", file=sys.stderr)
                     if not raw and aliases.get(cat):
-                        todo = list(aliases[cat]) + todo
+                        todo = [(a, None) for a in aliases[cat]] + todo
                         print(f"  {store}: trying alternative names for {cat}: {aliases[cat]}", file=sys.stderr)
                 break
             fresh = [r for r in recs if (r["id"] not in seen_ids)]   # categories overlap, so keep each product once
@@ -450,6 +497,8 @@ def scrape_foodstuffs(store, cfg, gcfg, session, probe=False):
             print(f"  {store} {cat} page {page}: {len(recs)}", file=sys.stderr)
             if page + 1 >= (payload.get("totalPages") or page + 2):   # last page: skip the request for an empty one
                 break
+    print(f"  {store}: {len(results)} products from {searches} searches; "
+          f"{skipped} sub-categories skipped because their products were already fetched", file=sys.stderr)
     return results
 
 

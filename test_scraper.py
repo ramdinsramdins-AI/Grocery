@@ -74,18 +74,20 @@ assert s._category_names({"categories": [{"name": "Fruit & Veg", "children": [{"
 # Foodstuffs search stops at 1,000 hits: a capped category is re-queried per sub-category (saved responses, no network)
 import copy
 assert s._category_filter('Pantry > Say "cheese"') == 'category0NI:"Pantry" AND category1NI:"Say \\"cheese\\""'
-_fx = json.loads((pathlib.Path(__file__).parent / "fixtures" / "foodstuffs_split.json").read_text(encoding="utf-8"))["responses"]
+_fixture = json.loads((pathlib.Path(__file__).parent / "fixtures" / "foodstuffs_split.json").read_text(encoding="utf-8"))
+_fx, _tree = _fixture["responses"], _fixture["categories"]
 
 
 class _FakeSession:
-    def __init__(self):
+    def __init__(self, tree=None):
         self.headers = {}
+        self.tree = tree
 
-    def get(self, *a, **kw):   # the category list is optional; pretend it is unavailable
-        return type("R", (), {"ok": False})()
+    def get(self, *a, **kw):   # the category list is optional; None pretends it is unavailable
+        return type("R", (), {"ok": self.tree is not None, "json": lambda r: self.tree, "text": ""})()
 
 
-def _scrape_fixture(responses, categories):
+def _scrape_fixture(responses, categories, tree=None):
     calls = []
 
     def post(session, url, delay, **kw):
@@ -99,7 +101,7 @@ def _scrape_fixture(responses, categories):
     real, s.polite_post = s.polite_post, post
     try:
         recs = s.scrape_foodstuffs("newworld", {"store_id": "x", "categories": categories},
-                                   {"max_pages_per_category": 30, "delay_seconds": [0, 0]}, _FakeSession())
+                                   {"max_pages_per_category": 30, "delay_seconds": [0, 0]}, _FakeSession(tree))
     finally:
         s.polite_post = real
     return recs, calls
@@ -108,15 +110,25 @@ def _scrape_fixture(responses, categories):
 _P = 'category0NI:"Pantry"'
 _CHOC = _P + ' AND category1NI:"Chocolate, Sweets & Chewing Gum"'
 _SPICE = _P + ' AND category1NI:"Spices, Seasoning & Coatings"'
+_SPLIT_CHOC = [(_CHOC, 0), (_CHOC + ' AND category2NI:"Single Chocolate Bars & Sweets"', 0),
+               (_CHOC + ' AND category2NI:"Chocolate Blocks"', 0)]
+# without the category list, sub-categories go in facet order; "Chips, Nuts & Snacks" is skipped because both its
+# products already came back under the promotion group "Game Day Hosting"
 recs, calls = _scrape_fixture(_fx, ["Pantry"])
-assert calls == [(_P, 0), (_P + ' AND category1NI:"Chips, Nuts & Snacks"', 0),
-                 (_CHOC, 0), (_CHOC + ' AND category2NI:"Single Chocolate Bars & Sweets"', 0),
-                 (_CHOC + ' AND category2NI:"Chocolate Blocks"', 0),
-                 (_SPICE, 0), (_SPICE, 1), (_P + ' AND category1NI:"World Foods"', 0)], calls
+assert calls == [(_P, 0), (_SPICE, 0), (_SPICE, 1)] + _SPLIT_CHOC + [
+    (_P + ' AND category1NI:"Game Day Hosting"', 0), (_P + ' AND category1NI:"World Foods"', 0)], calls
 ids = [r["id"] for r in recs]
-assert len(ids) == len(set(ids)) == 14, ids   # Taco Spice Mix is under Spices and World Foods, Bluebird chips under Pantry and Chips
+assert len(ids) == len(set(ids)) == 14, ids   # Taco Spice Mix is under Spices and World Foods, Bluebird chips under four
 assert {r["category"] for r in recs} == {"Pantry"}
 assert {"Mild Curry Powder", "Fajita Spice Mix", "Chocolate Block"} <= {r["name"] for r in recs}
+# with the category list, Pantry's own sub-categories go first, so "Game Day Hosting" is fully covered and skipped;
+# Snacks' sub-categories were all fetched under Pantry, so Snacks costs one search
+recs2, calls = _scrape_fixture(_fx, ["Pantry", "Snacks, Treats & Easy Meals"], _tree)
+assert calls == [(_P, 0), (_SPICE, 0), (_SPICE, 1)] + _SPLIT_CHOC + [
+    (_P + ' AND category1NI:"Chips, Nuts & Snacks"', 0), (_P + ' AND category1NI:"World Foods"', 0),
+    ('category0NI:"Snacks, Treats & Easy Meals"', 0)], calls
+assert sorted(r["id"] for r in recs2) == sorted(ids)
+assert s._category_children(_tree)[("Pantry", "Chocolate, Sweets & Chewing Gum")][:2] == ["Chocolate Blocks", "Chocolate Boxes & Gifts"]
 # the deepest level (category2NI) has nothing below it to split by: keep what the search gives
 _deep = copy.deepcopy(_fx)
 _deep[_CHOC + ' AND category2NI:"Chocolate Blocks"'][0]["totalHits"] = 1000

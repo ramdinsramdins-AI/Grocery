@@ -1,5 +1,820 @@
 {
- "_note": "Trimmed real search responses from New World and PAK'nSAVE (probes on 2026-10-15). The product objects and response shape are real; product lists and facet counts are cut down, and 'Chocolate, Sweets & Chewing Gum' is marked as hitting the 1,000 cap so the second-level split is exercised. Keys are the search filter without the 'stores:<id> AND ' prefix; values are pages 0, 1, ...",
+ "_note": "Trimmed real search responses from New World and PAK'nSAVE (probes on 2026-10-15). The product objects, category tree and response shape are real; product lists are cut down and facet counts match the cut-down lists. 'Pantry', 'Snacks, Treats & Easy Meals' and 'Chocolate, Sweets & Chewing Gum' are marked as hitting the 1,000 cap so the splits are exercised. 'responses' keys are the search filter without the 'stores:<id> AND ' prefix; values are pages 0, 1, ...",
+ "categories": [
+  {
+   "name": "Featured",
+   "children": [
+    {
+     "name": "NZ Cheese Month",
+     "children": [
+      {
+       "name": "NZ Cheese Month",
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Pantry",
+   "children": [
+    {
+     "name": "Chips, Nuts & Snacks",
+     "children": [
+      {
+       "name": "Chips",
+       "children": []
+      },
+      {
+       "name": "Corn Chips & Salsa",
+       "children": []
+      },
+      {
+       "name": "Muesli & Snack Bars",
+       "children": []
+      },
+      {
+       "name": "Nuts & Trail Mixes",
+       "children": []
+      },
+      {
+       "name": "Popcorn",
+       "children": []
+      },
+      {
+       "name": "Nutritional Bars & Snacks",
+       "children": []
+      },
+      {
+       "name": "Meat Snacks",
+       "children": []
+      },
+      {
+       "name": "Vege & Savoury Snacks",
+       "children": []
+      },
+      {
+       "name": "Fruit Snacks",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Biscuits & Crackers",
+     "children": [
+      {
+       "name": "Plain Biscuits",
+       "children": []
+      },
+      {
+       "name": "Chocolate Biscuits & Cookies",
+       "children": []
+      },
+      {
+       "name": "Crème, Jam & Iced Biscuits",
+       "children": []
+      },
+      {
+       "name": "Premium Crackers",
+       "children": []
+      },
+      {
+       "name": "Rice Crackers",
+       "children": []
+      },
+      {
+       "name": "Rice Cakes & Crispbread",
+       "children": []
+      },
+      {
+       "name": "Gluten Free Biscuits & Crackers",
+       "children": []
+      },
+      {
+       "name": "Biscuits & Cookies",
+       "children": []
+      },
+      {
+       "name": "Crackers",
+       "children": []
+      },
+      {
+       "name": "Gourmet Biscuits & Crackers",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Chocolate, Sweets & Chewing Gum",
+     "children": [
+      {
+       "name": "Chocolate Blocks",
+       "children": []
+      },
+      {
+       "name": "Chocolate Boxes & Gifts",
+       "children": []
+      },
+      {
+       "name": "Chocolate Bags & Sharepacks",
+       "children": []
+      },
+      {
+       "name": "Lollies, Sweets & Licorice",
+       "children": []
+      },
+      {
+       "name": "Single Chocolate Bars & Sweets",
+       "children": []
+      },
+      {
+       "name": "Chewing Gum & Mints",
+       "children": []
+      },
+      {
+       "name": "Sugar Free Lollies & Chocolate",
+       "children": []
+      },
+      {
+       "name": "Christmas",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Desserts",
+     "children": [
+      {
+       "name": "Custard Powder & Powdered Desserts",
+       "children": []
+      },
+      {
+       "name": "Creamed Rice",
+       "children": []
+      },
+      {
+       "name": "Ice Cream Cones & Wafers",
+       "children": []
+      },
+      {
+       "name": "Dessert Sauces & Syrups",
+       "children": []
+      },
+      {
+       "name": "Jelly & Fruit Cups",
+       "children": []
+      },
+      {
+       "name": "Puddings & Other Desserts",
+       "children": []
+      },
+      {
+       "name": "Yoghurt Bases",
+       "children": []
+      },
+      {
+       "name": "Ice Cream & Frozen Yoghurt",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Breakfast Cereals",
+     "children": [
+      {
+       "name": "Everyday Cereal",
+       "children": []
+      },
+      {
+       "name": "Family Favourites",
+       "children": []
+      },
+      {
+       "name": "Muesli & Granola",
+       "children": []
+      },
+      {
+       "name": "Oats & Porridge",
+       "children": []
+      },
+      {
+       "name": "Breakfast On The Go",
+       "children": []
+      },
+      {
+       "name": "Gluten Free Cereal",
+       "children": []
+      },
+      {
+       "name": "Cold Cereals",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Jams, Honey & Spreads",
+     "children": [
+      {
+       "name": "Honey",
+       "children": []
+      },
+      {
+       "name": "Jam",
+       "children": []
+      },
+      {
+       "name": "Marmalade & Curd",
+       "children": []
+      },
+      {
+       "name": "Peanut & Nut Butter",
+       "children": []
+      },
+      {
+       "name": "Savoury Spreads",
+       "children": []
+      },
+      {
+       "name": "Chocolate & Sweet Spreads",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Canned Foods & Packets",
+     "children": [
+      {
+       "name": "Baked Beans & Spaghetti",
+       "children": []
+      },
+      {
+       "name": "Canned Tuna",
+       "children": []
+      },
+      {
+       "name": "Canned Salmon & Other Seafood",
+       "children": []
+      },
+      {
+       "name": "Canned Meat",
+       "children": []
+      },
+      {
+       "name": "Canned Tomatoes",
+       "children": []
+      },
+      {
+       "name": "Canned & Dried Vegetables",
+       "children": []
+      },
+      {
+       "name": "Canned Fruit",
+       "children": []
+      },
+      {
+       "name": "Chickpeas, Lentils & Beans",
+       "children": []
+      },
+      {
+       "name": "Canned & Packet Soup",
+       "children": []
+      },
+      {
+       "name": "Condensed Milk & Reduced Cream",
+       "children": []
+      },
+      {
+       "name": "Coconut Cream & Milk",
+       "children": []
+      },
+      {
+       "name": "Instant Meals",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Long Life & Dairy Free Milk",
+     "children": [
+      {
+       "name": "UHT Milk & Milk Powder",
+       "children": []
+      },
+      {
+       "name": "Soy Milk",
+       "children": []
+      },
+      {
+       "name": "Nut Milk",
+       "children": []
+      },
+      {
+       "name": "Oat & Rice Milk",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Baking Supplies & Sugar",
+     "children": [
+      {
+       "name": "Flour",
+       "children": []
+      },
+      {
+       "name": "Sugar",
+       "children": []
+      },
+      {
+       "name": "Cocoa & Cooking Chocolate",
+       "children": []
+      },
+      {
+       "name": "Cake, Pancake & Bread Mixes",
+       "children": []
+      },
+      {
+       "name": "Baking Powder & Raising Agents",
+       "children": []
+      },
+      {
+       "name": "Food Colouring, Flavouring & Essence",
+       "children": []
+      },
+      {
+       "name": "Icing & Decorating",
+       "children": []
+      },
+      {
+       "name": "Baking Syrups",
+       "children": []
+      },
+      {
+       "name": "Baking Nuts & Seeds",
+       "children": []
+      },
+      {
+       "name": "Dried Fruit",
+       "children": []
+      },
+      {
+       "name": "Sugar Substitutes & Sweeteners",
+       "children": []
+      },
+      {
+       "name": "Gluten Free Baking",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Pasta, Rice & Noodles",
+     "children": [
+      {
+       "name": "Dried Pasta",
+       "children": []
+      },
+      {
+       "name": "Instant Noodles",
+       "children": []
+      },
+      {
+       "name": "Udon, Egg & Other Noodles",
+       "children": []
+      },
+      {
+       "name": "Instant Rice",
+       "children": []
+      },
+      {
+       "name": "Rice",
+       "children": []
+      },
+      {
+       "name": "Pasta & Rice Meals",
+       "children": []
+      },
+      {
+       "name": "Cous Cous, Quinoa & Grains",
+       "children": []
+      },
+      {
+       "name": "Gluten Free Pasta",
+       "children": []
+      },
+      {
+       "name": "Fresh Pasta",
+       "children": []
+      },
+      {
+       "name": "Long Grain Rices",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Cooking Sauces, Stocks & Marinades",
+     "children": [
+      {
+       "name": "Curry Paste & Sauce",
+       "children": []
+      },
+      {
+       "name": "Gravy",
+       "children": []
+      },
+      {
+       "name": "Marinade",
+       "children": []
+      },
+      {
+       "name": "Packet Sauce & Recipe Bases",
+       "children": []
+      },
+      {
+       "name": "Pasta & Pizza Sauce",
+       "children": []
+      },
+      {
+       "name": "Tomato Paste & Puree",
+       "children": []
+      },
+      {
+       "name": "Simmer Sauce",
+       "children": []
+      },
+      {
+       "name": "Soy & Asian Sauces",
+       "children": []
+      },
+      {
+       "name": "Stir-Fry Sauce",
+       "children": []
+      },
+      {
+       "name": "Stock & Bone Broth",
+       "children": []
+      },
+      {
+       "name": "Worcestershire Sauce",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Table Sauces, Dressings & Condiments",
+     "children": [
+      {
+       "name": "Aioli",
+       "children": []
+      },
+      {
+       "name": "BBQ Sauce",
+       "children": []
+      },
+      {
+       "name": "Chutney & Relish",
+       "children": []
+      },
+      {
+       "name": "Fruit Sauce",
+       "children": []
+      },
+      {
+       "name": "Mayonnaise",
+       "children": []
+      },
+      {
+       "name": "Mint Sauce",
+       "children": []
+      },
+      {
+       "name": "Mustard",
+       "children": []
+      },
+      {
+       "name": "Salad Dressing",
+       "children": []
+      },
+      {
+       "name": "Sweet Chilli & Hot Sauce",
+       "children": []
+      },
+      {
+       "name": "Tomato Sauce",
+       "children": []
+      },
+      {
+       "name": "Tartare & Seafood Sauce",
+       "children": []
+      },
+      {
+       "name": "Olives & Antipasti",
+       "children": []
+      },
+      {
+       "name": "Gherkins & Pickled Vegetables",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Oil & Vinegar",
+     "children": [
+      {
+       "name": "Olive & Avocado Oil",
+       "children": []
+      },
+      {
+       "name": "Cooking Oil",
+       "children": []
+      },
+      {
+       "name": "Coconut Oil",
+       "children": []
+      },
+      {
+       "name": "Oil Spray",
+       "children": []
+      },
+      {
+       "name": "Cooking Fat",
+       "children": []
+      },
+      {
+       "name": "Vinegar",
+       "children": []
+      },
+      {
+       "name": "Premium & Infused Oil",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Spices, Seasoning & Coatings",
+     "children": [
+      {
+       "name": "Breadcrumbs, Coatings & Stuffings",
+       "children": []
+      },
+      {
+       "name": "Dried Spices",
+       "children": []
+      },
+      {
+       "name": "Dried Herbs",
+       "children": []
+      },
+      {
+       "name": "Freshly Ground Herbs",
+       "children": []
+      },
+      {
+       "name": "Garlic & Ginger",
+       "children": []
+      },
+      {
+       "name": "Salt & Pepper",
+       "children": []
+      },
+      {
+       "name": "Rubs & Blends",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Bulk Foods",
+     "children": [
+      {
+       "name": "Bulk Breakfast Cereals",
+       "children": []
+      },
+      {
+       "name": "Bulk Confectionery",
+       "children": []
+      },
+      {
+       "name": "Bulk Dried Fruit",
+       "children": []
+      },
+      {
+       "name": "Bulk Nuts, Seeds & Legumes",
+       "children": []
+      },
+      {
+       "name": "Bulk Snacks & Mixes",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "World Foods",
+     "children": [
+      {
+       "name": "Japanese",
+       "children": []
+      },
+      {
+       "name": "Mexican",
+       "children": []
+      },
+      {
+       "name": "Chinese",
+       "children": []
+      },
+      {
+       "name": "Korean",
+       "children": []
+      },
+      {
+       "name": "Indian",
+       "children": []
+      },
+      {
+       "name": "USA",
+       "children": []
+      },
+      {
+       "name": "UK",
+       "children": []
+      },
+      {
+       "name": "Other Countries",
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Snacks, Treats & Easy Meals",
+   "children": [
+    {
+     "name": "Chocolate, Sweets & Chewing Gum",
+     "children": [
+      {
+       "name": "Chocolate Blocks",
+       "children": []
+      },
+      {
+       "name": "Chocolate Boxes & Gifts",
+       "children": []
+      },
+      {
+       "name": "Chocolate Bags & Sharepacks",
+       "children": []
+      },
+      {
+       "name": "Lollies, Sweets & Licorice",
+       "children": []
+      },
+      {
+       "name": "Single Chocolate Bars & Sweets",
+       "children": []
+      },
+      {
+       "name": "Chewing Gum & Mints",
+       "children": []
+      },
+      {
+       "name": "Sugar Free Lollies & Chocolate",
+       "children": []
+      },
+      {
+       "name": "Christmas",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Chips, Nuts & Snacks",
+     "children": [
+      {
+       "name": "Chips",
+       "children": []
+      },
+      {
+       "name": "Corn Chips & Salsa",
+       "children": []
+      },
+      {
+       "name": "Muesli & Snack Bars",
+       "children": []
+      },
+      {
+       "name": "Nuts & Trail Mixes",
+       "children": []
+      },
+      {
+       "name": "Popcorn",
+       "children": []
+      },
+      {
+       "name": "Nutritional Bars & Snacks",
+       "children": []
+      },
+      {
+       "name": "Meat Snacks",
+       "children": []
+      },
+      {
+       "name": "Vege & Savoury Snacks",
+       "children": []
+      },
+      {
+       "name": "Fruit Snacks",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Lunchbox Snacks",
+     "children": [
+      {
+       "name": "Protein Bars & Nutritional Snacks",
+       "children": []
+      },
+      {
+       "name": "Dried Fruit Snacks",
+       "children": []
+      },
+      {
+       "name": "Meat Snacks",
+       "children": []
+      },
+      {
+       "name": "Muesli & Snack Bars",
+       "children": []
+      },
+      {
+       "name": "Multipack Chips & Snacks",
+       "children": []
+      },
+      {
+       "name": "Snacking Cheese",
+       "children": []
+      },
+      {
+       "name": "Yoghurt Pouches & Single Serve",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Ready to Eat",
+     "children": [
+      {
+       "name": "Sushi",
+       "children": []
+      },
+      {
+       "name": "Ready to Eat Salads",
+       "children": []
+      },
+      {
+       "name": "Deli Food to Go",
+       "children": []
+      },
+      {
+       "name": "Fresh Cut Fruit & Vegetables",
+       "children": []
+      },
+      {
+       "name": "Instant Rice & Noodle Meals",
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Easy Meals & Meal Kits",
+     "children": [
+      {
+       "name": "Heat & Eat Ready Meals",
+       "children": []
+      },
+      {
+       "name": "International Meal Kits",
+       "children": []
+      },
+      {
+       "name": "Simply Dinner Meal Kits",
+       "children": []
+      },
+      {
+       "name": "Family Pies & Quiches",
+       "children": []
+      },
+      {
+       "name": "Pizza",
+       "children": []
+      }
+     ]
+    }
+   ]
+  }
+ ],
  "responses": {
   "category0NI:\"Pantry\"": [
    {
@@ -112,10 +927,11 @@
     "algoliaSearchResult": {
      "facets": {
       "category1NI": {
-       "Chips, Nuts & Snacks": 651,
-       "Chocolate, Sweets & Chewing Gum": 365,
-       "Spices, Seasoning & Coatings": 253,
-       "World Foods": 184
+       "Spices, Seasoning & Coatings": 7,
+       "Chocolate, Sweets & Chewing Gum": 4,
+       "Game Day Hosting": 4,
+       "Chips, Nuts & Snacks": 2,
+       "World Foods": 2
       }
      }
     },
@@ -125,15 +941,15 @@
     "hitsPerPage": 50
    }
   ],
-  "category0NI:\"Pantry\" AND category1NI:\"Chips, Nuts & Snacks\"": [
+  "category0NI:\"Pantry\" AND category1NI:\"Spices, Seasoning & Coatings\"": [
    {
     "tobaccoProducts": false,
     "products": [
      {
-      "productId": "5010717-EA-000",
-      "brand": "Bluebird",
-      "name": "Originals Ready Salted Potato Chips",
-      "displayName": "150g",
+      "productId": "5219807-EA-000",
+      "brand": "Mrs Rogers",
+      "name": "Naturals Eco Onion Powder Fine",
+      "displayName": "40g",
       "availability": [
        "IN_STORE",
        "ONLINE"
@@ -143,100 +959,30 @@
       "liquorFlag": false,
       "tobaccoFlag": false,
       "originRegulated": false,
-      "marketingInitiatives": [
-       {
-        "themeCode": "0000",
-        "initiativeCode": "AOV"
-       },
-       {
-        "initiativeCode": "AOV"
-       }
-      ],
       "singlePrice": {
-       "price": 199,
-       "promoId": "130443784",
+       "price": 279,
        "comparativePrice": {
-        "pricePerUnit": 133,
-        "unitQuantity": 100,
+        "pricePerUnit": 70,
+        "unitQuantity": 10,
         "unitQuantityUom": "g",
-        "measureDescription": "100g"
+        "measureDescription": "10g"
        }
       },
-      "promotions": [
-       {
-        "promoId": "130443784",
-        "rewardValue": 199,
-        "decal": "6000",
-        "sapType": "BASE",
-        "rewardType": "NEW_PRICE",
-        "threshold": 1,
-        "limit": 0,
-        "multiProducts": false,
-        "cardDependencyFlag": false,
-        "bestPromotion": true,
-        "comparativePrice": {
-         "pricePerUnit": 133,
-         "unitQuantity": 100,
-         "unitQuantityUom": "g",
-         "measureDescription": "100g"
-        }
-       }
-      ],
-      "facets": [
-       {
-        "itemCode": "00020004",
-        "itemDescription": "Gluten Free"
-       },
-       {
-        "itemCode": "00020013",
-        "itemDescription": "Vegan"
-       },
-       {
-        "itemCode": "00020012",
-        "itemDescription": "Non-GMO"
-       }
-      ],
       "categoryTrees": [
        {
-        "level0": "Snacks, Treats & Easy Meals",
-        "level1": "Chips, Nuts & Snacks",
-        "level2": "Chips"
-       },
-       {
         "level0": "Pantry",
-        "level1": "Chips, Nuts & Snacks",
-        "level2": "Chips"
-       },
-       {
-        "level0": "Featured",
-        "level1": "Game Day Hosting",
-        "level2": "Chips, Nuts & Snacks",
-        "webContent": {
-         "badgeSmallUrl": "",
-         "badgeMediumUrl": "",
-         "badgeLargeUrl": "",
-         "title": "",
-         "subTitle": "",
-         "campaignUrl": ""
-        },
-        "appContent": {
-         "badgeSmallUrl": "",
-         "badgeMediumUrl": "",
-         "badgeLargeUrl": "",
-         "title": "",
-         "subTitle": "",
-         "campaignUrl": ""
-        }
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Dried Spices"
        }
       ],
       "cateredFlag": false,
       "boughtBefore": false
      },
      {
-      "productId": "5010716-EA-000",
-      "brand": "Bluebird",
-      "name": "Originals Chicken Potato Chips",
-      "displayName": "150g",
+      "productId": "5008899-EA-000",
+      "brand": "Pams",
+      "name": "Crushed Garlic",
+      "displayName": "230g",
       "availability": [
        "IN_STORE",
        "ONLINE"
@@ -248,18 +994,129 @@
       "originRegulated": false,
       "marketingInitiatives": [
        {
-        "themeCode": "0000",
-        "initiativeCode": "AOV"
-       },
-       {
-        "initiativeCode": "AOV"
+        "themeCode": "4700",
+        "initiativeCode": "EDV"
        }
       ],
       "singlePrice": {
-       "price": 199,
-       "promoId": "130443784",
+       "price": 249,
        "comparativePrice": {
-        "pricePerUnit": 133,
+        "pricePerUnit": 1083,
+        "unitQuantity": 1,
+        "unitQuantityUom": "kg",
+        "measureDescription": "1kg"
+       }
+      },
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       },
+       {
+        "itemCode": "00020007",
+        "itemDescription": "Dairy Free"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Garlic & Ginger"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5026706-EA-000",
+      "brand": "Mrs Rogers",
+      "name": "Naturals Eco Mixed Herbs",
+      "displayName": "10g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 279,
+       "comparativePrice": {
+        "pricePerUnit": 279,
+        "unitQuantity": 10,
+        "unitQuantityUom": "g",
+        "measureDescription": "10g"
+       }
+      },
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Dried Herbs"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5334358-EA-000",
+      "brand": "Masterfoods",
+      "name": "Onion Powder",
+      "displayName": "44g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "4700",
+        "initiativeCode": "EDV"
+       }
+      ],
+      "singlePrice": {
+       "price": 289,
+       "comparativePrice": {
+        "pricePerUnit": 66,
+        "unitQuantity": 10,
+        "unitQuantityUom": "g",
+        "measureDescription": "10g"
+       }
+      },
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Dried Spices"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5001484-EA-000",
+      "brand": "Old El Paso",
+      "name": "Taco Spice Mix",
+      "displayName": "30g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 299,
+       "comparativePrice": {
+        "pricePerUnit": 997,
         "unitQuantity": 100,
         "unitQuantityUom": "g",
         "measureDescription": "100g"
@@ -267,18 +1124,17 @@
       },
       "promotions": [
        {
-        "promoId": "130443784",
-        "rewardValue": 199,
-        "decal": "6000",
+        "promoId": "130443570",
+        "rewardValue": 249,
+        "decal": "4000",
         "sapType": "BASE",
         "rewardType": "NEW_PRICE",
         "threshold": 1,
-        "limit": 0,
-        "multiProducts": false,
-        "cardDependencyFlag": false,
+        "multiProducts": true,
+        "cardDependencyFlag": true,
         "bestPromotion": true,
         "comparativePrice": {
-         "pricePerUnit": 133,
+         "pricePerUnit": 830,
          "unitQuantity": 100,
          "unitQuantityUom": "g",
          "measureDescription": "100g"
@@ -287,45 +1143,24 @@
       ],
       "facets": [
        {
-        "itemCode": "00020004",
-        "itemDescription": "Gluten Free"
+        "itemCode": "00020013",
+        "itemDescription": "Vegan"
        },
        {
-        "itemCode": "00020012",
-        "itemDescription": "Non-GMO"
+        "itemCode": "00020014",
+        "itemDescription": "Vegetarian"
        }
       ],
       "categoryTrees": [
        {
-        "level0": "Snacks, Treats & Easy Meals",
-        "level1": "Chips, Nuts & Snacks",
-        "level2": "Chips"
+        "level0": "Pantry",
+        "level1": "World Foods",
+        "level2": "Mexican"
        },
        {
         "level0": "Pantry",
-        "level1": "Chips, Nuts & Snacks",
-        "level2": "Chips"
-       },
-       {
-        "level0": "Featured",
-        "level1": "Game Day Hosting",
-        "level2": "Chips, Nuts & Snacks",
-        "webContent": {
-         "badgeSmallUrl": "",
-         "badgeMediumUrl": "",
-         "badgeLargeUrl": "",
-         "title": "",
-         "subTitle": "",
-         "campaignUrl": ""
-        },
-        "appContent": {
-         "badgeSmallUrl": "",
-         "badgeMediumUrl": "",
-         "badgeLargeUrl": "",
-         "title": "",
-         "subTitle": "",
-         "campaignUrl": ""
-        }
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Rubs & Blends"
        }
       ],
       "cateredFlag": false,
@@ -335,13 +1170,108 @@
     "algoliaSearchResult": {
      "facets": {
       "category1NI": {
-       "Chips, Nuts & Snacks": 2
+       "Spices, Seasoning & Coatings": 7,
+       "World Foods": 1
       }
      }
     },
-    "totalHits": 2,
+    "totalHits": 7,
     "page": 0,
-    "totalPages": 1,
+    "totalPages": 2,
+    "hitsPerPage": 50
+   },
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5010565-EA-000",
+      "brand": "Empire",
+      "name": "Mild Curry Powder",
+      "displayName": "100g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "singlePrice": {
+       "price": 519,
+       "comparativePrice": {
+        "pricePerUnit": 52,
+        "unitQuantity": 10,
+        "unitQuantityUom": "g",
+        "measureDescription": "10g"
+       }
+      },
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Dried Spices"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5046576-KGM-000",
+      "name": "Ginger",
+      "displayName": "kg",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "WEIGHT",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": true,
+      "originStatement": "Product of Thailand",
+      "variableWeight": {
+       "minOrderQuantity": 80,
+       "stepSize": 20,
+       "stepUnitOfMeasure": "g"
+      },
+      "singlePrice": {
+       "price": 899,
+       "comparativePrice": {
+        "pricePerUnit": 899,
+        "unitQuantity": 1,
+        "unitQuantityUom": "kg",
+        "measureDescription": "1kg"
+       }
+      },
+      "categoryTrees": [
+       {
+        "level0": "Pantry",
+        "level1": "Spices, Seasoning & Coatings",
+        "level2": "Garlic & Ginger"
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {
+      "category1NI": {
+       "Spices, Seasoning & Coatings": 7,
+       "World Foods": 1
+      }
+     }
+    },
+    "totalHits": 7,
+    "page": 1,
+    "totalPages": 2,
     "hitsPerPage": 50
    }
   ],
@@ -418,11 +1348,12 @@
     "algoliaSearchResult": {
      "facets": {
       "category1NI": {
-       "Chocolate, Sweets & Chewing Gum": 365
+       "Chocolate, Sweets & Chewing Gum": 4,
+       "Game Day Hosting": 2
       },
       "category2NI": {
-       "Single Chocolate Bars & Sweets": 74,
-       "Chocolate Blocks": 78
+       "Single Chocolate Bars & Sweets": 2,
+       "Chocolate Blocks": 2
       }
      }
     },
@@ -741,48 +1672,15 @@
     "hitsPerPage": 50
    }
   ],
-  "category0NI:\"Pantry\" AND category1NI:\"Spices, Seasoning & Coatings\"": [
+  "category0NI:\"Pantry\" AND category1NI:\"Game Day Hosting\"": [
    {
     "tobaccoProducts": false,
     "products": [
      {
-      "productId": "5219807-EA-000",
-      "brand": "Mrs Rogers",
-      "name": "Naturals Eco Onion Powder Fine",
-      "displayName": "40g",
-      "availability": [
-       "IN_STORE",
-       "ONLINE"
-      ],
-      "saleType": "UNITS",
-      "restrictedFlag": false,
-      "liquorFlag": false,
-      "tobaccoFlag": false,
-      "originRegulated": false,
-      "singlePrice": {
-       "price": 279,
-       "comparativePrice": {
-        "pricePerUnit": 70,
-        "unitQuantity": 10,
-        "unitQuantityUom": "g",
-        "measureDescription": "10g"
-       }
-      },
-      "categoryTrees": [
-       {
-        "level0": "Pantry",
-        "level1": "Spices, Seasoning & Coatings",
-        "level2": "Dried Spices"
-       }
-      ],
-      "cateredFlag": false,
-      "boughtBefore": false
-     },
-     {
-      "productId": "5008899-EA-000",
-      "brand": "Pams",
-      "name": "Crushed Garlic",
-      "displayName": "230g",
+      "productId": "5010717-EA-000",
+      "brand": "Bluebird",
+      "name": "Originals Ready Salted Potato Chips",
+      "displayName": "150g",
       "availability": [
        "IN_STORE",
        "ONLINE"
@@ -794,129 +1692,18 @@
       "originRegulated": false,
       "marketingInitiatives": [
        {
-        "themeCode": "4700",
-        "initiativeCode": "EDV"
-       }
-      ],
-      "singlePrice": {
-       "price": 249,
-       "comparativePrice": {
-        "pricePerUnit": 1083,
-        "unitQuantity": 1,
-        "unitQuantityUom": "kg",
-        "measureDescription": "1kg"
-       }
-      },
-      "facets": [
-       {
-        "itemCode": "00020012",
-        "itemDescription": "Non-GMO"
+        "themeCode": "0000",
+        "initiativeCode": "AOV"
        },
        {
-        "itemCode": "00020007",
-        "itemDescription": "Dairy Free"
-       }
-      ],
-      "categoryTrees": [
-       {
-        "level0": "Pantry",
-        "level1": "Spices, Seasoning & Coatings",
-        "level2": "Garlic & Ginger"
-       }
-      ],
-      "cateredFlag": false,
-      "boughtBefore": false
-     },
-     {
-      "productId": "5026706-EA-000",
-      "brand": "Mrs Rogers",
-      "name": "Naturals Eco Mixed Herbs",
-      "displayName": "10g",
-      "availability": [
-       "IN_STORE",
-       "ONLINE"
-      ],
-      "saleType": "UNITS",
-      "restrictedFlag": false,
-      "liquorFlag": false,
-      "tobaccoFlag": false,
-      "originRegulated": false,
-      "singlePrice": {
-       "price": 279,
-       "comparativePrice": {
-        "pricePerUnit": 279,
-        "unitQuantity": 10,
-        "unitQuantityUom": "g",
-        "measureDescription": "10g"
-       }
-      },
-      "categoryTrees": [
-       {
-        "level0": "Pantry",
-        "level1": "Spices, Seasoning & Coatings",
-        "level2": "Dried Herbs"
-       }
-      ],
-      "cateredFlag": false,
-      "boughtBefore": false
-     },
-     {
-      "productId": "5334358-EA-000",
-      "brand": "Masterfoods",
-      "name": "Onion Powder",
-      "displayName": "44g",
-      "availability": [
-       "IN_STORE",
-       "ONLINE"
-      ],
-      "saleType": "UNITS",
-      "restrictedFlag": false,
-      "liquorFlag": false,
-      "tobaccoFlag": false,
-      "originRegulated": false,
-      "marketingInitiatives": [
-       {
-        "themeCode": "4700",
-        "initiativeCode": "EDV"
+        "initiativeCode": "AOV"
        }
       ],
       "singlePrice": {
-       "price": 289,
+       "price": 199,
+       "promoId": "130443784",
        "comparativePrice": {
-        "pricePerUnit": 66,
-        "unitQuantity": 10,
-        "unitQuantityUom": "g",
-        "measureDescription": "10g"
-       }
-      },
-      "categoryTrees": [
-       {
-        "level0": "Pantry",
-        "level1": "Spices, Seasoning & Coatings",
-        "level2": "Dried Spices"
-       }
-      ],
-      "cateredFlag": false,
-      "boughtBefore": false
-     },
-     {
-      "productId": "5001484-EA-000",
-      "brand": "Old El Paso",
-      "name": "Taco Spice Mix",
-      "displayName": "30g",
-      "availability": [
-       "IN_STORE",
-       "ONLINE"
-      ],
-      "saleType": "UNITS",
-      "restrictedFlag": false,
-      "liquorFlag": false,
-      "tobaccoFlag": false,
-      "originRegulated": false,
-      "singlePrice": {
-       "price": 299,
-       "comparativePrice": {
-        "pricePerUnit": 997,
+        "pricePerUnit": 133,
         "unitQuantity": 100,
         "unitQuantityUom": "g",
         "measureDescription": "100g"
@@ -924,17 +1711,18 @@
       },
       "promotions": [
        {
-        "promoId": "130443570",
-        "rewardValue": 249,
-        "decal": "4000",
+        "promoId": "130443784",
+        "rewardValue": 199,
+        "decal": "6000",
         "sapType": "BASE",
         "rewardType": "NEW_PRICE",
         "threshold": 1,
-        "multiProducts": true,
-        "cardDependencyFlag": true,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
         "bestPromotion": true,
         "comparativePrice": {
-         "pricePerUnit": 830,
+         "pricePerUnit": 133,
          "unitQuantity": 100,
          "unitQuantityUom": "g",
          "measureDescription": "100g"
@@ -943,51 +1731,158 @@
       ],
       "facets": [
        {
+        "itemCode": "00020004",
+        "itemDescription": "Gluten Free"
+       },
+       {
         "itemCode": "00020013",
         "itemDescription": "Vegan"
        },
        {
-        "itemCode": "00020014",
-        "itemDescription": "Vegetarian"
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
        }
       ],
       "categoryTrees": [
        {
-        "level0": "Pantry",
-        "level1": "World Foods",
-        "level2": "Mexican"
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
        },
        {
         "level0": "Pantry",
-        "level1": "Spices, Seasoning & Coatings",
-        "level2": "Rubs & Blends"
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chips, Nuts & Snacks",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
        }
       ],
       "cateredFlag": false,
       "boughtBefore": false
-     }
-    ],
-    "algoliaSearchResult": {
-     "facets": {
-      "category1NI": {
-       "Spices, Seasoning & Coatings": 7,
-       "World Foods": 5
-      }
-     }
-    },
-    "totalHits": 7,
-    "page": 0,
-    "totalPages": 2,
-    "hitsPerPage": 50
-   },
-   {
-    "tobaccoProducts": false,
-    "products": [
+     },
      {
-      "productId": "5010565-EA-000",
-      "brand": "Empire",
-      "name": "Mild Curry Powder",
-      "displayName": "100g",
+      "productId": "5010716-EA-000",
+      "brand": "Bluebird",
+      "name": "Originals Chicken Potato Chips",
+      "displayName": "150g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "0000",
+        "initiativeCode": "AOV"
+       },
+       {
+        "initiativeCode": "AOV"
+       }
+      ],
+      "singlePrice": {
+       "price": 199,
+       "promoId": "130443784",
+       "comparativePrice": {
+        "pricePerUnit": 133,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443784",
+        "rewardValue": 199,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 133,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020004",
+        "itemDescription": "Gluten Free"
+       },
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chips, Nuts & Snacks",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5009651-EA-000",
+      "brand": "Whittaker's",
+      "name": "Creamy Milk 33% Cocoa Milk Chocolate Block",
+      "displayName": "250g",
       "availability": [
        "IN_STORE",
        "ONLINE"
@@ -998,12 +1893,12 @@
       "tobaccoFlag": false,
       "originRegulated": false,
       "singlePrice": {
-       "price": 519,
+       "price": 709,
        "comparativePrice": {
-        "pricePerUnit": 52,
-        "unitQuantity": 10,
+        "pricePerUnit": 284,
+        "unitQuantity": 100,
         "unitQuantityUom": "g",
-        "measureDescription": "10g"
+        "measureDescription": "100g"
        }
       },
       "facets": [
@@ -1014,47 +1909,121 @@
       ],
       "categoryTrees": [
        {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Chocolate Blocks"
+       },
+       {
         "level0": "Pantry",
-        "level1": "Spices, Seasoning & Coatings",
-        "level2": "Dried Spices"
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Chocolate Blocks"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chocolate, Sweets & Chewing Gum",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
        }
       ],
       "cateredFlag": false,
       "boughtBefore": false
      },
      {
-      "productId": "5046576-KGM-000",
-      "name": "Ginger",
-      "displayName": "kg",
+      "productId": "5249650-EA-000",
+      "brand": "Cadbury Dairy Milk",
+      "name": "Chocolate Block",
+      "displayName": "180g",
       "availability": [
        "IN_STORE",
        "ONLINE"
       ],
-      "saleType": "WEIGHT",
+      "saleType": "UNITS",
       "restrictedFlag": false,
       "liquorFlag": false,
       "tobaccoFlag": false,
-      "originRegulated": true,
-      "originStatement": "Product of Thailand",
-      "variableWeight": {
-       "minOrderQuantity": 80,
-       "stepSize": 20,
-       "stepUnitOfMeasure": "g"
-      },
+      "originRegulated": false,
       "singlePrice": {
-       "price": 899,
+       "price": 439,
+       "promoId": "130433120",
        "comparativePrice": {
-        "pricePerUnit": 899,
-        "unitQuantity": 1,
-        "unitQuantityUom": "kg",
-        "measureDescription": "1kg"
+        "pricePerUnit": 244,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
        }
       },
+      "promotions": [
+       {
+        "promoId": "130433120",
+        "rewardValue": 439,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 244,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
       "categoryTrees": [
        {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Chocolate Blocks"
+       },
+       {
         "level0": "Pantry",
-        "level1": "Spices, Seasoning & Coatings",
-        "level2": "Garlic & Ginger"
+        "level1": "Chocolate, Sweets & Chewing Gum",
+        "level2": "Chocolate Blocks"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chocolate, Sweets & Chewing Gum",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
        }
       ],
       "cateredFlag": false,
@@ -1062,16 +2031,227 @@
      }
     ],
     "algoliaSearchResult": {
-     "facets": {
-      "category1NI": {
-       "Spices, Seasoning & Coatings": 7,
-       "World Foods": 5
-      }
-     }
+     "facets": {}
     },
-    "totalHits": 7,
-    "page": 1,
-    "totalPages": 2,
+    "totalHits": 4,
+    "page": 0,
+    "totalPages": 1,
+    "hitsPerPage": 50
+   }
+  ],
+  "category0NI:\"Pantry\" AND category1NI:\"Chips, Nuts & Snacks\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5010717-EA-000",
+      "brand": "Bluebird",
+      "name": "Originals Ready Salted Potato Chips",
+      "displayName": "150g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "0000",
+        "initiativeCode": "AOV"
+       },
+       {
+        "initiativeCode": "AOV"
+       }
+      ],
+      "singlePrice": {
+       "price": 199,
+       "promoId": "130443784",
+       "comparativePrice": {
+        "pricePerUnit": 133,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443784",
+        "rewardValue": 199,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 133,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020004",
+        "itemDescription": "Gluten Free"
+       },
+       {
+        "itemCode": "00020013",
+        "itemDescription": "Vegan"
+       },
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chips, Nuts & Snacks",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     },
+     {
+      "productId": "5010716-EA-000",
+      "brand": "Bluebird",
+      "name": "Originals Chicken Potato Chips",
+      "displayName": "150g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "0000",
+        "initiativeCode": "AOV"
+       },
+       {
+        "initiativeCode": "AOV"
+       }
+      ],
+      "singlePrice": {
+       "price": 199,
+       "promoId": "130443784",
+       "comparativePrice": {
+        "pricePerUnit": 133,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443784",
+        "rewardValue": 199,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 133,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020004",
+        "itemDescription": "Gluten Free"
+       },
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chips, Nuts & Snacks",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {}
+    },
+    "totalHits": 2,
+    "page": 0,
+    "totalPages": 1,
     "hitsPerPage": 50
    }
   ],
@@ -1219,16 +2399,134 @@
      }
     ],
     "algoliaSearchResult": {
-     "facets": {
-      "category1NI": {
-       "World Foods": 2,
-       "Spices, Seasoning & Coatings": 2
-      }
-     }
+     "facets": {}
     },
     "totalHits": 2,
     "page": 0,
     "totalPages": 1,
+    "hitsPerPage": 50
+   }
+  ],
+  "category0NI:\"Snacks, Treats & Easy Meals\"": [
+   {
+    "tobaccoProducts": false,
+    "products": [
+     {
+      "productId": "5010717-EA-000",
+      "brand": "Bluebird",
+      "name": "Originals Ready Salted Potato Chips",
+      "displayName": "150g",
+      "availability": [
+       "IN_STORE",
+       "ONLINE"
+      ],
+      "saleType": "UNITS",
+      "restrictedFlag": false,
+      "liquorFlag": false,
+      "tobaccoFlag": false,
+      "originRegulated": false,
+      "marketingInitiatives": [
+       {
+        "themeCode": "0000",
+        "initiativeCode": "AOV"
+       },
+       {
+        "initiativeCode": "AOV"
+       }
+      ],
+      "singlePrice": {
+       "price": 199,
+       "promoId": "130443784",
+       "comparativePrice": {
+        "pricePerUnit": 133,
+        "unitQuantity": 100,
+        "unitQuantityUom": "g",
+        "measureDescription": "100g"
+       }
+      },
+      "promotions": [
+       {
+        "promoId": "130443784",
+        "rewardValue": 199,
+        "decal": "6000",
+        "sapType": "BASE",
+        "rewardType": "NEW_PRICE",
+        "threshold": 1,
+        "limit": 0,
+        "multiProducts": false,
+        "cardDependencyFlag": false,
+        "bestPromotion": true,
+        "comparativePrice": {
+         "pricePerUnit": 133,
+         "unitQuantity": 100,
+         "unitQuantityUom": "g",
+         "measureDescription": "100g"
+        }
+       }
+      ],
+      "facets": [
+       {
+        "itemCode": "00020004",
+        "itemDescription": "Gluten Free"
+       },
+       {
+        "itemCode": "00020013",
+        "itemDescription": "Vegan"
+       },
+       {
+        "itemCode": "00020012",
+        "itemDescription": "Non-GMO"
+       }
+      ],
+      "categoryTrees": [
+       {
+        "level0": "Snacks, Treats & Easy Meals",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Pantry",
+        "level1": "Chips, Nuts & Snacks",
+        "level2": "Chips"
+       },
+       {
+        "level0": "Featured",
+        "level1": "Game Day Hosting",
+        "level2": "Chips, Nuts & Snacks",
+        "webContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        },
+        "appContent": {
+         "badgeSmallUrl": "",
+         "badgeMediumUrl": "",
+         "badgeLargeUrl": "",
+         "title": "",
+         "subTitle": "",
+         "campaignUrl": ""
+        }
+       }
+      ],
+      "cateredFlag": false,
+      "boughtBefore": false
+     }
+    ],
+    "algoliaSearchResult": {
+     "facets": {
+      "category1NI": {
+       "Chocolate, Sweets & Chewing Gum": 4,
+       "Game Day Hosting": 4,
+       "Chips, Nuts & Snacks": 2
+      }
+     }
+    },
+    "totalHits": 1000,
+    "page": 0,
+    "totalPages": 20,
     "hitsPerPage": 50
    }
   ]
