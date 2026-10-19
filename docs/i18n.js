@@ -118,7 +118,8 @@
     ".langlist button{display:flex;align-items:center;gap:10px;width:100%;font:inherit;font-size:14px;background:none;border:0;color:var(--ink);padding:8px 10px;border-radius:4px;cursor:pointer;text-align:left}" +
     ".langlist button:hover,.langlist [aria-selected=true] button{background:var(--soft)}" +
     ".flag{flex:0 0 auto;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18)}" +
-    ".hside{display:flex;flex-direction:column;align-items:flex-end;gap:8px}@media (max-width:600px){.hside{align-items:flex-start}.langlist{left:0;right:auto}}";
+    ".hside{display:flex;flex-direction:column;align-items:flex-end;gap:8px}@media (max-width:600px){.hside{align-items:flex-start}.langlist{left:0;right:auto}}" +
+    ".hbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;align-items:flex-start}@media (max-width:600px){.hbar{justify-content:flex-start}}";   // account button (account.js) and language menu
   document.head.appendChild(css);
 
   window.I18N = {

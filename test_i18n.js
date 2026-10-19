@@ -29,7 +29,7 @@ function phrases(src) {
   for (const [, al] of src.matchAll(/aria-label="([^"]*)"[^>]*data-i18n-aria/g)) out.add(al);
   return out;
 }
-const keys = new Set([...phrases(read("index.html")), ...phrases(read("recipes.html")), ...phrases(read("i18n.js"))]);
+const keys = new Set([...phrases(read("index.html")), ...phrases(read("recipes.html")), ...phrases(read("i18n.js")), ...phrases(read("account.js"))]);
 const aisles = [...read("index.html").matchAll(/^ \["([^"]+)",\//gm)].map((x) => x[1]);
 aisles.forEach((a) => keys.add(a));
 ["tsp", "tbsp", "cup", "pinch", "each", "clove", "stalk", "slice", "can", "g", "ml"].forEach((u) => keys.add(u));

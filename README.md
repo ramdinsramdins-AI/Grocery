@@ -94,3 +94,19 @@ To look at it locally: `cd docs && python3 -m http.server 8000`, then open http:
 - Product names stay as the stores write them, except that names in Chinese, Japanese or Korean (NJK, FromK) are put into English by the scraper on every save: `translations.json` (repo root) lists the names that are only in Chinese, and for mixed names the English part is kept. Add a line to `translations.json` when a new Chinese-only name appears.
 - `node test_i18n.js` checks every language file against the pages (missing or unused phrases, placeholders such as `{price}`, tags, ingredients, recipe steps). `node test_i18n.js --keys` prints every phrase a new language file needs. After changing page text or adding recipes, the test lists what each language is missing.
 - The translations were written by Claude (AI) and have not been checked by native speakers. Te Reo Māori in particular should be reviewed by a fluent speaker.
+
+## Accounts (sign in to keep your list on every device)
+
+Shoppers can make an account with an email and a password. Their shopping list and chosen recipes then save to the account as well as to the device, so they show up on any phone or computer where they sign in. Without an account everything works as before and saves on that device only. The box also has "Forgot your password?", "Change my password", "Sign out" and "Delete my account".
+
+Google Firebase checks the passwords and stores the lists (free Spark plan: no card needed, and it cannot charge you). A password check written into the page itself would protect nothing, because anyone can read the site's files. `firestore.rules` makes sure each person can read and change only their own list.
+
+The account button only appears once Firebase is set up. To set it up (about 10 minutes, the Firebase screens may word things slightly differently):
+
+1. Go to https://console.firebase.google.com and sign in with a Google account. Create a new project, name it `shelf-check-nz`, and turn Google Analytics off (not needed).
+2. In the menu on the left open **Authentication** (it may be under Build or Security), press **Get started**, pick **Email/Password**, switch on the first switch only, and press **Save**.
+3. Open **Firestore Database**, press **Create database**, choose the Standard edition if asked, pick location **australia-southeast1 (Sydney)**, choose **production mode**, and create it. Then open its **Rules** tab, delete all the text there, paste in everything from `firestore.rules` (in this repo), and press **Publish**.
+4. Press the gear icon next to "Project overview", then **Project settings**. Under **Your apps** press the web button `</>`, call the app `Shelf Check`, leave Firebase Hosting unticked, and press **Register app**. When it shows code, pick **Config** if offered and copy only the part from `const firebaseConfig = {` down to `};`.
+5. Paste that into `docs/account-config.js` between the two "paste" marker lines, save, and send it to GitHub (or ask Claude to). The settings you paste are not secret: every visitor's browser needs them to reach Firebase.
+
+Accounts and their lists can be seen and deleted in the Firebase console (Authentication > Users, and Firestore Database > Data). People can delete their own account from the account box.

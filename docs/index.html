@@ -109,7 +109,7 @@ aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;ma
     <a href="recipes.html" style="display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--ink)" data-i18n>Shop by recipe</a>
   </div>
   <div class="hside">
-    <div id="lang"></div>
+    <div class="hbar"><div id="account"></div><div id="lang"></div></div>
     <div class="status" id="status" role="status" data-i18n>Loading prices...</div>
   </div>
 </header>
@@ -140,6 +140,8 @@ aside h2{font-family:var(--f-display);font-size:26px;text-transform:uppercase;ma
 </div>
 
 <script src="i18n.js"></script>
+<script src="account-config.js"></script>
+<script src="account.js"></script>
 <script>
 var T = I18N.t;   // T(english, vars) gives the chosen language
 var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE", newgumsarn:"New Gum Sarn", txgmall:"TXG Mall", njk:"NJK", fromk:"FromK"};
@@ -148,7 +150,21 @@ var PAGE = 40;
 var ITEMS = [], BYKEY = {};
 var state = {sort:"name", specials:false, q:"", member:false, stop:4, list:{}, sel:null, shown:PAGE, aisle:""};
 try{var saved=JSON.parse(localStorage.getItem("shelfcheck-live")||"null"); if(saved&&saved.list){state.list=saved.list; if(typeof saved.stop==="number")state.stop=saved.stop;}}catch(e){}
-function save(){try{localStorage.setItem("shelfcheck-live",JSON.stringify({list:state.list,stop:state.stop}));}catch(e){}}
+function save(){try{localStorage.setItem("shelfcheck-live",JSON.stringify({list:state.list,stop:state.stop}));}catch(e){} if(window.Account)Account.changed();}
+// signed in, the list also saves to the account (account.js); combining two lists keeps every item at the larger quantity
+if(window.Account)Account.sync("live",{
+  get:function(){return {list:state.list,stop:state.stop};},
+  set:function(d){
+    state.list=d.list||{}; if(typeof d.stop==="number")state.stop=d.stop;
+    document.getElementById("stopCost").value=state.stop;
+    if(CMP){Object.keys(state.list).forEach(function(k){if(!BYKEY[k])delete state.list[k];}); renderAll();}
+    save();
+  },
+  merge:function(a,b){
+    var list={}; [a.list||{},b.list||{}].forEach(function(l){Object.keys(l).forEach(function(k){list[k]=Math.max(list[k]||0,l[k]);});});
+    return {list:list,stop:typeof b.stop==="number"?b.stop:a.stop};
+  }
+});
 
 function money(n){return "$"+n.toFixed(2);}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}

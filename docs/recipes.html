@@ -109,7 +109,7 @@ aside h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(
     <a class="navlink" href="index.html" data-i18n>Compare individual products</a>
   </div>
   <div class="hside">
-    <div id="lang"></div>
+    <div class="hbar"><div id="account"></div><div id="lang"></div></div>
     <div class="status" id="status" role="status" data-i18n>Loading...</div>
   </div>
 </header>
@@ -136,6 +136,8 @@ aside h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(
 </div>
 
 <script src="i18n.js"></script>
+<script src="account-config.js"></script>
+<script src="account.js"></script>
 <script>
 var T = I18N.t, TH = I18N.html;   // T(english, vars) gives the chosen language; TH does the same for HTML
 var STORES = {woolworths:"Woolworths", newworld:"New World", paknsave:"PAK'nSAVE", newgumsarn:"New Gum Sarn", txgmall:"TXG Mall", njk:"NJK", fromk:"FromK"};
@@ -147,7 +149,21 @@ try{
   var saved = JSON.parse(localStorage.getItem("shelfcheck-recipes")||"null");
   if(saved){ state.sel=saved.sel||{}; state.have=saved.have||{}; if(typeof saved.stop==="number")state.stop=saved.stop; }
 }catch(e){}
-function save(){try{localStorage.setItem("shelfcheck-recipes",JSON.stringify({sel:state.sel,have:state.have,stop:state.stop}));}catch(e){}}
+function save(){try{localStorage.setItem("shelfcheck-recipes",JSON.stringify({sel:state.sel,have:state.have,stop:state.stop}));}catch(e){} if(window.Account)Account.changed();}
+// signed in, the chosen recipes also save to the account (account.js); combining two keeps every recipe at the larger
+// number of servings, and the account's ticks for what you already have
+if(window.Account)Account.sync("recipes",{
+  get:function(){return {sel:state.sel,have:state.have,stop:state.stop};},
+  set:function(d){
+    state.sel=d.sel||{}; state.have=d.have||{}; if(typeof d.stop==="number")state.stop=d.stop;
+    if(PRICES){Object.keys(state.sel).forEach(function(id){if(!BYID[id])delete state.sel[id];}); renderAll();}
+    save();
+  },
+  merge:function(a,b){
+    var sel={}; [a.sel||{},b.sel||{}].forEach(function(s){Object.keys(s).forEach(function(k){sel[k]=Math.max(sel[k]||0,s[k]);});});
+    return {sel:sel,have:Object.assign({},a.have,b.have),stop:typeof b.stop==="number"?b.stop:a.stop};
+  }
+});
 
 function money(n){return "$"+n.toFixed(2);}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
